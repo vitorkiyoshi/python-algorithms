@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from os.path import isfile, join
+from os.path import isfile, join, getsize
 import re
 from subprocess import DEVNULL, PIPE, run, TimeoutExpired
 
@@ -18,6 +18,11 @@ class BaseTask:
                 return f.read()
         except:
             return ''
+
+    def has_size(self, file_name, size):
+        file_size = getsize(file_name)
+        
+        assert file_size >= size, f"{file_name} deve ter pelo menos {size} bytes"
     
     def count_words(self, text):
         words = text.split()
@@ -94,23 +99,29 @@ class Task(BaseTask):
     def teste_1_problema(self):
         arquivo = "problema.md"
         n_words = 60
+        size = 300
 
         self.exists(arquivo)
         self.has_n_words(arquivo, n_words)
+        self.has_size(arquivo, size)
 
     def teste_2_algoritmo(self):
         arquivo = "algoritmo1.md"
         n_words = 60
+        size = 300
 
         self.exists(arquivo)
         self.has_n_words(arquivo, n_words)
+        self.has_size(arquivo, size)
 
     def teste_3_lavar_maos(self):
         arquivo = "algoritmo2.md"
         n_words = 60
+        size = 300
 
         self.exists(arquivo)
         self.has_n_words(arquivo, n_words)
+        self.has_size(arquivo, size)
 
 
 
