@@ -1,1 +1,1 @@
-obstusângulo
+obtusângulo
