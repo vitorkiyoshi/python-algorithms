@@ -10,3 +10,6 @@ tarefa07/testes/*.out
 tarefa08/testes/*.out
 
 tarefa09/testes/*.out
+
+tarefa10/testes/*.out
+tarefa10/__pycache__
