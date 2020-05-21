@@ -3,15 +3,21 @@ from bordas import destacar_bordas
 
 def testar_bordas():
     # crie um exemplo de imagem pequena para testar
-    largura = ...
-    altura = ...
+    largura = 8
+    altura = 4
     imagem = [
-        ...
+        ['0', '0', '0', '0', '0', '0', '0', '0'],
+        ['1', '1', '1', '1', '0', '0', '0', '0'],
+        ['1', '1', '1', '1', '1', '1', '1', '1'],
+        ['1', '1', '1', '1', '1', '1', '1', '1']
     ]
 
     # cria a matriz de bordas que você espera para essa imagem
     bordas_esperadas = [
-        ...
+        ['0', '0', '0', '0', '0', '0', '0', '0'],
+        ['1', '1', '1', '1', '0', '0', '0', '0'],
+        ['1', '0', '0', '1', '1', '1', '1', '1'],
+        ['1', '1', '1', '1', '1', '1', '1', '1']
     ]
 
     # aqui chamamos a função sendo testada
