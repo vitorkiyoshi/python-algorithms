@@ -5,26 +5,27 @@ from os import listdir
 import re
 import codecs
 from subprocess import DEVNULL, PIPE, run, TimeoutExpired
+
 import tempfile
-import signal
+
 from contextlib import contextmanager
+import threading
+import _thread
 
-
-class TimeoutException(Exception):
-    pass
-
+class TimeOutException(Exception):
+    def __init__(self, message):
+        super(TimeOutException, self).__init__(message)
 
 @contextmanager
-def time_limit(seconds):
-    def signal_handler(signum, frame):
-        raise TimeoutException("Timed out!")
-
-    signal.signal(signal.SIGALRM, signal_handler)
-    signal.alarm(seconds)
+def time_limit(seconds, msg=''):
+    timer = threading.Timer(seconds, lambda: _thread.interrupt_main())
+    timer.start()
     try:
         yield
+    except KeyboardInterrupt:
+        raise TimeOutException("Timed out for operation {}".format(msg))
     finally:
-        signal.alarm(0)
+        timer.cancel()
 
 
 class BaseTask:
@@ -80,9 +81,9 @@ class BaseTask:
         with time_limit(self.TIME_LIMIT_SECONDS):
             try:
                 clousure()
-            except TimeoutException:
+            except TimeOutException:
                 assert False, f"comando excedeu o tempo limite de {self.TIME_LIMIT_SECONDS}s"
-            except Exception as e:
+            except Exception:
                 tb = traceback.format_exc()
                 assert False, f"algum erro ocorreu durante a execução:\n{tb}"
 
