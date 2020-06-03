@@ -1,0 +1,11 @@
+direitos das mulheres
+o feminismo de
+do feminismo começou
+a primeira onda
+abolição da escravidão
+dos estados unidos
+onda do feminismo
+homens e mulheres
+de classe média
+classe média alta
+direito de votar
