@@ -150,8 +150,24 @@ class Task(BaseTask):
     def teste_5(self):
         csvfile = "agenda.csv"
         script = "agenda.py"
-
-        ## cria novo evento
+        args = ["-a", csvfile, "inicializar"]
+        self.test_case(script, None, args)
+        
+        ## cria novos eventos
+        args = [
+            "-a",
+            csvfile,
+            "criar",
+            "--nome",
+            "MC102",
+            "--data",
+            "01/01/2020",
+            "--hora",
+            "14:00",
+            "--descricao",
+            "Aula de laboratório",
+        ]
+        self.test_case(script, None, args)
         args = ["-a", csvfile, "criar", "--nome", "MC102", "--data", "01/06/2020", "--hora", "14:00", "--descricao", ""]
         self.test_case(script, None, args)
 
