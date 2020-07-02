@@ -19,3 +19,5 @@ tarefa11/testes/*.out
 tarefa12/testes/*.out
 tarefa12/__pycache__
 tarefa12/agenda.csv
+
+tarefa13/testes/*.out
