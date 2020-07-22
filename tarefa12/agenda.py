@@ -9,87 +9,85 @@ class Evento:
         self.hora = hora
         self.arquivo = arquivo
     def criar(self):
-        with open(self.arquivo,"r+") as arquivo:
-            arquivo.readlines() #colocando ponteiro para o final
-            arquivo.write(str(self.id) + ",")
-            arquivo.write(self.nome + ",")
-            arquivo.write(self.descricao + ",")
-            arquivo.write(self.data + ",")
-            arquivo.write(self.hora + "\n")
-            print("Foi adicionado evento " + str(self.id) + ".")
-        pass
+        matriz=carregar_arquivo(self.arquivo)
+        matriz.append([self.id,self.nome,self.descricao,self.data,self.hora])
+        salvar_arquivo(matriz,self.arquivo)
+        print("Evento com id"+str(self.id)+"criado")
     def alterar(self):
-        with open(self.arquivo, 'r') as arquivo:
-            eventos = arquivo.readlines()
-        for i in eventos:
-            if str(self.id) in i.split(","):
-                index_evento = eventos.index(i)
-        with open(self.arquivo, 'w+') as arquivo:
-            for linha in eventos:
-                if eventos.index(linha) == index_evento:
-                    arquivo.write(str(self.id) + ",")
-                    arquivo.write(self.nome + ",")
-                    arquivo.write(self.descricao + ",")
-                    arquivo.write(self.data + ",")
-                    arquivo.write(self.hora + "\n")
-                    print("Evento "+str(self.id)+" alterado")
-                else:
-                    arquivo.write(linha)
+        matriz=carregar_arquivo(self.arquivo)
+        for i in range(len(matriz)):
+            if matriz[i][0]==str(self.id):
+                matriz[i][1]=self.nome
+                matriz[i][2]=self.descricao
+                matriz[i][3]=self.data
+                matriz[i][4]=self.hora
+                salvar_arquivo(matriz,self.arquivo)
+                print("Evento "+str(self.id)+" alterado")
+                
+def carregar_arquivo(nome_arquivo):
+    matriz_agenda=[]
+    with open(nome_arquivo,"r+") as arquivo:
+        for linha in arquivo:
+            matriz_agenda.append(linha.strip().split(","))
+    return matriz_agenda
+def salvar_arquivo(matriz,nome_arquivo):
+    with open(nome_arquivo,"w+") as arquivo:
+        for linha in matriz:
+            arquivo.write(str(linha[0]) + ",")
+            arquivo.write(linha[1] + ",")
+            arquivo.write(linha[2] + ",")
+            arquivo.write(linha[3] + ",")
+            arquivo.write(linha[4] + "\n")
+    pass
+    
+def remover_evento(nome_arquivo,id):
+    matriz=carregar_arquivo(nome_arquivo)
+    for i in range(len(matriz)):
+        if matriz[i][0]==str(id):
+            del matriz[i]
+            break
+    salvar_arquivo(matriz,nome_arquivo)
+    print("removido evento"+str(id))
+    pass
+    
 def inicializar(nome_arquivo):
     with open(nome_arquivo , "w+"):
         print("Uma agenda vazia "+nome_arquivo+" foi criada!")    #inicializa/cria o arquivo csv
     pass
 
 def achar_id_valido(nome_arquivo):
-    i=1
-    with open(nome_arquivo,"r+") as arquivo:
-        try:
-            ultimo_id= arquivo.readlines()[-1]
-            i = int(ultimo_id.split(",")[0]) + 1
-            return i
-        except:
-            return i
-
-def remover_evento(nome_arquivo, id):
-    with open(nome_arquivo,"r") as entrada:
-        with open(nome_arquivo+"2","w") as saida:
-            for linha in entrada:
-                if linha.split(",")[0] != str(id):
-                    saida.write(linha)
-    os.remove(nome_arquivo)
-    os.rename(nome_arquivo+"2",nome_arquivo)
-    print("Evento "+str(id)+" removido")
-    pass
+    matriz=carregar_arquivo(nome_arquivo)
+    if matriz==[]:
+        return 1
+    else:
+        return len(matriz)+1
+    
 def identificar_evento(nome_arquivo,id):
-    with open(nome_arquivo, "r+") as arquivo:
-        while True:
-            pesquisa = arquivo.readline().strip().split(",")
-            if pesquisa[0] == str(id):
-                evento = Evento(id, pesquisa[1], pesquisa[2], pesquisa[3], pesquisa[4], nome_arquivo)
-                return evento
+    matriz=carregar_arquivo(nome_arquivo)
+    for i in range(len(matriz)):
+        if matriz[i][0]==str(id):
+            evento = Evento(id, matriz[i][1], matriz[i][2], matriz[i][3], matriz[i][4], nome_arquivo)   #retornando objeto evento do arquivo csv
+            return evento
 def listar_eventos(data, nome_arquivo):
     achou=False
-    with open(nome_arquivo,"r+") as arquivo:
-        matriz = []
-        matriz_data = []
-        for linha in arquivo:
-            matriz.append(linha.split(","))
-        for i in range(len(matriz)):
-            if data in matriz[i]:
-                achou=True
-                matriz_data.append(matriz[i])
-        if achou:
-            print("Eventos do dia " + data)
+    matriz=carregar_arquivo(nome_arquivo)
+    matriz_data = []
+    for i in range(len(matriz)):
+        if str(data) in matriz[i]:
+            matriz_data.append(matriz[i])
+            achou=True
+    if achou:
+        print("Eventos do dia " + data)
+        print("-----------------------------------------------")
+        for i in range(len(matriz_data)):
+            print("Evento "+matriz_data[i][0]+" - "+matriz_data[i][1])
+            print("Descrição: "+matriz_data[i][2])
+            print("Data: "+matriz_data[i][3])
+            print("Hora: "+matriz_data[i][4])
             print("-----------------------------------------------")
-            for i in range(len(matriz_data)):
-                print("Evento "+matriz_data[i][0]+" - "+matriz_data[i][1])
-                print("Descrição: "+matriz_data[i][2])
-                print("Data: "+matriz_data[i][3])
-                print("Hora: "+matriz_data[i][4])
-                print("-----------------------------------------------")
             pass
-        else:
-            print("Não existem eventos para o dia "+data+"!")
+    else:
+        print("Não existem eventos para o dia "+data+"!")
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", "--arquivo", help="nome do arquivo.", type=str)
