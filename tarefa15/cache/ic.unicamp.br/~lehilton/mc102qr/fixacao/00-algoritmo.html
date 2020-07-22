@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - DefiniÃ§Ãµes de problema e algoritmo
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../fixacao.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >DefiniÃ§Ãµes de problema e algoritmo</h1>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h1 id="definicao-de-problemas-e-algoritmos">DefiniÃ§Ã£o de problemas e algoritmos</h1>
+<ol>
+<li>
+<p>Um robÃ´ estÃ¡ na posiÃ§Ã£o da seta. Existe um tesouro escondido em um
+caixote amarelo, mas no outro hÃ¡ uma armadilha que o deixa preso
+para sempre. Para saber em que caixote estÃ¡, pode-se verificar a
+chave marrom e ler o valor de X. Se X = -1, entÃ£o o tesouro estÃ¡
+em A, mas se X = 1, entÃ£o o tesouro estÃ¡ em B. Escreva um
+algoritmo para pegar o tesouro. O robÃ´ sÃ³ entende os seguintes
+comandos</p>
+<ul>
+<li>virar Ã  direita</li>
+<li>virar Ã  esquerda</li>
+<li>abrir um caixote</li>
+<li>andar N quadrados</li>
+<li>ler um valor e</li>
+<li>pegar o tesouro</li>
+</ul>
+<img src="figs/mapa.svg" style="width: 100%; max-width: 500px;">
+<p>a) Identifique todas as partes relacionadas (problema, entrada,
+saÃ­da etc.).</p>
+<p>b) Concorde ou discorde: um algoritmo que abre um caixote antes de
+ler a chave estÃ¡ bem definido.</p>
+</li>
+<li>
+<p>Escreva um algoritmo para somar dois nÃºmeros decimais inteiros
+usando somente a tabuada.</p>
+</li>
+<li>
+<p>Execute:</p>
+<ul>
+<li>
+<p>Pegue papel em branco e lÃ¡pis;</p>
+</li>
+<li>
+<p>Desenhe um semicÃ­rculo na esquerda;</p>
+</li>
+<li>
+<p>Desenhe outro semicÃ­rculo na direita;</p>
+</li>
+<li>
+<p>Desenhe um cÃ­rculo menor em baixo de de cada semicÃ­rculo;</p>
+</li>
+<li>
+<p>Desenhe um semicÃ­rculo maior sobre os semicÃ­rculos;</p>
+</li>
+<li>
+<p>Pinte os semicÃ­rculos pequenos de verde;</p>
+</li>
+<li>
+<p>Pinte o semicÃ­rculo grande de laranja;</p>
+</li>
+</ul>
+<p>a) Que figura vocÃª obteve? O procedimento acima Ã© um algoritmo?
+Explique.</p>
+<p>b) Reescreva o procedimento como um algoritmo bem definido que
+obtenha o desenho <a href="figs/fusca.svg">disponÃ­vel aqui</a>. Atente-se
+para tamanho, ordem etc.</p>
+</li>
+<li>
+<p>Ana dÃ¡ uma volta no percurso de corrida do Lago a cada 15 min.
+Suponha que um amigo comece a correr X minutos mais tarde em um
+ritmo de Y min por volta. Dados X e Y, Ana e seu amigo irÃ£o se
+encontrar no inÃ­cio da volta antes de uma hora? Quando? Escreva um
+algoritmo para o problema. Lembre-se de sempre especificar
+claramente todas as partes relacionadas (problema, entrada, saÃ­da
+etc.)!</p>
+</li>
+<li>
+<p>Em um hospital, Ã© preciso escalar um mÃ©dico para plantÃ£o em cada
+dia do mÃªs. Sabendo-se que <code class="language-text">medico</code> Ã© um vetor de dimensÃ£o $N$,
+onde $N$ Ã© o nÃºmero de mÃ©dicos e <code class="language-text">medico[i]</code> Ã© a matrÃ­cula do
+$i$-Ã©simo mÃ©dico, queremos construir um novo vetor <code class="language-text">plantao</code> com 30
+posiÃ§Ãµes, onde <code class="language-text">plantao[j]</code> contÃ©m a matrÃ­cula do mÃ©dico escalado
+para o dia $j$. O objetivo Ã© obter uma escala mais justa possÃ­vel.</p>
+<pre class="highlight">plantao[1] = medico[1];
+dia = 2;
+enquanto (dia â¤ 30) faÃ§a {
+    plantao[dia] = plantao[dia - 1];
+    dia = dia + 1;
+}
+</pre><p>a) Como vocÃª descreveria uma escala justa? Descreva a entrada e a saÃ­da
+usando uma linguagem mais formal do que na descriÃ§Ã£o do problema.</p>
+<p>b) No algoritmo escrito acima, descreva as configuraÃ§Ãµes inicial, apÃ³s
+a execuÃ§Ã£o das linhas 1, 2, apÃ³s a $i$-Ã©sima execuÃ§Ã£o da linha 4,
+e a configuraÃ§Ã£o final.</p>
+<p>c) Argumente (informalmente ou formalmente) que o algoritmo acima nÃ£o
+estÃ¡ correto de acordo com a especificaÃ§Ã£o de saÃ­da que vocÃª
+descreveu.</p>
+</li>
+<li>
+<p>VocÃª tem trÃªs baldes, identificados como $A$, $B$ e $C$ com
+capacidades $2$, $7$ e $4$ litros respectivamente. Os baldes $A$ e
+$C$ estÃ£o vazios, enquanto o balde $B$ estÃ¡ cheio de Ã¡gua. Um
+amigo gostaria de, sem desperdiÃ§ar Ã¡gua, separar um litro, mas nÃ£o
+hÃ¡ indicadores de medida nos baldes. Ele sugeriu o procedimento
+abaixo:</p>
+<ul>
+<li>Despeje Ã¡gua do balde $B$ no balde $A$ atÃ© a borda;</li>
+<li>Despeje metade da Ã¡gua do balde $A$ no balde $C$;</li>
+<li>Entregue o balde $A$.</li>
+</ul>
+<p>a) Argumente que este procedimento nÃ£o Ã© um algoritmo; para isso,
+dÃª a definiÃ§Ã£o de um algoritmo e descreva suas caracterÃ­sticas.</p>
+<p>b) Depois escreva um algoritmo para o problema.</p>
+</li>
+</ol>
+<h1 id="decidibilidade">Decidibilidade</h1>
+<p><strong>AtenÃ§Ã£o</strong>: as questÃµes abaixo tratam de conteÃºdos que nÃ£o discutimos
+em sala e estÃ£o disponÃ­veis apenas para referÃªncia.</p>
+<ol>
+<li>
+<p>Leia:</p>
+<blockquote>
+<p>Como regra bÃ¡sica que dominou a computaÃ§Ã£o, a lei de Moore
+afirma que o nÃºmero de transÃ­stores de um chip de
+microprocessador irÃ¡ dobrar a cada dois anos â o que em geral
+significa que a velocidade tambÃ©m irÃ¡ dobrar. (...) NÃ£o por
+muito tempo. Esse ritmo jÃ¡ comeÃ§ou a decair, graÃ§as ao
+aquecimento que Ã© inevitÃ¡vel quando mais e mais circuitos de
+silÃ­cios sÃ£o espremidos em uma pequena Ã¡rea. (...)</p>
+</blockquote>
+<blockquote>
+<p><em>The chips are down for Mooreâs law</em>, Nature, 9 de fevereiro de
+2016 (adaptado).</p>
+</blockquote>
+<p>Considerando o excerto, disserte brevemente sobre: âmesmo que a
+lei de Moore nÃ£o chegasse ao fim, ainda hÃ¡ problemas que nÃ£o
+poderÃ­amos resolverâ. No seu texto, defina problemas indecidÃ­veis
+e problemas intratÃ¡veis, explicando a diferenÃ§a entre eles.</p>
+</li>
+<li>
+<p>Concorde ou discorde: âO problema de decidir se dois nÃºmeros
+racionais sÃ£o iguais Ã© indecidÃ­vel, jÃ¡ que existem infinitas formas
+de escrever um mesmo nÃºmero.â</p>
+<p>Justifique considerando a seguinte questÃ£o: como podemos mostrar
+que um problema Ã© decidÃ­vel (resolvÃ­vel)?</p>
+</li>
+</ol>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../fixacao.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="01-variaveis.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

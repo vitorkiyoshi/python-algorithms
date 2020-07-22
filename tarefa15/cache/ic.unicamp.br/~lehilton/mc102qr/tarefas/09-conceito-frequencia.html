@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - Conceito e frequÃªncia
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >Conceito e frequÃªncia</h1>
+
+
+          <span class="meta">Domingo, 10 de maio de 2020</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <p><strong>AtenÃ§Ã£o:</strong> Esta tarefa tambÃ©m serÃ¡ corrigida manualmente. Depois de
+terminada e corrigida automaticamente, vocÃª dever apresentar sua
+tarefa a um monitor em algum horÃ¡rio de atendimento. VocÃª poderÃ¡
+pedir recorreÃ§Ã£o, mas o conceito da recorreÃ§Ã£o serÃ¡ no mÃ¡ximo B.</p>
+<h1 id="conceito-e-frequencia">Conceito e frequÃªncia</h1>
+<p>VocÃª conhece os critÃ©rios necessÃ¡rios para ser aprovado nessa
+disciplina? EntÃ£o, vamos facilitar a vida do professor criando uma
+forma automÃ¡tica de determinar se umx estudante estÃ¡ aprovadx. Para
+isso, vocÃª deverÃ¡ criar um programa em Python chamado <code class="language-text">aprovacao.py</code>
+que recebe como entrada a nota em cada uma das tarefas e a presenÃ§a dx
+estudante em cada uma das aulas e imprime &quot;Aprovadx&quot; se x estudante
+cumpriu todos os critÃ©rios e &quot;Reprovadx&quot;, caso contrÃ¡rio.</p>
+<p>Para relembrar os critÃ©rios de aprovaÃ§Ã£o, consulte a pÃ¡gina da
+<a href="https://www.ic.unicamp.br/~lehilton/mc102qr/apresentacao.html#avaliacao">disciplina</a>.</p>
+<p>Busque organizar seu cÃ³digo em funÃ§Ãµes e evite usar desnecessariamente
+funÃ§Ãµes predefinidas do Python ou list comprehension. Se vocÃª acha que precisa utilizar
+algumas dessas funÃ§Ãµes, considere implementar sua prÃ³pria versÃ£o
+dessas funÃ§Ãµes. TambÃ©m, dÃª nomes que faÃ§am sentido para as suas
+funÃ§Ãµes e seja consistente. VocÃª deve separar claramente a parte do
+cÃ³digo responsÃ¡vel pela entrada e saÃ­da da parte do cÃ³digo responsÃ¡vel
+por resolver o problema da questÃ£o.</p>
+<h2 id="entrada">Entrada</h2>
+<p>Primeiro, serÃ¡ dada a nota para cada uma das tarefas como um par de
+nome da tarefa e conceito. O conceito Ã© uma das letras A, B, C, e D.
+Em seguida, serÃ¡ dada a presenÃ§a em cada uma das aulas como uma
+palavra por linha. A palavra Ã© &quot;presente&quot; se x estudante estava na
+aula e &quot;faltou&quot; se nÃ£o estava presente.</p>
+<pre class="highlight">tarefa0 A tarefa1 C tarefa2 C 
+faltou
+faltou
+faltou
+presente
+presente
+faltou
+faltou
+presente
+faltou
+presente
+</pre><h2 id="saida">SaÃ­da</h2>
+<p>Imprima &quot;Aprovadx&quot; se todos os critÃ©rios foram cumpridos e
+&quot;Reprovadx&quot;, caso contrÃ¡rio.</p>
+<pre class="highlight">Reprovadx
+</pre>
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="08-funcoes.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../index.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="10-imagens-binarias.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

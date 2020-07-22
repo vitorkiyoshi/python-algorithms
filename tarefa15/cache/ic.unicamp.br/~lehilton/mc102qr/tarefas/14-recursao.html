@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - RecursÃ£o
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >RecursÃ£o</h1>
+
+
+          <span class="meta">Quarta, 1 de julho de 2020</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <p><strong>AtenÃ§Ã£o:</strong> Esta tarefa nÃ£o serÃ¡ corrigida manualmente, mas vocÃª deve
+tentar respondÃª-la genuinamente. Se tiver alguma dÃºvida se ela estÃ¡ ou
+nÃ£o correta, procure os monitores. Tentativas de passar no teste
+automÃ¡tico sem responder as questÃµes serÃ£o consideradas fraude. VocÃª
+nÃ£o pode copiar nem consultar quaisquer soluÃ§Ãµes prontas; qualquer
+tentativa nesse sentido serÃ¡ considerada fraude.</p>
+<p>Ã <strong>obrigatÃ³rio</strong> resolver cada um dos problemas seguintes utilizando
+recursÃ£o.</p>
+<h2 id="maximo">MÃ¡ximo</h2>
+<p>Dada uma lista de elementos, faÃ§a um programa <code class="language-text">maximo.py</code> que encontra
+o maior elemento.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Uma sequÃªncia de nÃºmeros separados por espaÃ§o.</p>
+<pre class="highlight">18 75 70 10 168 13 184 76 97 195 35 99 79 82 162 114 73 136 148 26 119 159 153 122 15 116 15 36 176 92 57 193 166 127 2 133 139 185 9 35 180 44 134 58 125 95 171 198 31 119 23 150 78 176 71 93 91 85 128 66 177 185 59 142 111 60 75 49 45 84 84 25 127 18 82 52 113 53 49 143 171 72 93 49 47 163 141 138 48 69 4 24 53 62 166 164 122 41 12 167
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>O maior elemento da sequÃªncia.</p>
+<pre class="highlight">198
+</pre><h2 id="fatorial">Fatorial</h2>
+<p>FaÃ§a um programa <code class="language-text">fatorial.py</code> que calcula o fatorial de um nÃºmero
+inteiro $n$ nÃ£o-negativo.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Um nÃºmero inteiro $n$ nÃ£o-negativo.</p>
+<pre class="highlight">5
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>O fatorial de $n$.</p>
+<pre class="highlight">120
+</pre><h2 id="3-fibonacci">3-Fibonacci</h2>
+<p>Podemos definir uma variaÃ§Ã£o da sequÃªncia de Fibonacci como $f(n) =
+f(n-1) + f(n-2) + f(n-3)$, tal que $f(n) = n$ para $0 \le n \le 2$.</p>
+<p>FaÃ§a um programa <code class="language-text">fibonacci3.py</code> que calcula o $n$-Ã©simo nÃºmero dessa
+sequÃªncia. Considere que $n$ pode ser um nÃºmero grande.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Um nÃºmero inteiro $n$ nÃ£o-negativo.</p>
+<pre class="highlight">31
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>O $n$-Ã©simo nÃºmero da sequÃªncia de Fibonacci modificada.</p>
+<pre class="highlight">83047505
+</pre><h2 id="conjectura-de-collatz">Conjectura de Collatz</h2>
+<p>Considere o seguinte procedimento em um nÃºmero inteiro positivo $n$:</p>
+<ul>
+<li>se $n$ Ã© par, divida por 2;</li>
+<li>se $n$ Ã© Ã­mpar, multiplique $n$ por 3, some 1 e divida por 2.</li>
+</ul>
+<p>A
+<a href="https://en.wikipedia.org/wiki/Collatz_conjecture">conjectura de Collatz</a>
+diz que se repetirmos esse procedimento no resultado da execuÃ§Ã£o
+anterior um nÃºmero suficiente de vezes, eventualmente vamos chegar ao
+nÃºmero 1. FaÃ§a um programa <code class="language-text">collatz.py</code> que dado um nÃºmero inteiro
+positivo, determina o nÃºmero de repetiÃ§Ãµes do procedimento para chegar
+em 1.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Um nÃºmero inteiro positivo $n$.</p>
+<pre class="highlight">15
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>O nÃºmero de passos para convergir para 1.</p>
+<pre class="highlight">12
+</pre><h2 id="minimo-multiplo-comum">MÃ­nimo MÃºltiplo Comum</h2>
+<p>O mÃ­nimo mÃºltiplo comum entre dois nÃºmeros $a$ e $b$ Ã© o menor nÃºmero
+$c$ que Ã© divisÃ­vel por $a$ e $b$. FaÃ§a um programa <code class="language-text">mmc.py</code> que dados
+dois nÃºmeros $a$ e $b$, calcula o mÃ­nimo mÃºltiplo comum entre esses
+dois nÃºmeros sem fazer uma busca exaustiva. VocÃª pode usar o algoritmo
+para encontrar o mÃ¡ximo divisor comum.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Dois nÃºmeros $a$ e $b$ separados por espaÃ§o.</p>
+<pre class="highlight">12 9
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>O mÃ­nimo mÃºltiplo comum de $a$ e $b$.</p>
+<pre class="highlight">36
+</pre><h2 id="busca-em-um-vetor-ordenado">Busca em um vetor ordenado</h2>
+<p>Dado um vetor de inteiros em ordem crescente e um nÃºmero, faÃ§a um
+programa <code class="language-text">busca_binaria.py</code> que retorne o Ã­ndice da posiÃ§Ã£o desse
+nÃºmero no vetor ou $-1$ se esse nÃºmero nÃ£o estÃ¡ no vetor.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Uma sequÃªncia de nÃºmeros separados por espaÃ§o e um nÃºmero $i$.</p>
+<pre class="highlight">1 3 4 7 12 17 18 24 25 26 28 29 31 32 33 34 35 36 37 40 43 44 45 47 51 53 54 55 57 58 60 62 63 65 70 74 75 77 79 81 82 85 86 87 90 93 94 95 97 100
+31
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>A posiÃ§Ã£o de $i$ na sequÃªncia ou -1.</p>
+<pre class="highlight">12
+</pre><h2 id="torre-de-hanoi">Torre de Hanoi</h2>
+<p>FaÃ§a um programa <code class="language-text">hanoi.py</code> que determina o nÃºmero mÃ­nimo de
+movimentos para resolver o problema da torre de HanÃ³i com $n$ discos.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Um nÃºmero $n$.</p>
+<pre class="highlight">2
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>O nÃºmero mÃ­nimo de movimentos para resolver a torre de HanÃ³i com $n$
+discos.</p>
+<pre class="highlight">3
+</pre><h2 id="merge-sort">Merge sort</h2>
+<p>FaÃ§a um programa <code class="language-text">merge_sort.py</code> que dada uma lista de elementos,
+retorna essa lista em ordem crescente. Para isso, implemente o
+algoritmo de ordenaÃ§Ã£o <strong>mergesort</strong>.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Uma sequÃªncia de nÃºmeros separados por espaÃ§o.</p>
+<pre class="highlight">18 75 70 10 168 13 184 76 97 195 35 99 79 82 162 114 73 136 148 26 119 159 153 122 15 116 15 36 176 92 57 193 166 127 2 133 139 185 9 35 180 44 134 58 125 95 171 198 31 119 23 150 78 176 71 93 91 85 128 66 177 185 59 142 111 60 75 49 45 84 84 25 127 18 82 52 113 53 49 143 171 72 93 49 47 163 141 138 48 69 4 24 53 62 166 164 122 41 12 167
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>A sequÃªncia em ordem crescente.</p>
+<pre class="highlight">2 4 9 10 12 13 15 15 18 18 23 24 25 26 31 35 35 36 41 44 45 47 48 49 49 49 52 53 53 57 58 59 60 62 66 69 70 71 72 73 75 75 76 78 79 82 82 84 84 85 91 92 93 93 95 97 99 111 113 114 116 119 119 122 122 125 127 127 128 133 134 136 138 139 141 142 143 148 150 153 159 162 163 164 166 166 167 168 171 171 176 176 177 180 184 185 185 193 195 198
+</pre><h2 id="potencia-rapido">PotÃªncia, rÃ¡pido!!!</h2>
+<p>Dado dois nÃºmeros inteiros positivos $a$ e $b$, faÃ§a um programa
+<code class="language-text">potencia.py</code> que calcule $a^b$ fazendo no mÃ¡ximo $\log_2(b) + 1$
+chamadas recursivas.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Dois nÃºmeros inteiros positivos $a$ e $b$.</p>
+<pre class="highlight">2 3
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>O resultado de $a^b$.</p>
+<pre class="highlight">8
+</pre><h2 id="encontrar-o-menor-elemento-ausente-de-uma-sequencia-ordenada">Encontrar o menor elemento ausente de uma sequÃªncia ordenada</h2>
+<p>Dada uma sequÃªncia ordenada (crescente) de nÃºmeros, faÃ§a um programa
+<code class="language-text">menor_ausente.py</code> que encontre o menor elemento ausente dessa
+sequÃªncia.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Uma sequÃªncia ordenada de nÃºmeros separados por espaÃ§o.</p>
+<pre class="highlight">0 1 2 3 4 5 6 7 8 9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100 101
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>O menor nÃºmero ausente da sequÃªncia.</p>
+<pre class="highlight">66
+</pre><h2 id="encontrar-o-k-esimo-menor-elemento-em-uma-sequencia-possivelmente-nao-ordenada">Encontrar o k-Ã©simo menor elemento em uma sequÃªncia possivelmente nÃ£o-ordenada</h2>
+<p>Dada uma sequÃªncia de nÃºmeros nÃ£o necessariamente ordenada, faÃ§a um
+programa <code class="language-text">k-esimo.py</code> que encontre o $k$-Ã©simo menor elemento.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Uma sequÃªncia de nÃºmeros separados por espaÃ§o e um nÃºmero $k$.</p>
+<pre class="highlight">88 46 50 82 128 91 36 78 163 188 4 142 89 27 148 18 194 130 156 115 13 26 34 85 174 74 95 104 182 150 134 64 24 100 155 187 159 48 38 65 127 195 41 8 129 75 93 103 6 33 169 166 190 132 177 19 147 105 110 60 59 7 53 111 114 39 189 153 141 136 139 168 108 140 124 71 123 101 90 70 200 122 20 175 35 21 162 58 126 109 25 11 172 146 43 69 183 133 2 52
+25
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>O maior $k$-Ã©simo menor elemento da sequÃªncia.</p>
+<pre class="highlight">48
+</pre><h2 id="todas-as-combinacoes-de-n-digitos">Todas as combinaÃ§Ãµes de $n$ dÃ­gitos</h2>
+<p>Dado um nÃºmero $n$. Encontre todas as combinaÃ§Ãµes de $n$ dÃ­gitos (0-9)
+cuja soma dos dÃ­gitos Ã© um determinado valor $s$. Seu programa
+<code class="language-text">n-digitos.py</code> deverÃ¡ imprimir todas combinaÃ§Ãµes em ordem crescente.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Um nÃºmero de dÃ­gitos $n$ e o valor da soma $s$.</p>
+<pre class="highlight">3 10
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>Todas as combinaÃ§Ãµes em ordem crescente.</p>
+<pre class="highlight">109
+118
+127
+136
+145
+154
+163
+172
+181
+190
+208
+217
+226
+235
+244
+253
+262
+271
+280
+307
+316
+325
+334
+343
+352
+361
+370
+406
+415
+424
+433
+442
+451
+460
+505
+514
+523
+532
+541
+550
+604
+613
+622
+631
+640
+703
+712
+721
+730
+802
+811
+820
+901
+910
+</pre><h3 id="dica">Dica</h3>
+<p>HÃ¡ vÃ¡rias formas de fazer isso. Uma maneira Ã© supor que sua funÃ§Ã£o
+recursiva jÃ¡ recebe um vetor dos $n$ dÃ­gitos, mas que as primeiras $m$
+posiÃ§Ãµes jÃ¡ estÃ£o preenchidas. Assim, falta listar apenas as
+combinaÃ§Ãµes que comeÃ§am com esses $m$ dÃ­gitos.</p>
+<h2 id="menor-caminho-para-escapar-do-labirinto">Menor caminho para escapar do labirinto</h2>
+<p>FaÃ§a um programa <code class="language-text">menor_caminho.py</code> que encontra o caminho mais curto
+para atravessar um labirinto. O labirinto Ã© representado por uma
+matriz sendo que as paredes sÃ£o indicadas por <code class="language-text">#</code>. A entrada e saÃ­da
+sÃ£o indicadas por <code class="language-text">E</code> e <code class="language-text">S</code> respectivamente. Ã possÃ­vel se mover em
+$4$ direÃ§Ãµes: cima, baixo, esquerda e direita.</p>
+<h3 id="entrada">Entrada</h3>
+<p>Um labirinto.</p>
+<pre class="highlight">###E#########
+#     #  #  #
+# # #### # ##
+# ### #  # ##
+#      # #  #
+## ###    # #
+#   #  ##   #
+######S######
+</pre><h3 id="saida">SaÃ­da</h3>
+<p>O labirinto com o menor caminho marcado com <code class="language-text">*</code>.</p>
+<pre class="highlight">###E#########
+#***  #  #  #
+#*# #### # ##
+#*### #  # ##
+#******# #  #
+## ###*   # #
+#   # *##   #
+######S######
+</pre><h3 id="dicas">Dicas</h3>
+<ol>
+<li>
+<p>VocÃª pode supor que hÃ¡ um Ãºnico caminho, para cada um dos
+labirintos de teste. Assim, nÃ£o precisa se preocupar em encontrar o
+menor caminho.</p>
+</li>
+<li>
+<p>Imagine que vocÃª estÃ¡ dentro desse labirinto. Se vocÃª jÃ¡ passou por
+alguma posiÃ§Ã£o, vocÃª nÃ£o deseja passar por lÃ¡ novamente. Assim, que
+vocÃª faz para marcar que jÃ¡ passou por ali? Deixa uma migalha de
+pÃ£o, digo, um asterisco. Depois de marcar uma posiÃ§Ã£o, vocÃª tenta
+mover-se para cada uma das direÃ§Ãµes possÃ­veis, uma por vez,
+evitando voltar a alguma posiÃ§Ã£o marcada. Se nÃ£o tiver sorte em
+nenhuma das direÃ§Ãµes, provavelmente vocÃª fez alguma escolha errada
+antes. Desmarque a posiÃ§Ã£o, coma sua migalha de pÃ£o, e retorne Ã 
+posiÃ§Ã£o anterior.</p>
+</li>
+</ol>
+<h1 id="observacoes">ObservaÃ§Ãµes</h1>
+<ul>
+<li>
+<p>Para obter conceito B vocÃª precisa passar em todos os testes com
+exceÃ§Ã£o de <code class="language-text">teste_11_ndigitos</code> e <code class="language-text">teste_12_menor_caminho</code>. Para
+obter conceito A Ã© necessÃ¡rio passar em pelo menos um desses dois.</p>
+</li>
+<li>
+<p>NÃ£o custa lembrar: faÃ§a um commit registrando suas alteraÃ§Ãµes a cada
+nova atividade realizada.</p>
+</li>
+</ul>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="13-algoritmos-eficientes.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../index.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

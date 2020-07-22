@@ -23,3 +23,10 @@ tarefa12/agenda.csv
 tarefa13/testes/*.out
 
 tarefa14/testes/*.out
+
+tarefa15/testes/*.out
+tarefa15/__pycache__
+tarefa15/cache/**/*.htm
+tarefa15/cache/**/*.html
+!tarefa15/cache/ic.unicamp.br/graduacao/**/*.html
+!tarefa15/cache/ic.unicamp.br/~lehilton/mc102qr/**/*.html

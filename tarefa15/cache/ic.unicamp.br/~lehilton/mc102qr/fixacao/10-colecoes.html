@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - ColeÃ§Ãµes de dados e representaÃ§Ã£o
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../fixacao.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >ColeÃ§Ãµes de dados e representaÃ§Ã£o</h1>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h1 id="dicionario">DicionÃ¡rio</h1>
+<ol>
+<li>
+<p>Em Python, os dicionÃ¡rios nÃ£o tÃªm uma ordem natural. Escreva uma funÃ§Ã£o que
+receba um dicionÃ¡rio e devolva uma lista ordenada de tuplas ordenadas
+pelo valor.</p>
+<pre class="highlight">DicionÃ¡rio:  {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+Lista de tuplas ordenada:  (0, 0), (2, 1), (1, 2), (4, 3), (3, 4)
+</pre></li>
+<li>
+<p>Escreva uma funÃ§Ã£o que dado um nÃºmero $n$, devolva um dicionÃ¡rio
+com chaves $(1, 2, \dots, n)$ que contenha, respectivamente, os
+valores $(1, 4,... n^2)$.</p>
+<pre class="highlight">n = 5
+Saida: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+</pre></li>
+<li>
+<p>Escreva uma funÃ§Ã£o que, dada uma string, faÃ§a em um dicionÃ¡rio de
+vocabulÃ¡rio e o nÃºmero de vezes que a palavra aparece, faÃ§a o mesmo
+para cada letra. NÃ£o precisa estar em ordem alfabÃ©tica.</p>
+<pre class="highlight">isso e um teste az teste isso
+dicionario_palavras = {
+ &#39;isso&#39;: 2,
+ &#39;e&#39;: 1,
+ &#39;um&#39;: 1,
+ &#39;teste&#39;: 2,
+ &#39;az&#39;: 1
+}
+dicionario_letras = {
+ &#39;i&#39;: 2,
+ &#39;s&#39;: 6,
+ &#39;o&#39;: 2,
+ &#39; &#39;: 6,
+ &#39;e&#39;: 5,
+ &#39;u&#39;: 1,
+ &#39;m&#39;: 1,
+ &#39;t&#39;: 4,
+ &#39;a&#39;: 1,
+ &#39;z&#39;: 1
+}
+</pre></li>
+<li>
+<p>Crie um sugestor de palavras, que dada uma string de entrada e um
+prefixo, ele te devolve o vocabulÃ¡rio total em ordem alfabÃ©tica, e
+te recomenda as palavras que comeÃ§em com o prefixo. Por exemplo,
+para o texto</p>
+<blockquote>
+<p>Os otimistas sao ingenuos, os pessimistas sao amargos, mas vale
+ser um realista esperancoso.</p>
+</blockquote>
+<p>com parÃ¢metros <code class="language-text">real</code> e <code class="language-text">otim</code>, a saÃ­da Ã©:</p>
+<pre class="highlight">Vocabulario:
+amargos (1)
+esperancoso (1)
+ingenuos (1)
+mas (1)
+os (2)
+otimistas (1)
+pessimistas (1)
+realista (1)
+sao (2)
+ser (1)
+um (1)
+vale (1)
+Sugestoes:
+real: realista
+otim: otimistas
+</pre></li>
+<li>
+<p>FaÃ§a um programa que receba vÃ¡rias partidas de futebol na entrada e
+organize na saÃ­da a pontuaÃ§Ã£o e indique o vencedor. Leia a entrada
+atÃ© o caractere <code class="language-text">&#39;.&#39;</code>.</p>
+<pre class="highlight">Ibis 0 x Cascavel 3
+Cascavel 2 x Ibis 0
+Ibis 0 x Dourados 1
+Dourados 2 x Ibis 0
+Cascavel 3 x Dourados 2
+Dourados 3 x Cascavel 1
+.
+</pre><pre class="highlight">Cascavel 9 3 4 9
+Dourados 9 3 4 8
+Ibis 0 0 -8 0
+Vencedor: Cascavel
+</pre></li>
+</ol>
+<h1 id="conjuntos-e-tuplas">Conjuntos e Tuplas</h1>
+<ol>
+<li>
+<p>Considere as estruturas de conjuntos (sets), e.g.,
+<code class="language-text">A = {1, 2, 3, 5, 7}</code> e <code class="language-text">B = {1, 3, 4, 6, 5}</code>. Implemente as
+operaÃ§Ãµes abaixo. Escreva duas implementaÃ§Ãµes, uma utilizando os
+operadores nativos de Python e outras sem utilizar.</p>
+<p>a) $A \cup B$</p>
+<p>b) $A \cap B$</p>
+<p>c) $A \setminus B$</p>
+<p>d) Pesquise sobre os conjuntos na documentaÃ§Ã£o do Python e
+descreva as diferenÃ§as entre usar os operadores diretamente
+e fazer chamadas de atributos, por exemplo, qual a diferenÃ§a
+das duas instruÃ§Ãµes abaixo:</p>
+<pre class="highlightlanguage-python">A <span style="color: #666666">-</span> B
+A<span style="color: #666666">.</span>difference(B)
+A<span style="color: #666666">.</span>difference_update(B)
+</pre></li>
+<li>
+<p>FaÃ§a em Python, as seguintes operaÃ§Ãµes com a tupla
+<code class="language-text">T = (1,&quot;Oi&quot;,1,2,3,4)</code>:</p>
+<p>a) Inverta a tupla</p>
+<p>b) FaÃ§a slice na tupla, pegando apenas os elementos da posiÃ§Ã£o 1 a 3</p>
+</li>
+<li>
+<p>Compare listas e tuplas. Discuta porque tuplas existem em Python e
+qual a diferenÃ§a entre usar uma tupla e uma lista. FaÃ§a uma
+pesquisa, caso necessÃ¡rio.</p>
+</li>
+</ol>
+<h1 id="conjuntos-de-dados-estruturados">Conjuntos de dados estruturados</h1>
+<ol>
+<li>
+<p>FaÃ§a um programa que representa um estudante em um dicionÃ¡rio,
+contendo nome, idade e 3 notas de provas â seguindo o modelo
+abaixo. Seu programa deverÃ¡ receber um conjunto de estudantes e
+devolver a maior mÃ©dia.</p>
+<pre class="highlight">estudante = {
+    &quot;nome&quot;: &quot;JoÃ£o&quot;,
+    &quot;idade&quot;: 18,
+    &quot;notas&quot;: [10,5,3]
+}
+</pre></li>
+<li>
+<p>TriÃ¢ngulos:</p>
+<p>a) FaÃ§a, com dicionÃ¡rios, uma estrutura para representar um
+triÃ¢ngulo que contÃ©m os pontos correspondentes aos trÃªs vÃ©rtices.
+AlÃ©m disso, os triÃ¢ngulos podem conter cores.</p>
+<p>b) Escreva uma funÃ§Ã£o que receba uma lista de triÃ¢ngulos e devolva
+aquele que possui o maior perÃ­metro.</p>
+<p>c) Escreva uma funÃ§Ã£o que receba uma lista de triÃ¢ngulos e
+desloque Ã  esquerda por uma distÃ¢ncia $d$ aqueles que forem
+pretos.</p>
+</li>
+<li>
+<p>Representamos cotaÃ§Ãµes de uma fruta utilizando uma tupla, como a
+estrutura do exemplo <code class="language-text">(&quot;Laranja&quot;, 4.50, (15, 1, 2020))</code>, que
+representa que o valor da laranja no dia 15/1/2020 era R$ 4,50.</p>
+<p>a) Crie uma funÃ§Ã£o que receba uma lista de cotaÃ§Ãµes e calcule o
+valor mÃ©dio de uma determinada fruta.</p>
+<p>b) Crie uma funÃ§Ã£o que devolva a lista de todas as frutas que
+foram cotadas em determinado mÃªs.</p>
+</li>
+<li>
+<p>Um semÃ¡foro pode estar em exatamente um estado de algumas
+possibilidades: vermelho, amarelo, verde, piscando, ou desligado.
+Enquanto hÃ¡ vÃ¡rias possibilidades, essa lista nunca muda, isso Ã©,
+podemos <strong>enumerar</strong> todos os valores possÃ­veis.</p>
+<p>a) Descreva uma variÃ¡vel para representar <em>um estado</em>. Considere
+duas representaÃ§Ãµes possÃ­veis, uma utilizando representando o
+estado por inteiros e outra por uma string. Qual esquema vocÃª
+utilizaria? Explique comparando vantagens e desvantagens de cada
+uma.</p>
+<p>b) Descreva uma tupla para representar um semÃ¡foro em um
+determinado momento. Cada semÃ¡foro tem um identificador, que Ã© um
+nÃºmero inteiros. A partir da tupla, deve ser possÃ­vel descobrir o
+estado do semÃ¡foro.</p>
+<p>c) Suponha que temos uma lista guardando o estado de todos os
+semÃ¡foros em cada segundo do dia. Como vocÃª faria para listar os
+momentos em que um determinado semÃ¡foro abriu.</p>
+</li>
+<li>
+<p>Descreva uma estrutura de dados que representa um polinÃ´mio de
+grau arbitrÃ¡rio.</p>
+</li>
+<li>
+<p>Suponha que para organizar os dados de turmas de um determinado
+instituto de ensino, usamos um esquema como representado no
+exemplo abaixo:</p>
+<pre class="highlight">turmas = [
+    {
+        &quot;professor&quot;: &quot;AntÃ´nio&quot;,
+        &quot;alunos&quot;: [
+            {
+                &quot;nome&quot;: &quot;JoÃ£o&quot;,
+                &quot;notas&quot;: {
+                    &quot;exercicios&quot;: 70,
+                    &quot;provas&quot;: 80
+                },
+            },
+            {
+                &quot;nome&quot;:&quot;Maria&quot;,
+                &quot;notas&quot;: {
+                    &quot;exercicios&quot;: 65,
+                    &quot;provas&quot;: 100
+                }
+            },
+        ]
+    },
+]
+</pre><p>a) Escreva uma instruÃ§Ã£o que imprima a nota das provas de Maria:</p>
+<p>b) Suponha que os dados das turmas estÃ¡ salvo em um arquivo
+<code class="language-text">turmas.json</code>. Utilize o mÃ³dulo <code class="language-text">json</code> de Python para ler o
+arquivo. Depois, calcule a mÃ©dia de cada uma das turmas.</p>
+</li>
+</ol>
+<h1 id="exercicios-criativos">ExercÃ­cios criativos</h1>
+<ol>
+<li>
+<p>Em um sistema computacional de auxÃ­lio a matemÃ¡ticos (Maple,
+Mathematica, Sage...), um nÃºmero pode ser real, inteiro, complexo,
+racional, ou a soluÃ§Ã£o de um sistema algÃ©brico. Por outro lado, as
+operaÃ§Ãµes aritmÃ©ticas e vÃ¡rias outras funÃ§Ãµes sÃ£o aplicadas
+uniformemente sobre os nÃºmeros, independente do tipo.</p>
+<p>a) Defina um esquema para representar exatamente um nÃºmero. O
+nÃºmero pode ser racional, inteiro ou raiz $n$-Ã©sima de um nÃºmero
+nÃ£o-negativo.</p>
+<p>b) FaÃ§a uma funÃ§Ã£o que imprima um nÃºmero na sua forma natural de
+representaÃ§Ã£o.</p>
+<p>c) FaÃ§a uma funÃ§Ã£o que receba dois nÃºmeros e devolva verdadeiro se
+o primeiro for menor que o segundo.</p>
+</li>
+<li>
+<p>Um sinal sonoro digital nada mais Ã© do que uma sequÃªncia de
+amostras no intervalo $[-1, 1]$, ou outro intervalo de
+intensidades de uma onda sonora. Na imagem, as intensidades variam
+de $0$ atÃ© $15$. Essas amostras sÃ£o proporcionais Ã  amplitude da
+onda em determinado instante. Assim, um âsomâ de 44,1 kHz como um
+CD tem 44.100 amostras em cada segundo e tem qualidade muito
+melhor do que algumas ligaÃ§Ãµes telefÃ´nicas com 8 kHz.</p>
+<img src="figs/pcm.png" style="width: 100%; max-width: 500px;">
+<p>a) Um som estÃ©reo nada mais Ã© do que dois canais de som (esquerda e
+direta). Descreva uma estrutura de dados para representar um som
+estÃ©reo.</p>
+<p>b) Escreva uma funÃ§Ã£o para ler do teclado um som estÃ©reo (as
+amostras sÃ£o apresentadas de forma alternada, esquerda, direita,
+esquerda, direita, ....).</p>
+<p>c) Pelo princÃ­pio de interposiÃ§Ã£o das ondas, quando duas pessoas
+falam ao mesmo tempo, as amplitudes se somam. Pensando nisso,
+escreva uma funÃ§Ã£o que faÃ§a a mixagem (mistura) de dois âsonsâ
+estÃ©reos.</p>
+<p>d) Fisicamente, os auto-falantes tÃªm limitaÃ§Ãµes de pressÃ£o, por
+isso as amostras sÃ£o limitadas. Assim, se tivermos uma sequÃªncia
+0,7; 0,8; 1,0; 1,2; 1,3; 1,2; 1,1; 1,0; 0,8, o auto-falante
+tocarÃ¡ como se fosse 0,7; 0,8; 1,0; 1,0; 1,0; 1,0; 1,0; 1,0;
+0,8. Isso explica as distorÃ§Ãµes quando aumentamos o volume. Uma
+maneira (bem rudimentar) de corrigir isso Ã© normalizando o
+sinal, isso Ã©, dividindo cada valor pelo maior valor encontrado
+na sequÃªncia. Implemente uma funÃ§Ã£o que normalize um som.</p>
+</li>
+<li>
+<p>Normalmente um artista dispÃµe de poucas cores de tinta puras e
+obtÃ©m outras cores misturando e compondo as diversas tonalidades.
+Por exemplo, misturando a tinha vermelha e azul, obtemos o roxo.
+As cores primÃ¡rias disponÃ­veis sÃ£o azul, amarelo e vermelho.
+Assim, para representar o roxo, usamos 50% de azul, 50% de
+vermelho e 0% de amarelo. Podemos ainda misturar o roxo com o
+amarelo, obtendo uma cor composta de 25% de azul, 25% de vermelho
+e 50% de amarelo. AlÃ©m dessas, normalmente ainda estÃ£o disponÃ­veis
+o preto e o branco. As cores preto e branco tÃªm o efeito de
+escurecer ou clarear a cor obtida da combinaÃ§Ã£o. Assim, podemos
+ter um azul com 75% de branco, que Ã© um azul bem clarinho. Ainda,
+um vermelho com 100% de preto Ã© simplesmente preto e nÃ£o contÃ©m
+nenhum pigmento do vermelho!</p>
+<p>a) Descreva uma estrutura para representar uma cor de tinta como
+descrita acima.</p>
+<p>b) Implemente uma funÃ§Ã£o que receba como entrada duas cores e
+devolva uma nova cor com a composiÃ§Ã£o das duas.</p>
+<p>c) Implemente uma funÃ§Ã£o que determine se duas cores dadas como
+entrada sÃ£o iguais. Duas cores devem ser consideradas iguais,
+mesmo que uma seja mais escura e outra mais clara, mas
+correspondam Ã  mesma tonalidade.</p>
+</li>
+<li>
+<p><strong>Um desafio:</strong> Um polÃ­gono simples pode ser definido como uma
+sequÃªncia de pontos nÃ£o coincidentes no plano de forma que ao
+traÃ§ar segmentos que ligam esses pontos em ordem, eles nÃ£o se
+cruzem. A Ã¡rea Ã  esquerda delimitada pelo percorrimento desses
+segmentos Ã© a regiÃ£o do polÃ­gono.</p>
+<p>a) Defina uma estrutura para representar um polÃ­gono simples (no
+plano).</p>
+<p>b) Escreva uma funÃ§Ã£o que remova um vÃ©rtice especÃ­fico do polÃ­gono.</p>
+<p>c) Escreva uma funÃ§Ã£o para devolver a menor coordenada e a menor
+abscissa de vetor de pontos.</p>
+<p>d) Escreva uma funÃ§Ã£o para construir um novo polÃ­gono que Ã© o
+<em>bounding box</em> do polÃ­gono, isso Ã©, o menor retÃ¢ngulo que contÃ©m o
+polÃ­gono.</p>
+<p>e) Um polÃ­gono simples Ã© convexo se, ao percorrer os segmentos,
+sempre viramos Ã  esquerda. Escreva uma funÃ§Ã£o para calcular a Ã¡rea
+da regiÃ£o de um polÃ­gono convexo.</p>
+</li>
+</ol>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="09-arquivos.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../fixacao.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="11-eficiencia.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

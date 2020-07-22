@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - PrÃ¡ticas de desenvolvimento
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../fixacao.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >PrÃ¡ticas de desenvolvimento</h1>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h1 id="pythonismo">Pythonismo</h1>
+<p>Python tem muitas funcionalidades ou sintaxes interessantes que outras
+linguagens nÃ£o possuem, ou que sÃ£o implementadas de maneira diferente.
+Ã muito comum entrar em fÃ³runs online e ver discussÃµes sobre cÃ³digos
+&quot;pytÃ´nicos&quot;, isto Ã©, cÃ³digos que foram otimizados para legibilidade e
+funcionamento com Python.</p>
+<p>Nesta disciplina, queremos aprender algoritmos, entÃ£o vamos evitar
+construÃ§Ãµes como essas, mas nesta seÃ§Ã£o vamos tentar implementar
+coisas de jeitos pytÃ´nicos.</p>
+<ol>
+<li>
+<p>Sendo A uma lista. Qual a diferenÃ§a entre <code class="language-text">for valor in A:</code> e
+<code class="language-text">for i in range(len(A)):</code>? Explique com palavras o que a variÃ¡vel
+<code class="language-text">i</code> assume nos dois <code class="language-text">for</code>s.</p>
+</li>
+<li>
+<p>Quando estamos trabalhando com listas, Ã© normal utilizarmos List
+Comprehension para facilitar o trabalho. O que o cÃ³digo abaixo
+imprime?</p>
+<pre class="highlightlanguage-python">A <span style="color: #666666">=</span> [<span style="color: #666666">-2</span>, <span style="color: #666666">3</span>, <span style="color: #666666">-5</span>, <span style="color: #666666">1</span>, <span style="color: #666666">0</span>, <span style="color: #666666">-</span> <span style="color: #666666">11</span>]
+B <span style="color: #666666">=</span> [i <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> A <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #666666">&lt;</span> <span style="color: #666666">0</span>]
+
+<span style="color: #008000">print</span>(B)
+</pre></li>
+<li>
+<p>Agora, baseado no exemplo acima, usando List Comprehension que
+copia em B apenas os elementos mÃºltiplos do primeiro elemento da
+lista A. O cÃ³digo de B deve possuir apenas 1 linha e pode ter
+repetiÃ§Ãµes. Preencha o modelo:</p>
+<pre class="highlightlanguage-python">A <span style="color: #666666">=</span> [<span style="color: #666666">5</span>, <span style="color: #666666">8</span>, <span style="color: #666666">3</span>, <span style="color: #666666">0</span>, <span style="color: #666666">15</span>, <span style="color: #666666">7</span>, <span style="color: #666666">20</span>]
+B <span style="color: #666666">=</span> <span style="color: #666666">...</span>
+
+<span style="color: #008000">print</span>(B)
+</pre><p>Depois, teste para uma lista aleatÃ³ria onde o primeiro elemento Ã© 7.
+Verifique se funciona.</p>
+</li>
+<li>
+<p>TambÃ©m Ã© possÃ­vel utilizar funÃ§Ãµes na compreensÃ£o de listas. O que
+o cÃ³digo abaixo imprime?</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">soma</span>(c):
+    <span style="color: #008000; font-weight: bold">if</span> c <span style="color: #666666">+</span> <span style="color: #666666">3</span> <span style="color: #666666">&gt;=</span> <span style="color: #666666">8</span>:
+         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">True</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+         <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">False</span>
+
+A <span style="color: #666666">=</span> [<span style="color: #666666">2</span>, <span style="color: #666666">8</span>, <span style="color: #666666">3</span>, <span style="color: #666666">11</span>, <span style="color: #666666">4</span>, <span style="color: #666666">5</span>, <span style="color: #666666">6</span>, <span style="color: #666666">7</span>]
+B <span style="color: #666666">=</span> [i <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> A <span style="color: #008000; font-weight: bold">if</span> soma(i)]
+
+<span style="color: #008000">print</span>(B)
+</pre></li>
+<li>
+<p>Baseado no exemplo acima, faÃ§a um cÃ³digo que receba uma string e
+transforme-o em uma lista de caracteres, depois, copie para uma
+outra lista b apenas os caracteres seguidos de vogais.</p>
+</li>
+<li>
+<p>FunÃ§Ãµes dentro de funÃ§Ãµes sÃ£o algo que vocÃª pode encontrar em
+python. &quot;Nested Functions&quot; servem uma sÃ©rie de razÃµes,
+principalmente para organizar funÃ§Ãµes que sÃ³ serÃ£o usadas para
+coisas pequenas e possuem escopo local para funÃ§Ãµes. Veja este
+exemplo:</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">externa</span>(A):
+    <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">interna</span>(B):
+        <span style="color: #008000; font-weight: bold">return</span> B <span style="color: #666666">+</span> <span style="color: #666666">1</span>
+    C <span style="color: #666666">=</span> interna(A)
+    <span style="color: #008000">print</span>(A, C)
+</pre><p>Qual Ã© a saida de <code class="language-text">externa(4)</code>? E o que acontece se eu tentar
+chamar <code class="language-text">interna(5)</code> a partir da funÃ§Ã£o principal?</p>
+</li>
+<li>
+<p>Baseado no que vocÃª viu atÃ© agora na secÃ§Ã£o de Pythonismo, faÃ§a uma
+funÃ§Ã£o que recebe uma lista com nÃºmeros, alguns repetidos,
+utilizando duas funÃ§Ãµes internas, faÃ§a uma funÃ§Ã£o que adicione 1 em
+cada valor e outra funÃ§Ã£o interna para tirar repetiÃ§Ãµes para copiar
+a uma outra lista.</p>
+</li>
+<li>
+<p>FunÃ§Ãµes lambda sÃ£o funÃ§Ãµes &quot;anÃ´nimas&quot; em python que sÃ£o de grande
+uso para reduzir cÃ³digo ou comprimir operaÃ§Ãµes. Por exemplo:</p>
+<pre class="highlightlanguage-python">    <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">add_one</span>(x):
+        <span style="color: #008000; font-weight: bold">return</span> x <span style="color: #666666">+</span> <span style="color: #666666">1</span>
+</pre><p>Pode ser reescrito como:</p>
+<pre class="highlightlanguage-python">    add_one <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">lambda</span> x: x <span style="color: #666666">+</span> <span style="color: #666666">1</span>
+</pre><p>E eu posso utilizar <code class="language-text">print(add_one(2))</code> sem maiores problemas
+no meu cÃ³digo. FaÃ§a uma funÃ§Ã£o multiplica_5 que dado um nÃºmero, o
+resultado Ã© multiplicado por 5. Depois, faÃ§a uma funÃ§Ã£o lambda que
+inverta uma lista.</p>
+</li>
+<li>
+<p>O jeito mais poderoso de usar funÃ§Ãµes lambda Ã© criando funÃ§Ãµes
+genÃ©ricas que podem ser &quot;instanciadas&quot;. Veja esse exemplo:</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">myfunc</span>(n):
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">lambda</span> a : a <span style="color: #666666">*</span> n
+
+mydoubler <span style="color: #666666">=</span> myfunc(<span style="color: #666666">2</span>)
+mytripler <span style="color: #666666">=</span> myfunc(<span style="color: #666666">3</span>)
+
+<span style="color: #008000">print</span>(mydoubler(<span style="color: #666666">11</span>))
+<span style="color: #008000">print</span>(mytripler(<span style="color: #666666">11</span>))
+</pre><p>Sabendo disso, faÃ§a uma funÃ§Ã£o genÃ©rica que que pega o mÃ³dulo de
+um n genÃ©rico. Depois, instancie n para 5 e 7 e teste com nÃºmeros.</p>
+</li>
+<li>
+<p>Por fim, existe em python uma funÃ§Ã£o chamada <code class="language-text">zip()</code>, que cria um
+iterador que agrega duas ou mais iterÃ¡veis (listas, tuplas, etc...)
+e Ã© muito Ãºtil para percorrer listas simultaneamente. Veja um
+exemplo:</p>
+<pre class="highlightlanguage-python">A <span style="color: #666666">=</span> [<span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">5</span>]
+B <span style="color: #666666">=</span> [<span style="color: #BA2121">&#39;a&#39;</span>, <span style="color: #BA2121">&#39;b&#39;</span>, <span style="color: #BA2121">&#39;c&#39;</span>, <span style="color: #BA2121">&#39;d&#39;</span>, <span style="color: #BA2121">&#39;e&#39;</span>]
+
+<span style="color: #008000; font-weight: bold">for</span> a, b <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">zip</span>(A, B):
+  <span style="color: #008000">print</span>(a, b)
+</pre><p>Essa funÃ§Ã£o irÃ¡ imprimir &quot;1 a&quot;, &quot;2 b&quot;, etc... Utilize zip para
+receber trÃªs listas A,B,C, com valores inteiros e coloque em uma
+lista D o resultado D[i] = A[i]*B[i]*C[i], porÃ©m, utilizando zip.
+Depois, descubra o que acontece quando as listas nÃ£o possuem o
+mesmo tamanho.</p>
+</li>
+</ol>
+<h2 id="lidando-com-erros-e-tratando-excecoes">Lidando com erros e tratando exceÃ§Ãµes</h2>
+<p>Vamos nos basear em um programa que dado dois nÃºmeros, A e B, ele
+divide A por B.</p>
+<img src="figs/excecao.png" style="width: 100%; max-width: 700px;">
+<p>Perceba que ao tentarmos dividir por zero, o programa retorna o erro:
+<code class="language-text">ZeroDivisionError</code>. Desse modo, o programa termina a execuÃ§Ã£o com uma
+mensagem de erro. Pode ser que alguns erros sejam de fato esperados; a
+esses erros damos o nome de <strong>exceÃ§Ã£o</strong>. Por exemplo, dividir por zero
+Ã© um erro que pode acontecer em um programa de divisÃ£o,
+particularmente quando o divisor Ã© um nÃºmero lido do usuÃ¡rio. Assim,
+precisamos tratar essa exceÃ§Ã£o para que o programa continue rodando e
+nÃ£o seja interrompido por um erro.</p>
+<p>Para isso, podemos usar as construÃ§Ãµes <code class="language-text">try</code> e o <code class="language-text">except</code> para
+tratarmos erros em Python. No bloco de <code class="language-text">try</code> testamos um bloco de
+cÃ³digo no fluxo normal de execuÃ§Ã£o. Se ocorrer alguma exceÃ§Ã£o, o fluxo
+de execuÃ§Ã£o serÃ¡ desviado para o bloco de <code class="language-text">except</code> correspondente;
+nesse bloco, devemos tratar o erro. Por exemplo, adaptando o cÃ³digo
+acima para tratar a divisÃ£o por 0, temos o cÃ³digo a seguir.</p>
+<img src="figs/excecao_tratada.png" style="width: 100%; max-width: 700px;">
+<p>Observe que o nome do erro Ã© colocado apÃ³s a palavra-chave <code class="language-text">except</code>.
+Essa palavra-chave indica qual exceÃ§Ã£o estamos esperando; pode haver
+vÃ¡rios blocos. Portanto, para qualquer tipo de erro,
+ZeroDivisionError, EOFError, entre outros, podemos tratÃ¡-lo para o
+nosso programa executar ao nosso critÃ©rio.</p>
+<ol>
+<li>Escreva uma funÃ§Ã£o que leia do teclado um nÃºmero de ponto
+flutuante. Para converter uma string em nÃºmero, use a funÃ§Ã£o
+<code class="language-text">float</code>. Se a linha digitada nÃ£o for uma string que possa ser
+convertida em ponto flutuante, a funÃ§Ã£o deve tentar novamente
+atÃ© que um valor vÃ¡lido seja digitado.</li>
+</ol>
+<h1 id="testes-de-mesa">Testes de mesa</h1>
+<ol>
+<li>
+<p>Qual a saÃ­da quando vocÃª fornece os dados de seu RA?</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">func</span>(a):
+    n <span style="color: #666666">=</span> a <span style="color: #666666">%</span> div
+    a <span style="color: #666666">=</span> a <span style="color: #666666">/</span> div
+    x <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        x <span style="color: #666666">=</span> x <span style="color: #666666">+</span> a
+    <span style="color: #008000; font-weight: bold">return</span> x
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Os 2 Ãºltimos dÃ­gitos do seu RA: &quot;</span>))
+
+    a <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+    div <span style="color: #666666">=</span> <span style="color: #666666">2</span>
+    n <span style="color: #666666">=</span> func(n <span style="color: #666666">+</span> <span style="color: #666666">15</span>)
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">3</span>):
+        <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(a):
+            <span style="color: #008000">print</span>(n,end <span style="color: #666666">=</span> <span style="color: #BA2121">&#39; &#39;</span>)
+            n <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;&quot;</span>)
+        a <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+    <span style="color: #008000; font-weight: bold">return</span>;
+</pre></li>
+<li>
+<p>Uma matriz em Python Ã© apenas uma lista de listas! Ainda vamos
+aprender mais sobre esta estrutura de dados, mas vocÃª jÃ¡ sabe
+simular cÃ³digos usando matrizes. Considere a matriz:</p>
+<p>$$
+mat =
+\begin{bmatrix}
+1 &amp; 0 &amp; 2\\
+2 &amp; 2 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+\end{bmatrix}
+$$</p>
+<p>a) Execute o comando (faÃ§a sem o computador):</p>
+<pre class="highlightlanguage-python">
+mat <span style="color: #666666">=</span> [
+    [<span style="color: #666666">1</span>, <span style="color: #666666">0</span> , <span style="color: #666666">2</span>,],
+    [<span style="color: #666666">2</span>, <span style="color: #666666">2</span> , <span style="color: #666666">0</span>,],
+    [<span style="color: #666666">0</span>, <span style="color: #666666">1</span> , <span style="color: #666666">0</span>,],
+]
+mat1 <span style="color: #666666">=</span> [
+    [<span style="color: #666666">0</span>, <span style="color: #666666">0</span> , <span style="color: #666666">0</span>,],
+    [<span style="color: #666666">0</span>, <span style="color: #666666">0</span> , <span style="color: #666666">0</span>,],
+    [<span style="color: #666666">0</span>, <span style="color: #666666">0</span> , <span style="color: #666666">0</span>,],
+]
+
+<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">3</span>):
+    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">3</span>):
+        mat1[i][j] <span style="color: #666666">=</span> mat[mat[i][j]][mat[j][i]]
+</pre><p>Supondo que todas as variÃ¡veis tenham sido declaradas corretamente,
+responda Ã s perguntas:</p>
+<p>b) Qual o valor da variÃ¡vel <code class="language-text">mat1</code> resultante?</p>
+<p>c) Substitua no comando a variÃ¡vel <code class="language-text">mat1</code> por mat. Qual o valor de
+mat resultante?</p>
+</li>
+<li>
+<p>Descreva textualmente o que o programa a seguir faz. FaÃ§a um teste
+de mesa se necessÃ¡rio.</p>
+<pre class="highlightlanguage-python">
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>())
+    m <span style="color: #666666">=</span> <span style="color: #666666">2*</span>n <span style="color: #666666">+</span> <span style="color: #666666">1</span>;
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        j <span style="color: #666666">=</span> <span style="color: #666666">2*</span>i <span style="color: #666666">-</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">for</span> l <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>( <span style="color: #008000">int</span>((m <span style="color: #666666">-</span> j) <span style="color: #666666">/</span> <span style="color: #666666">2</span>), <span style="color: #666666">0</span>, <span style="color: #666666">-1</span>)::
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot; &quot;</span>, end <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&quot;</span>)
+        <span style="color: #008000; font-weight: bold">for</span> l <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(j, <span style="color: #666666">0</span>, <span style="color: #666666">-1</span>):
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;*&quot;</span>, end <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&quot;</span>)
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;&quot;</span>)
+
+main()
+</pre></li>
+<li>
+<p>Qual a saÃ­da do cÃ³digo abaixo quando o usuÃ¡rio digita o Ãºltimo
+dÃ­gito do seu RA.</p>
+<pre class="highlightlanguage-python">
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">f</span>(a, b):
+    c <span style="color: #666666">=</span> <span style="color: #666666">3*</span>a <span style="color: #666666">+</span> <span style="color: #666666">4*</span>b
+    c <span style="color: #666666">=</span> c <span style="color: #666666">%</span> d
+    <span style="color: #008000; font-weight: bold">return</span> c
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    <span style="color: #008000; font-weight: bold">global</span> d
+    d <span style="color: #666666">=</span> <span style="color: #666666">20</span>
+    a <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>())
+    b <span style="color: #666666">=</span> <span style="color: #666666">3</span>
+    <span style="color: #008000">print</span>(f(b, a))
+    <span style="color: #008000; font-weight: bold">return</span>
+
+main()
+</pre></li>
+</ol>
+<h1 id="legibilidade-de-codigo">Legibilidade de cÃ³digo</h1>
+<p>Para um cÃ³digo ser legÃ­vel, ele deve ter as seguintes caracterÃ­sticas.</p>
+<p>CaracterÃ­sticas:</p>
+<ul>
+<li>ComentÃ¡rios que resumem o que faz um <strong>conjunto</strong> de comandos.</li>
+<li>FormataÃ§Ã£o bem definida (indentaÃ§Ã£o, espaÃ§amentos, nomes)</li>
+<li>DocumentaÃ§Ã£o adequada de cada programa ou algoritmo.</li>
+</ul>
+<h2 id="um-pouco-de-maniqueismo-comentarios">Um pouco de maniqueÃ­smo - ComentÃ¡rios</h2>
+<p><strong>Mal:</strong></p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    <span style="color: #408080; font-style: italic"># lÃª um valor do teclado</span>
+    x <span style="color: #666666">=</span> <span style="color: #008000">input</span>()
+    <span style="color: #408080; font-style: italic"># lÃª outro valor</span>
+    y <span style="color: #666666">=</span> <span style="color: #008000">input</span>()
+    <span style="color: #408080; font-style: italic"># calcula o x ao quadrado</span>
+    <span style="color: #408080; font-style: italic"># mais y ao quadrado</span>
+    z <span style="color: #666666">=</span> x<span style="color: #666666">*</span>x <span style="color: #666666">+</span> y<span style="color: #666666">*</span>y;
+    <span style="color: #408080; font-style: italic"># tira a raiz de z</span>
+    z <span style="color: #666666">=</span> math<span style="color: #666666">.</span>sqrt(z)
+    <span style="color: #408080; font-style: italic"># mostra o valor de z</span>
+    <span style="color: #008000">print</span>(z)
+
+main()
+</pre><p><strong>Bem:</strong></p>
+<pre class="highlightlanguage-python">
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    <span style="color: #408080; font-style: italic"># lÃª valores dos catetos</span>
+    x <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    y <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+
+    <span style="color: #408080; font-style: italic"># aplica PitÃ¡goras</span>
+    z <span style="color: #666666">=</span> x<span style="color: #666666">*</span>x <span style="color: #666666">+</span> y<span style="color: #666666">*</span>y
+    z <span style="color: #666666">=</span> math<span style="color: #666666">.</span>sqrt(z)
+
+    <span style="color: #408080; font-style: italic"># devolve a hipotenusa</span>
+    <span style="color: #008000">print</span>(z)
+
+main()
+</pre><h2 id="um-pouco-de-maniqueismo-indentacao">Um pouco de maniqueÃ­smo - IndentaÃ§Ã£o</h2>
+<p><strong>Mal:</strong></p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;n:&quot;</span>) ; n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>())
+    <span style="color: #008000; font-weight: bold">if</span> n<span style="color: #666666">==1</span>: <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Unidade&quot;</span>)
+    <span style="color: #008000; font-weight: bold">elif</span>(n  <span style="color: #666666">&gt;=0</span>):
+        <span style="color: #008000; font-weight: bold">if</span>(n<span style="color: #666666">%</span> <span style="color: #666666">3</span>): <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Deixa resto&quot;</span>)
+        <span style="color: #008000; font-weight: bold">else</span>:    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;NÃ£o deixa&quot;</span>)
+    <span style="color: #008000; font-weight: bold">else</span>: <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Negativo&quot;</span>)
+main()
+</pre><p><strong>Bem:</strong></p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;n:&quot;</span>))
+    <span style="color: #008000; font-weight: bold">if</span> n <span style="color: #666666">==</span> <span style="color: #666666">1</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Unidade&quot;</span>)
+    <span style="color: #008000; font-weight: bold">elif</span> n <span style="color: #666666">&gt;=</span> <span style="color: #666666">0</span>:
+        <span style="color: #008000; font-weight: bold">if</span> n <span style="color: #666666">%</span> <span style="color: #666666">3</span> <span style="color: #666666">==</span> <span style="color: #666666">1</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Deixa resto&quot;</span>)
+        <span style="color: #008000; font-weight: bold">else</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;NÃ£o deixa&quot;</span>)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Negativo&quot;</span>)
+
+main()
+</pre><h2 id="um-pouco-de-maniqueismo-nome-de-variaveis">Um pouco de maniqueÃ­smo - Nome de variÃ¡veis</h2>
+<p><strong>Mal:</strong></p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    exercises <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>())
+    n1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    n3 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    n2 <span style="color: #666666">=</span> <span style="color: #666666">4.0</span>
+    n4 <span style="color: #666666">=</span> <span style="color: #666666">6.0</span>
+    <span style="color: #008000; font-weight: bold">if</span> exercices <span style="color: #666666">&gt;</span> <span style="color: #666666">7</span>:
+        n4 <span style="color: #666666">=</span> <span style="color: #666666">7.0</span>
+    aluno <span style="color: #666666">=</span> (n1<span style="color: #666666">*</span>n2 <span style="color: #666666">+</span> n3<span style="color: #666666">*</span>n4)<span style="color: #666666">/10</span>
+    <span style="color: #008000">print</span>(aluno)
+
+main()
+</pre><p><strong>Bem:</strong></p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    exercicios <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>())
+    nota1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    nota2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    peso1 <span style="color: #666666">=</span> <span style="color: #666666">4.0</span>
+    peso2 <span style="color: #666666">=</span> <span style="color: #666666">6.0</span>
+    <span style="color: #008000; font-weight: bold">if</span> exercicios <span style="color: #666666">&gt;</span> <span style="color: #666666">7</span>:
+        peso2 <span style="color: #666666">=</span> <span style="color: #666666">7.0</span>
+    media <span style="color: #666666">=</span> (nota1<span style="color: #666666">*</span>peso1 <span style="color: #666666">+</span> nota2<span style="color: #666666">*</span>peso2)<span style="color: #666666">/10</span>
+    <span style="color: #008000">print</span>(media)
+
+main()
+</pre><h2 id="um-pouco-de-maniqueismo-documentacao">Um pouco de maniqueÃ­smo - DocumentaÃ§Ã£o</h2>
+<p><strong>Mal:</strong></p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    r <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    v <span style="color: #666666">=</span> (<span style="color: #666666">4.0*3.1425*</span>r<span style="color: #666666">*</span>r<span style="color: #666666">*</span>r)<span style="color: #666666">/3.0</span>
+    <span style="color: #008000">print</span>(v)
+main()
+</pre><ul>
+<li>O que esse programa faz?</li>
+<li>O valor de $\pi$ estÃ¡ errado, com quem eu falo?</li>
+</ul>
+<p><strong>Mal:</strong></p>
+<pre class="highlightlanguage-python"><span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+<span style="color: #BA2121; font-style: italic">Calcula o volume de uma esfera.</span>
+
+<span style="color: #BA2121; font-style: italic">LÃª o raio de uma esfera pelo</span>
+<span style="color: #BA2121; font-style: italic">teclado e imprime na tela o</span>
+<span style="color: #BA2121; font-style: italic">volume correspondente.</span>
+
+<span style="color: #BA2121; font-style: italic">ENTRADA:</span>
+<span style="color: #BA2121; font-style: italic">    - o raio da esfera</span>
+<span style="color: #BA2121; font-style: italic">SAÃDA:</span>
+<span style="color: #BA2121; font-style: italic">    - o volume da esfera</span>
+<span style="color: #BA2121; font-style: italic">PRÃ-CONDIÃÃO:</span>
+<span style="color: #BA2121; font-style: italic">    - O raio deve ser maior que zero.</span>
+<span style="color: #BA2121; font-style: italic">AUTOR: JoÃ£ozinho</span>
+<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
+
+PI <span style="color: #666666">=</span> <span style="color: #666666">3.1415</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    r <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    v <span style="color: #666666">=</span> (<span style="color: #666666">4.0*</span>PI<span style="color: #666666">*</span>r<span style="color: #666666">*</span>r<span style="color: #666666">*</span>r)<span style="color: #666666">/3.0</span>;
+    <span style="color: #008000">print</span>(v)
+
+main()
+</pre><h2 id="exercicio">ExercÃ­cio</h2>
+<ol>
+<li>
+<p>Escolhendo um estilo de programaÃ§Ã£o</p>
+<p>a) NÃ£o existe um jeito certo de escrever cÃ³digo: cada programador
+adota um estilo diferente, o importante Ã© manter-se consistente.
+Pesquise sobre a importÃ¢ncia da legibilidades de programas de
+computador: posiÃ§Ã£o das chaves, indentaÃ§Ã£o, uso de espaÃ§o, etc.
+Depois reflita e disserte brevemente sobre o seguinte tema: âUm
+cÃ³digo Ã© escrito sÃ³ uma vez, mas Ã© lido diversas vezesâ.</p>
+<p>b) Manter o cÃ³digo organizado pode ser trabalhoso, especialmente
+para programadores iniciantes. Mas felizmente o existem ferramentas
+que ajudam nessa tarefa. Pesquise e experimente ferramentas de
+formataÃ§Ã£o automÃ¡tica de cÃ³digos, como plugins ou extensÃµes de
+editores de texto e IDEs.</p>
+</li>
+</ol>
+<h1 id="lidando-com-casos-especiais">Lidando com casos especiais</h1>
+<p>Olhando os casos especiais: Algumas vezes, um algoritmo âfuncionaâ
+para vÃ¡rios casos, mas nÃ£o para todos. Esses casos âproblemÃ¡ticosâ
+geralmente sÃ£o casos especias, que devem ser tratados individualmente.</p>
+<p>Alguns exemplos:</p>
+<ul>
+<li>Os primeiros dois termos da sequÃªncia de Fibonacci.</li>
+<li>Primeiro elemento no algoritmo para descobrir o maior nÃºmero.</li>
+</ul>
+<p><strong>LiÃ§Ã£o:</strong> Sempre lembrar dos possÃ­veis casos especiais, como o
+primeiro ou o Ãºltimo elemento de uma sequÃªncia, lista, etc.</p>
+<ol>
+<li>
+<p>Existem $n$ lÃ¢mpadas numeradas ordenadamente. Elas estÃ£o ligadas em
+um circuito de tal modo que toda vez que uma lÃ¢mpada Ã© acesa ou
+apagada, outras lÃ¢mpadas podem sÃ£o apagadas ou acendidas. Quando
+uma lÃ¢mpada Ã©</p>
+<ul>
+<li>ACENDIDA, as posteriores invertem.</li>
+<li>APAGADA, as anteriores invertem.</li>
+</ul>
+<p>Inicialmente:<br />
+<img src="figs/lamp1.svg" style="width: 100%; max-width: 400px;"></p>
+<p>LÃ¢mpada 3 acendida:<br />
+<img src="figs/lamp2.svg" style="width: 100%; max-width: 400px;"></p>
+<p>LÃ¢mpada 4 apagada:<br />
+<img src="figs/lamp3.svg" style="width: 100%; max-width: 400px;"></p>
+<p>a) Escreva um programa que receba:</p>
+<ul>
+<li>a quantidade de lÃ¢mpadas, $n$, de um circuito como no
+anterior,</li>
+<li>um nÃºmero de uma lÃ¢mpada especÃ­fica, $k$, que deverÃ¡ ficar
+acesa.</li>
+</ul>
+<p>O programa deve instruir o usuÃ¡rio a acender ou apagar lÃ¢mpadas
+para que, no final, <strong>apenas</strong> a lÃ¢mpada de nÃºmero $k$ fique
+acesa. Para acender uma lÃ¢mpada de nÃºmero XX , imprima âAcender
+lampada XXâ, ou, para apagar uma lÃ¢mpada de nÃºmero XX, imprima
+âApagar lampada XXâ</p>
+<p>b) Modifique o programa anterior para receber</p>
+<ul>
+<li>a quantidade de lÃ¢mpadas, $n$, de um circuito como no
+anterior,</li>
+<li>a quantidade de lÃ¢mpadas que devem ficar acesas, $m$,</li>
+<li>uma lista de $m$ nÃºmeros de lÃ¢mpadas que devem ficar acesas.</li>
+</ul>
+<p>No final, apenas as lÃ¢mpadas listadas devem permanecer acesas.</p>
+<p>c) Verifique se o seu programa estÃ¡ correto. Para isso, verifique
+se existe algum caso especial. FaÃ§a um teste de mesa se necessÃ¡rio.</p>
+</li>
+</ol>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="04-funcoes.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../fixacao.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="06-listas.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

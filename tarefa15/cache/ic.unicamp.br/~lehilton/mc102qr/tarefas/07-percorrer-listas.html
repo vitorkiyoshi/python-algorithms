@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - Percorrendo listas
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >Percorrendo listas</h1>
+
+
+          <span class="meta">Sexta, 24 de abril de 2020</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <p><strong>AtenÃ§Ã£o:</strong> Esta tarefa tambÃ©m serÃ¡ corrigida manualmente. Depois de
+terminada e corrigida automaticamente, vocÃª dever apresentar sua
+tarefa a um monitor em algum horÃ¡rio de atendimento.</p>
+<h1 id="concatenacao">ConcatenaÃ§Ã£o</h1>
+<p>Dadas duas listas de strings $A = [a_1, a_2, \ldots]$ e $B = [b_1, b_2, \ldots]$, vocÃª deve escrever um programa que recebe $A$ e $B$ como entrada e produz uma lista $C = [a_1+b_1, a_2+b_2, \ldots]$ como saÃ­da. Ou seja, uma lista na qual o $i$-Ã©simo elemento Ã© a concatenaÃ§Ã£o do elemento de $A$ e do elemento de $B$ no Ã­ndice $i$. Observe que $A$ e $B$ devem ter o mesmo tamanho.</p>
+<p>Para isso, crie um arquivo chamado <code class="language-text">concatenacao.py</code> que recebe como entrada duas listas e produz uma outra lista como saÃ­da.</p>
+<h2 id="entrada">Entrada</h2>
+<p>Cada lista Ã© dada em uma linha como pode ser visto no exemplo abaixo.</p>
+<pre class="highlight">T comp w bo t so prob th d n ex bef - Bi Ga
+he uter as rn o lve lems at id ot ist ore. - ll tes
+</pre><h2 id="saida">SaÃ­da</h2>
+<p>A saÃ­da deve ser uma Ãºnica linha (sem quebra de linha) como no exemplo abaixo.</p>
+<pre class="highlight">The computer was born to solve problems that did not exist before. -- Bill Gates
+</pre><h1 id="probabilidade">Probabilidade</h1>
+<p>Considere uma lista de inteiros nÃ£o negativos $L$, possivelmente com repetiÃ§Ã£o. Queremos calcular a probabilidade de um nÃºmero $a$ de $L$ ser escolhido quando sorteamos um elemento da lista aleatoriamente.</p>
+<p>VocÃª deve criar uma lista $L'$ em que cada nÃºmero de $L$ ocorra apenas uma vez. Os elementos de $L'$ devem estar na ordem de menos provÃ¡vel para mais provÃ¡vel. No caso de dois nÃºmeros diferentes terem a mesma probabilidade, o menor elemento deve vir antes.</p>
+<p>Para isso, crie um arquivo chamado <code class="language-text">probabilidade.py</code> que recebe como entrada uma lista e produz uma outra lista como saÃ­da. Ã proibido utilizar funÃ§Ãµes do Python para fazer a ordenaÃ§Ã£o. VocÃª deve organizar seu cÃ³digo utilizando funÃ§Ãµes.</p>
+<h2 id="entrada">Entrada</h2>
+<p>A sequÃªncia $L$ de nÃºmeros inteiros nÃ£o negativos separados por espaÃ§o.</p>
+<pre class="highlight">6 8 6 8 8 6 5 9 2 4
+</pre><h2 id="saida">SaÃ­da</h2>
+<p>A sequÃªncia $L'$ de nÃºmeros inteiros nÃ£o negativos separados por espaÃ§o.</p>
+<pre class="highlight">2 4 5 9 6 8
+</pre>
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="06-listas.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../index.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="08-funcoes.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

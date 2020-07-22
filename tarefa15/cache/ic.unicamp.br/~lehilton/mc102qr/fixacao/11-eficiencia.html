@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - EficiÃªncia de algoritmos
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../fixacao.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >EficiÃªncia de algoritmos</h1>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h1 id="eficiencia-e-tratabilidade-de-problemas">EficiÃªncia e tratabilidade de problemas</h1>
+<ol>
+<li>
+<p>VocÃªs decidiram fazer uma festa surpresa para uma amigo hoje Ã 
+noite. Para isso, vocÃª precisa cortar papel colorido e produzir
+bastante confete. Cada folha de papel deve ser cortada em 32 linhas
+e 32 colunas. Um amigo emprestou-lhe uma guilhotina e aconselhou: o
+melhor jeito de cortar o papel Ã© enrolar uma folha e ir fazendo
+fitas, depois Ã© sÃ³ cortar cada uma das fitas separadamente.</p>
+<p>a) Descreva o procedimento sugerido como um algoritmo.</p>
+<p>b) Se vocÃª precisar cortar 100 folhas e gastar um segundo por cada
+corte da guilhotina, entÃ£o quanto tempo levarÃ¡ para terminar a
+tarefa?</p>
+<p>c) Concorde ou discorde: embora esse algoritmo possa demorar
+horas, isso nÃ£o significa que o problema nÃ£o Ã© viÃ¡vel, pois pode
+haver algoritmos mais espertos para a tarefa. Justifique.</p>
+</li>
+<li>
+<p>Em um problema de calcular a potÃªncia Ã  potÃªncia, temos:</p>
+<p><strong>Entrada:</strong> nÃºmero inteiro $k \ge 1$</p>
+<p><strong>SaÃ­da:</strong> $2^{2^k}$</p>
+<p><strong>Algoritmo 1:</strong></p>
+<ol>
+<li>$p \gets 1$</li>
+<li>
+faÃ§a $k$ vezes:<ul>
+<li>$p \gets  2*p$</li>
+</ul>
+</li>
+<li>$r \gets 1$</li>
+<li>
+faÃ§a $p$ vezes:<ul>
+<li>$r \gets 2*r$</li>
+</ul>
+</li>
+<li>devolva $r$</li>
+</ol>
+<p><strong>Algoritmo 2:</strong></p>
+<ol>
+<li>$r \gets 2$</li>
+<li>
+faÃ§a $k$ vezes:<ul>
+<li>$r \gets r*r$</li>
+</ul>
+</li>
+<li>devolva $r$</li>
+</ol>
+<p>Concorde ou discorde, justificando sua posiÃ§Ã£o.</p>
+<p>a) O segundo algoritmo Ã© mais rÃ¡pido porque tem menos passos.</p>
+<p>b) O segundo algoritmo Ã© mais rÃ¡pido quando assumimos que cada
+instruÃ§Ã£o elementar gasta o mesmo tempo.</p>
+</li>
+<li>
+<p>Uma maneira de tornar algoritmos mais eficientes Ã© reaproveitando
+valores que jÃ¡ foram calculados anteriormente. Escreva um programa
+que imprima os $n$ primeiras somas parciais da sÃ©rie</p>
+<p>$$
+\sum_{i=1}^n \left( (-2)^{n+i} + \frac{1}{2^i} \right).
+$$</p>
+<p>a) FaÃ§a uma versÃ£o que computa a $k$-Ã©sima soma parcial fazendo
+uma chamada a uma funÃ§Ã£o <code class="language-text">soma_parcial(i)</code>.</p>
+<p>b) FaÃ§a uma versÃ£o que reaproveita o valor da soma parcial
+computado anteriormente.</p>
+<p>c) Conte o nÃºmero de multiplicaÃ§Ãµes e somas que seu programa faz.</p>
+</li>
+<li>
+<p>Uma mÃ¡quina de troco (<em>change-machine</em>) Ã© um equipamento comum em
+certos lugares, onde sÃ³ se aceitam moedas. O objetivo Ã© inserir
+uma ou mais cÃ©dulas e obter o valor equivalente no menor nÃºmero de
+moedas. Suponha que a mÃ¡quina possua um total de $N$ moedas para
+cada valor 1,00, 0,50, 0,25 e 0,10. Uma maneira de resolver o
+problema Ã© testar todas as combinaÃ§Ãµes possÃ­veis de moedas,
+verificar quais correspondem ao valor inserido em cÃ©dulas e
+memorizar a de menor nÃºmero de moedas. Naturalmente o nÃºmero de
+combinaÃ§Ãµes Ã© muito grande. Calcule o nÃºmero de combinaÃ§Ãµes
+possÃ­veis de moedas e argumente que esse algoritmo nÃ£o Ã©
+eficiente. VocÃª Ã© capaz de propor um algoritmo melhor?</p>
+</li>
+</ol>
+<h1 id="buscas">Buscas</h1>
+<ol>
+<li>
+<p>Se $L$ Ã© uma lista de tamanho 8 e queremos encontrar um valor $k$
+nessa lista, no pior caso, uma busca sequencial acessarÃ¡ a lista 8
+vezes, mas a busca binÃ¡ria acessarÃ¡ apenas 4. Isso ocorre pois
+para uma lista ordenada de tamanho $n$, a busca sequencial acessa
+a lista atÃ© $n$ vezes, enquanto a busca binÃ¡ria realiza cerca de
+$\log_{2}(n)$ iteraÃ§Ãµes. Sabendo disso, calcule o nÃºmero de
+acessos no pior caso para um vetor de tamanho 16 e dÃª um exemplo
+de lista ordenada em que esse pior caso acontece.</p>
+</li>
+<li>
+<p>Para uma lista nÃ£o-ordenada, o que Ã© mais vantajoso: uma busca
+sequencial ou ordenar e realizar busca binÃ¡ria? Explique.</p>
+</li>
+<li>
+<p>RefaÃ§a a funÃ§Ã£o de busca binÃ¡ria estudada. Dessa vez, suponha que a
+lista pode conter chaves repetidas.</p>
+<p>a) Implemente um versÃ£o, chamada <code class="language-text">busca_esquerda</code> em que, se a
+chave aparecer mais de uma vez, devolve a primeira posiÃ§Ã£o da lista
+de entrada que contÃ©m a chave.</p>
+<p>b) FaÃ§a uma versÃ£o <code class="language-text">busca_direita</code>, que devolve a Ãºltima posiÃ§Ã£o.</p>
+</li>
+<li>
+<p>Considere o seguinte problema: Temos como entrada uma lista de
+inteiros $v$ nÃ£o necessariamente ordenada e um inteiro $x$.
+Desenvolva um algoritmo que determina se hÃ¡ dois nÃºmeros em $v$
+cuja soma seja $x$. Tente fazer o algoritmo mais eficiente
+possÃ­vel.</p>
+</li>
+</ol>
+<h1 id="exercicios-criativos">ExercÃ­cios criativos</h1>
+<ol>
+<li>
+<p>VocÃª irÃ¡ escrever um programa interativo. Suponha que vocÃª recebe
+uma lista de nÃºmeros fracionÃ¡rios. Uma vez recebida essa lista, o
+usuÃ¡rio pode fazer uma sÃ©rie de consultas, que vocÃª deve responder
+usando funÃ§Ãµes mais rÃ¡pidas que conseguir. Para isso, vocÃª pode
+<strong>preprocessar</strong> a sua lista antes mesmo que o usuÃ¡rio comeÃ§ar a
+fazer consultas. Assim, alÃ©m da lista e dos dados da consulta,
+cada funÃ§Ã£o recebe um parÃ¢metro com os dados preprocesesados.</p>
+<p>a) Escreva uma funÃ§Ã£o que conte quantos nÃºmeros da lista estÃ£o no
+intervalo $[a, b)$.</p>
+<p>b) Escreva uma funÃ§Ã£o que calcule a mÃ©dia de todos os nÃºmeros que
+estÃ£o no intervalo $[a, b)$.</p>
+</li>
+<li>
+<p>Suponha que vocÃª tem uma lista de inteiros <code class="language-text">L</code>. Essa lista nÃ£o
+estÃ¡ ordenada, mas vocÃª sabe que o primeiro elemento Ã© negativo e
+que o Ãºltimo Ã© positivo. Mais do que isso, vocÃª sabe que a
+diferenÃ§a entre dois valores consecutivos Ã© de no mÃ¡ximo um.
+Assim, se <code class="language-text">L[i] = 3</code>, entÃ£o <code class="language-text">L[i+1]</code> deve valer <code class="language-text">2</code>, <code class="language-text">3</code> ou <code class="language-text">4</code>.
+Escreva um algoritmo eficiente para encontrar a posiÃ§Ã£o do zero
+nessa lista.</p>
+</li>
+<li>
+<p>Em uma avenida central, hÃ¡ diversas ruas que a cruzam de maneira
+perpendicular, como na figura.</p>
+<img src="figs/ruas.png" style="width: 100%; max-width: 500px;">
+<p>Se vocÃª prestar atenÃ§Ã£o no sentido da primeira rua, verÃ¡ que ele Ã©
+para baixo enquanto o sentido da Ãºltima rua Ã© para cima. Suponha
+que esses sentidos sÃ£o representados por um vetor de strings, como
+o exemplo para a figura acima.</p>
+<pre class="highlightlanguage-python">sentido <span style="color: #666666">=</span> [ <span style="color: #BA2121">&#39;baixo&#39;</span>, <span style="color: #BA2121">&#39;baixo&#39;</span>, <span style="color: #BA2121">&#39;cima&#39;</span>, <span style="color: #BA2121">&#39;cima&#39;</span>, <span style="color: #BA2121">&#39;baixo&#39;</span>, <span style="color: #BA2121">&#39;cima&#39;</span>]
+</pre><p>Escreva um algoritmo que encontre eficientemente um par de ruas
+adjacentes com sentidos para baixo e para cima, respectivamente.</p>
+</li>
+</ol>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="10-colecoes.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../fixacao.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="12-recursao.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - Estruturas condicionais
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../fixacao.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >Estruturas condicionais</h1>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h1 id="estruturas-condicionais">Estruturas condicionais</h1>
+<ol>
+<li>
+<p>Escreva um programa que lÃª um nÃºmero inteiro do teclado e imprime
+&quot;sim&quot; se o nÃºmero for par e maior do que 10, ou for Ã­mpar e menor
+do que 50. Caso contrÃ¡rio o programa deve imprimir &quot;nÃ£o&quot;.</p>
+</li>
+<li>
+<p>FaÃ§a um programa que lÃª dois nÃºmeros do teclado e em seguida um
+caractere que representa uma operaÃ§Ã£o: +, â, â, /. Seu programa
+entÃ£o deve imprimir o resultado da operaÃ§Ã£o.</p>
+</li>
+<li>
+<p>Escreva um programa lÃª trÃªs nÃºmeros e imprime o maior deles.</p>
+</li>
+<li>
+<p>Escreva um programa que ordene trÃªs nÃºmeros.</p>
+<p>a) Escreva duas versÃµes para o programa acima: uma sem utilizar
+operadores lÃ³gicos e outra utilizando operadores lÃ³gicos.</p>
+<p>b) Depois responda: existem problemas que nÃ£o podem ser resolvidos
+sem utilizar operadores lÃ³gicos, mesmo estando disponÃ­veis
+estruturas condicionais?</p>
+</li>
+<li>
+<p>FaÃ§a um algoritmo que leia um dado nÃºmero X inteiro e verifique se
+esse nÃºmero Ã© divisÃ­vel por 3 e 5 simultaneamente.</p>
+</li>
+<li>
+<p>O nÃºmero $3025$ possui a seguinte propriedade:</p>
+<p>$$
+30+25 = 55 \mbox{ e } 55^2 = 3025.
+$$</p>
+<p>FaÃ§a um algoritmo que leia um nÃºmero de 4 dÃ­gitos e mostre se esse
+nÃºmero tem essa propriedade ou nÃ£o.</p>
+</li>
+<li>
+<p>Dados trÃªs valores X,Y e Z, verifique se eles podem ser os
+comprimentos dos lados de um triÃ¢ngulo e, se forem, verifique se Ã©
+um triÃ¢ngulo equilÃ¡tero, isÃ³sceles ou escaleno. Se eles nÃ£o puderem
+formar um triÃ¢ngulo, escreva uma mensagem. <em>O comprimento de cada
+lado de um triÃ¢ngulo Ã© menor do que a soma dos comprimentos dos
+outros dois lados.</em></p>
+</li>
+<li>
+<p>FaÃ§a um algoritmo que, dados os lados de um triÃ¢ngulo $A$, $B$ e
+$C$, diga se os lados formam um triÃ¢ngulo: retÃ¢ngulo ($A^2 = B^2 +
+C^2$), obtusÃ¢ngulo ($A^2 &gt; B^2 + C^2$) ou acutÃ¢ngulo ($A^2 &lt; B^2 +
+C^2$)</p>
+</li>
+<li>
+<p>Dados trÃªs valores distintos, coloque-os em ordem crescente. Obs.:
+Certifique-se de que os nÃºmeros sejam realmente distintos, se nÃ£o
+forem, mostre uma mensagem de erro e finalize o algoritmo.</p>
+</li>
+<li>
+<p>Desenvolva um algoritmo que leia os coeficientes ($A$, $B$ e $C$)
+de uma equaÃ§Ã£o do segundo grau ($Ax^2 + Bx + C = 0$) e calcule suas
+raÃ­zes. O programa deve mostrar, quando possÃ­vel, o valor das
+raÃ­zes calculadas e a classificaÃ§Ã£o das raÃ­zes: âRAÃZES
+IMAGINÃRIASâ, âRAIZ ÃNICAâ, âRAÃZES DISTINTASâ.</p>
+</li>
+<li>
+<p>Um usuÃ¡rio deseja escolher que tipo de mÃ©dia e calculÃ¡-a a partir
+de 3 notas. FaÃ§a um algoritmo que leia as notas, a opÃ§Ã£o escolhida
+pelo usuÃ¡rio e calcule a mÃ©dia.</p>
+<ol>
+<li>aritmÃ©tica</li>
+<li>ponderada com pesos 3, 3, 4</li>
+<li>harmÃ´nica</li>
+<li>geomÃ©trica</li>
+</ol>
+</li>
+<li>
+<p>Capicuas sÃ£o nÃºmeros que lidos da esquerda para a direita Ã© o mesmo
+que quando lido da direita para a esquerda. Exemplos:</p>
+<ul>
+<li>10201</li>
+<li>2002</li>
+<li>565</li>
+<li>99</li>
+<li>7</li>
+</ul>
+<p>FaÃ§a um algoritmo que leia um nÃºmero de cinco dÃ­gitos e verifique
+se esse nÃºmero Ã© ou nÃ£o capicua. VocÃª nÃ£o deve trabalhar com
+variÃ¡veis do tipo inteiro.</p>
+</li>
+<li>
+<p>Escreva um programa que leia um tabuleiro de jogo da velha e
+verifique o status do jogo. O tabuleiro Ã© composto de nove nÃºmeros, onde
+o jogador âOâ Ã© representado por um 0; o jogador âXâ por um 2 e uma casa
+vazia por um 1. A saÃ­da do seu programa deve ser âXâ, âOâ, âVelhaâ ou
+âIndefinidoâ.</p>
+</li>
+<li>
+<p>FaÃ§a um programa que receba como entrada um ano e imprima a data da
+PÃ¡scoa naquele ano. VocÃª deve fazer uma pesquisa para encontrar a
+fÃ³rmula que calcula a data da PÃ¡scoa.</p>
+</li>
+<li>
+<p>Considere um problema de decidir se um nÃºmero inteiro Ã© grande par,
+isso Ã©, se ele Ã© par, maior que 100 e vale o dobro de um nÃºmero
+Ã­mpar.</p>
+<p>a) Escreva um programa que leia um nÃºmero e imprime âSIMâ quando
+for grande par, e âNÃOâ caso contrÃ¡rio.</p>
+<p>b) Agora use operadores lÃ³gicos para diminuir o tamanho do texto
+do programa.</p>
+</li>
+<li>
+<p>A soluÃ§Ã£o abaixo estÃ¡ correta para classificar um nÃºmero como par
+e menor que 100, ou par e maior ou igual a 100, etc?</p>
+<pre class="highlightlanguage-python">a <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Digite um nÃºmero inteiro:&quot;</span>))
+<span style="color: #008000; font-weight: bold">if</span> a <span style="color: #666666">%</span> <span style="color: #666666">2</span> <span style="color: #666666">==</span> <span style="color: #666666">0</span> <span style="color: #AA22FF; font-weight: bold">and</span> a <span style="color: #666666">&lt;</span> <span style="color: #666666">100</span>:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;O nÃºmero Ã© par e menor que 100&quot;</span>)
+<span style="color: #008000; font-weight: bold">elif</span> a <span style="color: #666666">&gt;=</span> <span style="color: #666666">100</span>:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;O nÃºmero Ã© par e maior ou igual a 100&quot;</span>)
+<span style="color: #008000; font-weight: bold">if</span> a <span style="color: #666666">%</span> <span style="color: #666666">2</span> <span style="color: #AA22FF; font-weight: bold">and</span> a <span style="color: #666666">&lt;</span> <span style="color: #666666">100</span>:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;O nÃºmero Ã© Ã­mpar e menor que 100&quot;</span>)
+<span style="color: #008000; font-weight: bold">elif</span> a <span style="color: #666666">&gt;=</span> <span style="color: #666666">100</span>:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;O nÃºmero Ã© Ã­mpar e maior que 100&quot;</span>)
+</pre></li>
+<li>
+<p>FaÃ§a um programa que lÃª um caractere âFâ ou âCâ, que indica se o
+prÃ³ximo nÃºmero a ser digitado corresponde a temperatura em
+Fahrenheit ou Celsius. Em seguida o programa deve ler o valor da
+temperatura e entÃ£o imprimir o valor correspondente da temperatura
+na outra unidade de medida. Obs.: $(C = 5/9 \cdot (F â 32))$.</p>
+</li>
+<li>
+<p>FaÃ§a um programa que leia um ano (valor inteiro) e imprima se ele Ã©
+bissexto ou nÃ£o. OBS: SÃ£o bissextos todos os anos mÃºltiplos de 400.
+NÃ£o sendo mÃºltiplo de 400, sÃ£o bissextos todos os anos mÃºltiplos de
+4 mas que nÃ£o sÃ£o mÃºltiplos de 100.</p>
+</li>
+<li>
+<p>Escreva um programa que determina a data cronologicamente maior de
+duas datas fornecidas pelo usuÃ¡rio. Cada data deve ser fornecida
+por trÃªs valores inteiros onde o primeiro representa um dia, o
+segundo um mÃªs e o terceiro um ano.</p>
+</li>
+<li>
+<p>Escreva um programa que lÃª uma coordenada (x, y) do teclado e
+imprima como resposta o quadrante em que a coordenada estÃ¡.</p>
+</li>
+<li>
+<p>Uma pessoa podia se aposentar pelo INSS caso estivesse em alguma
+das situaÃ§Ãµes abaixo:</p>
+<ul>
+<li>Ã do sexo masculino, possui pelo menos 65 anos e pelo menos 10
+anos de contribuiÃ§Ã£o.</li>
+<li>Ã do sexo masculino, possui pelo menos 63 anos e pelo menos 15
+anos de contribuiÃ§Ã£o.</li>
+<li>Ã do sexo feminino, possui pelo menos 63 anos e pelo menos 10
+anos de contribuiÃ§Ã£o.</li>
+<li>Ã do sexo feminino, possui pelo menos 61 anos e pelo menos 15
+anos de contribuiÃ§Ã£o.</li>
+</ul>
+<p>Infelizmente os direitos estÃ£o cada vez mais reduzidos e essas
+regras jÃ¡ nÃ£o valem mais. FaÃ§a um programa que receba o sexo, a
+idade e o tempo de contribuiÃ§Ã£o e decida se Ã© possÃ­vel aposentar-se
+pelas regras acima.</p>
+</li>
+<li>
+<p>Digamos que vamos fazer a mÃ©dia de uma soma de valores e temos as
+variÃ¡veis <code class="language-text">soma</code> e <code class="language-text">conta</code>. O que o cÃ³digo abaixo faz? Depois de
+responder, modifique o cÃ³digo para utilizar o operador <code class="language-text">or</code>, e
+depois faÃ§a o mesmo com <code class="language-text">if</code>-<code class="language-text">else</code>. Finalmente, responda o que
+acontece quando o valor que a variÃ¡vel <code class="language-text">conta</code> receber for <code class="language-text">0</code>.</p>
+<pre class="highlightlanguage-python">soma <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Digite a soma:&quot;</span>))
+conta <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Digite o nÃºmero de vezes:&quot;</span>))
+media <span style="color: #666666">=</span> conta <span style="color: #666666">!=</span> <span style="color: #666666">0</span> <span style="color: #AA22FF; font-weight: bold">and</span> <span style="color: #008000">float</span>(soma) <span style="color: #666666">/</span> conta
+</pre></li>
+<li>
+<p>O que faz o cÃ³digo abaixo? Responda qual a saÃ­da desse cÃ³digo sem
+executÃ¡-lo no computador. Explique e depois verifique sua resposta.</p>
+<pre class="highlightlanguage-python">x <span style="color: #666666">=</span> <span style="color: #666666">21</span> <span style="color: #AA22FF; font-weight: bold">and</span> <span style="color: #666666">1</span>
+y <span style="color: #666666">=</span> <span style="color: #666666">5</span> <span style="color: #666666">%</span> <span style="color: #666666">2</span> <span style="color: #AA22FF; font-weight: bold">and</span> <span style="color: #666666">0</span> <span style="color: #AA22FF; font-weight: bold">or</span> <span style="color: #666666">1</span>
+z <span style="color: #666666">=</span> <span style="color: #666666">4</span> <span style="color: #666666">%</span> <span style="color: #666666">2</span> <span style="color: #AA22FF; font-weight: bold">or</span> <span style="color: #AA22FF; font-weight: bold">not</span> <span style="color: #008000; font-weight: bold">True</span>
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> (<span style="color: #666666">0</span> <span style="color: #AA22FF; font-weight: bold">and</span> x):
+  <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;a&quot;</span>)
+<span style="color: #008000; font-weight: bold">if</span> y <span style="color: #666666">==</span> <span style="color: #008000; font-weight: bold">True</span>:
+  <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;b&quot;</span>)
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> z:
+  <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;c&quot;</span>)
+z <span style="color: #666666">=</span> <span style="color: #666666">12</span>
+<span style="color: #008000; font-weight: bold">if</span> z <span style="color: #666666">-</span> <span style="color: #666666">12</span>:
+  <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;d&quot;</span>)
+<span style="color: #008000; font-weight: bold">if</span> z <span style="color: #666666">-</span> <span style="color: #666666">13</span>:
+  <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;e&quot;</span>)
+</pre></li>
+</ol>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="01-variaveis.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../fixacao.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="03-repeticao.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

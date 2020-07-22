@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - VariÃ¡veis e tipos
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../fixacao.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >VariÃ¡veis e tipos</h1>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h1 id="variavel-e-tipos">VariÃ¡vel e tipos</h1>
+<ol>
+<li>
+<p>Qual Ã© o tipo de variÃ¡vel correta para armazenar as seguintes informaÃ§Ãµes:</p>
+<p>a) A idade.</p>
+<p>b) A quantidade de chuva mÃ©dia no mÃªs de fevereiro.</p>
+<p>c) O tamanho do seu quintal.</p>
+<p>d) O nÃºmero de estrelas do universo.</p>
+</li>
+<li>
+<p>FaÃ§a um programa que leia um nÃºmero real x e calcule o valor de
+$f(x) = \sqrt{x + (x/2) + x^x}$</p>
+</li>
+<li>
+<p>FaÃ§a um programa que leia dois valores inteiros nas variÃ¡veis x e
+y e troque o conteÃºdo das variÃ¡veis.</p>
+</li>
+<li>
+<p>Ã possÃ­vel trocar os valores de duas variÃ¡veis inteiras x e y sem
+usar nenhuma outra variÃ¡vel adicional, fazendo apenas operaÃ§Ãµes
+aritmÃ©ticas e atribuiÃ§Ãµes. Explique como. Isso, no entanto nunca Ã©
+recomendado em programas reais. VocÃª consegue dizer porque?</p>
+</li>
+<li>
+<p>FaÃ§a um programa que leia o valor da base e altura de um triÃ¢ngulo
+e calcule o valor da sua Ã¡rea.</p>
+</li>
+<li>
+<p>FaÃ§a um programa que leia os valores correspondentes aos trÃªs
+lados a, b e c de um triÃ¢ngulo. O programa deve entÃ£o calcular a
+Ã¡rea A do triÃ¢ngulo utilizando a fÃ³rmula de HerÃ£o:</p>
+<p>$$
+A = \sqrt{s(s â a)(s â b)(s â c)}
+$$</p>
+<p>onde $s = \frac{a + b + c}{2}$</p>
+</li>
+<li>
+<p>FaÃ§a um programa que lÃª o raio de um disco e imprime sua Ã¡rea e
+seu perÃ­metro.</p>
+</li>
+<li>
+<p>Escreva um programa que leia um nÃºmero real $x$ e imprima o
+terceiro dÃ­gito antes e depois da vÃ­rgula da raiz quadrado do
+nÃºmero lido (ex., para $x = 12345678$, temos
+$\sqrt{12345678}=3513{,}641700572...$, entÃ£o o terceiro antes da
+vÃ­rgula Ã© $5$ e o terceiro depois da vÃ­rgula Ã© $1$.</p>
+<p>*Entrada:</p>
+<pre class="highlight">12345678
+</pre><p>*SaÃ­da:</p>
+<pre class="highlight">5 1
+</pre></li>
+<li>
+<p>FaÃ§a um algoritmo que dados os 4 elementos de uma matriz 2Ã2.
+Calcule e escreva o valor do determinante desta matriz.</p>
+<p>$$
+\left|
+\begin{array}{cc}
+a11 &amp; a12\\
+a21 &amp; a22
+\end{array}
+\right|
+= a11 \cdot a22 â a21 \cdot a12
+$$</p>
+</li>
+<li>
+<p>Uma locadora de charretes cobra <span>R$</span> 10,00 de taxa para
+cada trÃªs horas de uso e <span>R$</span>5,00 para cada hora abaixo
+dessas trÃªs horas. FaÃ§a um algoritmo que, dada a quantidade de
+horas que a charrete foi usada, calcule e escreva o quanto o
+cliente deve pagar.</p>
+</li>
+<li>
+<p>FaÃ§a um algoritmo que leia a idade de uma pessoa expressa em anos,
+meses e dias e mostre-a expressa apenas em dias.</p>
+</li>
+<li>
+<p>Fazer um algoritmo que leia o tempo de duraÃ§Ã£o de um evento expresso
+em segundos e mostre-o expresso em horas, minutos e segundos.</p>
+</li>
+<li>
+<p>Pedro comprou um saco de raÃ§Ã£o com peso em quilos. Ele possui dois
+gatos, para os quais fornece a quantidade de raÃ§Ã£o em gramas. Os gatos
+recebem quantidades diferentes de raÃ§Ã£o. A quantidade diÃ¡ria de raÃ§Ã£o
+fornecida para cada gato Ã© sempre a mesma. FaÃ§a um algoritmo que receba
+o peso do saco de raÃ§Ã£o e a quantidade de raÃ§Ã£o fornecida para cada
+gato, calcule e mostre quanto restarÃ¡ de raÃ§Ã£o no saco apÃ³s cinco dias.</p>
+</li>
+</ol>
+<h1 id="strings">Strings</h1>
+<ol>
+<li>
+<p>Escreva um programa que leia duas palavras do teclado e determina
+se a segunda Ã© um <em>anagrama</em> da primeira. Uma palavra Ã© um anagrama
+de outra se todas as letras de uma ocorrem na outra, <span> <em>em
+mesmo nÃºmero, independente da posiÃ§Ã£o</em></span>. Exemplos:
+<code class="language-text">ROMA, MORA, ORAM, AMOR, RAMO</code> sÃ£o anagramas entre si.</p>
+</li>
+<li>
+<p>FaÃ§a um programa que leia um texto <code class="language-text">t</code> e uma palavra <code class="language-text">p</code> do
+teclado. Em seguida o programa deverÃ¡ imprimir todas as posiÃ§Ãµes
+onde ocorrem a palavra <code class="language-text">p</code> em <code class="language-text">T</code>.</p>
+<p>Se por exemplo
+<code class="language-text">t = &quot;Duas bananas e 4 abacates. NÃ£o haverÃ¡ mais bananas.</code>, e
+<code class="language-text">p = &quot;bananas&quot;</code>, entÃ£o o programa deveria imprimir 5 e 43.</p>
+</li>
+<li>
+<p>Escreva um programa que lÃª uma string de atÃ© 50 caracteres, e
+imprime &quot;PalÃ­ndromo&quot; caso a string seja um palÃ­ndromo e &quot;NÃ£o
+PalÃ­ndromo&quot; caso contrÃ¡rio. OBS: Um palÃ­ndromo Ã© uma palavra ou
+frase, que Ã© igual quando lida da esquerda para a direita ou da
+direita para a esquerda (presuma que sÃ³ sÃ£o usados caracteres
+minÃºsculos e sem acentos. EspaÃ§os em brancos devem ser
+descartados). Exemplo de palÃ­ndromo: saudavel leva duas.</p>
+</li>
+<li>
+<p>Escreva um programa que receba um texto como entrada e um nÃºmero
+<code class="language-text">n</code> de linhas, entÃ£o imprima o texto em <code class="language-text">n</code> linhas.</p>
+<ul>
+<li>Entrada:</li>
+</ul>
+<pre class="highlight">O Luiz estÃ¡ assistindo TV
+3
+</pre><ul>
+<li>SaÃ­da:</li>
+</ul>
+<pre class="highlight">O Luiz es
+tÃ¡ assist
+indo TV
+</pre></li>
+<li>
+<p>Escreva um programa que imprime uma string atÃ© a primeira
+ocorrÃªncia de uma letra</p>
+<ul>
+<li>Entrada:</li>
+</ul>
+<pre class="highlight">gitlab.ic.unicamp.br/ra123456
+/
+</pre><ul>
+<li>SaÃ­da:</li>
+</ul>
+<pre class="highlight">gitlab.ic.unicamp.br
+</pre></li>
+<li>
+<p>Escreva um programa que devolva o tamanho da maior cadeia de 0's de
+uma string</p>
+<ul>
+<li>Entrada:</li>
+</ul>
+<pre class="highlight">11111010000011100111
+</pre><ul>
+<li>SaÃ­da:</li>
+</ul>
+<pre class="highlight">5
+</pre></li>
+<li>
+<p>Escreva um programa que converte os caracteres maiÃºsculos de uma
+string para minÃºsculos e os minÃºsculos para maiÃºsculos.</p>
+<ul>
+<li>Entrada:</li>
+</ul>
+<pre class="highlight">SÃ£o Paulo
+</pre><ul>
+<li>SaÃ­da:</li>
+</ul>
+<pre class="highlight">sÃO pAULO
+</pre></li>
+</ol>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="00-algoritmo.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../fixacao.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="02-condicional.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - DicionÃ¡rios e tuplas
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >DicionÃ¡rios e tuplas</h1>
+
+
+          <span class="meta">TerÃ§a, 2 de junho de 2020</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <p><strong>AtenÃ§Ã£o:</strong> Esta tarefa nÃ£o serÃ¡ corrigida manualmente, mas vocÃª deve
+tentar respondÃª-la genuinamente. Se tiver alguma dÃºvida se ela estÃ¡ ou
+nÃ£o correta, procure os monitores. Tentativas de passar no teste
+automÃ¡tico sem responder as questÃµes serÃ£o consideradas fraude.</p>
+<h1 id="frequencia-de-palavras">FrequÃªncia de palavras</h1>
+<p>Descobrir informaÃ§Ãµes sobre um texto pode ser importante quando se
+estÃ¡ tentando obter conhecimento sobre o seu conteÃºdo de forma
+automÃ¡tica. Uma anÃ¡lise que podemos fazer Ã© descobrir a frequÃªncia de
+sÃ­mbolos e palavras. As palavras mais frequentes provavelmente sÃ£o os
+artigos, proposiÃ§Ãµes e conectivos, entÃ£o nÃ£o vamos nos atentar apenas
+a elas. Essas palavras sÃ£o chamadas de <em>stop words</em> e nÃ£o a
+incluiremos na nossa contagem.</p>
+<p>Neste exercÃ­cio, vocÃª deve fazer um programa <code class="language-text">frequencia.py</code> que, dado
+um arquivo de texto, conte a frequÃªncia com que elas aparecem no texto
+e descobra algumas palavras-chaves do texto. As palavras mais
+frequentes provavelmente dÃ£o uma boa ideia sobre o tÃ³pico principal do
+texto. No entanto, se o texto tratar de mais de um assunto, entÃ£o
+palavras-chaves sobre o tÃ³pico secundÃ¡rio provavelmente nÃ£o aparecerÃ£o
+tantas vezes.</p>
+<h2 id="entrada">Entrada</h2>
+<p>Uma linha contendo o caminho de um arquivo de texto e uma linha
+contendo stop words.</p>
+<pre class="highlight">testes/texto3.in
+a Ã  ainda ao aos aqui as Ã s assim cada clara claro com como da das de demais desta destes deve do dois dos e Ã© em entanto entre estas existem geral jÃ¡ longo mais maneira melhor mesmo na nÃ£o nas neste no nos nossa novas novo nunca o os ou outras outro para pela pelo pelos por qual quanto que se sempre seu sobre sua suas talvez todas todavia todo todos tudo um uma
+</pre><h2 id="saida">SaÃ­da</h2>
+<p>Seu programa deve mostrar algumas informaÃ§Ãµes sobre o texto:</p>
+<ol>
+<li>
+<p>A primeira linha deve conter as <strong>trÃªs</strong> palavras mais frequentes,
+da mais Ã  menos frequente.</p>
+</li>
+<li>
+<p>A segunda linha deve conter o nÃºmero de palavras cuja frequÃªncia Ã©
+maior ou igual Ã  da Ãºltima palavra do primeiro
+<a href="https://pt.wikipedia.org/wiki/Quartil">quartil</a>, quando
+consideramos as palavra da mais Ã  menos frequente. Para determinar
+o quartil, desconsidere palavras que se repetem <strong>5</strong>
+vezes ou menos.</p>
+</li>
+<li>
+<p>A terceira linha deve conter atÃ© <strong>trÃªs</strong> palavras mais frequentes
+entre aquelas que <strong>nÃ£o</strong> foram incluÃ­das na contagem da linha
+anterior.</p>
+</li>
+</ol>
+<p>Quando necessÃ¡rio, use a ordem lexicogrÃ¡fica das palavras para
+resolver empates.</p>
+<pre class="highlight">queimadas fumaÃ§a amazÃ´nia
+6
+incÃªndio brasil focos
+</pre><h1 id="sugestao-de-palavras">SugestÃ£o de palavras</h1>
+<p>Imagine que vocÃª deve criar um sistema que, dadas duas palavras,
+sugere ao usuÃ¡rio qual serÃ¡ a prÃ³xima palavra. Essa escolha Ã© baseada
+na probabilidade de que essas trÃªs palavras apareÃ§am nessa ordem em um
+determinado texto.</p>
+<p>VocÃª deve fazer um programa <code class="language-text">sugestao.py</code> que leia um arquivo contendo
+esse texto e guarde os dados necessÃ¡rios para realizar as sugestÃµes de
+palavras. Depois, seu programa deve sugerir uma palavra para cada par
+que receber.</p>
+<h2 id="entrada">Entrada</h2>
+<ol>
+<li>A primeira linha contÃ©m o caminho do arquivo de texto.</li>
+<li>Em seguida hÃ¡ a sequÃªncia de pares de palavras, um por linha.</li>
+</ol>
+<pre class="highlight">testes/texto0.in
+buraco negro
+buracos negros
+campo gravitacional
+velocidade da
+do buraco
+deformaÃ§Ãµes no
+no centro
+velocidade de
+</pre><h2 id="saida">SaÃ­da</h2>
+<p>Para cada par de palavras da entrada, a frase sugerida com as trÃªs
+palavras, uma trio por linha.</p>
+<pre class="highlight">buraco negro Ã©
+buracos negros nÃ£o
+campo gravitacional pode
+velocidade da luz
+do buraco negro
+deformaÃ§Ãµes no espaÃ§o-tempo
+no centro da
+velocidade de escape
+</pre><h1 id="dicas">Dicas</h1>
+<ul>
+<li>
+<p>FaÃ§a programas para testar as funÃ§Ãµes de seu programa. Se achar
+conveniente, vocÃª criar um mÃ³dulo separado para funÃ§Ãµes comuns.
+Sempre utilize o Git corretamente! A cada parte pequena funÃ§Ã£o
+implementada e testada, faÃ§a um registro das alteraÃ§Ãµes (commit).
+Isso ajuda vocÃª a se organizar alÃ©m de registrar o histÃ³rico de seu
+desenvolvimento.</p>
+</li>
+<li>
+<p>Faz parte da tarefa entender e resolver omissÃµes do enunciado. Leia,
+interprete e entenda o que pede cada questÃ£o. NÃ£o tente adivinhar o
+que ela pede e <strong>nunca</strong> tente programar antes de entender o
+problema. Pode ser Ãºtil olhar para vÃ¡rios exemplos de entrada e
+saÃ­da para confirmar seu entendimento.</p>
+</li>
+<li>
+<p>Neste exercÃ­cio vocÃª deve utilizar, entre as estruturas de dados que
+jÃ¡ vimos, aquelas que forem mais adequadas ao problema. Se
+necessÃ¡rio, vocÃª pode utilizar funÃ§Ãµes prontas de Python para
+ordenaÃ§Ã£o â mas nÃ£o para outras subtarefas.</p>
+</li>
+<li>
+<p>Caso vocÃª esteja tendo problemas com encoding no Windows Ã© importante
+seguir esses passos para resolvÃª-los:</p>
+<ol>
+<li>
+<p>Ao abrir um arquivo pelo cÃ³digo, coloque o enconding utf-8 como
+parÃ¢metro: <code class="language-text">open(filename, &#39;r&#39;, encoding=&#39;utf-8&#39;)</code>.</p>
+</li>
+<li>
+<p>Caso vocÃª esteja usando o git Bash, ao abri-lo, digite
+<code class="language-text">export PYTHONIOENCODING=utf-8</code>. Caso esteja usando o cmd, ao
+abri-lo, digite <strong>SET PYTHONIOENCODING=utf-8</strong>. Se tiver qualquer
+dÃºvida, chame um monitor.</p>
+</li>
+</ol>
+</li>
+</ul>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="10-imagens-binarias.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../index.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="12-colecoes-dinamicas.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - Matrizes
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >Matrizes</h1>
+
+
+          <span class="meta">Quinta, 7 de maio de 2020</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <p>Quando aprendemos listas, nossos exemplos todos tratavam de listas com
+valores escalares. Dizemos que uma variÃ¡vel Ã© de um tipo <strong>escalar</strong>
+porque os valores possÃ­veis sÃ£o simples e indivisÃ­veis, como um nÃºmero
+inteiro ou um nÃºmero de ponto flutuante. Muitas vezes, tambÃ©m vamos
+olhar para strings como uma unidade (sem se preocupar com quais partes
+a formam), entÃ£o tambÃ©m chamaremos as strings de valores escalares.</p>
+<p>Restringir-nos a listas de valores escalares pode simplificar nossos
+algoritmos, mas tambÃ©m limita o tipo de estrutura que conseguimos
+representar. Para muitas aplicaÃ§Ãµes, elas sÃ£o tudo do que precisamos.</p>
+<blockquote>
+<p>Escreva um programa que leia as notas de 10 exercÃ­cios de um
+estudante e calcule a mÃ©dia dos 9 exercÃ­cios com maiores notas.</p>
+</blockquote>
+<p>Esse problema Ã© mais simples do que muitos outros que jÃ¡ fizemos, mas
+vamos resolvÃª-lo agora com uma atenÃ§Ã£o especial Ã  representaÃ§Ã£o dos
+dados. Queremos representar as notas de um aluno, entÃ£o vamos
+armazenÃ¡-las em um lista de notas.</p>
+<p>Em Python, os tipos das variÃ¡veis nÃ£o estÃ£o anotadas juntamente com os
+nomes das variÃ¡veis. Por isso, precisamos tomar bastante cuidado em
+como nomeamos nossas variÃ¡veis, para ficar claro quando estamos
+lidando com um valor escalar, ou com uma lista de escalares. Para
+isso, devemos utilizar os nomes consistentemente:</p>
+<ul>
+<li>Uma nota Ã© um escalar do tipo <code class="language-text">float</code>. Vamos denotar variÃ¡veis de
+tipos <em>escalares</em> sempre pelo nome <strong><code class="language-text">nota</code></strong>.</li>
+<li>Uma lista de notas Ã© do tipo <code class="language-text">list</code> e cada elemento dessa lista Ã© um
+escalar que representa uma nota. Vamos denotar variÃ¡veis de tipo
+<em>lista de escalares</em> sempre pelo nome <strong><code class="language-text">lista_notas</code></strong>.</li>
+</ul>
+<p>Uma vez que jÃ¡ sabemos como representar os dados na memÃ³ria do
+computador, jÃ¡ podemos passar a escrita do algoritmo. VocÃª deve
+escrever um algoritmo e construir o seu programa incrementalmente. Eu
+vou adiantar tudo isso e mostrar o programa jÃ¡ pronto.</p>
+<pre class="highlightlanguage-python">NUMERO_EXERCICIOS <span style="color: #666666">=</span> <span style="color: #666666">3</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_lista_notas</span>(n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve uma lista de n notas lidas do teclado&quot;&quot;&quot;</span>
+    lista_notas <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> _ <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Digite a prÃ³xima nota: &quot;</span>)
+        nota <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        lista_notas<span style="color: #666666">.</span>append(nota)
+    <span style="color: #008000; font-weight: bold">return</span> lista_notas
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_media_excluida</span>(lista_notas, indice_excluida):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve a mÃ©dia de lista_notas excluindo-se</span>
+<span style="color: #BA2121; font-style: italic">    a nota de Ã­ndice indice_excluida&quot;&quot;&quot;</span>
+    soma <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+    <span style="color: #008000; font-weight: bold">for</span> i, nota <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(lista_notas):
+        <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #666666">!=</span> indice_excluida:
+            soma <span style="color: #666666">=</span> soma <span style="color: #666666">+</span> nota
+    media <span style="color: #666666">=</span> soma <span style="color: #666666">/</span> (<span style="color: #008000">len</span>(lista_notas) <span style="color: #666666">-</span> <span style="color: #666666">1</span>)
+    <span style="color: #008000; font-weight: bold">return</span> media
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">obter_indice_menor</span>(lista_notas):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve o Ã­ndice da menor nota&quot;&quot;&quot;</span>
+    indice_menor <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+    menor_nota <span style="color: #666666">=</span> lista_notas[<span style="color: #666666">0</span>]
+    <span style="color: #008000; font-weight: bold">for</span> i, nota <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(lista_notas):
+        <span style="color: #008000; font-weight: bold">if</span> nota <span style="color: #666666">&lt;</span> menor_nota:
+            menor_nota <span style="color: #666666">=</span> nota
+            indice_menor <span style="color: #666666">=</span> i
+    <span style="color: #008000; font-weight: bold">return</span> indice_menor
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Digite as notas dos exercÃ­cios:&quot;</span>)
+    lista_notas <span style="color: #666666">=</span> ler_lista_notas(NUMERO_EXERCICIOS)
+    indice_menor <span style="color: #666666">=</span> obter_indice_menor(lista_notas)
+    media <span style="color: #666666">=</span> calcular_media_excluida(lista_notas, indice_menor)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;A mÃ©dia excluindo a pior nota Ã© </span><span style="color: #BB6688; font-weight: bold">{media}</span><span style="color: #BA2121">&quot;</span>)
+
+main()
+</pre><p>Leia esse programa com atenÃ§Ã£o. Estude o que cada funÃ§Ã£o faz. NÃ£o
+continue lendo este texto atÃ© que tenha entendido e internalizado esse
+programa.</p>
+<p>Ã claro que uma professora nÃ£o gostaria de usar esse programa, porque
+ela nÃ£o tem apenas um estudante. Ã bem possÃ­vel que sua turma tenha
+100 estudantes. EntÃ£o ela teria que executar esse programa 100 vezes e
+tomar nota manualmente da mÃ©dia de cada um. Pior, pode ser que a
+professora decida que irÃ¡ excluir a nota do <em>mesmo</em> exercÃ­cio para a
+turma inteira, entÃ£o esse programa jÃ¡ nÃ£o seria mais Ãºtil. Vejamos por
+quÃª:</p>
+<ol>
+<li>
+<p>para descobrir a mÃ©dia da turma, fixamos um exercÃ­cio, e
+percorremos a lista de notas de <strong>todos os estudantes</strong> para esse
+exercÃ­cio</p>
+</li>
+<li>
+<p>para calcular a mÃ©dia de um estudante, fixamos esse estudante e
+percorremos a lista de notas de <strong>todos os exercÃ­cios</strong> para esse
+estudante</p>
+</li>
+</ol>
+<p>Agora deve estar claro porque nos restringir a listas de escalares Ã©
+insuficiente: precisamos tanto da lista de notas de todos os
+exercÃ­cios para um estudante, quanto da lista de notas de um exercÃ­cio
+para todos estudantes. Para deixar esse problema mais concreto, vamos
+resolver o seguinte problema:</p>
+<blockquote>
+<p>Escreva um programa que leia a notas de 10 exercÃ­cios de 100
+estudantes e depois:</p>
+<ol>
+<li>calcule a mÃ©dia da turma para cada exercÃ­cio;</li>
+<li>descubra o exercÃ­cio com menor mÃ©dia da turma;</li>
+<li>calcule a mÃ©dia de cada estudante, excluindo-se esse exercÃ­cio.</li>
+</ol>
+</blockquote>
+<p>Antes de comeÃ§ar a escrever nosso algoritmo e nosso programa,
+precisamos pensar na maneira como vamos representar os dados na
+memÃ³ria. O que muda Ã© que agora, alÃ©m de representar as notas dos
+exercÃ­cios de um estudantes, precisamos guardar a tabela de notas da
+turma inteira. Vamos estender a nossa convenÃ§Ã£o:</p>
+<ul>
+<li>Uma nota Ã© um escalar. Vamos denotar variÃ¡veis de tipos <em>escalares</em>
+sempre pelo nome <strong><code class="language-text">nota</code></strong>.</li>
+<li>Um estudante tem um lista de notas. Vamos denotar variÃ¡veis de tipo
+<em>lista de escalares</em> sempre pelo nome <strong><code class="language-text">lista_notas</code></strong>;</li>
+<li>A tabela de notas da turma Ã© uma lista de lista de notas. Vamos
+denotar variÃ¡veis de tipo <em>lista de lista de escalares</em> pelo nome
+<strong><code class="language-text">tabela_notas</code></strong>.</li>
+</ul>
+<p>De novo, escrevemos um algoritmo e implementamos esse programa incrementalmente.
+Vamos omitir esse processo e ver o resultado.</p>
+<pre class="highlightlanguage-python">
+NUMERO_EXERCICIOS <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+NUMERO_ESTUDANTES <span style="color: #666666">=</span> <span style="color: #666666">100</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_lista_notas</span>(n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve uma lista de n notas lidas do teclado&quot;&quot;&quot;</span>
+    lista_notas <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> _ <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Digite a prÃ³xima nota: &quot;</span>)
+        nota <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        lista_notas<span style="color: #666666">.</span>append(nota)
+    <span style="color: #008000; font-weight: bold">return</span> lista_notas
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_tabela_notas</span>(m, n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve a tabela de notas de m estudantes</span>
+<span style="color: #BA2121; font-style: italic">    com n notas de exercÃ­cios cada, lidas do teclado&quot;&quot;&quot;</span>
+    tabela_notas <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> _ <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(m):
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Digite as notas dos exercicios do proximo estudante: &quot;</span>)
+        lista_notas <span style="color: #666666">=</span> ler_lista_notas(n)
+        tabela_notas<span style="color: #666666">.</span>append(lista_notas)
+    <span style="color: #008000; font-weight: bold">return</span> tabela_notas
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_lista_medias</span>(tabela_notas):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve uma lista com as mÃ©dias dos exercÃ­cio&quot;&quot;&quot;</span>
+    m <span style="color: #666666">=</span> <span style="color: #008000">len</span>(tabela_notas)  <span style="color: #408080; font-style: italic"># nÃºmero de estudantes</span>
+    n <span style="color: #666666">=</span> <span style="color: #008000">len</span>(tabela_notas[<span style="color: #666666">0</span>])  <span style="color: #408080; font-style: italic"># nÃºmero de exercÃ­cios</span>
+
+    lista_medias <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        soma <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+        <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(m):
+            soma <span style="color: #666666">=</span> soma <span style="color: #666666">+</span> tabela_notas[i][j]
+        media <span style="color: #666666">=</span> soma <span style="color: #666666">/</span> m
+        lista_medias<span style="color: #666666">.</span>append(media)
+
+    <span style="color: #008000; font-weight: bold">return</span> lista_medias
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">obter_indice_menor</span>(lista_notas):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve o Ã­ndice da menor nota&quot;&quot;&quot;</span>
+    indice_menor <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+    menor_nota <span style="color: #666666">=</span> lista_notas[<span style="color: #666666">0</span>]
+    <span style="color: #008000; font-weight: bold">for</span> i, nota <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(lista_notas):
+        <span style="color: #008000; font-weight: bold">if</span> nota <span style="color: #666666">&lt;</span> menor_nota:
+            menor_nota <span style="color: #666666">=</span> nota
+            indice_menor <span style="color: #666666">=</span> i
+    <span style="color: #008000; font-weight: bold">return</span> indice_menor
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_media_excluida</span>(lista_notas, indice_excluida):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve a mÃ©dia de lista_notas excluindo-se</span>
+<span style="color: #BA2121; font-style: italic">    a nota de Ã­ndice indice_excluida&quot;&quot;&quot;</span>
+    soma <span style="color: #666666">=</span> <span style="color: #666666">0.0</span>
+    <span style="color: #008000; font-weight: bold">for</span> i, nota <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(lista_notas):
+        <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #666666">!=</span> indice_excluida:
+            soma <span style="color: #666666">=</span> soma <span style="color: #666666">+</span> nota
+    media <span style="color: #666666">=</span> soma <span style="color: #666666">/</span> (<span style="color: #008000">len</span>(lista_notas) <span style="color: #666666">-</span> <span style="color: #666666">1</span>)
+    <span style="color: #008000; font-weight: bold">return</span> media
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    tabela_notas <span style="color: #666666">=</span> ler_tabela_notas(NUMERO_ESTUDANTES, NUMERO_EXERCICIOS)
+    lista_medias <span style="color: #666666">=</span> calcular_lista_medias(tabela_notas)
+    indice_menor <span style="color: #666666">=</span> obter_indice_menor(lista_medias)
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(NUMERO_ESTUDANTES):
+        media <span style="color: #666666">=</span> calcular_media_excluida(tabela_notas[i], indice_menor)
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;O estudante </span><span style="color: #BB6688; font-weight: bold">{i}</span><span style="color: #BA2121"> tem mÃ©dia </span><span style="color: #BB6688; font-weight: bold">{media}</span><span style="color: #BA2121">&quot;</span>)
+
+main()
+</pre><p>Mantivemos as trÃªs funÃ§Ãµes do programa anterior. Ser organizado e usar
+nomes de funÃ§Ãµes e variÃ¡veis consistentes realmente salva a vida!
+Vamos estudar entÃ£o as demais funÃ§Ãµes, a comeÃ§ar pela
+<code class="language-text">ler_tabela_notas</code>.</p>
+<p>Repare que funÃ§Ã£o <code class="language-text">ler_tabela_notas</code> Ã© surpreendente parecida com a
+funÃ§Ã£o <code class="language-text">ler_lista_notas</code>. Isso nÃ£o acontece por um acaso. O que
+<code class="language-text">ler_lista_notas</code> faz Ã© construir e devolver uma lista de elementos,
+cada um do tipo <code class="language-text">float</code>. Do mesmo modo, <code class="language-text">ler_tabela_notas</code> constrÃ³i e
+devolve uma lista de elementos, mas dessa vez, cada elemento da lista
+Ã© uma outra lista.</p>
+<p>Agora investiguemos <code class="language-text">calcular_lista_medias</code>. Essa funÃ§Ã£o tem dois
+laÃ§os aninhados. O <code class="language-text">for</code> externo pode ser lido como <em>para cada
+exercÃ­cio <code class="language-text">j</code>, calcule a mÃ©dia da turma para esse exercÃ­cio</em>. EntÃ£o
+vamos nos concentrar em como calcular a mÃ©dia de um exercÃ­cio. JÃ¡
+vimos como calcular a mÃ©dia de uma lista de <code class="language-text">float</code>s antes; aqui,
+queremos fazer algo parecido. A diferenÃ§a Ã© que as notas de um
+exercÃ­cio em particular estÃ£o espalhadas nas vÃ¡rias listas dos alunos.
+Assim, primeiro precisamos acessar a lista de notas de um aluno, por
+isso escrevemos <code class="language-text">tabela_notas[i]</code>. Depois, nesta lista, precisamos
+acessar a nota do exercÃ­cio <code class="language-text">j</code>, entÃ£o escrevemos
+<code class="language-text">tabela_notas[i][j]</code>. Respire um pouco e releia essa funÃ§Ã£o. Agora
+deve fazer sentido.</p>
+<p>Por Ãºltimo, vamos olhar para a funÃ§Ã£o <code class="language-text">main</code>. As instruÃ§Ãµes dela jÃ¡
+devem ser autoexplicativas (repararam que ela nÃ£o tem comentÃ¡rios?).
+Vamos olhar apenas para a chamada Ã  funÃ§Ã£o <code class="language-text">calcular_media_excluida</code>.
+Essa funÃ§Ã£o recebe como primeiro parÃ¢metro uma lista de notas. De
+fato, Ã© exatamente isso que passamos a ela: <code class="language-text">tabela_notas[i]</code> Ã© a
+lista de notas do estudante de Ã­ndice <code class="language-text">i</code>. Se vocÃª se sentir mais
+confortÃ¡vel, poderia substituir essa linha pelas linhas abaixo. Ã
+completamente equivalente!</p>
+<pre class="highlightlanguage-python">        lista_notas <span style="color: #666666">=</span> tabela_notas[i]
+        media <span style="color: #666666">=</span> calcular_media_excluida(lista_notas, indice_menor)
+</pre><p>Agora que jÃ¡ entendeu o programa acima, execute-o e teste-o. Eu se
+fosse vocÃª modificaria os valores de <code class="language-text">NUMERO_EXERCICIOS</code> e
+<code class="language-text">NUMERO_ESTUDANTES</code> e criaria alguns arquivos de teste. Reflita sobre
+testes automatizados.</p>
+<h1 id="matrizes">Matrizes</h1>
+<p>A principal estrutura de dados que criamos no exemplo anterior foi uma
+lista de lista de escalares! Se quisermos, podemos escrever a nossa
+tabela de notas como uma tabela de fato. A variÃ¡vel a seguir
+representa trÃªs alunos, cada aluno tem quatro notas.</p>
+<pre class="highlightlanguage-pycon"><span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>tabela_notas <span style="color: #666666">=</span> [
+<span style="color: #000080; font-weight: bold">... </span>  [<span style="color: #666666">4.5</span>, <span style="color: #666666">7.6</span>, <span style="color: #666666">8.5</span>, <span style="color: #666666">4.5</span>],
+<span style="color: #000080; font-weight: bold">... </span>  [<span style="color: #666666">9.9</span>, <span style="color: #666666">8.0</span>, <span style="color: #666666">8.0</span>, <span style="color: #666666">6.0</span>],
+<span style="color: #000080; font-weight: bold">... </span>  [<span style="color: #666666">0.0</span>, <span style="color: #666666">3.3</span>, <span style="color: #666666">7.0</span>, <span style="color: #666666">8.0</span>],
+<span style="color: #000080; font-weight: bold">... </span>]
+</pre><p>Certa uniformidade Ã© relevante. Repare que <code class="language-text">tabela_notas</code> Ã© uma lista
+com trÃªs listas, cada uma delas com quatro nÃºmeros do tipo <code class="language-text">float</code>.
+Uma tabela como essa Ã© normalmente chamada de <strong>matriz</strong> na
+MatemÃ¡tica. Em Python, representamos matrizes usando lista de listas.
+Na verdade, Python nÃ£o sabe nada sobre matrizes, entÃ£o poderÃ­amos
+escrever algo como</p>
+<pre class="highlightlanguage-pycon"><span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>destabela_notas <span style="color: #666666">=</span> [
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>  [<span style="color: #666666">4.5</span>, <span style="color: #666666">4.5</span>],
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>  [<span style="color: #666666">9.9</span>, <span style="color: #666666">8.0</span>, <span style="color: #666666">8.0</span>, <span style="color: #666666">6.0</span>],
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>  [<span style="color: #BA2121">&quot;zero&quot;</span>, <span style="color: #666666">3</span>],
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>]
+</pre><p>que o interpretador iria executar, indiferente ao sofrimento dos
+obsessivos-compulsivos. EntÃ£o devemos definir matriz de um jeito um
+pouco mais preciso. Uma <strong>matriz</strong> Ã© uma lista de listas tal que:</p>
+<ol>
+<li>todas as listas internas tÃªm o mesmo nÃºmero de elementos;</li>
+<li>todos os elementos tÃªm o mesmo tipo escalar.</li>
+</ol>
+<p>Algumas vezes, tambÃ©m chamamos listas de <strong>arranjos</strong>, do inglÃªs
+<em>arrays</em> (ou <strong>vetores</strong>, a depender da linguagem). Assim, podemos
+dizer que uma matriz Ã© um arranjo bidimensional. TambÃ©m podemos
+definir arranjos multidimensionais, embora eles sejam menos comuns. Se
+temos dois estudantes, cada estudante fez trÃªs provas e cada prova tem
+duas questÃµes, entÃ£o podemos representar as notas das questÃµes como:</p>
+<pre class="highlightlanguage-python"><span style="color: #666666">&gt;&gt;&gt;</span> notas_questoes <span style="color: #666666">=</span> [
+<span style="color: #666666">...</span>   [[<span style="color: #666666">4.0</span>, <span style="color: #666666">5.0</span>],  [<span style="color: #666666">3.5</span>, <span style="color: #666666">5.0</span>],  [<span style="color: #666666">4.5</span>, <span style="color: #666666">4.0</span>]],
+<span style="color: #666666">...</span>   [[<span style="color: #666666">3.0</span>, <span style="color: #666666">2.0</span>],  [<span style="color: #666666">2.5</span>, <span style="color: #666666">0.0</span>],  [<span style="color: #666666">0.0</span>, <span style="color: #666666">0.0</span>]],
+<span style="color: #666666">...</span> ]
+</pre><p>Uma variÃ¡vel sÃ³ Ã© Ãºtil quando acessamos o seu valor. Para isso,
+basta acessar uma lista de cada vez:</p>
+<pre class="highlightlanguage-python"><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #408080; font-style: italic"># nota do segundo exercÃ­cio do primeiro estudante</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> tabela_notas[<span style="color: #666666">0</span>][<span style="color: #666666">1</span>]
+<span style="color: #666666">7.6</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #408080; font-style: italic"># nota da primeira questÃ£o da segunda prova do segundo estudante</span>
+<span style="color: #666666">&gt;&gt;&gt;</span> notas_questoes[<span style="color: #666666">1</span>][<span style="color: #666666">1</span>][<span style="color: #666666">0</span>]
+<span style="color: #666666">2.5</span>
+</pre><h2 id="operacoes-em-matrizes">OperaÃ§Ãµes em matrizes</h2>
+<p>Na Ãlgebra Linear Ã© comum realizar operaÃ§Ãµes com matrizes, como soma,
+produto por escalar, produto de matrizes, etc. Como Python nÃ£o entende
+o conceito de matriz, tampouco entende como realizar essas operaÃ§Ãµes.
+Por isso, temos de implementar cada uma delas. Vamos implementar
+a operaÃ§Ã£o de soma e fazer uma funÃ§Ã£o para testÃ¡-la.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">somar_matrizes</span>(a, b):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve a soma das matrizes a e b&quot;&quot;&quot;</span>
+    <span style="color: #008000; font-weight: bold">assert</span> <span style="color: #008000">len</span>(a) <span style="color: #666666">==</span> <span style="color: #008000">len</span>(b), <span style="color: #BA2121">&quot;NÃºmeros de linhas devem ser iguais&quot;</span>
+    <span style="color: #008000; font-weight: bold">assert</span> <span style="color: #008000">len</span>(a[<span style="color: #666666">0</span>]) <span style="color: #666666">==</span> <span style="color: #008000">len</span>(b[<span style="color: #666666">0</span>]), <span style="color: #BA2121">&quot;NÃºmeros de colunas devem ser iguais&quot;</span>
+
+    m <span style="color: #666666">=</span> <span style="color: #008000">len</span>(a)
+    n <span style="color: #666666">=</span> <span style="color: #008000">len</span>(a[<span style="color: #666666">0</span>])
+
+    soma <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(m):
+        linha <span style="color: #666666">=</span> []
+        soma<span style="color: #666666">.</span>append(linha)
+        <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+            celula <span style="color: #666666">=</span> a[i][j] <span style="color: #666666">+</span> b[i][j]
+            linha<span style="color: #666666">.</span>append(celula)
+    <span style="color: #008000; font-weight: bold">return</span> soma
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    a <span style="color: #666666">=</span> [
+      [<span style="color: #666666">5.3</span>, <span style="color: #666666">4.0</span>, <span style="color: #666666">7.5</span>],
+      [<span style="color: #666666">9.0</span>, <span style="color: #666666">0.0</span>, <span style="color: #666666">9.5</span>],
+      [<span style="color: #666666">7.0</span>, <span style="color: #666666">6.9</span>, <span style="color: #666666">7.8</span>]
+    ]
+    b <span style="color: #666666">=</span> [
+      [<span style="color: #666666">1.0</span>, <span style="color: #666666">1.0</span>, <span style="color: #666666">1.0</span>],
+      [<span style="color: #666666">1.0</span>, <span style="color: #666666">1.0</span>, <span style="color: #666666">1.0</span>],
+      [<span style="color: #666666">1.0</span>, <span style="color: #666666">1.0</span>, <span style="color: #666666">1.0</span>]
+    ]
+    soma <span style="color: #666666">=</span> somar_matrizes(a, b)
+    <span style="color: #008000">print</span>(soma)
+
+main()
+</pre><p>Na funÃ§Ã£o <code class="language-text">somar_matrizes</code> decidimos criar a matriz <code class="language-text">soma</code> linha por
+linha. Repare que adicionamos <code class="language-text">linha</code> Ã  matriz <code class="language-text">soma</code> antes mesmo de
+adicionar as cÃ©lulas que irÃ£o compor essa linha. PoderÃ­amos adicionar
+a linha somente depois, Ã© indiferente.</p>
+<p>Para entender essa funÃ§Ã£o, Ã© Ãºtil simular e olhar para a representaÃ§Ã£o
+em memÃ³ria. A figura a seguir mostra a memÃ³ria do programa ao executar
+a funÃ§Ã£o <code class="language-text">somar_matrizes</code> durante a iteraÃ§Ã£o <code class="language-text">i = 1</code> do laÃ§o externo e ao final
+da iteraÃ§Ã£o <code class="language-text">j = 0</code> do laÃ§o interno.</p>
+<img src="figs/somar_matrizes.png" style="width: 100%; max-width: 500px;">
+<p>Agora vamos comeÃ§ar a implementar o produto de matrizes. Para isso,
+vamos relembrar. O produto de uma matriz $A$ de dimensÃµes $m \times l$
+por uma matriz $B$ de dimensÃµes $l \times n$ Ã© a matriz $C$ de
+dimensÃµes $m \times n$, denotada como</p>
+<p>$$
+C = A \times B
+$$</p>
+<p>em que um elemento $c_{ij}$ Ã© definido pelo produto interno</p>
+<p>$$
+c_{ij} = \text{(linha $i$ de $A$)} \cdot \text{(coluna $j$ de $B$)}.
+$$</p>
+<p>Dessa vez, vamos primeiro criar uma matriz com zeros $C$ de dimensÃµes
+$m \times n$ e depois preenchÃª-la com os valores corretos.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">multiplicar_matrizes</span>(A, B):
+    <span style="color: #008000; font-weight: bold">assert</span> <span style="color: #008000">len</span>(A[<span style="color: #666666">0</span>]) <span style="color: #666666">==</span> <span style="color: #008000">len</span>(B), <span style="color: #BA2121">&quot;Matrizes devem ser compatÃ­veis&quot;</span>
+    m <span style="color: #666666">=</span> <span style="color: #008000">len</span>(A)
+    l <span style="color: #666666">=</span> <span style="color: #008000">len</span>(B)
+    n <span style="color: #666666">=</span> <span style="color: #008000">len</span>(B[<span style="color: #666666">0</span>])
+    C <span style="color: #666666">=</span> [[<span style="color: #666666">0</span> <span style="color: #008000; font-weight: bold">for</span> _ <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n)] <span style="color: #008000; font-weight: bold">for</span> _ <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(m)]
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(m):
+        <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+            C[i][j] <span style="color: #666666">=</span> calcular_produto_interno(A, B, i, j)
+    <span style="color: #008000; font-weight: bold">return</span> C
+</pre><p>Leia com atenÃ§Ã£o, faÃ§a um desenho da memÃ³ria e complete a funÃ§Ã£o
+implementando <code class="language-text">calcular_produto_interno</code>.</p>
+<h2 id="representacao-de-matrizes">RepresentaÃ§Ã£o de matrizes</h2>
+<p>VocÃª deve ter percebido que alguns nomes de variÃ¡veis sÃ£o recorrentes.
+Isso Ã© intencional para manter a consistÃªncia com a notaÃ§Ã£o normalmente
+utilizada em Ãlgebra Linear. Assim,</p>
+<ul>
+<li>as matrizes tÃªm dimensÃ£o $m \times n$, ou seja, $m$ linhas e $n$ colunas;</li>
+<li>os Ã­ndices das linhas sÃ£o normalmente denotados pela letra $i$;</li>
+<li>os Ã­ndices das colunas sÃ£o normalmente denotados pela letra $j$.</li>
+</ul>
+<p>Enquanto essa convenÃ§Ã£o Ã© puramente cosmÃ©tica, utilizar sempre essa
+notaÃ§Ã£o pode evitar confusÃµes que levam a um grande perda de tempo.</p>
+<p>HÃ¡ uma outra convenÃ§Ã£o que adotamos quando decidimos representar
+matrizes: representamos uma matriz como uma <em>lista de linhas</em>. Dessa
+vez, essa convenÃ§Ã£o nÃ£o Ã© meramente cosmÃ©tica e tem consequÃªncias para
+a forma com que vocÃª acessa os elementos de uma matriz e para a
+maneira com que seu algoritmo manipula a matriz. NÃ£o impede que vocÃª
+represente uma matriz como uma <em>lista de colunas</em>, mas sÃ³ faÃ§a isso se
+tiver uma justificativa.</p>
+<p>Uma Ãºltima palavrinha sobre matrizes em Python: elas nÃ£o foram feitas
+pensando em manipular grandes volumes de dados numÃ©ricos, nem para
+realizar operaÃ§Ãµes algÃ©bricas facilmente. Por esse motivo, quando
+precisamos de fato manipular e realizar operaÃ§Ãµes sobre matrizes,
+normalmente utilizamos uma biblioteca. A mais popular para essa
+finalidade Ã© a <a href="https://numpy.org/">NumPy</a>. Nesta disciplina nÃ£o
+iremos utilizÃ¡-la, jÃ¡ que para isso seria necessÃ¡rio entender bem
+programaÃ§Ã£o orientada a objetos (o que nÃ£o faremos!). Por isso, a nÃ£o
+ser que vocÃª precise, deixe para estudar essa e outras bibliotecas
+mais tarde.</p>
+<h1 id="arquivos">Arquivos</h1>
+<p>Agora que jÃ¡ sabemos trabalhar com coleÃ§Ãµes de dados um pouco mais
+complexas do que listas de nÃºmeros ou listas de strings, deve ficar
+mais latente a necessidade de armazenar dados de maneira permanente. A
+estratÃ©gia de sempre digitar os dados pelo teclado nÃ£o funciona.
+Assim, queremos distinguir a memÃ³ria do computador em</p>
+<ol>
+<li>
+<p><strong>MemÃ³ria volÃ¡til</strong>. Ã a memÃ³ria RAM, utilizada para armazenar
+variÃ¡veis durante a execuÃ§Ã£o do programa. Como regra geral, devemos
+carregar na memÃ³ria (i.e., criar variÃ¡veis) apenas os dados
+necessÃ¡rios para realizar a computaÃ§Ã£o. Quando o programa termina,
+o sistema operacional libera a memÃ³ria utilizada para outros
+programas, os dados que nÃ£o forem armazenados serÃ£o perdidos.</p>
+</li>
+<li>
+<p><strong>MemÃ³ria persistente</strong>. Ã a memÃ³ria dos discos rÃ­gidos, cartÃµes de
+memÃ³ria e outros tipos de perifÃ©ricos que mantÃ©m os dados mesmo
+apÃ³s o desligamento do computador. Queremos guardar os dados que
+poderÃ£o ser lidos mesmo depois que o programa termina.</p>
+</li>
+</ol>
+<p>Enquanto organizamos a memÃ³ria RAM utilizando variÃ¡veis, a abstraÃ§Ã£o
+utilizada para organizar a memÃ³ria persistente sÃ£o os <strong>arquivos</strong>. Um
+arquivo Ã© uma <em>sequÃªncia de bytes</em>, armazenados em um dispositivo de
+memÃ³ria persistente (disco rÃ­gido, CD, fita de dados, USB-Drive etc.)
+e acessados por meio de um <em>nome</em>.</p>
+<p>Os arquivos sÃ£o <em>identificados</em> por um nome, assim, cada nome deve
+corresponder a um Ãºnico arquivo. Normalmente, o nome contÃ©m um sufixo,
+chamado de <em>extensÃ£o</em> que correspondente ao tipo dos dados
+armazenados no arquivo.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Exemplo</th>
+<th align="left">Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code class="language-text">arq.txt</code></td>
+<td align="left">texto simples</td>
+</tr>
+<tr>
+<td align="left"><code class="language-text">arq.svg</code></td>
+<td align="left">imagem vetorial</td>
+</tr>
+<tr>
+<td align="left"><code class="language-text">arq.c</code></td>
+<td align="left">cÃ³digo-fonte em C</td>
+</tr>
+<tr>
+<td align="left"><code class="language-text">arq.py</code></td>
+<td align="left">cÃ³digo-fonte em Python</td>
+</tr>
+<tr>
+<td align="left"><code class="language-text">arq.html</code></td>
+<td align="left">pÃ¡gina da Internet</td>
+</tr>
+<tr>
+<td align="left"><code class="language-text">arq.exe</code></td>
+<td align="left">executÃ¡vel</td>
+</tr>
+</tbody></table><p>Enquanto a extensÃ£o pode ser utilizada pelo sistema operacional para
+classificar os arquivos, Ã© importante saber que nada impede que
+arquivos tenham conteÃºdo que nÃ£o correspondem Ã  extensÃ£o. Assim, um
+arquivo <code class="language-text">arq.txt</code> pode ser o nome de um programa executÃ¡vel e assim
+por diante.</p>
+<p>Os arquivos sÃ£o organizados no sistema de arquivo por meio de
+<strong>diretÃ³rios</strong>. Um diretÃ³rio Ã© um arquivo especial que contÃ©m uma
+lista de arquivos. Esses arquivos podem ser arquivos comuns ou outros
+diretÃ³rios. Assim, os diretÃ³rios formam uma hierarquia.</p>
+<p><img src="figs/hierarquia.png" alt="image" /></p>
+<p>Todo programa executa a partir de algum diretÃ³rio. Esse Ã© o chamado
+diretÃ³rio de trabalho. Para saber qual Ã© o diretÃ³rio de trabalho em um
+terminal, digit <code class="language-text">pwd</code> (ou <code class="language-text">cd</code> no Windows). Assim, para referenciar
+outro arquivo, utilizamos o nome simples ou o nome completo na
+hierarquia de diretÃ³rios, dependendo do diretÃ³rio atual.</p>
+<ul>
+<li>
+<p>Usamos barra <code class="language-text">/</code> para separar diretÃ³rios (ou contrabarra <code class="language-text">\</code> no
+Windows)</p>
+</li>
+<li>
+<p>Usamos uma Ãºnica barra <code class="language-text">/</code> para representar a raiz da hierarquia</p>
+</li>
+</ul>
+<p>Vejamos alguns exemplos de caminhos.</p>
+<ul>
+<li>
+<p>Absolutos, a partir do diretÃ³rio raiz:</p>
+<pre class="highlight">/home/maria/imagem.jpg
+/home/pedro/arquivo.txt
+/home/pedro/mc102/lab.c
+</pre></li>
+<li>
+<p>Relativo, a partir do diretÃ³rio corrente (por exemplo, <code class="language-text">/home/pedro</code>):</p>
+<pre class="highlight">../maria/imagem.jpg
+arquivo.txt
+mc102/lab.py
+</pre></li>
+</ul>
+<p>AlÃ©m da sequÃªncia de bytes, existem alguns dados associados a um
+arquivo, que sÃ£o chamados de atributos de arquivos, entre os quais o
+proprietÃ¡rio do arquivo, as datas de criaÃ§Ã£o, alteraÃ§Ã£o e acesso, o
+tamanho em bytes, permissÃµes de acesso etc.</p>
+<h2 id="arquivos-de-texto-e-arquivos-binarios">Arquivos de texto e arquivos binÃ¡rios</h2>
+<p>Os arquivos podem ser classificados em dois grupos:</p>
+<ol>
+<li>Arquivos de texto</li>
+<li>Arquivos binÃ¡rios</li>
+</ol>
+<img src="figs/arquivos.svg" style="width: 100%; max-width: 500px;">
+<p>Um <strong>arquivo de texto</strong> Ã© uma sequÃªncia de caracteres. Como no caso
+das strings, cada caractere Ã© representado por um ou mais bytes de
+acordo com alguma tabela de codificaÃ§Ã£o. A codificaÃ§Ã£o mais comum nas
+aplicaÃ§Ãµes modernas Ã© a chamada
+<a href="https://pt.wikipedia.org/wiki/UTF-8">UTF-8</a>. Essa codificaÃ§Ã£o
+representa a tabela de caracteres
+<a href="https://pt.wikipedia.org/wiki/Unicode">Unicode</a>, que contÃ©m
+caracteres de quase todas as lÃ­nguas, alÃ©m de outros caracteres de
+controle e, claro, emojis!</p>
+<p>VocÃª deveria salvar todos os seus arquivos de texto na codificaÃ§Ã£o
+UTF-8, mas pode ser que vocÃª precise lidar com outras codificaÃ§Ãµes. O
+importante Ã© entender que arquivos de texto sÃ£o representados em
+alguma codificaÃ§Ã£o e, se precisar ler um arquivo armazenado em uma
+codificaÃ§Ã£o diferente de sua aplicaÃ§Ã£o, serÃ¡ necessÃ¡rio antes
+converter esse arquivo.</p>
+<p>Nem sempre Ã© possÃ­vel fazer essa conversÃ£o sem perda de informaÃ§Ã£o,
+sobretudo quando usamos aplicaÃ§Ãµes legadas. Por exemplo, pode ser que
+seu ambiente sÃ³ reconheÃ§a a codificaÃ§Ã£o
+<a href="https://pt.wikipedia.org/wiki/ASCII">ASCII</a>, que nÃ£o possui acentos
+ou outros caracteres modificados. Pode ser que vocÃª tenha um conjunto
+de arquivos de texto antigos e precise ler esses arquivos por um
+programa em Python. Quase sempre Ã© preciso se preocupar com a
+codificaÃ§Ã£o, ou dito de outra forma, quando ignoramos a codificaÃ§Ã£o,
+quase sempre as coisas vÃ£o dar errado.</p>
+<p>Um <strong>arquivo binÃ¡rio</strong> Ã© uma sequÃªncia qualquer de bytes. Lembre-se de
+que um byte Ã© uma sequÃªncia de 8 bits. NÃ£o podemos armazenar menos de
+byte em um arquivo. Se vocÃª Ã© atento, deverÃ¡ ter percebido que um
+arquivo de texto tambÃ©m Ã© um arquivo binÃ¡rio! Na verdade, todos os
+arquivos sÃ£o binÃ¡rios, mas normalmente sÃ³ chamamos de binÃ¡rios aqueles
+cujos bytes nÃ£o podem ser interpretados como um arquivo de texto. Isso
+nÃ£o significa que os bits e bytes nÃ£o estejam organizados; significa
+apenas que a organizaÃ§Ã£o do arquivo depende do formato.</p>
+<p>Normalmente, mas nem sempre, os primeiros bytes dos arquivos
+sÃ£o suficientes para identificar qual Ã© o formato do arquivo.
+Por exemplo, o comando <code class="language-text">file</code> de sistemas Unix tenta
+adivinhar o tipo dos dados de um arquivo, mesmo que a
+extensÃ£o tenha sido modificada.</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/unidades$</span> file <span style="color: #666666">08</span>-matrizes.html
+<span style="color: #888888">08-matrizes.html: HTML document, UTF-8 Unicode text, with very long lines</span>
+<span style="color: #000080; font-weight: bold">user@notebook:~/unidades$</span> file virus.jpg
+<span style="color: #888888">virus.jpg: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV)</span>
+</pre><h2 id="manipulando-arquivos">Manipulando arquivos</h2>
+<p><strong>InstruÃ§Ãµes</strong>: Para essa unidade, vocÃª deve ler a seÃ§Ã£o 7 sobre
+entrada e saÃ­da e arquivos do
+<a href="https://docs.python.org/pt-br/3/tutorial/index.html">tutorial</a>
+Python.</p>
+<p>Vamos resolver o seguinte exercÃ­cio:</p>
+<blockquote>
+<p>Escreva um programa que leia um arquivo chamado <code class="language-text">&quot;palavras.txt&quot;</code> e
+escreva as palavras que terminam com <code class="language-text">&quot;s&quot;</code> em um arquivo chamado
+<code class="language-text">&quot;plurais.txt&quot;</code> e as demais em um arquivo chamado
+<code class="language-text">&quot;singulares.txt&quot;</code>.</p>
+</blockquote>
+<h3 id="abrindo-e-fechando-arquivos">Abrindo e fechando arquivos</h3>
+<p>Para acessar um arquivo, precisamos abrir esse arquivo usando uma
+chamada <code class="language-text">open(nome_arquivo)</code>. Abrir um arquivo Ã© um processo que
+envolve diversas etapas. Por exemplo, o sistema operacional deve
+verificar se o arquivo com o nome dado de fato existe e se o usuÃ¡rio
+tem permissÃ£o de acesso a esse arquivo em particular, etc. Quando o
+arquivo Ã© aberto com sucesso, a funÃ§Ã£o <code class="language-text">open</code> devolve uma variÃ¡vel com
+metadados do arquivo. Em particular, essa variÃ¡vel contÃ©m um nÃºmero
+descritor do sistema operacional para o seu arquivo aberto.</p>
+<pre class="highlightlanguage-pycon"><span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>arquivo <span style="color: #666666">=</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&quot;palavras.txt&quot;</span>)
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>arquivo
+<span style="color: #888888">&lt;_io.TextIOWrapper name=&#39;palavras.txt&#39; mode=&#39;r&#39; encoding=&#39;UTF-8&#39;&gt;</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>arquivo<span style="color: #666666">.</span>fileno()
+<span style="color: #888888">3</span>
+</pre><p>Uma vez terminado o acesso a um arquivo, Ã© necessÃ¡rio fechÃ¡-lo. Fechar
+um arquivo Ã© muito importante, pois Ã© nesse momento que salvamos as
+eventuais alteraÃ§Ãµes no disco (a traduÃ§Ã£o de <em>save</em> como <em>salvar</em> Ã©
+bastante infeliz, o que queremos fazer Ã© guardar as alteraÃ§Ãµes no
+disco). AlÃ©m disso, fechar um arquivo tambÃ©m pede ao sistema
+operacional para liberar esse arquivo. Dependendo do sistema e do modo
+como o arquivo foi aberto, outros programas ficaram impedidos de
+manipular o arquivo enquanto ele nÃ£o for fechado. Por isso, sempre
+depois de trabalhar com um aquivo, chamamos a funÃ§Ã£o <code class="language-text">close</code></p>
+<pre class="highlightlanguage-python">arquivo <span style="color: #666666">=</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&quot;palavras.txt&quot;</span>)
+<span style="color: #408080; font-style: italic"># ...</span>
+<span style="color: #408080; font-style: italic"># acessamos os dados do arquivo</span>
+<span style="color: #408080; font-style: italic"># ...</span>
+arquivo<span style="color: #666666">.</span>close()
+</pre><p>Liberar um recurso depois de usado Ã© tÃ£o importante que existe uma
+sintaxe especial em Python para isso: o bloco <code class="language-text">with</code>. Assim, ao invÃ©s
+de usar <code class="language-text">open</code> e <code class="language-text">close</code> como acima, sempre iremos escrever algo como</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&quot;palavras.txt&quot;</span>) <span style="color: #008000; font-weight: bold">as</span> arquivo:
+    <span style="color: #408080; font-style: italic"># ...</span>
+    <span style="color: #408080; font-style: italic"># acessamos os dados do arquivo</span>
+    <span style="color: #408080; font-style: italic"># ...</span>
+</pre><p>Repare que o valor devolvido por <code class="language-text">open</code> Ã© associado a <code class="language-text">arquivo</code>
+e que nÃ£o precisamos fechar o arquivo explicitamente.</p>
+<h3 id="lendo-os-dados-do-arquivo">Lendo os dados do arquivo</h3>
+<p>Quando abrimos um arquivo em um editor de texto, vemos um cursor
+piscando. Esse cursor indica a posiÃ§Ã£o de leitura e escrita atual do
+arquivo. Do mesmo modo, quando abrimos um arquivo, o sistema
+operacional cria um <strong>cursor de arquivo</strong>, que indica qual Ã© a posiÃ§Ã£o
+atual do arquivo sendo acessado. O cursor Ã© utilizado para informar a
+posiÃ§Ã£o no arquivo em estÃ£o os prÃ³ximos bytes a serem lidos, ou a
+posiÃ§Ã£o no arquivo em que serÃ£o escritos os prÃ³ximos bytes.</p>
+<p>O acesso aos dados do arquivo pode se dar de dois modos:</p>
+<ol>
+<li>Sequencialmente, na ordem em que os dados foram armazenados.</li>
+<li>Diretamente, obtendo diretamente o dado desejado a partir de sua posiÃ§Ã£o.</li>
+</ol>
+<p>Quando lemos um arquivo sequencialmente, lemos cada byte do arquivo,
+do primeiro ao Ãºltimo, assim como lemos um livro de literatura. No
+acesso sequencial, o cursor de arquivo nunca retrocede. Quando
+acessamos um arquivo diretamente, primeiros descobrimos em qual
+posiÃ§Ã£o estÃ¡ o dado requerido, assim como consultamos o Ã­ndice de uma
+lista telefÃ´nica. No acesso direto, posicionamos o cursor de arquivo
+na posiÃ§Ã£o do dado desejado. A cada operaÃ§Ã£o de leitura ou escrita no
+arquivo, o cursor move-se automaticamente para a prÃ³xima posiÃ§Ã£o.</p>
+<p>A maneira mais comum de ler um arquivo de dados Ã© interpretar o arquivo
+como um sequÃªncia de linhas e elr . Por esse motivo, Python permite
+percorrer as linhas de um arquivo como se ele fosse uma lista de strings.</p>
+<p>Vamos criar um arquivo de texto com os dados de uma estudante. NÃ£o Ã© porque
+o arquivo Ã© de texto que ele nÃ£o tem uma estrutura bem definida. No arquivo
+seguinte, adotamos a seguinte convenÃ§Ã£o:</p>
+<ol>
+<li>a primeira linha contÃ©m o nÃºmero de RA;</li>
+<li>a segunda linha contÃ©m o nome completo;</li>
+<li>a terceira linha contÃ©m a data de nascimento;</li>
+<li>a quarta linha contÃ©m o nome da mÃ£e.</li>
+</ol>
+<pre class="highlight">123456
+ Ana Viva Mariana
+29/2/2000
+Maria Viva
+</pre><p>Para ler esses dados, podemos fazer o seguinte</p>
+<pre class="highlightlanguage-pycon"><span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span><span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&quot;dados.txt&quot;</span>) <span style="color: #008000; font-weight: bold">as</span> arquivo:
+<span style="color: #000080; font-weight: bold">... </span>    ra <span style="color: #666666">=</span> arquivo<span style="color: #666666">.</span>readline()
+<span style="color: #000080; font-weight: bold">... </span>    nome_completo <span style="color: #666666">=</span> arquivo<span style="color: #666666">.</span>readline()
+<span style="color: #000080; font-weight: bold">... </span>    nascimento <span style="color: #666666">=</span> arquivo<span style="color: #666666">.</span>readline()
+<span style="color: #000080; font-weight: bold">... </span>    nome_mae <span style="color: #666666">=</span> arquivo<span style="color: #666666">.</span>readline()
+<span style="color: #000080; font-weight: bold">...</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>ra
+<span style="color: #888888">&#39; 123456\n&#39;</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>nome_completo
+<span style="color: #888888">&#39; Ana Viva Mariana\n&#39;</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>nascimento
+<span style="color: #888888">&#39;29/2/2000  \n&#39;</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>nome_mae
+<span style="color: #888888">&#39;Maria Viva&#39;</span>
+</pre><p>Cada uma das variÃ¡veis lidas corresponde a uma linha e Ã© do tipo
+<code class="language-text">str</code>. Repare que todas as variÃ¡veis lidas terminam com um caractere
+de nova linha <code class="language-text">\n</code>, com exceÃ§Ã£o da Ãºltima. Isso ocorreu porque quando
+criei esse arquivo nÃ£o adicionei um caractere <code class="language-text">\n</code> na no fim do
+arquivo, i.e., eu nÃ£o &quot;dei enter&quot; apÃ³s a Ãºltima letra da Ãºltima linha.</p>
+<p>Ã prÃ¡tica comum terminar todas as linhas com <code class="language-text">\n</code>, tanto que muitas
+vezes esse caractere Ã© chamado de caractere de fim de linha. Sempre
+adicione um caractere de fim de linha no final do seus arquivos de texto.</p>
+<p>Observe tambÃ©m que <code class="language-text">nome_completo</code> comeÃ§a com um espaÃ§o, assim como hÃ¡
+alguns espaÃ§os no final de <code class="language-text">nascimento</code>. Isso porque quando copiei o
+arquivo em meu editor de texto adicionei alguns arquivos em branco.
+Muitas vezes nÃ£o vemos esses caracteres, entÃ£o eles passam
+desapercebidos. Ã uma boa prÃ¡tica nÃ£o deixar esses caracteres no final
+das linhas de seus arquivos de texto. Descubra como configurar seu
+editor de texto.</p>
+<p>Acontece que quando criamos um programa, nÃ£o temos controle sobre os
+arquivos que leremos. EntÃ£o o que a maioria das programadoras faz Ã©
+livrar-se desses caracteres em branco. As strings em Python tÃªm um
+funÃ§Ã£o para isso, <code class="language-text">strip</code>:</p>
+<pre class="highlightlanguage-pycon"><span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>nome_completo<span style="color: #666666">.</span>strip()
+<span style="color: #888888">&#39;Ana Viva Mariana&#39;</span>
+</pre><p>Pode ser que vocÃª queira ler as linhas de um arquivo, mas nÃ£o conheÃ§a
+quantas linhas deverÃ¡ ler atÃ© que o arquivo termine. Para isso, Python
+permite percorrer as linhas do arquivo como se ele fosse uma lista de
+strings â com a diferenÃ§a crucial de que nÃ£o podemos voltar nem acessar
+uma linha com colchetes. JÃ¡ podemos ler nosso arquivo de palavras.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_aquivo_palavras</span>(nome_arquivo):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #BA2121; font-style: italic">    LÃª um arquivo e devolve a lista de palavras,</span>
+<span style="color: #BA2121; font-style: italic">    uma por linha</span>
+<span style="color: #BA2121; font-style: italic">    &quot;&quot;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(nome_arquivo) <span style="color: #008000; font-weight: bold">as</span> arquivo:
+        palavras <span style="color: #666666">=</span> []
+        <span style="color: #008000; font-weight: bold">for</span> linha <span style="color: #AA22FF; font-weight: bold">in</span> arquivo:
+            palavra <span style="color: #666666">=</span> linha<span style="color: #666666">.</span>strip()
+            palavras<span style="color: #666666">.</span>append(palavra)
+
+    <span style="color: #008000; font-weight: bold">return</span> palavras
+</pre><p>Agora jÃ¡ podemos criar duas listas separadas, uma com as palavras
+&quot;plurais&quot; e outras com as palavras &quot;singulares&quot; (Ã© claro que isso nÃ£o
+Ã© correto gramaticalmente, decidir se uma palavra estÃ¡ em plural Ã©
+muito mais desafiador do que simplesmente verificar se a Ãºltima letra
+Ã© um &quot;s&quot;).</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">separar_plurais</span>(palavras):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #BA2121; font-style: italic">    Devolve a lista das palavras que terminam em s</span>
+<span style="color: #BA2121; font-style: italic">    &quot;&quot;&quot;</span>
+    plurais <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> palavra <span style="color: #AA22FF; font-weight: bold">in</span> palavras:
+        <span style="color: #008000; font-weight: bold">if</span> palavra[<span style="color: #666666">-1</span>] <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;s&quot;</span>:
+            plurais<span style="color: #666666">.</span>append(palavra)
+    <span style="color: #008000; font-weight: bold">return</span> plurais
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_diferenca</span>(lista1, lista2):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #BA2121; font-style: italic">    Devolve uma lista com os elementos</span>
+<span style="color: #BA2121; font-style: italic">    de lista1 que nÃ£o estÃ£o em lista2</span>
+<span style="color: #BA2121; font-style: italic">    &quot;&quot;&quot;</span>
+    diferenca <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> valor <span style="color: #AA22FF; font-weight: bold">in</span> lista1:
+        <span style="color: #008000; font-weight: bold">if</span> valor <span style="color: #AA22FF; font-weight: bold">not</span> <span style="color: #AA22FF; font-weight: bold">in</span> lista2:
+            diferenca<span style="color: #666666">.</span>append(valor)
+    <span style="color: #008000; font-weight: bold">return</span> diferenca
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    palavras <span style="color: #666666">=</span> ler_aquivo_palavras(<span style="color: #BA2121">&quot;palavras.txt&quot;</span>)
+    plurais <span style="color: #666666">=</span> separar_plurais(palavras)
+    singulares <span style="color: #666666">=</span> calcular_diferenca(palavras, plurais)
+
+    <span style="color: #008000">print</span>(plurais)
+    <span style="color: #008000">print</span>(singulares)
+
+    <span style="color: #408080; font-style: italic"># criar_arquivo_palavras(&quot;plural.txt&quot;, plurais)</span>
+    <span style="color: #408080; font-style: italic"># criar_arquivo_palavras(&quot;singular.txt&quot;, singulares)</span>
+
+main()
+</pre><p>Isso deve ser suficiente para testar a leitura do arquivo. Experimente
+com o arquivo seguinte.</p>
+<pre class="highlight">feijÃ£o
+arroz
+limÃµes
+batata
+beterrabas
+pizzas
+lasanha quatro-queijos
+rapadura
+</pre><h3 id="escrevendo-dados-em-um-arquivo">Escrevendo dados em um arquivo</h3>
+<p>Para completar o nosso exercÃ­cio, precisamos implementar a funÃ§Ã£o
+<code class="language-text">criar_arquivo_palavras(nome_arquivo, palavras)</code>, cujas chamadas estÃ£o
+comentadas no trecho acima. O que essa funÃ§Ã£o deve fazer Ã©:</p>
+<ol>
+<li>criar um arquivo chamado <code class="language-text">nome_arquivo</code>;</li>
+<li>escrever as palavras no arquivo, uma por linha.</li>
+</ol>
+<p>Quando chamamos <code class="language-text">open(&quot;palavras.txt&quot;)</code> acima, abrimos esse arquivo no
+chamado modo de leitura. Para poder escrever em um arquivo, precisamos
+abrir um aquivo no modo de escrita. Para isso faremos algo como
+<code class="language-text">open(&quot;plurais.txt&quot;, &quot;w&quot;)</code>. Esse caractere <code class="language-text">&quot;w&quot;</code> estÃ¡ indicando que o
+mode abertura do arquivo Ã© de leitura. Quando nÃ£o passamos esse
+parÃ¢metro, o padrÃ£o Ã© modo de leitura, que tambÃ©m pode ser indicado
+pelo caractere <code class="language-text">&quot;r&quot;</code>. Dependendo do objetivo, existem vÃ¡rios modos de
+abertura de um arquivo, como os do exemplo abaixo. Mas os modos <code class="language-text">&quot;r&quot;</code>
+e <code class="language-text">&quot;w&quot;</code> sÃ£o os mais comuns.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>modo</strong></th>
+<th align="left"><strong>operaÃ§Ãµes</strong></th>
+<th align="left"><strong>posiÃ§Ã£o do cursor do arquivo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code class="language-text">&quot;r&quot;</code></td>
+<td align="left">leitura</td>
+<td align="left">inÃ­cio</td>
+</tr>
+<tr>
+<td align="center"><code class="language-text">&quot;r+&quot;</code></td>
+<td align="left">leitura e escrita</td>
+<td align="left">inÃ­cio</td>
+</tr>
+<tr>
+<td align="center"><code class="language-text">&quot;w&quot;</code></td>
+<td align="left">escrita</td>
+<td align="left">inÃ­cio (trunca arquivo)</td>
+</tr>
+<tr>
+<td align="center"><code class="language-text">&quot;w+&quot;</code></td>
+<td align="left">escrita e leitura</td>
+<td align="left">inÃ­cio (trunca arquivo)</td>
+</tr>
+<tr>
+<td align="center"><code class="language-text">&quot;a&quot;</code></td>
+<td align="left">escrita</td>
+<td align="left">final</td>
+</tr>
+<tr>
+<td align="center"><code class="language-text">&quot;a+&quot;</code></td>
+<td align="left">leitura</td>
+<td align="left">inÃ­cio</td>
+</tr>
+</tbody></table><p>O modo que iremos usar para nossa funÃ§Ã£o Ã© o <code class="language-text">&quot;w&quot;</code>, o que esse modo significa Ã© o seguinte:</p>
+<ol>
+<li>se o arquivo sendo aberto nÃ£o existir, entÃ£o um aquivo com esse
+nome Ã© criado;</li>
+<li>se um arquivo com esse nome existir, entÃ£o esse arquivo Ã© truncado
+a 0 bytes, descartando quaisquer dados armazenados anteriormente;</li>
+<li>o cursor de arquivo Ã© posicionado em modo de escrita no inÃ­cio do
+arquivo, que nesse momento estÃ¡ vazio.</li>
+</ol>
+<p>Tome cuidado ao usar o modo de escrita <code class="language-text">&quot;w&quot;</code>, jÃ¡ que ele pode levar a
+perda de dados. Pode ser necessÃ¡rio verificar se o arquivo jÃ¡ existe,
+ou renomeÃ¡-lo se jÃ¡ existir. Para isso, procure no mÃ³dulo <code class="language-text">os</code> as
+funÃ§Ãµes adequadas, como <code class="language-text">os.rename</code> ou <code class="language-text">os.remove</code>.</p>
+<p>Para entender o significado de cada modo disponÃ­vel, consulte a
+documentaÃ§Ã£o de <code class="language-text">open</code>. Aqui, sÃ³ precisamos escrever uma linha por
+vez. Fazemos isso com a funÃ§Ã£o <code class="language-text">write</code>, que estÃ¡ disponÃ­vel para os
+arquivos.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">criar_arquivo_palavras</span>(nome_arquivo, palavras):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #BA2121; font-style: italic">    Cria um arquivo nome_arquivo com as palavras,</span>
+<span style="color: #BA2121; font-style: italic">    uma por linha</span>
+<span style="color: #BA2121; font-style: italic">    &quot;&quot;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(nome_arquivo, <span style="color: #BA2121">&quot;w&quot;</span>) <span style="color: #008000; font-weight: bold">as</span> arquivo:
+        <span style="color: #008000; font-weight: bold">for</span> palavra <span style="color: #AA22FF; font-weight: bold">in</span> palavras:
+            linha <span style="color: #666666">=</span> palavra <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>
+            arquivo<span style="color: #666666">.</span>write(linha)
+</pre><p>Repare que para escrever uma linha, precisamos adicionar uma quebra de
+linha no final de cada linha manualmente. Se nÃ£o fizermos isso, entÃ£o
+todas as palavras apareceriam coladas. Se preferir, tambÃ©m Ã© possÃ­vel
+utilizar a funÃ§Ã£o <code class="language-text">print</code>, que irÃ¡ escrever no arquivo da mesma maneira
+que escreveria na tela. A vantagem Ã© que <code class="language-text">print</code> converte a variÃ¡vel para
+uma string automaticamente.</p>
+<pre class="highlightlanguage-pycon"><span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>lista <span style="color: #666666">=</span> [<span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>]
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span><span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(<span style="color: #BA2121">&quot;lista.txt&quot;</span>, <span style="color: #BA2121">&quot;w&quot;</span>) <span style="color: #008000; font-weight: bold">as</span> arquivo:
+<span style="color: #000080; font-weight: bold">... </span>    <span style="color: #008000">print</span>(lista, file<span style="color: #666666">=</span>arquivo)
+</pre><p>Experimente e descubra qual o conteÃºdo foi criado no arquivo
+<code class="language-text">&quot;lista.txt&quot;</code>.</p>
+<h3 id="entrada-e-saida-padrao">Entrada e saÃ­da padrÃ£o</h3>
+<p>Quando vimos como abrir arquivos, aprendemos que uma variÃ¡vel do tipo
+arquivo tem uma funÃ§Ã£o <code class="language-text">fileno</code> que devolve um descritor do arquivo,
+que Ã© um nÃºmero que designa um arquivo aberto de seu programa para o
+sistema operacional. Se vocÃª executou o exemplo, Ã© muito provÃ¡vel que
+<code class="language-text">arquivo.fileno()</code> devolveu o mesmo nÃºmero <code class="language-text">3</code> mostrado acima. Mas por
+que o primeiro arquivo que abrimos tem descritor <code class="language-text">3</code>, e nÃ£o <code class="language-text">0</code> ou
+<code class="language-text">1</code>?</p>
+<p>A resposta Ã© que quando nossas instruÃ§Ãµes comeÃ§am a executar, o processo
+associado a nosso programa jÃ¡ tem trÃªs arquivos abertos. Esses arquivos
+podem ser acessados a partir do mÃ³dulo <code class="language-text">sys</code>, i.e, se escrevermos
+<code class="language-text">import sys</code> no inÃ­cio do programa. SÃ£o eles:</p>
+<ul>
+<li>A entrada padrÃ£o <code class="language-text">sys.stdin</code>, que tem descritor <code class="language-text">0</code>. Esse arquivo
+comeÃ§a aberto no modo de leitura e representa os dados digitados
+pelo usuÃ¡rio. Normalmente acessamos esse arquivo atravÃ©s da funÃ§Ã£o
+<code class="language-text">input</code>.</li>
+<li>A entrada padrÃ£o <code class="language-text">sys.stdout</code>, que tem descritor <code class="language-text">1</code>. Esse arquivo
+comeÃ§a aberto no modo de escrita e representa os dados mostrados na
+tela. Normalmente acessamos esse arquivo atravÃ©s da funÃ§Ã£o <code class="language-text">print</code>.</li>
+<li>A entrada padrÃ£o <code class="language-text">sys.stderr</code>, que tem descritor <code class="language-text">2</code>. Esse arquivo
+comeÃ§a aberto no modo de escrita e representa as mensagens de erro
+mostradas na tela. Normalmente acessamos esse arquivo atravÃ©s da
+funÃ§Ã£o <code class="language-text">print</code>, mas passando o parÃ¢metro <code class="language-text">file=sys.stderr</code>.</li>
+</ul>
+<p>Nesta disciplina nÃ£o usamos ainda mensagens de erro, mas elas podem
+ser Ãºteis para distinguir a saÃ­da do seu programa de uma mensagem,
+particularmente uma mensagem de quando estamos testando o nosso
+programa.</p>
+<p>Entender e conhecer os arquivos de entrada e saÃ­da padrÃ£o Ã© bastante
+conveniente, particularmente quando nos cansarmos de testar nossos
+programas digitando a entrada na mÃ£o, de novo e de novo. Em um terminal
+podemos escrever</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook$</span> python3 programa.py &lt; entrada.txt &gt; saida.txt
+</pre><p>Isso irÃ¡ fazer com que <code class="language-text">sys.stdin</code> se refira ao arquivo <code class="language-text">entrada.txt</code>
+e <code class="language-text">sys.stdout</code> se refira ao arquivo <code class="language-text">saida.txt</code>. Se tambÃ©m
+quisermos guardar as mensagens de erro, poderÃ­amos
+escrever</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook$</span> python3 programa.py &lt; entrada.txt &gt; saida.txt <span style="color: #666666">2</span>&gt; erros.txt
+</pre><p>mas Ã© Ãºtil deixar que as mensagens de erro sejam mostradas na tela.
+Vamos fazer isso em breve.</p>
+<h1 id="um-exemplo-com-matrizes">Um exemplo com matrizes</h1>
+<p>Vamos resolver o seguinte exercÃ­cio:</p>
+<blockquote>
+<p>Escreva um programa que dada uma matriz de caracteres e uma palavra,
+conte o nÃºmero de vezes que a palavra aparece na matriz, tanto na
+direÃ§Ã£o vertical quanto na horizontal.</p>
+</blockquote>
+<p>Vamos ver um exemplo.</p>
+<pre class="highlight">OEAIAGBOOL
+IIWAXHHLHN
+PADUCAPNOC
+ZBMOUIZSAS
+OXEZOKOEUA
+QCRMAAPAOH
+DHOMEMTUFO
+HOOAJCMVGM
+NMFOANGMAE
+JEVJVCCSNM
+</pre><p>Se estivermos procurando <code class="language-text">HOMEM</code>, vocÃª deve encontrar duas ocorrÃªncias
+dessa palavra na matriz acima.</p>
+<p>Antes de tudo, precisamos formalizar o problema que nos Ã© dado. O
+enunciado nÃ£o fala de onde essa matriz serÃ¡ obtida, nem de onde vamos
+ler a palavra. NÃ£o Ã© razoÃ¡vel digitar toda a matriz sempre que formos
+testar nosso programa â acho que vocÃª deve concordar comigo, entÃ£o nÃ£o
+devemos sequer cogitar testar esse programa digitando a entrada.</p>
+<p>A soluÃ§Ã£o agora deve ser evidente: vamos criar um arquivo para
+armazenar a entrada de nosso programa. Nossa entrada Ã© uma matriz de
+caracteres e uma palavra, entÃ£o Ã© natural utilizarmos um arquivo de
+texto. Precisamos de alguma convenÃ§Ã£o para organizar os dados no nosso
+arquivo, assim definiremos a seguinte estrutura do arquivo, bem simples:</p>
+<ul>
+<li>a primeira linha contÃ©m a palavra sendo buscada;</li>
+<li>as demais linhas contÃ©m as linhas da matriz, sem espaÃ§o entre os caracteres.</li>
+</ul>
+<p>Vamos criar um arquivo chamado <code class="language-text">caca_palavras.txt</code>.</p>
+<pre class="highlight">HOMEM
+OEAIAGBOOL
+IIWAXHHLHN
+PADUCAPNOC
+ZBMOUIZSAS
+OXEZOKOEUA
+QCRMAAPAOH
+DHOMEMTUFO
+HOOAJCMVGM
+NMFOANGMAE
+JEVJVCCSNM
+</pre><p>Enquanto esse exercÃ­cio nÃ£o Ã© difÃ­cil, ele tampouco Ã© trivial. Assim,
+precisamos de mÃ©todo e organizaÃ§Ã£o, senÃ£o iremos gastar muito tempo
+tentando resolvÃª-lo e a experiÃªncia de programaÃ§Ã£o serÃ¡ frustrante.
+Como sempre, vamos fazer uma lista de funÃ§Ãµes a serem implementadas e,
+para cada uma delas, escrever um algoritmo em portuguÃªs antes de
+programÃ¡-la. Precisamos de pelo menos duas funÃ§Ãµes, com os seguintes objetivos:</p>
+<ol>
+<li>ler um arquivo e devolver uma palavra e a matriz de caracteres;</li>
+<li>procurar uma ocorrÃªncia de uma palavra na matriz.</li>
+</ol>
+<p>A primeira tarefa Ã© mecÃ¢nica: basta ler a primeira linha e depois
+percorrer as demais linhas adicionado as palavras a uma lista.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_arquivo_entrada</span>(nome_arquivo):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;LÃª um arquivo com os dados de entrada</span>
+<span style="color: #BA2121; font-style: italic">    e devolve a palavra e a matriz de caracteres&quot;&quot;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(nome_arquivo) <span style="color: #008000; font-weight: bold">as</span> arquivo:
+        palavra <span style="color: #666666">=</span> arquivo<span style="color: #666666">.</span>readline()<span style="color: #666666">.</span>strip()
+        matriz <span style="color: #666666">=</span> []
+        <span style="color: #008000; font-weight: bold">for</span> linha <span style="color: #AA22FF; font-weight: bold">in</span> arquivo:
+            matriz<span style="color: #666666">.</span>append(linha<span style="color: #666666">.</span>strip())
+    <span style="color: #008000; font-weight: bold">return</span> palavra, matriz
+</pre><p>Representamos uma matriz de caracteres como uma lista de strings!
+Assim, podemos acessar um caractere na linha <code class="language-text">i</code> e coluna <code class="language-text">j</code>
+normalmente, digitando <code class="language-text">matriz[i][j]</code>. Enquanto isso Ã© conveniente, hÃ¡
+uma consequÃªncia em termos de desempenho. Para acessar um elemento de
+uma lista em uma posiÃ§Ã£o <code class="language-text">j</code> dada, o interpretador Python pode acessar
+essa posiÃ§Ã£o na memÃ³ria diretamente, isso Ã© muito muito rÃ¡pido.</p>
+<p>JÃ¡ para acessar um caractere de uma string em uma dada posiÃ§Ã£o <code class="language-text">j</code>, Ã©
+necessÃ¡rio percorrer toda a string desde o inÃ­cio contando os
+caracteres. Para strings pequenas como do nosso exemplo isso nÃ£o Ã© um
+problema, mas para strings maiores ou para aplicaÃ§Ãµes crÃ­ticas, isso
+pode ser extremamente ineficiente. Por sorte, Ã© fÃ¡cil corrigir esse
+problema, basta converter a string em uma lista, mudando a iteraÃ§Ã£o do
+<code class="language-text">for</code> para <code class="language-text">matriz.append(list(linha.strip()))</code>. Sutil, mas
+importante!</p>
+<p>Para a segunda tarefa, queremos procurar as ocorrÃªncias de uma palavra
+na matriz. Um algoritmo em alto nÃ­vel, que Ã© talvez o que a maioria
+das pessoas faria, Ã© o seguinte:</p>
+<ul>
+<li>
+para cada linha $i$ da matriz<ul>
+<li>
+para cada coluna $j$ da matriz<ol>
+<li>verifique se a palavra aparece horizontalmente a partir de $(i,j)$</li>
+<li>verifique se a palavra aparece verticalmente a partir de $(i,j)$</li>
+<li>atualize o contador de ocorrÃªncias</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>Agora escrevemos a funÃ§Ã£o. Vamos postergar as tarefas mais difÃ­ceis
+usando stubs.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">contar_ocorrencias</span>(palavra, matriz):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Conta o nÃºmero de vezes que palavra</span>
+<span style="color: #BA2121; font-style: italic">    ocorre em matriz, horizontal ou verticalmente&quot;&quot;&quot;</span>
+
+    m <span style="color: #666666">=</span> <span style="color: #008000">len</span>(matriz)
+    n <span style="color: #666666">=</span> <span style="color: #008000">len</span>(matriz[<span style="color: #666666">0</span>])
+
+    ocorrencias <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(m):
+        <span style="color: #008000; font-weight: bold">for</span> j <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+            <span style="color: #008000; font-weight: bold">if</span> ocorre_horizontal(palavra, matriz, i, j):
+                ocorrencias <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #008000; font-weight: bold">if</span> ocorre_vertical(palavra, matriz, i, j):
+                ocorrencias <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+
+    <span style="color: #008000; font-weight: bold">return</span> ocorrencias
+</pre><p>Essa funÃ§Ã£o nÃ£o morde. Vamos passar Ã  funÃ§Ã£o <code class="language-text">main</code>.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    palavra, matriz <span style="color: #666666">=</span> ler_arquivo_entrada(<span style="color: #BA2121">&quot;caca_palavras.txt&quot;</span>)
+    ocorrencias <span style="color: #666666">=</span> contar_ocorrencias(palavra, matriz)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;HÃ¡ </span><span style="color: #BB6688; font-weight: bold">{ocorrencias}</span><span style="color: #BA2121"> ocorrencias&quot;</span>)
+</pre><p>A mÃ¡gica realmente acontece quando procuramos a ocorrÃªncia de uma
+palavra. Vamos implementar <code class="language-text">ocorre_vertical</code>. Um algoritmo seria o
+seguinte:</p>
+<ol>
+<li>$ocorre \gets True$</li>
+<li>
+para cada Ã­ndice $k$ de $palavra$:<ul>
+<li>compare os caracteres $palavra[k]$ com $matriz[i][j + k]$</li>
+<li>se forem diferentes, faÃ§a $ocorre \gets False$</li>
+</ul>
+</li>
+<li>devolva $ocorre$</li>
+</ol>
+<p>Isso verifica se cada caractere de palavra Ã© corresponde a algum
+caractere na linha $i$ da matriz comeÃ§ando pela coluna $j$.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ocorre_horizontal</span>(palavra, matriz, i, j):
+    ocorre <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+    tamanho <span style="color: #666666">=</span> <span style="color: #008000">len</span>(palavra)
+    <span style="color: #008000; font-weight: bold">for</span> k <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(tamanho):
+        <span style="color: #008000; font-weight: bold">if</span> palavra[k] <span style="color: #666666">!=</span> matriz[i][j <span style="color: #666666">+</span> k]:
+            ocorre <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">False</span>
+    <span style="color: #008000; font-weight: bold">return</span> ocorre
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ocorre_vertical</span>(palavra, matriz, i, j):
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">False</span>
+</pre><p>Juntamos todas as partes e executamos o nosso programa, digamos
+<code class="language-text">caca_palavras.py</code>, apenas para descobrir que ele tem um erro.</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/matrizes$</span> python3 caca_palavras.py
+<span style="color: #888888">Traceback (most recent call last):</span>
+<span style="color: #888888">  File &quot;caca_palavras.py&quot;, line 46, in &lt;module&gt;</span>
+<span style="color: #888888">    main()</span>
+<span style="color: #888888">  File &quot;caca_palavras.py&quot;, line 43, in main</span>
+<span style="color: #888888">    ocorrencias = contar_ocorrencias(palavra, matriz)</span>
+<span style="color: #888888">  File &quot;caca_palavras.py&quot;, line 22, in contar_ocorrencias</span>
+<span style="color: #888888">    if ocorre_horizontal(palavra, matriz, i, j):</span>
+<span style="color: #888888">  File &quot;caca_palavras.py&quot;, line 33, in ocorre_horizontal</span>
+<span style="color: #888888">    if palavra[k] != matriz[i][j + k]:</span>
+<span style="color: #888888">IndexError: list index out of range</span>
+</pre><p>Existe um erro ao acessar a coluna $j+k$ da linha $i$ da matriz. Para
+poder corrigir esse erro, utilizamos um debugger, possivelmente
+colocando configurando breakpoint na linha em que aconteceu o erro, ou
+um pouco antes. Muitas vezes, Ã© Ãºtil tambÃ©m colocar alguma mensagem de
+debug. Para distinguir a mensagem de debug da saÃ­da normal do nosso
+programa, vamos escrever no arquivo <code class="language-text">sys.stderr</code>, que Ã© para onde esse
+tipo de mensagem deve ir.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">sys</span>
+
+<span style="color: #408080; font-style: italic"># ...</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ocorre_horizontal</span>(palavra, matriz, i, j):
+    ocorre <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+    tamanho <span style="color: #666666">=</span> <span style="color: #008000">len</span>(palavra)
+    <span style="color: #008000; font-weight: bold">for</span> k <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(tamanho):
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;Comparando palavra[</span><span style="color: #BB6688; font-weight: bold">{k}</span><span style="color: #BA2121">] com matriz[</span><span style="color: #BB6688; font-weight: bold">{i}</span><span style="color: #BA2121">][{j + k}]&quot;</span>, file<span style="color: #666666">=</span>sys<span style="color: #666666">.</span>stderr)
+        <span style="color: #008000; font-weight: bold">if</span> palavra[k] <span style="color: #666666">==</span> matriz[i][j <span style="color: #666666">+</span> k]:
+            ocorre <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">False</span>
+    <span style="color: #008000; font-weight: bold">return</span> ocorre
+</pre><p>Executando novamente, temos um bocado de informaÃ§Ã£o na tela,
+resumida a seguir:</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/matrizes$</span> python3 caca_palavras.py
+<span style="color: #888888">Comparando palavra[0] com matriz[0][0]</span>
+<span style="color: #888888">Comparando palavra[1] com matriz[0][1]</span>
+<span style="color: #888888">Comparando palavra[2] com matriz[0][2]</span>
+<span style="color: #888888">....</span>
+<span style="color: #888888">Comparando palavra[0] com matriz[0][6]</span>
+<span style="color: #888888">Comparando palavra[1] com matriz[0][7]</span>
+<span style="color: #888888">Comparando palavra[2] com matriz[0][8]</span>
+<span style="color: #888888">Comparando palavra[3] com matriz[0][9]</span>
+<span style="color: #888888">Comparando palavra[4] com matriz[0][10]</span>
+<span style="color: #888888">Traceback (most recent call last):</span>
+<span style="color: #888888">  File &quot;caca_palavras.py&quot;, line 49, in &lt;module&gt;</span>
+<span style="color: #888888">    main()</span>
+<span style="color: #888888">  File &quot;caca_palavras.py&quot;, line 46, in main</span>
+<span style="color: #888888">    ocorrencias = contar_ocorrencias(palavra, matriz)</span>
+<span style="color: #888888">  File &quot;caca_palavras.py&quot;, line 24, in contar_ocorrencias</span>
+<span style="color: #888888">    if ocorre_horizontal(palavra, matriz, i, j):</span>
+<span style="color: #888888">  File &quot;caca_palavras.py&quot;, line 36, in ocorre_horizontal</span>
+<span style="color: #888888">    if palavra[k] != matriz[i][j + k]:</span>
+<span style="color: #888888">IndexError: list index out of range</span>
+</pre><p>Se vocÃª contar, irÃ¡ descobrir que a matriz tem apenas 10 colunas, mas
+<code class="language-text">matriz[0][10]</code> se refere Ã  dÃ©cima-primeira coluna da primeira linha,
+que nÃ£o existe. Encontramos o erro. A vantagem de mostrar mensagens de
+debug na saÃ­da de erro Ã© que, enquanto escrevemos o programa, podemos
+omitir essas mensagens, sem precisar remover as instruÃ§Ãµes do cÃ³digo.
+Depois de modificada a funÃ§Ã£o para tentar corrigir o erro, fazemos o
+seguinte:</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/matrizes$</span> python3 caca_palavras.py <span style="color: #666666">2</span>&gt; /dev/null
+<span style="color: #888888">HÃ¡ 1 ocorrencias</span>
+</pre><p>Vemos somente a saÃ­da padrÃ£o. Nesse caso, eu executei o programa
+depois de corrigir a funÃ§Ã£o <code class="language-text">ocorre_horizontal</code>. Corrija essa funÃ§Ã£o e
+implemente a funÃ§Ã£o que falta.</p>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="07-algortimos-iterativos.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../index.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="09-colecoes.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

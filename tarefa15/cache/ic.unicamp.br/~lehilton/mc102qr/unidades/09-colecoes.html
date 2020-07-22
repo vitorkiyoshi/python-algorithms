@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - ColeÃ§Ãµes de dados
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >ColeÃ§Ãµes de dados</h1>
+
+
+          <span class="meta">Quinta, 21 de maio de 2020</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <p><strong>InstruÃ§Ãµes</strong>: Para essa unidade, vocÃª deve ler as seÃ§Ãµes 5.3 a 5.6
+do <a href="https://docs.python.org/pt-br/3/tutorial/index.html">tutorial</a>
+Python. SÃ³ leia a seÃ§Ã£o de classes do tutorial depois que estiver
+confortÃ¡vel com os conceitos de conjuntos e dicionÃ¡rios. Quando se
+sentir pronto, leia a seÃ§Ã£o 9 atÃ© a subseÃ§Ã£o 9.4.</p>
+<p>Para guardar dados na memÃ³ria do computador, quase sempre utilizamos
+variÃ¡veis ou listas de variÃ¡veis de tipos bÃ¡sicos. Como nÃ£o tÃ­nhamos
+muitas opÃ§Ãµes, nÃ£o nos preocupÃ¡vamos com a forma com que os dados eram
+armazenados. Nesta unidade, veremos que as escolhas que fazemos para
+representar dados na memÃ³ria tÃªm consequÃªncias importantes para os
+algoritmos que lemos e escrevemos. Essas consequÃªncias sÃ£o percebidas
+tanto quando queremos dar significado aos dados, quanto quando
+queremos executar algum algoritmo.</p>
+<p>Iremos falar de dois conceitos que devem acompanhar uma programadora
+durante toda a vida: <strong>abstraÃ§Ã£o</strong> e <strong>representaÃ§Ã£o</strong>. Desde que
+comeÃ§amos a falar de algoritmos, vimos que preferimos falar de bytes
+ao invÃ©s de bits, de palavras ao invÃ©s de sequÃªncia de caracteres e
+assim por diante. Enquanto um computador sÃ³ manipula dados (ou bits,
+em Ãºltima instÃ¢ncia), nos nossos algoritmos, preferimos falar de
+objetos mais prÃ³ximos do nosso cotidiano. Assim, queremos falar de
+estudantes, ao invÃ©s de um nÃºmero de RA associado a um nome. Nesse
+caso, criamos uma abstraÃ§Ã£o para um estudante que Ã© representada em
+memÃ³ria por um inteiro e uma string.</p>
+<p>O dados que precisamos armazenar para uma determinada abstraÃ§Ã£o
+dependem do problema. Por exemplo, se queremos descobrir se um
+estudante foi aprovado, uma prova poderia muito bem ser representada
+por um nÃºmero de ponto flutuante correspondente Ã  nota. Se quisermos
+calcular a nota da prova em si, entÃ£o provavelmente representarÃ­amos a
+prova como uma lista de nÃºmeros correspondente Ã s questÃµes. A
+representaÃ§Ã£o de uma abstraÃ§Ã£o corresponde tanto Ã  lista de dados que
+armazenamos na memÃ³ria bem como a forma com que esses dados estÃ£o
+organizados.</p>
+<p>Por exemplo, no momento da inscriÃ§Ã£o em uma universidade, cada
+estudante precisa preencher um fomulÃ¡rio. Esse formulÃ¡rio Ã© uma tabela
+padronizada com espaÃ§o reservado para vÃ¡rios campos, como nome, data
+de nascimento, endereÃ§o etc. Nesse exemplo, a representaÃ§Ã£o Ã© o
+leiaute do formulÃ¡rio. JÃ¡ cada cÃ³pia do formulÃ¡rio preenchida
+corresponde a um objeto ou indivÃ­duo de nossa abstraÃ§Ã£o &quot;estudante&quot;.
+Nem todo conjunto de dados compatÃ­vel com a representaÃ§Ã£o corresponde
+a um indivÃ­duo da abstraÃ§Ã£o, afinal, nÃ£o basta preencher um formulÃ¡rio
+de inscriÃ§Ã£o para ser universitÃ¡rio. Similarmente, nem todo trio de
+nÃºmeros inteiros corresponde a uma data.</p>
+<p>Os dados sozinhos nÃ£o servem para muita coisa se nÃ£o tivermos o que
+fazer com eles. Assim, alÃ©m da forma com que os dados sÃ£o armazenados,
+tambÃ©m precisamos de uma lista de operaÃ§Ãµes que permitem acessÃ¡-los e
+modificÃ¡-los. De maneira mais ampla, chamamos de <strong>estrutura de
+dados</strong> o conjunto de regras e convenÃ§Ãµes que definem a representaÃ§Ã£o
+de uma abstraÃ§Ã£o associado a uma lista de operaÃ§Ãµes permitidas.</p>
+<p>A primeira vez que utilizamos uma abstraÃ§Ã£o razoavelmente sofisticada
+e que nÃ£o fosse um tipo padrÃ£o de Python foi quando estudamos
+matrizes. Naquele momento, representamos uma matriz como uma lista de
+listas de escalares. PoderÃ­amos tambÃ©m ter representado uma matriz
+como uma Ãºnica lista de escalares, lidos da esquerda para direita e de
+cima para baixo. A razÃ£o para escolhermos listas de listas Ã© que essa
+organizaÃ§Ã£o facilita bastante a operaÃ§Ã£o mais comum de uma matriz:
+acessar um determinado elemento.</p>
+<p>A escolha ou o projeto de uma estrutura de dados nÃ£o Ã© tarefa trivial
+e nÃ£o Ã© nosso objetivo aprender a projetar estruturas de dados
+avanÃ§adas â hÃ¡ uma disciplina sÃ³ para isso. Por enquanto, o que Ã©
+importante Ã© entender que cada estrutura de dados Ã© projetada para
+executar bem e eficientemente um conjunto prÃ³prio de operaÃ§Ãµes. Assim,
+para escolher uma estrutura de dados, vamos comparar as operaÃ§Ãµes de
+que precisamos com as operaÃ§Ãµes que cada estrutura de dados que
+conhecemos oferece. Isso nÃ£o Ã© fÃ¡cil. NÃ£o vou mentir.</p>
+<h2 id="colecoes-dinamicas-de-dados">ColeÃ§Ãµes dinÃ¢micas de dados</h2>
+<p>Em diversos dos problemas que queremos resolver com um computador,
+precisamos lidar com uma grande quantidade de dados. Ter muitos dados
+implica que que precisamos tratar a maioria deles de maneira uniforme,
+jÃ¡ que nÃ£o podemos escrever um algoritmo para cada indivÃ­duo. Assim,
+vamos imaginar que o conjunto de dados de entrada de nosso problema
+corresponde a uma coleÃ§Ã£o que cada elemento dessa coleÃ§Ã£o Ã© um
+indivÃ­duo da mesma abstraÃ§Ã£o.</p>
+<p>Muitas vezes as coleÃ§Ãµes de dados sÃ£o dinÃ¢micas, i.e., elas mudam com o tempo.
+As operaÃ§Ãµes que podemos fazer sobre coleÃ§Ãµes dinÃ¢micas sÃ£o variadas, mas quase sempre queremos pelos menos</p>
+<ul>
+<li>inserir um novo elemento;</li>
+<li>buscar ou alterar um elemento existente;</li>
+<li>remover um elemento existente.</li>
+</ul>
+<p>AtÃ© entÃ£o, estudamos coleÃ§Ãµes dinÃ¢micas bem simples: listas de
+inteiros, listas de strings, etc. Dessa vez, vamos falar de uma
+coleÃ§Ã£o de objetos mais elaborados.</p>
+<blockquote>
+<p>Considere um dicionarista. Ele Ã© responsÃ¡vel estudar e investigar um
+conjunto de palavras. Ele pode catalogar novas palavras, alterar a
+definiÃ§Ã£o de palavras existentes... Como representar o dicionÃ¡rio
+manipulado por ele?</p>
+</blockquote>
+<p>Normalmente, sempre falamos de um problema com entrada e saÃ­da bem
+definidas. Nesse caso, nÃ£o temos uma entrada nem saÃ­da, mas falamos
+das <strong>operaÃ§Ãµes</strong> que desejamos realizar com uma coleÃ§Ã£o de dados. O
+motivo Ã© que queremos criar uma estrutura de dados que possa ser
+utilizada pelo dicionarista em diversas situaÃ§Ãµes.</p>
+<p>Primeiro, precisamos listar que dados precisamos guardar. Ora, os
+dados que precismos guardar sÃ£o as palavras do idioma. O problema Ã©
+que Python nÃ£o tem ideia do que Ã© uma palavra â aliÃ¡s, Python nÃ£o tem
+ideia nenhuma, apenas tipos. Podemos dizer entÃ£o que uma palavra Ã© uma
+string. Mas isso seria desvalorizar o trabalho do dicionarista, que
+pesquisa a definiÃ§Ã£o de cada uma palavra. EntÃ£o vamos guardar tambÃ©m a
+definiÃ§Ã£o da palavra. Mas e o ano em que a palavra foi catalogada pela
+primeira vez? TambÃ©m Ã© importante conhecer a histÃ³ria das palavras.</p>
+<p>O fato Ã© que, associado a uma palavra, hÃ¡ um conjunto enorme de outras
+informaÃ§Ãµes e qualquer subconjunto pequeno de dados que escolhermos
+nÃ£o irÃ¡ representar uma palavra em sua plenitude. Por isso, iremos
+omitir todos os dados que nÃ£o interessam Ã  nossa aplicaÃ§Ã£o. Pode ser
+que esse dicionarista em particular esteja interessado apenas na
+palavra, na definiÃ§Ã£o e no ano em que ela foi catalogada. Uma palavra
+e sua definiÃ§Ã£o sÃ£o facilmente representadas por strings e o ano, Ã©
+claro, por um inteiro, como 2020. Hum... nÃ£o seria tÃ£o claro assim se
+vocÃª tivesse nascido no
+<a href="https://pt.wikipedia.org/wiki/Problema_do_ano_2000">milÃªnio passado</a>.</p>
+<p>Agora podemos pensar no dicionÃ¡rio. Queremos armazenar uma lista de
+palavras, entÃ£o uma escolha Ã³bvia parece ser uma lista de strings
+<code class="language-text">palavras</code>. Do mesmo modo, criamos uma lista de strings <code class="language-text">definicoes</code>
+para representar as definiÃ§Ãµes e uma lista de inteiros <code class="language-text">anos</code> para
+representar os anos. Portanto, uma palavra <code class="language-text">palavras[i]</code> teria sido
+catalogada no ano <code class="language-text">anos[i]</code> e assim por diante. Isso Ã© suficiente para
+guardar todos os dados de nossa aplicaÃ§Ã£o, mas Ã© uma pÃ©ssima escolha
+de estrutura de dados. O motivo Ã© que uma regra de ouro das estruturas
+de dados diz que dados relacionados devem andam juntos. Imagine, por
+exemplo, o que acontece se quisermos ordenar a lista de palavras
+alfabeticamente. DÃ¡ nervoso sÃ³ de pensar.</p>
+<p>Como vimos matrizes recentemente, Ã© tentador remediar a situaÃ§Ã£o e
+dizer que devemos representar um dicionÃ¡rio como uma matriz dos dados.
+Afinal, o que queremos representar Ã© uma tabela de dados. Digamos
+entÃ£o que <code class="language-text">dicionario</code> Ã© uma matriz, isso Ã©, uma lista de listas. Isso
+Ã© definitivamente muito melhor do que a representaÃ§Ã£o anterior, mas
+tampouco Ã© uma boa escolha. Uma razÃ£o Ã© que chamamos de matriz uma
+estrutura bidimensional de dados escalares do mesmo tipo, mas um
+inteiro representando um ano Ã© bem distinto de uma string
+representando uma definiÃ§Ã£o. Outra razÃ£o Ã© que nÃ£o Ã© claro o que
+significa uma entrada da matriz <code class="language-text">dicionario[i][j]</code>. Seria o <code class="language-text">j</code>-Ã©simo
+dado da <code class="language-text">i</code>-Ã©sima palavra, ou seria o <code class="language-text">i</code>-Ã©simo dado da <code class="language-text">j</code>-Ã©sima
+palavra? Em uma matriz, nÃ£o hÃ¡ motivo nenhum para preferir uma forma a
+outra.</p>
+<p>Na verdade, um dicionÃ¡rio Ã© uma coleÃ§Ã£o de verbetes, entÃ£o seria muito
+melhor representÃ¡-lo como uma lista de verbetes â mas, ao contrÃ¡rio de
+uma palavra que pode ser facilmente representada por uma string, nÃ£o
+hÃ¡ tipo nativo em Python que corresponda a um verbete. Isso sugere que
+devamos criar nossa prÃ³pria abstraÃ§Ã£o para representar um verbete. Um
+verbete consiste de exatamente trÃªs dados distintos, a palavra, a
+definiÃ§Ã£o e o ano, entÃ£o Ã© natural representÃ¡-lo como uma tupla:</p>
+<pre class="highlight">(palavra, definiÃ§Ã£o, ano)
+</pre><p>Uma tupla Ã© parecida com a uma lista, mas nÃ£o podemos adicionar ou
+remover elementos, nem mudar os objetos a que ela se refere.
+PoderÃ­amos dizer tambÃ©m que um verbete Ã© uma lista
+<code class="language-text">[palavra, definicao, ano]</code>, mas hÃ¡ algumas vantagens em utilizar uma
+tupla. Como a tupla Ã© imutÃ¡vel, comunicamos claramente que hÃ¡ trÃªs, e
+sÃ³ trÃªs, dados em um verbete. TambÃ©m, como jÃ¡ discutimos, preferimos
+trabalhar com listas cujos elementos tenham o mesmo tipo e o mesmo
+significado. O fato de nÃ£o podermos modificar os objetos a que uma
+tupla se refere pode ser uma desvantagem, mas Ã© uma vantagem nesse
+exemplo: nÃ£o queremos que um verbete lido seja alterado pelo seu
+usuÃ¡rio (da mesma forma que nÃ£o queremos adulterar os livros
+emprestados de uma biblioteca).</p>
+<img src="figs/lista_tuplas.png" style="width: 100%; max-width: 500px;">
+<p>Para deixar o exemplo um pouco mais concreto e para exemplificar como
+o dicionarista poderia utilizar a estrutura de dados, suponha que ele
+deseja fazer uma sequencia de operaÃ§Ãµes que inclui criar um
+dicionÃ¡rio, adicionar um verbete, buscar um verbete e alterar a
+definiÃ§Ã£o de um verbete.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    dicionario <span style="color: #666666">=</span> criar_dicionario()
+
+    verbete <span style="color: #666666">=</span> (<span style="color: #BA2121">&quot;amor&quot;</span>, <span style="color: #BA2121">&quot;fogo que arde sem se ver&quot;</span>, <span style="color: #666666">1595</span>)
+    adicionar_verbete(dicionario, verbete)
+
+    verbete <span style="color: #666666">=</span> procurar_verbete(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>)
+    palavra, definicao, ano <span style="color: #666666">=</span> verbete
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #BB6688; font-weight: bold">{palavra}</span><span style="color: #BA2121"> significa </span><span style="color: #BB6688; font-weight: bold">{definicao}</span><span style="color: #BA2121">&quot;</span>)
+
+    nova_definicao <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;O que vocÃª acha que Ã© o amor?</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>)
+    atualizar_definicao(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>, nova_definicao)
+
+    palavra, definicao, ano <span style="color: #666666">=</span> procurar_verbete(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #BB6688; font-weight: bold">{palavra}</span><span style="color: #BA2121"> agora significa </span><span style="color: #BB6688; font-weight: bold">{definicao}</span><span style="color: #BA2121">&quot;</span>)
+</pre><p>Primeiro, vamos nos concentrar em criar um dicionÃ¡rio e adicionar um
+verbete.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">criar_dicionario</span>():
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;cria um dicionÃ¡rio vazio&quot;&quot;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">return</span> []
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">adicionar_verbete</span>(dicionario, verbete):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;adiciona um novo verbete ao dicionÃ¡rio&quot;&quot;&quot;</span>
+
+    dicionario<span style="color: #666666">.</span>append(verbete)
+</pre><p>Pode parecer bobagem criar uma funÃ§Ã£o apenas pare devolver uma lista
+vazia, ou sÃ³ para adicionar em elemento no final da lista, mas nÃ£o Ã©.
+Mesmo programadores experientes podem dizer que bastaria ter criado
+uma lista vazia na funÃ§Ã£o <code class="language-text">main</code>. NÃ£o dÃª ouvido a eles. HÃ¡ algumas
+razÃµes importantes para termos criado essas funÃ§Ãµes. Por exemplo, Ã©
+mais claro escrever <code class="language-text">dicionario = criar_dicionario()</code> para dizer que
+estamos criando um novo indivÃ­duo da abstraÃ§Ã£o &quot;dicionÃ¡rio&quot; do que
+escrever <code class="language-text">dicionario = []</code>. Mais importante do que isso, quando
+escrevemos <code class="language-text">dicionario = []</code>, temos que nos preocupar em como um
+dicionÃ¡rio estÃ¡ representado na memÃ³ria, mas Ã© exatamente isso que
+nossa abstraÃ§Ã£o estÃ¡ tentando esconder.</p>
+<p>Vamos agora implementar a busca e a atualizaÃ§Ã£o de um verbete.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">procurar_verbete</span>(dicionario, palavra):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;devolve o verbete correspondente Ã  palavra;</span>
+<span style="color: #BA2121; font-style: italic">    se palavra nÃ£o for encontrada, devolve None&quot;&quot;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">for</span> verbete <span style="color: #AA22FF; font-weight: bold">in</span> dicionario:
+        <span style="color: #008000; font-weight: bold">if</span> verbete[<span style="color: #666666">0</span>] <span style="color: #666666">==</span> palavra:
+            <span style="color: #008000; font-weight: bold">return</span> verbete
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">None</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">atualizar_definicao</span>(dicionario, palavra, nova_definicao):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;atualiza a definiÃ§Ã£o de uma palavra&quot;&quot;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">for</span> verbete <span style="color: #AA22FF; font-weight: bold">in</span> dicionario:
+        <span style="color: #008000; font-weight: bold">if</span> verbete[<span style="color: #666666">0</span>] <span style="color: #666666">==</span> palavra:
+            verbete[<span style="color: #666666">1</span>] <span style="color: #666666">=</span> nova_definicao
+</pre><p>Na funÃ§Ã£o <code class="language-text">procurar_verbete</code>, usamos <code class="language-text">None</code>, que Ã© um valor especial
+em Python para representar ausÃªncia. Mas a implementaÃ§Ã£o acima estÃ¡
+errada. O motivo Ã© que nÃ£o podemos alterar tuplas. VocÃª pode pensar
+nisso como uma desvantagem, mas imagine se alguma outra funÃ§Ã£o tivesse
+um verbete e o alterasse ignorando que ele Ã© parte do dicionÃ¡rio. Essa
+funÃ§Ã£o estaria alterando o dicionÃ¡rio, entÃ£o qualquer outra funÃ§Ã£o que
+buscasse por esse verbete no dicionÃ¡rio iria ser afetada pela
+alteraÃ§Ã£o. Muito provavelmente, isso causaria um bug muito difÃ­cil de
+encontrar. Para poder atualizar o dicionÃ¡rio entÃ£o, precisamos
+substituir o verbete por um novo, mas para alterar um elemento
+referenciado por uma lista, precisamos do Ã­ndice correspondente.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">procurar_indice</span>(dicionario, palavra):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;devolve o Ã­ndice correspondente Ã  palavra</span>
+<span style="color: #BA2121; font-style: italic">    ou None se ela nÃ£o existir no dicionÃ¡rio&quot;&quot;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">for</span> i, verbete <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(dicionario):
+        <span style="color: #008000; font-weight: bold">if</span> verbete[<span style="color: #666666">0</span>] <span style="color: #666666">==</span> palavra:
+            <span style="color: #008000; font-weight: bold">return</span> i
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">None</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">atualizar_definicao</span>(dicionario, palavra, nova_definicao):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;atualiza a definiÃ§Ã£o de uma palavra&quot;&quot;&quot;</span>
+
+    i <span style="color: #666666">=</span> procurar_indice(dicionario, palavra)
+    verbete_antigo <span style="color: #666666">=</span> dicionario[i]
+    verbete_novo <span style="color: #666666">=</span> (verbete_antigo[<span style="color: #666666">0</span>], nova_definicao, verbete_antigo[<span style="color: #666666">2</span>])
+    dicionario[i] <span style="color: #666666">=</span> verbete_novo
+</pre><p>Para o interpretador Python, <code class="language-text">dicionario</code> Ã© sÃ³ mais uma lista, entÃ£o
+ele nÃ£o se importaria se o dicionarista escrevesse a funÃ§Ã£o abaixo.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    dicionario <span style="color: #666666">=</span> criar_dicionario()
+
+    verbete <span style="color: #666666">=</span> (<span style="color: #BA2121">&quot;amor&quot;</span>, <span style="color: #BA2121">&quot;fogo que arde sem se ver&quot;</span>, <span style="color: #666666">1595</span>)
+    adicionar_verbete(dicionario, verbete)
+
+    outro <span style="color: #666666">=</span> (<span style="color: #BA2121">&quot;amor&quot;</span>, <span style="color: #BA2121">&quot;Ã© sofrer amargamente&quot;</span>, <span style="color: #666666">2020</span>)
+    adicionar_verbete(dicionario, outro)
+
+    palavra, definicao, _ <span style="color: #666666">=</span> procurar_verbete(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #BB6688; font-weight: bold">{palavra}</span><span style="color: #BA2121"> significa </span><span style="color: #BB6688; font-weight: bold">{definicao}</span><span style="color: #BA2121">&quot;</span>)
+</pre><p>TerÃ­amos um dicionÃ¡rio com dois verbetes correspondendo Ã  mesma
+palavra. NÃ£o parece algo muito confiÃ¡vel: quando alguÃ©m procurar por
+uma palavra, qual definiÃ§Ã£o seria devolvida? Nesse caso, a funÃ§Ã£o
+<code class="language-text">procurar_verbete</code> percorre a lista do inÃ­cio ao fim, entÃ£o ela
+devolveria a primeira definiÃ§Ã£o. Uma outra implementaÃ§Ã£o poderia
+devolver a segunda definiÃ§Ã£o e ainda assim cumprir o combinado em sua
+documentaÃ§Ã£o.</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> python3 dicionario_tuplas.py
+<span style="color: #888888">amor significa fogo que arde sem se ver</span>
+</pre><p>Onde estÃ¡ o erro? Deve estar na funÃ§Ã£o <code class="language-text">procurar_verbete</code>, ou na
+funÃ§Ã£o <code class="language-text">main</code>. Nesse caso, estÃ¡ na funÃ§Ã£o main, entÃ£o o dicionarista
+deveria certificar-se de que a palavra nÃ£o estÃ¡ no dicionÃ¡rio antes de
+adicionÃ¡-la. Mas isso Ã© pedir demais a ele. A funÃ§Ã£o que realmente
+deixou a nossa representaÃ§Ã£o na memÃ³ria inconsistente foi
+<code class="language-text">adicionar_verbete</code>. Seria muito bom se, quando o dicionarista
+tentasse adicionar um verbete para uma palavra existente, o
+informÃ¡ssemos desse erro.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">adicionar_verbete</span>(dicionario, verbete):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;adiciona um novo verbete ao dicionÃ¡rio&quot;&quot;&quot;</span>
+
+    i <span style="color: #666666">=</span> procurar_indice(dicionario, verbete[<span style="color: #666666">0</span>])
+    <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #AA22FF; font-weight: bold">is</span> <span style="color: #008000; font-weight: bold">None</span>:
+        dicionario<span style="color: #666666">.</span>append(verbete)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000; font-weight: bold">raise</span> <span style="color: #D2413A; font-weight: bold">Exception</span>(<span style="color: #BA2121">f&quot;Palavra </span><span style="color: #BB6688; font-weight: bold">{verbete[0]}</span><span style="color: #BA2121"> jÃ¡ existe.&quot;</span>)
+</pre><p>HÃ¡ mais uma novidade aqui. A instruÃ§Ã£o <code class="language-text">raise Exception(...)</code> serve
+para criar uma nova exceÃ§Ã£o sinalizando um erro. JÃ¡ lidamos com
+exceÃ§Ãµes antes; o que hÃ¡ de diferente aqui Ã© que, dessa vez, nÃ³s
+criamos nosso prÃ³prio erro. Assim, quando o dicionarista executar a
+funÃ§Ã£o <code class="language-text">main</code> com problemas, a execuÃ§Ã£o do programa serÃ¡ interrompida
+no momento em que ele tentasse adicionar um verbete para uma palavra
+que jÃ¡ estÃ¡ no dicionÃ¡rio.</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> python3 dicionario_tuplas.py
+<span style="color: #888888">Traceback (most recent call last):</span>
+<span style="color: #888888">  File &quot;dicionario_tuplas.py&quot;, line 69, in &lt;module&gt;</span>
+<span style="color: #888888">    main()</span>
+<span style="color: #888888">  File &quot;dicionario_tuplas.py&quot;, line 53, in main</span>
+<span style="color: #888888">    adicionar_verbete(dicionario, outro)</span>
+<span style="color: #888888">  File &quot;dicionario_tuplas.py&quot;, line 14, in adicionar_verbete</span>
+<span style="color: #888888">    raise Exception(f&quot;Palavra {verbete[0]} jÃ¡ existe.&quot;)</span>
+<span style="color: #888888">Exception: Palavra amor jÃ¡ existe.</span>
+</pre><p>HÃ¡ vÃ¡rios tipos de exceÃ§Ã£o, como <code class="language-text">ValueError</code>, <code class="language-text">IndexError</code>,
+<code class="language-text">ZeroDivisionError</code> e podemos criar a nossa prÃ³pria hierarquia de
+tipos. Nesta disciplina Ã© suficiente utilizar um tipo de erro genÃ©rico
+e levantar uma exceÃ§Ã£o. Para isso, basta fazer uma chamada a
+<code class="language-text">Exception</code> passando a mensagem de erro como argumento. VocÃª deveria
+ter se convencido de que criar uma funÃ§Ã£o apenas para adicionar um
+elemento Ã  lista nÃ£o Ã© tÃ£o bobo assim.</p>
+<p>Uma operaÃ§Ã£o sobre a qual nÃ£o discutimos Ã© a remoÃ§Ã£o de um verbete.
+Pode ser que uma palavra se torne obsoleta, entÃ£o, embora incomum,
+essa Ã© uma operaÃ§Ã£o que o dicionarista desejaria realizar. Implemente
+a operaÃ§Ã£o para remover um verbete.</p>
+<h1 id="conjuntos">Conjuntos</h1>
+<p>Em uma lista, temos uma sequÃªncia de elementos, ou seja, existe a
+noÃ§Ã£o de primeiro elemento, de segundo etc. Enquanto lista Ã© o tipo em
+Python mais comum para representar coleÃ§Ãµes de dados, muitas vezes a
+ordem em que eles estÃ£o armazenados Ã© irrelevante. Isso acontece
+quando falamos de conjuntos, no sentido matemÃ¡tico: nÃ£o existe uma
+ordem dos elementos e nenhum elemento aparece mais do que uma vez.</p>
+<blockquote>
+<p>Escreva uma funÃ§Ã£o que receba dois conjuntos de strings e devolva a
+diferenÃ§a entre esses conjuntos.</p>
+</blockquote>
+<p>NÃ£o Ã© muito difÃ­cil escrever um algoritmo para esse problema e depois
+programÃ¡-lo.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_diferenca</span>(a, b):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;recebe conjuntos a e b e devolve a - b&quot;&quot;&quot;</span>
+
+    diferenca <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> elemento_a <span style="color: #AA22FF; font-weight: bold">in</span> a:
+        <span style="color: #008000; font-weight: bold">if</span> elemento_a <span style="color: #AA22FF; font-weight: bold">not</span> <span style="color: #AA22FF; font-weight: bold">in</span> b:
+            diferenca<span style="color: #666666">.</span>append(elemento_a)
+    <span style="color: #008000; font-weight: bold">return</span> diferenca
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    a <span style="color: #666666">=</span> [<span style="color: #BA2121">&quot;ana&quot;</span>, <span style="color: #BA2121">&quot;maria&quot;</span>, <span style="color: #BA2121">&quot;pedro&quot;</span>, <span style="color: #BA2121">&quot;raul&quot;</span>]
+    b <span style="color: #666666">=</span> [<span style="color: #BA2121">&quot;sÃ©rgio&quot;</span>, <span style="color: #BA2121">&quot;gustavo&quot;</span>, <span style="color: #BA2121">&quot;maria&quot;</span>, <span style="color: #BA2121">&quot;ana&quot;</span>]
+    diferenca <span style="color: #666666">=</span> calcular_diferenca(a, b)
+    <span style="color: #008000">print</span>(diferenca)
+</pre><p>Esse Ã© sÃ³ um exemplo. NÃ£o precisÃ¡vamos de um computador para descobrir
+que a diferenÃ§a desses conjuntos corresponde a <code class="language-text">[&quot;pedro&quot;, &quot;raul&quot;]</code>. Os
+computadores sÃ£o mais Ãºteis quando trabalhamos com grandes volumes de
+dados.</p>
+<p>VocÃª jÃ¡ deve ter ouvido falar que portuguÃªs e espanhol sÃ£o muito
+parecidos. Ã bem possÃ­vel que vocÃª entenda uma pessoa falando espanhol
+â se ela falar bem devagar, mesmo que nunca tenha estudado o idioma.
+Vamos tirar isso a prova e calcular a diferenÃ§a das 1000 palavras mais
+comuns dos dois idiomas.</p>
+<p>Primeiro, com um pouco de paciÃªncia, precisamos encontrar duas listas
+razoavelmente confiÃ¡veis de palavras frequentes em portuguÃªs e
+espanhol. VocÃª pode achar dois arquivos <code class="language-text">pt_br.txt</code> e <code class="language-text">es.txt</code>
+<a href="https://invokeit.wordpress.com/frequency-word-lists/">aqui</a>. Vamos
+investigar um pouco esses arquivos de texto olhando para as primeiras
+linhas.</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> ls -lh *.txt
+<span style="color: #888888">-rw-rw-r-- 1 user user 6,6M set 25  2013 es.txt</span>
+<span style="color: #888888">-rw-rw-r-- 1 user user 4,8M set 25  2013 pt_br.txt</span>
+<span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> head pt_br.txt
+<span style="color: #888888">que 3097124</span>
+<span style="color: #888888">nÃ£o 2582821</span>
+<span style="color: #888888">o 2582602</span>
+<span style="color: #888888">de 2075204</span>
+<span style="color: #888888">a 1948955</span>
+<span style="color: #888888">Ã© 1786757</span>
+<span style="color: #888888">vocÃª 1513922</span>
+<span style="color: #888888">e 1508432</span>
+<span style="color: #888888">eu 1416433</span>
+<span style="color: #888888">um 1197384</span>
+<span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> head es.txt
+<span style="color: #888888">de 3405234</span>
+<span style="color: #888888">que 3349162</span>
+<span style="color: #888888">no 3166057</span>
+<span style="color: #888888">a 2368719</span>
+<span style="color: #888888">la 2288023</span>
+<span style="color: #888888">el 1922428</span>
+<span style="color: #888888">y 1774259</span>
+<span style="color: #888888">es 1729448</span>
+<span style="color: #888888">en 1640089</span>
+<span style="color: #888888">lo 1429314</span>
+</pre><p>O comando <code class="language-text">head</code> mostra as primeiras dez linhas de um arquivo. VocÃª
+nÃ£o quer abrir um arquivo com vÃ¡rios megabytes em um editor de textos,
+acredite. Agora podemos fazer um programa que leia as palavras mais
+frequÃªntes de cada idioma e calcule a diferenÃ§a.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_palavras_frequentes</span>(nome_arquivo, n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;lÃª o arquivo de frequÃªncia de palavras</span>
+<span style="color: #BA2121; font-style: italic">    e devolve as n palavras mais frequentes&quot;&quot;&quot;</span>
+
+    lista <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(nome_arquivo) <span style="color: #008000; font-weight: bold">as</span> arquivo:
+        i <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+        <span style="color: #008000; font-weight: bold">for</span> linha <span style="color: #AA22FF; font-weight: bold">in</span> arquivo:
+            palavra, frequencia <span style="color: #666666">=</span> linha<span style="color: #666666">.</span>strip()<span style="color: #666666">.</span>split()
+            lista<span style="color: #666666">.</span>append(palavra)
+            i <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #666666">==</span> n:
+                <span style="color: #008000; font-weight: bold">break</span>
+    <span style="color: #008000; font-weight: bold">return</span> lista
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_diferenca</span>(a, b):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;recebe conjuntos a e b e devolve a - b&quot;&quot;&quot;</span>
+
+    diferenca <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> elemento_a <span style="color: #AA22FF; font-weight: bold">in</span> a:
+        <span style="color: #008000; font-weight: bold">if</span> elemento_a <span style="color: #AA22FF; font-weight: bold">not</span> <span style="color: #AA22FF; font-weight: bold">in</span> b:
+            diferenca<span style="color: #666666">.</span>append(elemento_a)
+    <span style="color: #008000; font-weight: bold">return</span> diferenca
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">mostrar_lista</span>(lista):
+    <span style="color: #008000; font-weight: bold">for</span> elemento <span style="color: #AA22FF; font-weight: bold">in</span> lista:
+        <span style="color: #008000">print</span>(elemento)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    n <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+    palavras_es <span style="color: #666666">=</span> ler_palavras_frequentes(<span style="color: #BA2121">&#39;es.txt&#39;</span>, n)
+    palavras_pt_br <span style="color: #666666">=</span> ler_palavras_frequentes(<span style="color: #BA2121">&#39;pt_br.txt&#39;</span>, n)
+    diferenca <span style="color: #666666">=</span> calcular_diferenca(palavras_es, palavras_pt_br)
+    mostrar_lista(diferenca)
+
+main()
+</pre><p>Para testar, comeÃ§amos comparando as 10 palavras mais frequentes
+de cada idioma.</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> python3 diferenca.py
+<span style="color: #888888">no</span>
+<span style="color: #888888">la</span>
+<span style="color: #888888">el</span>
+<span style="color: #888888">y</span>
+<span style="color: #888888">es</span>
+<span style="color: #888888">en</span>
+<span style="color: #888888">lo</span>
+</pre><p>Bueno. NÃ£o hÃ¡ tanta interseÃ§Ã£o assim com as 10 palavras mais
+frequentes do espanhol, entÃ£o precisamos de fato aprender quase todas.
+O lado bom Ã© que sÃ£o palavras fÃ¡ceis. Vamos contar quantas palavras
+novas precisamos aprender se quisermos conhecer as 1000 mais
+frequentes do espanhol. Como sÃ³ estamos interessados na contagem,
+vamos substituir a instruÃ§Ã£o <code class="language-text">mostrar_lista(diferenca)</code> por algo como
+<code class="language-text">print(f&quot;Queremos aprender {len(diferenca)} palavras.&quot;)</code>. Executando
+para <code class="language-text">n = 1000</code>, obtemos a saÃ­da quase que imediatamente.</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> python3 diferenca.py
+<span style="color: #888888">Queremos aprender 742 palavras.</span>
+</pre><p>Pelo menos nÃ£o sÃ£o todas as 1000 palavras. Para alguÃ©m que nasceu
+antes dos computadores se popularizarem, parece um grade feito
+calcular a diferenÃ§a entre conjuntos de 1000 palavras em tÃ£o pouco
+tempo â em algumas dezenas de milissegundos. Para quem jÃ¡ nasceu com
+um computador na mÃ£o, isso nÃ£o tem nada de impressionante. Vamos
+tentar com 100.000 palavras. Alteramos a funÃ§Ã£o fazendo <code class="language-text">n = 100000</code>,
+salvamos e executamos novamente. Execute vocÃª mesmo, nÃ£o acredite em
+tudo que lÃª!</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> python3 diferenca.py
+<span style="color: #888888">Queremos aprender 57529 palavras.</span>
+</pre><p>No meu computador, essa execuÃ§Ã£o levou cerca de um minuto e meio! Isso
+Ã© muito tempo para os padrÃµes atuais. EntÃ£o precisamos parar e pensar:
+por que o programa gastou tanto tempo? SerÃ¡ que os computadores de
+hoje em dia nÃ£o sÃ£o rÃ¡pidos para um problema desse tipo? Com certeza
+vocÃª jÃ¡ viu tarefas muito mais complicadas serem realizadas por um
+computador em muito menos tempo, entÃ£o temos que desconfiar de nosso
+algoritmo.</p>
+<p>Quando estamos numa situaÃ§Ã£o como essa, temos que descobrir quais
+instruÃ§Ãµes de nosso programa sÃ£o executadas mais vezes. Revise o
+programa e tente descobrir quais instruÃ§Ãµes sÃ£o executadas mais vezes.
+VocÃª deve se convencer de que uma delas Ã© a instruÃ§Ã£o <code class="language-text">in</code> na linha
+que contÃ©m <code class="language-text">if elemento not in b:</code>. Essa instruÃ§Ã£o Ã© executada 100.000
+vezes, uma vez para cada palavra frequente em espanhol. Mas meu
+computador executa milhÃµes de instruÃ§Ãµes elementares por segundo,
+entÃ£o para realmente entender porque o programa gastou tanto tempo
+vamos reescrever essa linha explicitando o que o interpretador python
+tem que fazer sempre que a executa.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_diferenca</span>(a, b):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;recebe conjuntos a e b e devolve a - b&quot;&quot;&quot;</span>
+
+    diferenca <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> elemento_a <span style="color: #AA22FF; font-weight: bold">in</span> a:
+        encontrou <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">False</span>
+        <span style="color: #008000; font-weight: bold">for</span> elemento_b <span style="color: #AA22FF; font-weight: bold">in</span> b:
+            <span style="color: #008000; font-weight: bold">if</span> elemento_a <span style="color: #666666">==</span> elemento_b:
+                encontrou <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+                <span style="color: #008000; font-weight: bold">break</span>
+        <span style="color: #008000; font-weight: bold">if</span> <span style="color: #AA22FF; font-weight: bold">not</span> encontrou:
+            diferenca<span style="color: #666666">.</span>append(elemento_a)
+    <span style="color: #008000; font-weight: bold">return</span> diferenca
+</pre><p>Como representamos o conjunto de palavras usando uma lista, para
+encontrar uma determinada palavra na lista, temos que percorrÃª-la
+desde o inÃ­cio, nÃ£o hÃ¡ outro jeito. Pior, no nosso exemplo, em 57.529
+da vezes que procuramos alguma palavra, tivemos que percorrer <em>toda</em> a
+lista de palavras em portuguÃªs, sÃ³ para descobrir que a palavra em
+espanhol nÃ£o estava ali.</p>
+<p>A escolha da representaÃ§Ã£o do nosso conjunto de dados nesse caso teve
+um impacto tremendo no tempo de execuÃ§Ã£o do algoritmo. Listas foram
+feitas para armazenar conjuntos de dados que sÃ£o acessados
+sequencialmente na ordem armazenada --- elas nÃ£o sÃ£o boas para
+procurar valores arbitrÃ¡rios. Por esse motivo, existe um outro tipo de
+coleÃ§Ã£o de dados para representar conjuntos, o <code class="language-text">set</code>. A vocaÃ§Ã£o de uma
+coleÃ§Ã£o do tipo <code class="language-text">set</code> Ã© verificar pertinÃªncia eficientemente, entÃ£o
+essa Ã© uma escolha de estrutura de dados ideal para nosso algoritmo.
+Vamos criar uma implementaÃ§Ã£o alternativa de nosso programa, dessa
+vez usando conjuntos.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_palavras_frequentes</span>(nome_arquivo, n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;lÃª o arquivo de frequÃªncia de palavras</span>
+<span style="color: #BA2121; font-style: italic">    e devolve as n palavras mais frequentes&quot;&quot;&quot;</span>
+
+    conjunto <span style="color: #666666">=</span> <span style="color: #008000">set</span>()
+    <span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(nome_arquivo) <span style="color: #008000; font-weight: bold">as</span> arquivo:
+        i <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+        <span style="color: #008000; font-weight: bold">for</span> linha <span style="color: #AA22FF; font-weight: bold">in</span> arquivo:
+            palavra, _ <span style="color: #666666">=</span> linha<span style="color: #666666">.</span>strip()<span style="color: #666666">.</span>split()
+            conjunto<span style="color: #666666">.</span>add(palavra)
+            i <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+            <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #666666">==</span> n:
+                <span style="color: #008000; font-weight: bold">break</span>
+    <span style="color: #008000; font-weight: bold">return</span> conjunto
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_diferenca</span>(a, b):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;recebe conjuntos a e b e devolve a - b&quot;&quot;&quot;</span>
+
+    diferenca <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> elemento_a <span style="color: #AA22FF; font-weight: bold">in</span> a:
+        <span style="color: #008000; font-weight: bold">if</span> elemento_a <span style="color: #AA22FF; font-weight: bold">not</span> <span style="color: #AA22FF; font-weight: bold">in</span> b:
+            diferenca<span style="color: #666666">.</span>append(elemento_a)
+    <span style="color: #008000; font-weight: bold">return</span> diferenca
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">mostrar_conjunto</span>(conjunto):
+    <span style="color: #008000; font-weight: bold">for</span> elemento <span style="color: #AA22FF; font-weight: bold">in</span> conjunto:
+        <span style="color: #008000">print</span>(elemento)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    n <span style="color: #666666">=</span> <span style="color: #666666">100000</span>
+    palavras_es <span style="color: #666666">=</span> ler_palavras_frequentes(<span style="color: #BA2121">&quot;es.txt&quot;</span>, n)
+    palavras_pt_br <span style="color: #666666">=</span> ler_palavras_frequentes(<span style="color: #BA2121">&quot;pt_br.txt&quot;</span>, n)
+    diferenca <span style="color: #666666">=</span> calcular_diferenca(palavras_es, palavras_pt_br)
+    <span style="color: #408080; font-style: italic"># mostrar_conjunto(diferenca)</span>
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;Queremos aprender {len(diferenca)} palavras.&quot;</span>)
+
+main()
+</pre><p>As funÃ§Ãµes para manipular conjuntos sÃ£o ligeiramente diferentes das
+funÃ§Ãµes de lista, mas nÃ£o Ã© difÃ­cil se acostumar. Executando,
+devemos obter a mesma resposta -- o algoritmo Ã© o mesmo, sÃ³ mudamos
+a escolha da estrutura de dados.</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> python3 diferenca_conjuntos.py
+<span style="color: #888888">Queremos aprender 57529 palavras.</span>
+</pre><p>A resposta Ã© mostrada em pouco menos de 150ms, quase nÃ£o dÃ¡ pra
+perceber. Essa Ã© uma diferenÃ§a espetacular! Dessa vez escolhemos uma
+estrutura de dados mais adequada Ã s operaÃ§Ãµes de que nosso algoritmo
+necessita. O motivo para essa diferenÃ§a Ã© que a representaÃ§Ã£o dos
+dados quando armazenamos um conjunto Ã© cuidadosamente pensada para
+executar a operaÃ§Ã£o <code class="language-text">in</code> eficientemente. NÃ³s nÃ£o estudaremos essa
+representaÃ§Ã£o aqui, hÃ¡ toda uma disciplina dedicada a essas questÃµes.</p>
+<p>Uma pergunta deve inquietar quem sempre usou o tipo <code class="language-text">list</code> e aprendeu
+que existe o tipo <code class="language-text">set</code>: se a operaÃ§Ã£o <code class="language-text">in</code> em uma variÃ¡vel do tipo
+conjunto Ã© tÃ£o mais rÃ¡pida, por que nÃ£o usamos <code class="language-text">set</code> sempre? A
+resposta Ã© que, embora ambos tipos sirvam para armazenar conjuntos de
+dados, eles sÃ£o abstraÃ§Ãµes diferentes. Quando utilizamos uma lista, a
+ordem em que os elementos sÃ£o armazenados Ã© importante. Quando
+utilizamos um conjunto, abrimos mÃ£o dessa informaÃ§Ã£o para construir
+uma representaÃ§Ã£o mais eficiente para o operador <code class="language-text">in</code>.</p>
+<p>Uma Ãºltima palavra: alÃ©m da operaÃ§Ã£o <code class="language-text">in</code>, o tipo <code class="language-text">set</code> permite
+diversas outras operaÃ§Ãµes sobre os conjuntos. Consulte a documentaÃ§Ã£o
+do Python e experimente utilizar vÃ¡rias delas. Em particular,
+poderÃ­amos fazer a diferenÃ§a de conjuntos usando simplesmente o
+operador <code class="language-text">-</code>. Por exemplo, faÃ§a o seguinte.</p>
+<pre class="highlightlanguage-pycon"><span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>a <span style="color: #666666">=</span> {<span style="color: #666666">1</span>, <span style="color: #666666">3</span>, <span style="color: #666666">7</span>, <span style="color: #666666">2</span>}
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>b <span style="color: #666666">=</span> {<span style="color: #666666">7</span>, <span style="color: #666666">1</span>, <span style="color: #666666">8</span>}
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>a <span style="color: #666666">-</span> b
+<span style="color: #888888">{2, 3}</span>
+</pre><h2 id="dicionarios">DicionÃ¡rios</h2>
+<p>Agora vamos mudar um pouco e falar de nÃºmeros.</p>
+<blockquote>
+<p>Crie um programa que calcule o histograma de uma lista de nÃºmeros
+inteiros.</p>
+</blockquote>
+<p>Primeiro precisamos relembrar o que Ã© um histograma. Um <em>histograma</em>
+sobre uma dada lista de elementos Ã© uma tabela de contagem que associa
+cada elemento distinto ao nÃºmero de vezes que ele aparece na lista.
+Quando estamos falando de superconjuntos (conjuntos que permitem a
+repetiÃ§Ã£o de elementos), o nÃºmero de vezes tambÃ©m Ã© chamado de
+<em>multiplicidade</em>.</p>
+<p>Esse problema parece muito simples. De fato, nÃ£o Ã© muito difÃ­cil
+escrever um algoritmo para ele.</p>
+<ol>
+<li>
+<p>Para cada nÃºmero $n$ da entrada:</p>
+<p>a) se $n$ nÃ£o apareceu ainda:</p>
+<ul>
+<li>faÃ§a a multiplicidade de $n$ receber $1$</li>
+<li>armazene a contagem de $n$</li>
+</ul>
+<p>b) se $n$ jÃ¡ apareceu:</p>
+<ul>
+<li>encontre a contagem de $n$</li>
+<li>incremente a multiplicidade de $n$</li>
+</ul>
+</li>
+</ol>
+<p>Pare que esse algoritmo esteja bem definido de fato, antes precisamos
+dizer como vamos armazenar os nÃºmeros e as multiplicidades. Vimos que
+para escrever um bom algoritmo, Ã© fundamental pensar com cuidado na
+representaÃ§Ã£o dos dados que utilizaremos. Queremos guardar os nÃºmeros,
+entÃ£o uma lista de nÃºmeros Ã© sempre uma opÃ§Ã£o. Como nÃ£o estamos
+preocupados com a ordem em que os nÃºmeros sÃ£o armazenados e no nosso
+algoritmo precisamos determinar repetidamente se um dado nÃºmero estÃ¡
+na nossa coleÃ§Ã£o , utilizar um conjunto parece uma escolha muito
+melhor.</p>
+<p>Acontece que tambÃ©m queremos guardar os dados relativos Ã 
+multiplicidades. PoderÃ­amos pensar em uma lista ou em um conjunto de
+multiplicidades, mas como descobrirÃ­amos a qual nÃºmero se refere cada
+multiplicidade? AlÃ©m disso, jÃ¡ sabemos que dados relacionados devem
+andar juntos. EntÃ£o queremos criar alguma abstraÃ§Ã£o que associe um
+nÃºmero Ã  sua multiplicidade. Digamos que uma <strong>contagem</strong> Ã© uma lista
+com dois elementos.</p>
+<pre class="highlightlanguage-python">contagem <span style="color: #666666">=</span> [nÃºmero, multiplicidade]
+</pre><p>A maneira com que utilizamos uma lista aqui nÃ£o Ã© muito usual, afinal
+os dois elementos sÃ£o do mesmo tipo, mas tÃªm significados bem
+diferentes. Como a contagem de um nÃºmero muda no decorrer do algoritmo
+(e nÃ£o queremos recriar a contagem cada vez que reencontrarmos um
+nÃºmero), utilizar uma lista dessa maneira nesse caso traz mais
+vantagens do que desvantagens.</p>
+<p>Agora, voltamos a pergunta de como representar um histograma. Uma boa
+tentativa seria um conjunto de contagens, jÃ¡ que nosso algoritmo
+precisa acessar uma contagem rapidamente. Mas isso tem um
+problema. Quando estamos percorrendo a lista de entrada e encontramos
+um nÃºmero, queremos atualizar a multiplicidade desse nÃºmero, mas nÃ£o
+hÃ¡ como acessar o par <code class="language-text">[nÃºmero, multiplicidade]</code> diretamente. Temos
+que que percorrer cada par de contagem atÃ© encontrarmos a contagem
+correspondente. Para entender isso, tente descobrir qual a saÃ­da
+do trecho abaixo.</p>
+<pre class="highlightlanguage-python">conjunto <span style="color: #666666">=</span> {[<span style="color: #666666">1</span>, <span style="color: #666666">100</span>], [<span style="color: #666666">7</span>, <span style="color: #666666">21</span>], [<span style="color: #666666">3</span>, <span style="color: #666666">45</span>], [<span style="color: #666666">2</span>,<span style="color: #666666">200</span>]}
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">7</span> <span style="color: #AA22FF; font-weight: bold">in</span> histograma:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&#39;O nÃºmero 7 estÃ¡ no conjunto&#39;</span>)
+<span style="color: #008000; font-weight: bold">else</span>:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&#39;O nÃºmero 7 nÃ£o estÃ¡ no conjunto&#39;</span>)
+</pre><p>Claro que o nÃºmero nÃ£o estÃ¡ no conjunto. A variÃ¡vel referenciada por
+<code class="language-text">conjunto</code> Ã© do tipo <code class="language-text">set</code> e contÃ©m elementos do tipo lista; nÃ£o hÃ¡
+nenhum nÃºmero nesse conjunto. Como nÃ£o hÃ¡ nenhuma vantagem em usar
+conjuntos nesse exemplo, vamos utilizar listas, jÃ¡ que estamos mais
+familiarizados com elas. Assim, vamos representar um histograma como
+uma <strong>lista de contagens</strong>.</p>
+<p>Com isso, podemos implementar o algoritmo acima.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_histograma</span>(lista_numeros):
+    histograma <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> numero <span style="color: #AA22FF; font-weight: bold">in</span> lista_numeros:
+        <span style="color: #008000; font-weight: bold">for</span> par <span style="color: #AA22FF; font-weight: bold">in</span> histograma:
+            <span style="color: #008000; font-weight: bold">if</span> par[<span style="color: #666666">0</span>] <span style="color: #666666">==</span> numero:
+                par[<span style="color: #666666">1</span>] <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+                <span style="color: #008000; font-weight: bold">break</span>
+        <span style="color: #008000; font-weight: bold">else</span>:
+            par <span style="color: #666666">=</span> [numero, <span style="color: #666666">1</span>]
+            histograma<span style="color: #666666">.</span>append(par)
+
+    <span style="color: #008000; font-weight: bold">return</span> histograma
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">mostrar_histograma</span>(histograma):
+    <span style="color: #008000; font-weight: bold">for</span> numero, multiplicidade <span style="color: #AA22FF; font-weight: bold">in</span> histograma:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;Multiplicidade de </span><span style="color: #BB6688; font-weight: bold">{numero}</span><span style="color: #BA2121">: </span><span style="color: #BB6688; font-weight: bold">{multiplicidade}</span><span style="color: #BA2121">&quot;</span>)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    lista_numeros <span style="color: #666666">=</span> [<span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">7</span>, <span style="color: #666666">3</span>, <span style="color: #666666">2</span>, <span style="color: #666666">2</span>, <span style="color: #666666">6</span>, <span style="color: #666666">2</span>, <span style="color: #666666">1</span>, <span style="color: #666666">6</span>]
+    histograma <span style="color: #666666">=</span> calcular_histograma(lista_numeros)
+    mostrar_histograma(histograma)
+
+main()
+</pre><p>Testando o programa para essa entrada pequena, parece tudo certo. O
+que acontece quando o conjunto de dados Ã© grande Ã© que Ã© interessante.
+Vamos testar com um conjunto de 100.000 nÃºmeros, distribuÃ­dos entre 0
+e 9999. Dessa vez, vamos usar alguns nÃºmeros aleatÃ³rios. Para
+descobrir como criar esse arquivo, faÃ§a o exercÃ­cio correspondente ao
+mÃ³dulo <code class="language-text">random</code> <a href="../fixacao/07-ordenacao.html">aqui</a>.</p>
+<pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> ls -lh muitos.txt
+<span style="color: #888888">-rw-rw-r-- 1 user user 478K jun 13 22:46 muitos.txt</span>
+<span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> head muitos_numeros.txt
+<span style="color: #888888">15962</span>
+<span style="color: #888888">10902</span>
+<span style="color: #888888">8314</span>
+<span style="color: #888888">14623</span>
+<span style="color: #888888">3304</span>
+<span style="color: #888888">4029</span>
+<span style="color: #888888">12455</span>
+<span style="color: #888888">3304</span>
+<span style="color: #888888">19918</span>
+<span style="color: #888888">8353</span>
+</pre><p>Adaptamos o programa para ler o arquivo.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_arquivo</span>(nome_arquivo):
+    <span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(nome_arquivo) <span style="color: #008000; font-weight: bold">as</span> arquivo:
+        lista_numeros <span style="color: #666666">=</span> []
+        <span style="color: #008000; font-weight: bold">for</span> linha <span style="color: #AA22FF; font-weight: bold">in</span> arquivo:
+            numero <span style="color: #666666">=</span> <span style="color: #008000">int</span>(linha)
+            lista_numeros<span style="color: #666666">.</span>append(numero)
+        <span style="color: #008000; font-weight: bold">return</span> lista_numeros
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    lista_numeros <span style="color: #666666">=</span> ler_arquivo(<span style="color: #BA2121">&quot;muitos.txt&quot;</span>)
+    histograma <span style="color: #666666">=</span> calcular_histograma(lista_numeros)
+    mostrar_histograma(histograma)
+</pre><p>Executamos e esperamos cerca de 15 segundos para o programa terminar.
+Nada surpreendente. JÃ¡ sabemos que a estrutura de dados utilizada para
+representar os dados nÃ£o Ã© muito boa para as operaÃ§Ãµes de que nosso
+algoritmo precisa. Veremos que Python tem uma estrutura de dados
+chamada <code class="language-text">dict</code>, ou tipo dicionÃ¡rio, que Ã© especialmente adequada para
+nosso algoritmo. Antes de introduzir dicionÃ¡rios, vamos resolver uma
+versÃ£o bem mais simples do problema. A esperanÃ§a Ã© que esse exercÃ­cio
+mais simples nos dÃª uma intuiÃ§Ã£o sobre qual seria a estrutura de dados
+ideal.</p>
+<blockquote>
+<p>Crie um programa que calcule o histograma de uma lista de nÃºmeros
+inteiros entre 0 e 9999.</p>
+</blockquote>
+<p>Esse Ã© quase o mesmo problema, mas agora podemos supor que todos os
+nÃºmeros da entrada estÃ£o nesse intervalo. Isso sugere que podemos
+guardar as multiplicidades dos nÃºmeros em um vetor de 10000 posiÃ§Ãµes:
+os nÃºmeros da entrada correspondem a Ã­ndices desse vetor. Isso Ã©
+conveniente pois podemos acessar o dado associado a cada nÃºmero
+diretamente!</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_arquivo</span>(nome_arquivo):
+    <span style="color: #008000; font-weight: bold">with</span> <span style="color: #008000">open</span>(nome_arquivo) <span style="color: #008000; font-weight: bold">as</span> arquivo:
+        lista_numeros <span style="color: #666666">=</span> []
+        <span style="color: #008000; font-weight: bold">for</span> linha <span style="color: #AA22FF; font-weight: bold">in</span> arquivo:
+            numero <span style="color: #666666">=</span> <span style="color: #008000">int</span>(linha)
+            lista_numeros<span style="color: #666666">.</span>append(numero)
+        <span style="color: #008000; font-weight: bold">return</span> lista_numeros
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_histograma_simplificado</span>(lista_numeros):
+    histograma <span style="color: #666666">=</span> [<span style="color: #666666">0</span>] <span style="color: #666666">*</span> <span style="color: #666666">10000</span>
+
+    <span style="color: #008000; font-weight: bold">for</span> numero <span style="color: #AA22FF; font-weight: bold">in</span> lista_numeros:
+        histograma[numero] <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+
+    <span style="color: #008000; font-weight: bold">return</span> histograma
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">mostrar_histograma</span>(histograma):
+    <span style="color: #008000; font-weight: bold">for</span> numero, multiplicidade <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(histograma):
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;Multiplicidade de </span><span style="color: #BB6688; font-weight: bold">{numero}</span><span style="color: #BA2121">: </span><span style="color: #BB6688; font-weight: bold">{multiplicidade}</span><span style="color: #BA2121">&quot;</span>)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    lista_numeros <span style="color: #666666">=</span> ler_arquivo(<span style="color: #BA2121">&quot;muitos.txt&quot;</span>)
+    histograma <span style="color: #666666">=</span> calcular_histograma_simplificado(lista_numeros)
+    mostrar_histograma(histograma)
+
+main()
+</pre><p>Observe atentamente como utilizamos cada nÃºmero como um Ã­ndice do
+vetor. Dessa vez, o programa gastou cerca de 70ms para calcular o
+histograma de 100.000 nÃºmeros. Acessar um Ã­ndice de uma lista Ã© muito
+rÃ¡pido! Para que isso tenha dado certo, foram fundamentais algumas
+propriedades do problema simplificado.</p>
+<ol>
+<li>
+<p>os elementos de entrada que queremos armazenar sÃ£o nÃºmeros;</p>
+</li>
+<li>
+<p>esses nÃºmeros estÃ£o no intervalo de 0 a 9999.</p>
+</li>
+</ol>
+<p>Esse tipo de representaÃ§Ã£o nÃ£o funciona para o problema geral porque
+podemos querer calcular histogramas de conjuntos de dados nÃ£o
+numÃ©ricos. Por exemplo, se quisermos criar um arquivo das palavras
+mais frequentes de um idioma, o que estamos fazendo na verdade Ã© um
+histograma de palavras. Mesmo que os dados sejam nÃºmeros inteiros,
+pode ser que esses nÃºmeros sejam muito grandes. NÃ£o queremos criar um
+vetor que ocupa vÃ¡rios gigabytes de memÃ³ria apenas para computar um
+histograma.</p>
+<p>Agora jÃ¡ podemos descrever o que queremos de uma estrutura de dados
+para representar um histograma:</p>
+<ol>
+<li>
+<p>queremos armazenar um conjunto de pares <code class="language-text">(chave, valor)</code> de forma
+que cada chave sÃ³ apareÃ§a uma vez no conjunto;</p>
+</li>
+<li>
+<p>queremos decidir se uma determinada chave estÃ¡ na coleÃ§Ã£o,
+independentemente do valor associado;</p>
+</li>
+<li>
+<p>queremos modificar o valor associado a uma chave rapidamente, assim
+como modificamos o valor associado a um Ã­ndice de uma lista.</p>
+</li>
+</ol>
+<p>Uma estrutura de dados que satisfaz todos esses requisitos Ã© um <code class="language-text">dict</code>.
+Vejamos alguns exemplos.</p>
+<pre class="highlightlanguage-pycon"><span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>idades <span style="color: #666666">=</span> <span style="color: #008000">dict</span>()
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>idades[<span style="color: #BA2121">&quot;Ana&quot;</span>] <span style="color: #666666">=</span> <span style="color: #666666">18</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>idades[<span style="color: #BA2121">&quot;JoÃ£o&quot;</span>] <span style="color: #666666">=</span> <span style="color: #666666">17</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>idades[<span style="color: #BA2121">&quot;Mariana&quot;</span>] <span style="color: #666666">=</span> <span style="color: #666666">18</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>idades[<span style="color: #BA2121">&quot;Mariana&quot;</span>] <span style="color: #666666">=</span> <span style="color: #666666">19</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>idades
+<span style="color: #888888">{&#39;Ana&#39;: 18, &#39;JoÃ£o&#39;: 17, &#39;Mariana&#39;: 19}</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>tipos_triangulos <span style="color: #666666">=</span> {
+<span style="color: #000080; font-weight: bold">... </span>  (<span style="color: #666666">3</span>, <span style="color: #666666">3</span>, <span style="color: #666666">3</span>): <span style="color: #BA2121">&quot;equilÃ¡tero&quot;</span>,
+<span style="color: #000080; font-weight: bold">... </span>  (<span style="color: #666666">2</span>, <span style="color: #666666">1</span>, <span style="color: #666666">2</span>): <span style="color: #BA2121">&quot;isÃ³sceles&quot;</span>,
+<span style="color: #000080; font-weight: bold">... </span>  (<span style="color: #666666">2</span>, <span style="color: #666666">2</span>, <span style="color: #666666">1</span>): <span style="color: #BA2121">&quot;isÃ³sceles&quot;</span>,
+<span style="color: #000080; font-weight: bold">... </span>  (<span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">5</span>): <span style="color: #BA2121">&quot;escaleno&quot;</span>,
+<span style="color: #000080; font-weight: bold">... </span>}
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>tipos_triangulos
+<span style="color: #888888">{(3, 3, 3): &#39;equilÃ¡tero&#39;, (2, 1, 2): &#39;isÃ³sceles&#39;, (2, 2, 1): &#39;isÃ³sceles&#39;, (3, 4, 5): &#39;escaleno&#39;}</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>(<span style="color: #666666">5</span>,<span style="color: #666666">5</span>,<span style="color: #666666">5</span>) <span style="color: #AA22FF; font-weight: bold">in</span> tipos_triangulos
+<span style="color: #888888">False</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>(<span style="color: #666666">5</span>,<span style="color: #666666">4</span>,<span style="color: #666666">3</span>) <span style="color: #AA22FF; font-weight: bold">in</span> tipos_triangulos
+<span style="color: #888888">False</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>tipos_triangulos[(<span style="color: #666666">5</span>,<span style="color: #666666">5</span>,<span style="color: #666666">5</span>)] <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;equilÃ¡tero&quot;</span>
+<span style="color: #000080; font-weight: bold">&gt;&gt;&gt; </span>(<span style="color: #666666">5</span>,<span style="color: #666666">5</span>,<span style="color: #666666">5</span>) <span style="color: #AA22FF; font-weight: bold">in</span> tipos_triangulos
+<span style="color: #888888">True</span>
+</pre><p>Veja o trecho acima com cuidado e, se tiver dÃºvidas sobre a sintaxe,
+consulte o tutorial Python. Na primeira linha, a atribuiÃ§Ã£o
+<code class="language-text">idades = dict()</code> cria um dicionÃ¡rio vazio e associa ao nome idades.
+PoderÃ­amos escrever apenas <code class="language-text">idades = {}</code>, mas preferi escrever
+<code class="language-text">dict()</code> para explicitar que estamos criando um dicionÃ¡rio. Com isso,
+jÃ¡ podemos ajustar nossa funÃ§Ã£o para calcular histogramas.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_histograma</span>(lista):
+    histograma <span style="color: #666666">=</span> {}
+
+    <span style="color: #008000; font-weight: bold">for</span> elemento <span style="color: #AA22FF; font-weight: bold">in</span> lista:
+        <span style="color: #008000; font-weight: bold">if</span> elemento <span style="color: #AA22FF; font-weight: bold">not</span> <span style="color: #AA22FF; font-weight: bold">in</span> histograma:
+            histograma[elemento] <span style="color: #666666">=</span> <span style="color: #666666">1</span>
+        <span style="color: #008000; font-weight: bold">else</span>:
+            histograma[elemento] <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+
+    <span style="color: #008000; font-weight: bold">return</span> histograma
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">mostrar_histograma</span>(histograma):
+    <span style="color: #008000; font-weight: bold">for</span> elemento, multiplicidade <span style="color: #AA22FF; font-weight: bold">in</span> histograma<span style="color: #666666">.</span>items():
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;Multiplicidade de </span><span style="color: #BB6688; font-weight: bold">{elemento}</span><span style="color: #BA2121">: </span><span style="color: #BB6688; font-weight: bold">{multiplicidade}</span><span style="color: #BA2121">&quot;</span>)
+</pre><p>Repare que para percorrer os pares <code class="language-text">(chave, valor)</code> de um dicionÃ¡rio,
+chamamos a funÃ§Ã£o <code class="language-text">items</code>. Se nÃ£o tivÃ©ssemos usado essa funÃ§Ã£o,
+irÃ­amos iterar apenas sobre as chaves. Executamos a versÃ£o atualizada
+do programa com o arquivo de 100.000 inteiros. Ela gasta cerca de 70ms
+apenas e ainda funciona com entradas arbitrÃ¡rias.</p>
+<h1 id="registros-e-mutabilidade">Registros e mutabilidade</h1>
+<p>Agora que jÃ¡ conhecemos o tipo dicionÃ¡rio, podemos repensar a
+representaÃ§Ã£o de um verbete do nosso primeiro exemplo. LÃ¡, dissemos
+que um verbete era uma tupla da forma <code class="language-text">(palavra, definiÃ§Ã£o, ano)</code>. HÃ¡
+algumas desvantagens em se utilizar uma tupla dessa maneira. A
+principal delas Ã© que para acessar uma dado associado ao verbete
+precisamos utilizar um Ã­ndice numÃ©rico que nÃ£o tem nada a ver com o
+significado daquele dado.</p>
+<p>Por exemplo, na nossa representaÃ§Ã£o, a definiÃ§Ã£o de uma palavra Ã©
+<code class="language-text">verbete[1]</code>, mas se tivÃ©ssemos abstraÃ­do um verbete como uma tupla da
+forma <code class="language-text">(palavra, ano, definiÃ§Ã£o)</code>, deverÃ­amos escrever <code class="language-text">verbete[2]</code>.
+Pior, se algum dia quisermos adicionar outro dado associado a um
+verbete, entÃ£o teremos que revisitar todos os trechos de cÃ³digo que
+lidam com a representaÃ§Ã£o de um verbete! Digamos que depois de um
+tempo decidamos armazenar juntamente com um verbete a classe associada
+a determinada palavra (substantivo, adjetivo, etc.). Atualizamos a
+representaÃ§Ã£o de um verbete para uma tupla da forma
+<code class="language-text">(palavra, classe, definiÃ§Ã£o, ano)</code>.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">atualizar_definicao</span>(dicionario, palavra, nova_definicao):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;atualiza a definiÃ§Ã£o de uma palavra&quot;&quot;&quot;</span>
+
+    i <span style="color: #666666">=</span> procurar_indice(dicionario, palavra)
+    verbete_antigo <span style="color: #666666">=</span> dicionario[i]
+    verbete_novo <span style="color: #666666">=</span> (verbete_antigo[<span style="color: #666666">0</span>], verbete_antigo[<span style="color: #666666">1</span>], nova_definicao, verbete_antigo[<span style="color: #666666">3</span>])
+    dicionario[i] <span style="color: #666666">=</span> verbete_novo
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    dicionario <span style="color: #666666">=</span> criar_dicionario()
+
+    verbete <span style="color: #666666">=</span> (<span style="color: #BA2121">&quot;amor&quot;</span>, <span style="color: #BA2121">&quot;substantivo&quot;</span>, <span style="color: #BA2121">&quot;fogo que arde sem se ver&quot;</span>, <span style="color: #666666">1595</span>)
+    adicionar_verbete(dicionario, verbete)
+
+    verbete <span style="color: #666666">=</span> procurar_verbete(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>)
+    palavra, classe, definicao, ano <span style="color: #666666">=</span> verbete
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #BB6688; font-weight: bold">{palavra}</span><span style="color: #BA2121"> significa </span><span style="color: #BB6688; font-weight: bold">{definicao}</span><span style="color: #BA2121">&quot;</span>)
+
+    nova_definicao <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;O que vocÃª acha que Ã© o amor?</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>)
+    atualizar_definicao(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>, nova_definicao)
+
+    palavra, definicao, ano <span style="color: #666666">=</span> procurar_verbete(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #BB6688; font-weight: bold">{palavra}</span><span style="color: #BA2121"> agora significa </span><span style="color: #BB6688; font-weight: bold">{definicao}</span><span style="color: #BA2121">&quot;</span>)
+</pre><p>Tivemos que alterar praticamente toda a funÃ§Ã£o <code class="language-text">main</code>, jÃ¡ que ela cria
+e manipula os verbetes. O que foi desagradÃ¡vel Ã© que tivemos que
+alterar tambÃ©m a funÃ§Ã£o <code class="language-text">atualizar_definicao</code>, mesmo que a definiÃ§Ã£o
+nÃ£o tenha nada a ver com a classe da palavra. Sempre que mudamos a
+representaÃ§Ã£o em memÃ³ria de uma certa abstraÃ§Ã£o precisamos revisar
+todas as instruÃ§Ãµes que acessam essa representaÃ§Ã£o diretamente.
+Aff... esqueci de atualizar as variÃ¡veis recebidas na Ãºltima chamada
+a <code class="language-text">procurar_verbete</code>.</p>
+<p>Em uma boa abstraÃ§Ã£o, gostarÃ­amos de acessar a definiÃ§Ã£o associada ao
+verbete sem nos preocupar com a forma com que ele Ã© representado. Uma
+estratÃ©gia bastante comum em Python Ã© criar um dicionÃ¡rio que
+representa um registro de uma coleÃ§Ã£o de dados. Assim, ao invÃ©s de
+utilizar uma tupla, representamos um verbete por um dicionÃ¡rio como no
+exemplo</p>
+<pre class="highlightlanguage-python">verbete <span style="color: #666666">=</span> {
+  <span style="color: #BA2121">&quot;palavra&quot;</span>: <span style="color: #BA2121">&quot;amor&quot;</span>,
+  <span style="color: #BA2121">&quot;classe&quot;</span>: <span style="color: #BA2121">&quot;substantivo&quot;</span>,
+  <span style="color: #BA2121">&quot;definicao&quot;</span>: <span style="color: #BA2121">&quot;ferida que dÃ³i e nÃ£o se sente&quot;</span>,
+  <span style="color: #BA2121">&quot;ano&quot;</span>: <span style="color: #666666">1595</span>,
+}
+</pre><p>Vamos adaptar, mais uma vez, o nosso programa.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">criar_dicionario</span>():
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;cria um dicionÃ¡rio vazio&quot;&quot;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">return</span> []
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">adicionar_verbete</span>(dicionario, verbete):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;adiciona um novo verbete ao dicionÃ¡rio&quot;&quot;&quot;</span>
+
+    i <span style="color: #666666">=</span> procurar_indice(dicionario, verbete[<span style="color: #BA2121">&quot;palavra&quot;</span>])
+    <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #AA22FF; font-weight: bold">is</span> <span style="color: #008000; font-weight: bold">None</span>:
+        dicionario<span style="color: #666666">.</span>append(verbete)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000; font-weight: bold">raise</span> <span style="color: #D2413A; font-weight: bold">Exception</span>(<span style="color: #BA2121">f&quot;Palavra </span><span style="color: #BB6688; font-weight: bold">{verbete[&#39;palavra&#39;]}</span><span style="color: #BA2121"> jÃ¡ existe.&quot;</span>)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">procurar_verbete</span>(dicionario, palavra):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;devolve o verbete correspondente Ã  palavra;</span>
+<span style="color: #BA2121; font-style: italic">    se palavra nÃ£o for encontrada, devolve None&quot;&quot;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">for</span> verbete <span style="color: #AA22FF; font-weight: bold">in</span> dicionario:
+        <span style="color: #008000; font-weight: bold">if</span> verbete[<span style="color: #BA2121">&quot;palavra&quot;</span>] <span style="color: #666666">==</span> palavra:
+            <span style="color: #008000; font-weight: bold">return</span> verbete
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">None</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">procurar_indice</span>(dicionario, palavra):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;devolve o Ã­ndice correspondente Ã  palavra</span>
+<span style="color: #BA2121; font-style: italic">    ou None se ela nÃ£o existir no dicionÃ¡rio&quot;&quot;&quot;</span>
+
+    <span style="color: #008000; font-weight: bold">for</span> i, verbete <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(dicionario):
+        <span style="color: #008000; font-weight: bold">if</span> verbete[<span style="color: #BA2121">&quot;palavra&quot;</span>] <span style="color: #666666">==</span> palavra:
+            <span style="color: #008000; font-weight: bold">return</span> i
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">None</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">atualizar_definicao</span>(dicionario, palavra, nova_definicao):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;atualiza a definiÃ§Ã£o de uma palavra&quot;&quot;&quot;</span>
+
+    i <span style="color: #666666">=</span> procurar_indice(dicionario, palavra)
+    verbete <span style="color: #666666">=</span> dicionario[i]
+    verbete[<span style="color: #BA2121">&quot;definicao&quot;</span>] <span style="color: #666666">=</span> nova_definicao
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    dicionario <span style="color: #666666">=</span> criar_dicionario()
+
+    verbete <span style="color: #666666">=</span> {
+        <span style="color: #BA2121">&quot;palavra&quot;</span>: <span style="color: #BA2121">&quot;amor&quot;</span>,
+        <span style="color: #BA2121">&quot;classe&quot;</span>: <span style="color: #BA2121">&quot;substantivo&quot;</span>,
+        <span style="color: #BA2121">&quot;definicao&quot;</span>: <span style="color: #BA2121">&quot;fogo que arde sem se ver&quot;</span>,
+        <span style="color: #BA2121">&quot;ano&quot;</span>: <span style="color: #666666">1595</span>,
+    }
+    adicionar_verbete(dicionario, verbete)
+
+    verbete <span style="color: #666666">=</span> procurar_verbete(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #BB6688; font-weight: bold">{verbete[&#39;palavra&#39;]}</span><span style="color: #BA2121"> significa </span><span style="color: #BB6688; font-weight: bold">{verbete[&#39;definicao&#39;]}</span><span style="color: #BA2121">&quot;</span>)
+
+    nova_definicao <span style="color: #666666">=</span> <span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;O que vocÃª acha que Ã© o amor?</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>)
+    atualizar_definicao(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>, nova_definicao)
+
+    verbete <span style="color: #666666">=</span> procurar_verbete(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #BB6688; font-weight: bold">{verbete[&#39;palavra&#39;]}</span><span style="color: #BA2121"> agora significa </span><span style="color: #BB6688; font-weight: bold">{verbete[&#39;definicao&#39;]}</span><span style="color: #BA2121">&quot;</span>)
+
+
+main()
+</pre><p>VocÃª deve comparar essa implementaÃ§Ã£o com a anterior e decidir qual Ã©
+mais fÃ¡cil de ler e entender. Se compararmos com atenÃ§Ã£o, no entanto,
+vamos ver que a maneira que implementamos <code class="language-text">alterar_definicao</code> na
+versÃ£o com dicionÃ¡rios Ã© ligeiramente diferente da maneira que
+implementamos essa mesma funÃ§Ã£o na versÃ£o com lista. Antes, como nÃ£o
+podÃ­amos alterar os dados de uma tupla, criamos um novo verbete e
+<em>substituÃ­mos</em> o verbete antigo pelo novo. Agora, apenas alteramos o
+verbete diretamente.</p>
+<p>Vamos investigar as consequÃªncias disso. Primeiro vamos executar o
+seguinte trecho de cÃ³digo, utilizando a representaÃ§Ã£o de nossa coleÃ§Ã£o
+de verbetes como uma lista de tuplas.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    dicionario <span style="color: #666666">=</span> criar_dicionario()
+
+    anterior <span style="color: #666666">=</span> (<span style="color: #BA2121">&quot;amor&quot;</span>, <span style="color: #BA2121">&quot;substantivo&quot;</span>, <span style="color: #BA2121">&quot;fogo que arde sem se ver&quot;</span>, <span style="color: #666666">1595</span>)
+    adicionar_verbete(dicionario, anterior)
+    atualizar_definicao(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>, <span style="color: #BA2121">&quot;um contentamento descontente&quot;</span>)
+    atual <span style="color: #666666">=</span> procurar_verbete(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>)
+
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;antes, amor era </span><span style="color: #BB6688; font-weight: bold">{anterior[2]}</span><span style="color: #BA2121">&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;agora, amor Ã© </span><span style="color: #BB6688; font-weight: bold">{atual[2]}</span><span style="color: #BA2121">&quot;</span>)
+</pre><pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> python3 dicionario_tuplas.py
+<span style="color: #888888">antes, amor era fogo que arde sem se ver</span>
+<span style="color: #888888">agora, amor Ã© um contentamento descontente</span>
+</pre><p>Tudo dentro do esperado. Vamos utilizar a implementaÃ§Ã£o com
+dicionÃ¡rio.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    dicionario <span style="color: #666666">=</span> criar_dicionario()
+
+    anterior <span style="color: #666666">=</span> {
+        <span style="color: #BA2121">&quot;palavra&quot;</span>: <span style="color: #BA2121">&quot;amor&quot;</span>,
+        <span style="color: #BA2121">&quot;classe&quot;</span>: <span style="color: #BA2121">&quot;substantivo&quot;</span>,
+        <span style="color: #BA2121">&quot;definicao&quot;</span>: <span style="color: #BA2121">&quot;fogo que arde sem se ver&quot;</span>,
+        <span style="color: #BA2121">&quot;ano&quot;</span>: <span style="color: #666666">1595</span>,
+    }
+    adicionar_verbete(dicionario, anterior)
+    atualizar_definicao(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>, <span style="color: #BA2121">&quot;um contentamento descontente&quot;</span>)
+    atual <span style="color: #666666">=</span> procurar_verbete(dicionario, <span style="color: #BA2121">&quot;amor&quot;</span>)
+
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;antes, amor era </span><span style="color: #BB6688; font-weight: bold">{anterior[&#39;definicao&#39;]}</span><span style="color: #BA2121">&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;agora, amor Ã© </span><span style="color: #BB6688; font-weight: bold">{atual[&#39;definicao&#39;]}</span><span style="color: #BA2121">&quot;</span>)
+</pre><pre class="highlightlanguage-console"><span style="color: #000080; font-weight: bold">user@notebook:~/ra123456/colecoes$</span> python3 dicionario_dict.py
+<span style="color: #888888">antes, amor era um contentamento descontente</span>
+<span style="color: #888888">agora, amor Ã© um contentamento descontente</span>
+</pre><p>A definiÃ§Ã£o do verbete <code class="language-text">anterior</code> Ã© a mesma do verbete <code class="language-text">atual</code>! Isso
+acontece porque o verbete alterado <code class="language-text">atualizar_definicao</code> Ã© o mesmo
+verbete adicionado anteriormente. Em outras palavras, <code class="language-text">anterior</code> e
+<code class="language-text">atual</code> sÃ£o o mesmo objeto.</p>
+<p>Vamos fazer um desenho da memÃ³ria das variÃ¡veis desses programas no
+momento em que a funÃ§Ã£o <code class="language-text">atualizar_definicao</code> termina. Lembre-se de
+que, nos nossos desenhos, costumamos representar os valores das
+variÃ¡veis por retÃ¢ngulos, entÃ£o cada retÃ¢ngulo corresponde a um objeto
+distinto. Para a implementaÃ§Ã£o que usa lista de tuplas, temos o
+seguinte desenho.</p>
+<img src="figs/atualizar_tupla.png" style="width: 100%; max-width: 500px;">
+<p>E para a implementaÃ§Ã£o que usa lista de dicionÃ¡rio, o seguinte.</p>
+<img src="figs/atualizar_dicionario.png" style="width: 100%; max-width: 500px;">
+<p>Para entender a diferenÃ§a, precisamos aprender o conceito de
+<strong>identidade</strong>. JÃ¡ falamos que toda variÃ¡vel em Python Ã© um objeto na
+memÃ³ria com determinado tipo e, normalmente, referenciado pelo nome de
+uma variÃ¡vel. A identidade de um objeto Ã© um nÃºmero inteiro associado
+a esse objeto e a nenhum outro. Podemos pensar que cada objeto Ã© um
+pequeno espaÃ§o reservado na memÃ³ria. Assim, se dois objetos tiverem a
+mesma identidade, eles sÃ£o os mesmos objetos.</p>
+<p>Para verificar se dois objetos sÃ£o o mesmo, utilizamos o operador
+<code class="language-text">is</code>. Para descobrir a identidade de um objeto, utilizamos a funÃ§Ã£o
+<code class="language-text">id</code>. Experimente adicionar o trecho abaixo Ã s funÃ§Ãµes acima e
+executar com cada implementaÃ§Ã£o. Depois faÃ§a alteraÃ§Ãµes no cÃ³digo e
+experimente atÃ© internalizar esses conceitos. Por exemplo, chame a
+funÃ§Ã£o <code class="language-text">atualizar_definicao</code> passando como parÃ¢metro a definiÃ§Ã£o
+original.</p>
+<pre class="highlightlanguage-python">    <span style="color: #008000; font-weight: bold">if</span> atual <span style="color: #666666">==</span> anterior:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;objetos sÃ£o iguais&quot;</span>)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;objetos sÃ£o diferentes&quot;</span>)
+
+    <span style="color: #008000; font-weight: bold">if</span> atual <span style="color: #AA22FF; font-weight: bold">is</span> anterior:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;atual e anterior sÃ£o o mesmo objeto&quot;</span>)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;atual e anterior sÃ£o objetos distintos&quot;</span>)
+
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;o identificador de anterior Ã© {id(anterior)}&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;o identificador de atual Ã© {id(atual)}&quot;</span>)
+</pre><p>Esses exemplos ilustram bem um conceito fundamental em Python e de
+linguagens de programaÃ§Ã£o em geral: <strong>mutabilidade</strong>. Um tipo de
+variÃ¡vel Ã© imutÃ¡vel se um objeto desse tipo nÃ£o muda nunca.</p>
+<p>SÃ£o exemplos de tipos imutÃ¡veis: <code class="language-text">int</code>, <code class="language-text">str</code>, <code class="language-text">tuple</code>. VocÃª pode
+desconfiar dessa afirmaÃ§Ã£o, afinal de conta, inÃºmeras vezes jÃ¡
+escrevemos programas que modificam variÃ¡veis inteiras. Por exemplo,
+para calcular o dobro de um nÃºmero podemos escrever.</p>
+<pre class="highlightlanguage-python">n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>())
+n <span style="color: #666666">=</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> n
+<span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;O dobro Ã© </span><span style="color: #BB6688; font-weight: bold">{n}</span><span style="color: #BA2121">&quot;</span>)
+</pre><p>Lembremos: quando fazemos uma atribuiÃ§Ã£o, primeiro calculamos o valor
+da expressÃ£o do lado direito do <code class="language-text">=</code> e depois associamos o nome a
+esquerda a esse valor. Portanto, quando escrevemos <code class="language-text">n = 2 * n</code>
+(leia-se, <code class="language-text">n</code> recebe <code class="language-text">2 * n</code>), o que estamos fazendo Ã© substituir o
+valor referenciado pelo seu dobro. Isso pode ser ilustrado pela figura
+abaixo.</p>
+<img src="figs/atribuicao.png" style="width: 100%; max-width: 500px;">
+<p>SÃ£o exemplos de tipos mutÃ¡veis <code class="language-text">list</code> e <code class="language-text">dict</code>. Devemos tomar cuidado:
+quando dizemos que uma lista Ã© mutÃ¡vel, estamos falando que estamos
+alterando o objeto correspondente Ã  lista. Se fizermos uma atribuiÃ§Ã£o,
+entÃ£o, estaremos alterando a referÃªncia do nome, nÃ£o o objeto.
+Considere o exemplo que mostra duas maneiras distintas de ordenar uma
+lista em Python.</p>
+<pre class="highlightlanguage-python">lista_strings <span style="color: #666666">=</span> [<span style="color: #BA2121">&quot;ana&quot;</span>, <span style="color: #BA2121">&quot;maria&quot;</span>, <span style="color: #BA2121">&quot;beto&quot;</span>]
+apelido_lista_strings <span style="color: #666666">=</span> lista_strings
+lista_inteiros <span style="color: #666666">=</span> [<span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">2</span>, <span style="color: #666666">1</span>]
+apelido_lista_inteiros <span style="color: #666666">=</span> lista_strings
+lista_strings<span style="color: #666666">.</span>sort()
+lista_inteiros <span style="color: #666666">=</span> <span style="color: #008000">sorted</span>(lista_inteiros)
+<span style="color: #008000">print</span>(apelido_lista_strings)
+<span style="color: #008000">print</span>(apelido_lista_inteiros)
+</pre><p>Descubra qual Ã© a saÃ­da deste trecho. Para isso, faÃ§a um desenho que
+representa a memÃ³ria do processo. Depois, confira sua resposta
+simulando esse cÃ³digo no terminal interativo do Python.</p>
+<h3 id="um-parentese-json">Um parÃªntese: JSON</h3>
+<p>Normalmente, nÃ£o guardamos os dados diretamente no cÃ³digo de um
+programa. Para armazenÃ¡-los permanentemente podemos utilizar
+diferentes mecanismos, como banco de dados, arquivos binÃ¡rios ou
+arquivos texto. A escolha depende da aplicaÃ§Ã£o. Em diversas situaÃ§Ãµes,
+quando a quantidade de dados nÃ£o Ã© tÃ£o grande e queremos apenas
+consultar os dados, podemos usar um arquivo JSON. Um arquivo JSON Ã© um
+formato estruturado de guardar conjuntos de dados bastante popular na
+internet. A grande vantagem desse formato (e de outros similares, como
+XML, Yaml, Toml etc.) Ã© que ele se mapeia muito facilmente com as
+representaÃ§Ãµes de coleÃ§Ãµes de dados que normalmente utilizamos em
+nossos programa. Depois, nÃ£o deixe de fazer o exercÃ­cio de fixaÃ§Ã£o
+correspondente.</p>
+<h2 id="classes">Classes</h2>
+<p><strong>Um aviso</strong>: VocÃª nÃ£o precisa criar ou usar classes nesta disciplina,
+mas eventualmente precisarÃ¡ lidar com elas quando estiver trabalhando
+com Python. Aqui, iremos utilizar classes apenas como meio para
+guardar um conjunto de dados associados, assim como fizemos com tuplas
+e dicionÃ¡rios. HÃ¡ diversas outros motivos pelos quais se usa uma
+classe, mas nÃ£o vamos colocar o carro na frente dos bois.</p>
+<p>Suponha que o dicionarista decida adicionar mais uma palavra ao
+dicionÃ¡rio.</p>
+<pre class="highlightlanguage-python">    verbete <span style="color: #666666">=</span> {
+        <span style="color: #BA2121">&quot;palavra&quot;</span>: <span style="color: #BA2121">&quot;liberdade&quot;</span>,
+        <span style="color: #BA2121">&quot;definicao&quot;</span>: <span style="color: #BA2121">&quot;palava que o sonho humano alimenta&quot;</span>,
+        <span style="color: #BA2121">&quot;ano&quot;</span>: <span style="color: #666666">1953</span>,
+    }
+    adicionar_verbete(dicionario, anterior)
+</pre><p>Este trecho Ã© inofensivo e quando executado nÃ£o irÃ¡ causar nenhum
+erro, mas ele tem um problema de consistÃªncia. Um verbete deveria ter
+todos as chaves <code class="language-text">&quot;palavra&quot;</code>, <code class="language-text">&quot;classe&quot;</code>, <code class="language-text">&quot;definicao&quot;</code> e <code class="language-text">&quot;ano&quot;</code>, mas
+esquecemos de <code class="language-text">&quot;classe&quot;</code>. Esse Ã© um tipo de erro muito comum que
+aconteceu porque, quando criamos o verbete, precisamos nos preocupar
+com os detalhes de como ele Ã© representado na memÃ³ria. Para evitar
+esse tipo de problema, podemos criar uma funÃ§Ã£o cujo Ãºnico objetivo Ã©
+criar um verbete. Assim, se esquecermos de algum dado, identificaremos
+o erro, antes mesmo de executarmos o programa.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">criar_verbete</span>(palavra, classe, definicao, ano):
+    verbete <span style="color: #666666">=</span> {
+        <span style="color: #BA2121">&quot;palavra&quot;</span>: palavra,
+        <span style="color: #BA2121">&quot;classe&quot;</span>: classe,
+        <span style="color: #BA2121">&quot;definicao&quot;</span>: definicao,
+        <span style="color: #BA2121">&quot;ano&quot;</span>: ano,
+    }
+    <span style="color: #008000; font-weight: bold">return</span> verbete
+</pre><p>Quando representamos um verbete usando um dicionÃ¡rio, estamos fazendo
+uma abstraÃ§Ã£o nova, mas nÃ£o estamos criando um novo tipo de variÃ¡vel.
+O problema de usar um dicionÃ¡rio diretamente Ã© que, se nÃ£o formos
+cuidados, podemos acaber realizando operaÃ§Ãµes sobre o objeto de forma
+a deixar a representaÃ§Ã£o inconsistente. Para abstraÃ§Ãµes simples como
+essa, um dicionÃ¡rio Ã© suficiente. Mas, para abstraÃ§Ãµes mais
+complicadas precisamos criar um novo tipo de variÃ¡vel. Em Python,
+fazemos isso usando usamos classes.</p>
+<p>Em seguida, criamos uma classe que representa um verbete e uma funÃ§Ã£o
+<code class="language-text">main</code> que cria um objeto desse novo tipo.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Verbete</span>:
+    <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">__init__</span>(<span style="color: #008000">self</span>, palavra, classe, definicao, ano):
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>palavra <span style="color: #666666">=</span> palavra
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>classe <span style="color: #666666">=</span> classe
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>definicao <span style="color: #666666">=</span> definicao
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>ano <span style="color: #666666">=</span> ano
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    verbete <span style="color: #666666">=</span> Verbete(<span style="color: #BA2121">&quot;amor&quot;</span>, <span style="color: #BA2121">&quot;substantivo&quot;</span>, <span style="color: #BA2121">&quot;estar-se preso por vontade&quot;</span>, <span style="color: #666666">1595</span>)
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;amor significa </span><span style="color: #BB6688; font-weight: bold">{verbete.definicao}</span><span style="color: #BA2121">&quot;</span>)
+    <span style="color: #008000">print</span>(<span style="color: #008000">type</span>(objeto))
+</pre><p>HÃ¡ vÃ¡rios detalhes aqui que precisamos entender. Primeiro, observe que
+chamamos o nome da classe como se ela fosse uma funÃ§Ã£o. Quando essa
+instruÃ§Ã£o Ã© executada, o que acontece Ã© o seguinte:</p>
+<ol>
+<li>O interpretador Python cria um novo objeto na memÃ³ria do tipo
+<code class="language-text">Verbete</code>.</li>
+<li>A funÃ§Ã£o <code class="language-text">Verbete.__init__</code> Ã© chamada para inicializar esse objeto.
+O primeiro parÃ¢metro deve ser <code class="language-text">self</code> e corresponde ao objeto recÃ©m
+criado. Os demais parÃ¢metros sÃ£o os parÃ¢metros passados na chamada
+<code class="language-text">Verbete(...)</code>.</li>
+<li>A funÃ§Ã£o Ã© executada e cria os diversos atributos contendo os dados
+associados ao verbete.</li>
+</ol>
+<p>AlÃ©m dos atributos, uma classe pode definir funÃ§Ãµes que operam sobre o
+objeto. Por exemplo, digamos que classificamos uma palavra como
+neologismo se ela for catalogada a partir de certo ano.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Verbete</span>:
+    <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">__init__</span>(<span style="color: #008000">self</span>, palavra, classe, definicao, ano):
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>palavra <span style="color: #666666">=</span> palavra
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>classe <span style="color: #666666">=</span> classe
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>definicao <span style="color: #666666">=</span> definicao
+        <span style="color: #008000">self</span><span style="color: #666666">.</span>ano <span style="color: #666666">=</span> ano
+
+    <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">eh_neologismo</span>(<span style="color: #008000">self</span>):
+        <span style="color: #008000; font-weight: bold">if</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>ano <span style="color: #666666">&gt;=</span> <span style="color: #666666">1990</span>:
+            <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">True</span>
+        <span style="color: #008000; font-weight: bold">else</span>:
+            <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">False</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    verbete <span style="color: #666666">=</span> Verbete(<span style="color: #BA2121">&quot;smartphone&quot;</span>, <span style="color: #BA2121">&quot;substantivo&quot;</span>, <span style="color: #BA2121">&quot;um telefone, sÃ³ que mais caro&quot;</span>, <span style="color: #666666">1997</span>)
+    <span style="color: #008000; font-weight: bold">if</span> verbete<span style="color: #666666">.</span>eh_neologismo():
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;a palavra Ã© um neologismo&quot;</span>)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;a palavra nÃ£o Ã© um neologismo&quot;</span>)
+</pre><p>Enquanto o termo classe possa ser uma novidade, jÃ¡ estamos lidando com
+elas hÃ¡ muito tempo. Todos os valores em Python sÃ£o objetos de alguma
+classe! Por exemplos, listas sÃ£o objetos da classe <code class="language-text">list</code>.</p>
+<pre class="highlight">lista1 = []
+lista2 = list()
+</pre><p>O trecho acima cria dois objetos do tipo <code class="language-text">list</code>. A expressÃ£o <code class="language-text">[]</code> nada
+mais Ã© do que um atalho para uma chamada <code class="language-text">list()</code>. Quando usamos o
+nome de um tipo como se fosse uma funÃ§Ã£o, reservamos um espaÃ§o na
+memÃ³ria para um novo objeto. Esse espaÃ§o Ã© preenchido por uma funÃ§Ã£o
+especial de inicializaÃ§Ã£o; nesse caso, <code class="language-text">list.__init__</code>.</p>
+<p>Agora, modifique nosso programa para que a coleÃ§Ã£o de verbetes seja
+representada como uma lista de objetos do tipo <code class="language-text">Verbete</code>. Isso nÃ£o
+deve ser difÃ­cil, basta mudar expressÃµes como <code class="language-text">verbete[&quot;palavra&quot;]</code>
+para expressÃµes como <code class="language-text">verbete.palavra</code>.</p>
+<h3 id="alternativas">Alternativas</h3>
+<p>Adicionar um tipo novo parece trivial, mas se feito sem cuidado pode
+complicar o nosso programa e prejudicar o entendimento ou a execuÃ§Ã£o
+de nosso algoritmo. Se tudo o que queremos Ã© acessar os dados de uma
+tupla atravÃ©s de um nome, entÃ£o poderÃ­amos usar uma
+<a href="https://docs.python.org/pt-br/3/library/collections.html#collections.namedtuple"><code class="language-text">namedtuple</code></a>,
+ou se precisarmos de um objeto mutÃ¡vel, um
+<a href="https://docs.python.org/pt-br/3/library/types.html#types.SimpleNamespace"><code class="language-text">SimpleNamespace</code></a>.
+NÃ£o vamos estudar todos os tipos da linguagem, nem Ã© necessÃ¡rio para a
+disciplina. Mas Ã© sempre bom saber que eles existem.</p>
+<p>Finalmente, nossa abstraÃ§Ã£o do dicionÃ¡rio de palavras representado
+como uma lista sofre dos mesmos problemas que nossa primeira versÃ£o da
+funÃ§Ã£o para calcular um histograma. A soluÃ§Ã£o deve ser clara agora:
+utilizar uma estrutura de dados mais adequada. Dessa vez, vou deixar
+para vocÃª fazer â ainda mais uma â implementaÃ§Ã£o do dicionÃ¡rio.</p>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="08-matrizes.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../index.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="10-eficiencia.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

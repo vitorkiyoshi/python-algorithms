@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - OrdenaÃ§Ã£o
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../fixacao.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >OrdenaÃ§Ã£o</h1>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <ol>
+<li>
+<p>Ãs vezes, a melhor maneira de descrever um algoritmo nÃ£o Ã©
+escrevendo.</p>
+<img src="figs/bubble.jpg" style="width: 100%; max-width: 600px;">
+<p><a href="https://www.youtube.com/watch?v=lyZQPjUT5B4">https://www.youtube.com/watch?v=lyZQPjUT5B4</a></p>
+<p>a) FaÃ§a um teste de mesa para um vetor com elementos $(5, 4, 3, 2,
+1)$ e para um vetor com elementos $(1, 4, 3, 2, 5)$. Conte o
+nÃºmero de vezes que trocamos dois elementos</p>
+<p>b) VocÃª consegue dizer por que o algoritmo tem esse nome?</p>
+</li>
+<li>
+<p>Inconformado com a ordenaÃ§Ã£o por bolha, em que os maiores
+elementos flutuam atÃ© o topo, como uma bolha, JoÃ£ozinho disse que
+esses elementos deveriam afundar atÃ© o fundo, como uma Ã¢ncora.
+Assim, decidiu criar seu prÃ³prio algoritmo de ordenaÃ§Ã£o.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">anchor_sort</span>(lista):
+    n <span style="color: #666666">=</span> <span style="color: #008000">len</span>(lista)
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>, n):
+        a <span style="color: #666666">=</span> i
+        <span style="color: #008000; font-weight: bold">while</span> a <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>:
+            <span style="color: #008000; font-weight: bold">if</span> lista[a] <span style="color: #666666">&gt;</span> lista[a<span style="color: #666666">-1</span>]:
+                trocar(lista, a, a<span style="color: #666666">-1</span>)
+            a <span style="color: #666666">=</span> a <span style="color: #666666">-</span> <span style="color: #666666">1</span>
+</pre><p>a) VocÃª concorda que algoritmo de JoÃ£zinho estÃ¡ correto? Justifique.</p>
+<p>b) Explique o que esse algoritmo faz.</p>
+</li>
+<li>
+<p>Reescreva a funÃ§Ã£o <code class="language-text">insertion_sort</code> para que ela <em>nÃ£o</em> utilize
+funÃ§Ãµes auxiliares.</p>
+</li>
+<li>
+<p>Escreva uma funÃ§Ã£o para ordenar uma lista de pessoas em ordem
+decrescente de idade e, havendo empate, em ordem crescente de
+nome. Uma pessoa Ã© representada por uma tupla como <code class="language-text">(&quot;Ana&quot;, 18)</code>,
+que representa a Ana que tem 18 anos.</p>
+</li>
+</ol>
+<h1 id="exercicios-criativos">ExercÃ­cios criativos</h1>
+<ol>
+<li>
+<p>Suponha que um time de voleibol Ã© representado por uma string
+contendo o nome. AlÃ©m disso, existe uma lista de tuplas
+representando os confrontos dos times, e.g.,</p>
+<pre class="highlight">confrontos = [
+    (&quot;Estaleiro&quot;, &quot;Mavista&quot;),
+    (&quot;Estaleiro&quot;, &quot;Manos&quot;),
+    (&quot;Estaleiro&quot;, &quot;SÃ£o Saulo&quot;),
+    (&quot;Mavista&quot;, &quot;Manos&quot;),
+    (&quot;Mavista&quot;, &quot;SÃ£o Saulo&quot;),
+    (&quot;Mavista&quot;, &quot;Tio de Janeiro&quot;),
+    (&quot;Tio de Janeiro&quot;, &quot;Estaleiro&quot;),
+    (&quot;Tio de Janeiro&quot;, &quot;Manos&quot;),
+    (&quot;Manos&quot;, &quot;SÃ£o Saulo&quot;),
+    (&quot;SÃ£o Saulo&quot;, &quot;Tio de Janeiro&quot;),
+]
+</pre><p>Essa lista representa que o Estaleiro venceu o Mavista, mas foi
+derrotado pelo Tio de Janeiro.</p>
+<p>a) Para ordenar uma lista de times, nÃ£o basta olhar para os nomes
+dos times: devemos prestar atenÃ§Ã£o Ã s regras do campeonato! Crie
+uma funÃ§Ã£o <code class="language-text">ordenar_times</code> que respeita as regras do
+campeonato. Para isso, o algoritmo receberÃ¡ como entrada, alÃ©m
+da lista de nomes, uma funÃ§Ã£o <code class="language-text">funcao_comparar</code>. Essa funÃ§Ã£o Ã© chamada
+como <code class="language-text">funcao_comparar(time_x, time_y, confrontos)</code> e devolve <code class="language-text">True</code>
+sempre que <code class="language-text">time_x</code> puder aparecer antes de <code class="language-text">time_y</code> em uma lista
+ordenada.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ordenar_time</span>(lista_nomes, funcao_comparar, confrontos):
+    <span style="color: #008000; font-weight: bold">pass</span>
+</pre><p>b) Implemente agora uma funÃ§Ã£o <code class="language-text">comparar</code> para ser usada como
+parÃ¢metro da funÃ§Ã£o de ordenaÃ§Ã£o. Nesse campeonato, vem primeiro
+o time com maior nÃºmero de vitÃ³rias; se houver empate, a ordem
+Ã© desempatada pelo confronto direto.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">comparar</span>(time_x, time_y, confrontos):
+    <span style="color: #008000; font-weight: bold">pass</span>
+</pre></li>
+<li>
+<p>Obter nÃºmeros aleatÃ³rios Ã© um aspecto delicado de ComputaÃ§Ã£o. A
+noÃ§Ã£o de aleatoriedade em ComputaÃ§Ã£o Ã© bem distinta da noÃ§Ã£o da
+linguagem natural. Normalmente, quando falamos de nÃºmeros
+aleatÃ³rios estamos falando de uma sequÃªncia que satisfaz
+determinadas propriedades, chamada sequÃªncia pseudoaleatÃ³ria. Em
+muitos casos, essa distinÃ§Ã£o Ã© irrelevante; por exemplo quando
+queremos apenas embaralhar um conjunto de cartas. Em Python, a
+maneira de obter nÃºmeros aleatÃ³rios Ã© usando o mÃ³dulo <code class="language-text">random</code>.
+Por exemplo, para escolher um nÃºmero aleatÃ³rio entre 1 e 10,
+incluindo os extremos, fazemos:</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">random</span>
+
+numero <span style="color: #666666">=</span> random<span style="color: #666666">.</span>randint(<span style="color: #666666">1</span>, <span style="color: #666666">10</span>)
+chute <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Adivinhe em qual nÃºmero pensei: &quot;</span>))
+<span style="color: #008000; font-weight: bold">if</span> chute <span style="color: #666666">==</span> numero:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;VocÃª Ã© de mais!&quot;</span>)
+<span style="color: #008000; font-weight: bold">else</span>:
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;O nÃºmero era </span><span style="color: #BB6688; font-weight: bold">{numero}</span><span style="color: #BA2121">.&quot;</span>)
+</pre><p>Uma pessoa com humor aleatÃ³rio, mas que estÃ¡ bem em 80% dos dias,
+bem poderia registrar o seguinte diÃ¡rio</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">random</span>
+
+<span style="color: #008000; font-weight: bold">for</span> dia <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>, <span style="color: #666666">11</span>):
+    <span style="color: #008000; font-weight: bold">if</span> random<span style="color: #666666">.</span>random() <span style="color: #666666">&lt;</span> <span style="color: #666666">0.8</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;No dia </span><span style="color: #BB6688; font-weight: bold">{dia}</span><span style="color: #BA2121"> estive feliz =)&quot;</span>)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;No dia </span><span style="color: #BB6688; font-weight: bold">{dia}</span><span style="color: #BA2121"> estive triste :(&quot;</span>)
+</pre><p>Execute vÃ¡rias vezes os cÃ³digos acima e procure a documentaÃ§Ã£o
+do mÃ³dulo <code class="language-text">random</code>.</p>
+<p>O objetivo dessa questÃ£o Ã© escrever uma funÃ§Ã£o que embaralha uma
+lista de inteiros. VocÃª <strong>nÃ£o</strong> pode utilizar uma lista auxiliar.</p>
+</li>
+</ol>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="06-listas.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../fixacao.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="08-matrizes.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

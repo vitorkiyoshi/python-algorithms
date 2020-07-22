@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - FunÃ§Ãµes
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >FunÃ§Ãµes</h1>
+
+
+          <span class="meta">Quinta, 16 de abril de 2020</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <p><strong>InstruÃ§Ãµes</strong>: Enquanto vocÃª lÃª, vocÃª deve acompanhar os exemplos
+utilizando um console e Python. Para essa unidade, vocÃª deve ler a
+seÃ§Ã£o 4.6 sobre funÃ§Ãµes do
+<a href="https://docs.python.org/pt-br/3/tutorial/index.html">tutorial</a>
+Python. Discutiremos alguns exemplos sobre a importÃ¢ncia de funÃ§Ãµes e
+sobre como utilizÃ¡-las efetivamente. Depois, vocÃª deverÃ¡ ler sobra as
+demais funcionalidades de funÃ§Ã£o em Python (do inÃ­cio da seÃ§Ã£o 4.7 atÃ©
+4.7.3).</p>
+<hr />
+<p>Vamos retomar o exemplo de nossa calculadora, mas agora vamos adicionar
+outras operaÃ§Ãµes operaÃ§Ãµes.</p>
+<pre class="highlightlanguage-python">
+<span style="color: #008000; font-weight: bold">while</span> <span style="color: #008000; font-weight: bold">True</span>:
+    operador <span style="color: #666666">=</span> <span style="color: #008000">input</span>()
+    <span style="color: #008000; font-weight: bold">if</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;+&quot;</span>:
+        num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        soma <span style="color: #666666">=</span> num1 <span style="color: #666666">+</span> num2
+        <span style="color: #008000">print</span>(soma)
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;-&quot;</span>:
+        num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        diferenca <span style="color: #666666">=</span> num1 <span style="color: #666666">-</span> num2
+        <span style="color: #008000">print</span>(diferenca)
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;*&quot;</span>:
+        num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        produto <span style="color: #666666">=</span> num1 <span style="color: #666666">*</span> num2
+        <span style="color: #008000">print</span>(produto)
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;/&quot;</span>:
+        num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        <span style="color: #008000; font-weight: bold">if</span> num2 <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Divisor nÃ£o pode ser zero&quot;</span>)
+            <span style="color: #008000; font-weight: bold">continue</span>
+        produto <span style="color: #666666">=</span> num1 <span style="color: #666666">/</span> num2
+        <span style="color: #008000">print</span>(produto)
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;F&quot;</span>:
+        <span style="color: #008000; font-weight: bold">break</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;OperaÃ§Ã£o invÃ¡lida&quot;</span>)
+</pre><p>Observe que usamos um comando <code class="language-text">continue</code>. Essa instruÃ§Ã£o termina a
+iteraÃ§Ã£o atual do laÃ§o, mas ao contrÃ¡rio de <code class="language-text">break</code>, continua na
+prÃ³xima iteraÃ§Ã£o. Assim, imediatamente apÃ³s executar <code class="language-text">continue</code>, o
+interpretador irÃ¡ voltar a verificar a condiÃ§Ã£o do <code class="language-text">while</code>.</p>
+<p>Perceba que o programa comeÃ§a a ficar muito grande e jÃ¡ nÃ£o cabe em
+muitas telas, mas ainda Ã© razoavelmente simples e a maioria dos
+programadores nÃ£o teria dificuldades em ler esse cÃ³digo. No entanto, Ã 
+medida que adicionamos operaÃ§Ãµes, a situaÃ§Ã£o fica um pouco mais
+complicada.</p>
+<p>Queremos que nossa calculadora seja mais Ãºtil do que as calculadoras
+de mesa tradicionais, entÃ£o vamos adicionar duas operaÃ§Ãµes, uma menos
+trivial do que a outra: a raiz quadrada e as raÃ­zes de uma equaÃ§Ã£o do
+segundo grau.</p>
+<p>Para calcular a raiz quadrada, vamos de novo importar um mÃ³dulo <code class="language-text">math</code>,
+entÃ£o adicionamos no inÃ­cio no arquivo</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+</pre><p>Com isso, basta basta escolher um nome para a operaÃ§Ã£o apropriado e
+adicionar mais algumas linhas no corpo do <code class="language-text">while</code>.</p>
+<pre class="highlightlanguage-python">    <span style="color: #408080; font-style: italic"># ....</span>
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;sqrt&quot;</span>:
+        num <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        raiz <span style="color: #666666">=</span> math<span style="color: #666666">.</span>sqrt(num)
+        <span style="color: #008000">print</span>(raiz)
+    <span style="color: #408080; font-style: italic"># ...</span>
+</pre><p>A segunda operaÃ§Ã£o â encontrar as raÃ­zes de uma equaÃ§Ã£o do segundo
+grau â diverge das operaÃ§Ãµes anteriores, pois nÃ£o hÃ¡ funÃ§Ã£o
+prontamente disponÃ­vel em Python, e precisamos de um nÃºmero de
+instruÃ§Ãµes um pouco maior. Primeiro, lembramos que
+uma equaÃ§Ã£o do segundo grau Ã© escrita como</p>
+<p>$$
+ax^2 + bx + c = 0
+$$</p>
+<p>Desde muito sabemos como encontrar o valor de $x$. Primeiro, calculamos
+o valor do discriminante</p>
+<p>$$
+\Delta = b^2 - 4ac
+$$</p>
+<p>Com o valor de $\Delta$, podemos determinar quantas e quais sÃ£o as
+soluÃ§Ãµes da equaÃ§Ã£o. A fÃ³rmula para isso Ã©</p>
+<p>$$
+x = \frac{-b \pm \sqrt{\Delta}}{2a}
+$$</p>
+<p>que Ã© popularmente conhecida como fÃ³rmula de Bhaskara. Adicionamos
+o seguinte ao corpo da funÃ§Ã£o</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">while</span> <span style="color: #008000; font-weight: bold">True</span>:
+    <span style="color: #408080; font-style: italic"># ....</span>
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;bhaskara&quot;</span>:
+        a <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        b <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        c <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        delta <span style="color: #666666">=</span> b<span style="color: #666666">*</span>b <span style="color: #666666">-</span> <span style="color: #666666">4</span> <span style="color: #666666">*</span> a <span style="color: #666666">*</span> c
+        <span style="color: #008000; font-weight: bold">if</span> delta <span style="color: #666666">&lt;</span> <span style="color: #666666">0</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;NÃ£o hÃ¡ raÃ­zes reais&quot;</span>)
+            <span style="color: #008000; font-weight: bold">continue</span>
+        <span style="color: #008000; font-weight: bold">elif</span> delta <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;HÃ¡ uma raiz distinta apenas&quot;</span>)
+        <span style="color: #008000; font-weight: bold">else</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;HÃ¡ duas raÃ­zes distintas&quot;</span>)
+        x1 <span style="color: #666666">=</span> (<span style="color: #666666">-</span>b <span style="color: #666666">+</span> math<span style="color: #666666">.</span>sqrt(delta)) <span style="color: #666666">/</span> (<span style="color: #666666">2</span> <span style="color: #666666">*</span> a)
+        x1 <span style="color: #666666">=</span> (<span style="color: #666666">-</span>b <span style="color: #666666">-</span> math<span style="color: #666666">.</span>sqrt(delta)) <span style="color: #666666">/</span> (<span style="color: #666666">2</span> <span style="color: #666666">*</span> a)
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;As raÃ­zes sÃ£o </span><span style="color: #BB6688; font-weight: bold">{x1}</span><span style="color: #BA2121"> e </span><span style="color: #BB6688; font-weight: bold">{x2}</span><span style="color: #BA2121">&quot;</span>)
+    <span style="color: #408080; font-style: italic"># ...</span>
+</pre><p>Se tentarmos olhar para todo o programa, teremos
+uma surpresa:</p>
+<pre class="highlightlanguage-python">
+<span style="color: #008000; font-weight: bold">while</span> <span style="color: #008000; font-weight: bold">True</span>:
+    operador <span style="color: #666666">=</span> <span style="color: #008000">input</span>()
+    <span style="color: #008000; font-weight: bold">if</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;+&quot;</span>:
+        num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        soma <span style="color: #666666">=</span> num1 <span style="color: #666666">+</span> num2
+        <span style="color: #008000">print</span>(soma)
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;-&quot;</span>:
+        num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        diferenca <span style="color: #666666">=</span> num1 <span style="color: #666666">-</span> num2
+        <span style="color: #008000">print</span>(diferenca)
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;*&quot;</span>:
+        num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        produto <span style="color: #666666">=</span> num1 <span style="color: #666666">*</span> num2
+        <span style="color: #008000">print</span>(produto)
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;/&quot;</span>:
+        num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        <span style="color: #008000; font-weight: bold">if</span> num2 <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Divisor nÃ£o pode ser zero&quot;</span>)
+            <span style="color: #008000; font-weight: bold">continue</span>
+        produto <span style="color: #666666">=</span> num1 <span style="color: #666666">/</span> num2
+        <span style="color: #008000">print</span>(produto)
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;sqrt&quot;</span>:
+        num <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        raiz <span style="color: #666666">=</span> math<span style="color: #666666">.</span>sqrt(num)
+        <span style="color: #008000">print</span>(raiz)
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;bhaskara&quot;</span>:
+        a <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        b <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        c <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        delta <span style="color: #666666">=</span> b <span style="color: #666666">*</span> b <span style="color: #666666">-</span> <span style="color: #666666">4</span> <span style="color: #666666">*</span> a <span style="color: #666666">*</span> c
+        <span style="color: #008000; font-weight: bold">if</span> delta <span style="color: #666666">&lt;</span> <span style="color: #666666">0</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;NÃ£o hÃ¡ raÃ­zes reais&quot;</span>)
+            <span style="color: #008000; font-weight: bold">continue</span>
+        <span style="color: #008000; font-weight: bold">elif</span> delta <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;HÃ¡ uma raiz distinta apenas&quot;</span>)
+        <span style="color: #008000; font-weight: bold">else</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;HÃ¡ duas raÃ­zes distintas&quot;</span>)
+        x1 <span style="color: #666666">=</span> (<span style="color: #666666">-</span>b <span style="color: #666666">+</span> math<span style="color: #666666">.</span>sqrt(delta)) <span style="color: #666666">/</span> (<span style="color: #666666">2</span> <span style="color: #666666">*</span> a)
+        x1 <span style="color: #666666">=</span> (<span style="color: #666666">-</span>b <span style="color: #666666">-</span> math<span style="color: #666666">.</span>sqrt(delta)) <span style="color: #666666">/</span> (<span style="color: #666666">2</span> <span style="color: #666666">*</span> a)
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;As raÃ­zes sÃ£o </span><span style="color: #BB6688; font-weight: bold">{x1}</span><span style="color: #BA2121"> e </span><span style="color: #BB6688; font-weight: bold">{x2}</span><span style="color: #BA2121">&quot;</span>)
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;F&quot;</span>:
+        <span style="color: #008000; font-weight: bold">break</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;OperaÃ§Ã£o invÃ¡lida&quot;</span>)
+</pre><p>Dessa vez, tenho certeza de que todo o cÃ³digo nÃ£o cabe em uma Ãºnica
+tela de seu editor. Mais importante do que isso, Ã© extremamente
+difÃ­cil ler esse cÃ³digo e entender o que estÃ¡ acontecendo! O motivo,
+alÃ©m do tamanho, Ã© que para entender o cÃ³digo acima precisamos
+nos preocupar, ao mesmo tempo, com diversos problemas distintos:</p>
+<ul>
+<li>como controlar um menu de operaÃ§Ãµes ao usuÃ¡rio?</li>
+<li>como ler e mostrar os dados de uma operaÃ§Ã£o de soma, subtraÃ§Ã£o etc.?</li>
+<li>como obter as raÃ­zes de uma equaÃ§Ã£o de segundo grau?</li>
+</ul>
+<p>Como estamos fazendo tudo isso de maneira intercalada, ao lermos esse
+cÃ³digo, ora nos preocumos com o <code class="language-text">while</code>, ora com a entrada e saÃ­da,
+ora com a fÃ³rmula de Bhaskara. Pior! Se houver um erro na lÃ³gica do
+nosso programa, vamos gastar bastante tempo tentando descobrir onde
+ele estÃ¡.</p>
+<h1 id="funcoes">FunÃ§Ãµes</h1>
+<p>Para resolver esse problema, vamos criar uma abstraÃ§Ã£o para conjunto
+de instruÃ§Ãµes dedicadas a resolver uma determinada tarefa. Vamos
+<strong>reescrever</strong> ou <strong>refatorar</strong> o programa. Vamos adotar uma
+estratÃ©gia de resolver os problemas mais gerais primeiro, e depois os
+mais especÃ­ficos (algumas pessoas chamam a isso de estratÃ©gia
+<em>top-down</em>).</p>
+<p>Primeiro precisamos descobrir qual a tarefa principal do programa,
+isso Ã©, qual Ã© o conjunto de instruÃ§Ãµes deve ser executado ao iniciar
+o programa. Nesse exemplo, a primeira instruÃ§Ã£o Ã© <code class="language-text">while</code>, que Ã©
+responsÃ¡vel pelo controle das operaÃ§Ãµes digitadas pelo usuÃ¡rio. Vamos
+entÃ£o nos concentrar nesse problema e <strong>esconder</strong> todos os demais.
+Escrevemos o seguinte:</p>
+<pre class="highlightlanguage-python">
+<span style="color: #008000; font-weight: bold">while</span> <span style="color: #008000; font-weight: bold">True</span>:
+    operador <span style="color: #666666">=</span> <span style="color: #008000">input</span>()
+    <span style="color: #008000; font-weight: bold">if</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;+&quot;</span>:
+        operacao_soma()
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;-&quot;</span>:
+        operacao_diferenca()
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;*&quot;</span>:
+        operacao_multiplicacao()
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;/&quot;</span>:
+        operacao_divisao()
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;sqrt&quot;</span>:
+        operacao_raiz()
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;bhaskara&quot;</span>:
+        operacao_bhaskara()
+    <span style="color: #008000; font-weight: bold">elif</span> operador <span style="color: #666666">==</span> <span style="color: #BA2121">&quot;F&quot;</span>:
+        <span style="color: #008000; font-weight: bold">break</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;OperaÃ§Ã£o invÃ¡lida&quot;</span>)
+</pre><p>Agora fica muito mais simples entender o que esse cÃ³digo faz: ele lÃª
+uma linha do teclado e realiza uma operaÃ§Ã£o de acordo com o que o
+usuÃ¡rio digitar. Ã claro que <code class="language-text">operacao_soma</code>, <code class="language-text">operacao_diferenca</code>
+etc. nÃ£o sÃ£o instruÃ§Ãµes da linguagem Python. Cada um desses nomes Ã©
+uma <strong>abstraÃ§Ã£o</strong>: aqui, abstrair significa esconder os detalhes de
+como realizar um determinada operaÃ§Ã£o.</p>
+<p>Se tentarmos executar um cÃ³digo assim irÃ­amos obter uma mensagem de
+erro do interpretador dizendo que algum nome nÃ£o estÃ¡ definido, como
+se ele reclamasse, &quot;nÃ£o sei do que vocÃª estÃ¡ falando&quot;. Vamos entÃ£o
+definir cada um desses nomes. Para isso, antes do <code class="language-text">while</code>, adicione</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_soma</span>():
+    <span style="color: #008000; font-weight: bold">pass</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_diferenca</span>():
+    <span style="color: #008000; font-weight: bold">pass</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_produto</span>():
+    <span style="color: #008000; font-weight: bold">pass</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_divisao</span>():
+    <span style="color: #008000; font-weight: bold">pass</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_raiz</span>():
+    <span style="color: #008000; font-weight: bold">pass</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_bhaskara</span>():
+    <span style="color: #008000; font-weight: bold">pass</span>
+</pre><p>O que estamos fazendo Ã© definir diversas novas <strong>funÃ§Ãµes</strong>. Uma funÃ§Ã£o
+Ã© um conjunto de instruÃ§Ãµes realiza determinada tarefa identificada
+por um nome. As funÃ§Ãµes acima sÃ£o sÃ³ <em>stubs</em>, que sÃ£o funÃ§Ãµes
+incompletas. O motivo para criar stub Ã© poder testar o cÃ³digo do
+programa principal enquanto ainda estamos desenvolvendo nosso
+programa.</p>
+<p>Depois de terminado o trecho de cÃ³digo do programa principal, devemos
+implementar cada uma das funÃ§Ãµes definidas acima. Implementar uma
+funÃ§Ã£o significa escrever o conjunto de instruÃ§Ãµes que realiza a
+tarefa correspondente. Uma das vantagens de definir e usar funÃ§Ãµes Ã©
+que Ã© muito mais fÃ¡cil implementar tarefas pequenas, uma de cada vez,
+do que tentar resolver todo o problema de uma vez. Para a funÃ§Ã£o
+<code class="language-text">operacao_soma</code> basta copiar as instruÃ§Ãµes do cÃ³digo original:</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_soma</span>():
+    num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    soma <span style="color: #666666">=</span> num1 <span style="color: #666666">+</span> num2
+    <span style="color: #008000">print</span>(soma)
+</pre><p>VocÃª deve fazer o mesmo para as operaÃ§Ãµes de diferenÃ§a e produto. Para
+a operaÃ§Ã£o de divisÃ£o, no entanto, precisamos tomar um cuidado a mais.
+Copiando o cÃ³digo original, terÃ­amos:</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_divisao</span>():
+    num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    <span style="color: #008000; font-weight: bold">if</span> num2 <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Divisor nÃ£o pode ser zero&quot;</span>)
+        <span style="color: #008000; font-weight: bold">continue</span>
+    produto <span style="color: #666666">=</span> num1 <span style="color: #666666">/</span> num2
+    <span style="color: #008000">print</span>(produto)
+</pre><p>O problema do cÃ³digo acima Ã© que a instruÃ§Ã£o <code class="language-text">continue</code> sÃ³ faz sentido
+dentre do corpo de um comando <code class="language-text">for</code> ou <code class="language-text">while</code>. O que queremos, nesse
+caso, Ã© terminar a funÃ§Ã£o e retornar ao menu. Para isso, existe a
+instruÃ§Ã£o <code class="language-text">return</code> que termina a funÃ§Ã£o que a contÃ©m e continua a
+execuÃ§Ã£o imediatamente depois do ponto de chamada.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_divisao</span>():
+    num1 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    num2 <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    <span style="color: #008000; font-weight: bold">if</span> num2 <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Divisor nÃ£o pode ser zero&quot;</span>)
+        <span style="color: #008000; font-weight: bold">return</span>
+    produto <span style="color: #666666">=</span> num1 <span style="color: #666666">/</span> num2
+    <span style="color: #008000">print</span>(produto)
+</pre><p>FaÃ§a o mesmo para operaÃ§Ã£o para obter raÃ­zes da equaÃ§Ã£o.</p>
+<h1 id="passando-argumentos-e-devolvendo-valores">Passando argumentos e devolvendo valores</h1>
+<p>Vamos olhar como ficaria a funÃ§Ã£o para a operaÃ§Ã£o da raiz:</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_raiz</span>():
+    num <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    raiz <span style="color: #666666">=</span> math<span style="color: #666666">.</span>sqrt(num)
+    <span style="color: #008000">print</span>(raiz)
+</pre><p>A expressÃ£o <code class="language-text">math.sqrt(num)</code> Ã© uma chamada a uma funÃ§Ã£o de nome <code class="language-text">sqrt</code>
+importada com o mÃ³dulo <code class="language-text">math</code>. Repare que o radiando Ã© passado como
+parÃ¢metro da funÃ§Ã£o Ã© a raiz Ã© obtida, assim, a funÃ§Ã£o <code class="language-text">sqrt</code>
+funciona, de fato, como uma funÃ§Ã£o matemÃ¡tica, que tem uma entrada e
+devolve uma saÃ­da.</p>
+<p>Embora calcular a raiz quadrada jÃ¡ Ã© uma funÃ§Ã£o prÃ³pria de uma
+biblioteca padrÃ£o do Python, ela nÃ£o Ã© uma instruÃ§Ã£o elementar dos
+nossos computadores modernos. Como bons computeiros, devemos ter o
+espÃ­rito curioso de descobrir como uma tal operaÃ§Ã£o complexa pode ser
+computada a partir de operaÃ§Ãµes elementares (soma, subtraÃ§Ã£o,
+multiplicaÃ§Ã£o e divisÃ£o).</p>
+<p>HÃ¡ vÃ¡rios mÃ©todos conhecidos e vocÃª deve ter jÃ¡ estudado pelo menos um
+na escola. Nesse exemplo, vamos usar o mÃ©todo de Newton. Como essa Ã©
+uma operaÃ§Ã£o complicada, primeiro vamos criar um stub para poder
+modificar o cÃ³digo de <code class="language-text">operacao_raiz</code>. Fazemos o seguinte:</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">minha_sqrt</span>(radiando):
+    raiz <span style="color: #666666">=</span> radiando <span style="color: #666666">/</span> <span style="color: #666666">2</span> <span style="color: #408080; font-style: italic"># TODO: implementar mÃ©todo de Newton</span>
+    <span style="color: #008000; font-weight: bold">return</span> raiz
+
+<span style="color: #408080; font-style: italic"># ...</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">operacao_raiz</span>():
+    num <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+    raiz <span style="color: #666666">=</span> minha_sqrt(num)
+    <span style="color: #008000">print</span>(raiz)
+</pre><p>A funÃ§Ã£o <code class="language-text">minha_sqrt</code> Ã© sÃ³ um stub, mas ela ilustra dois conceitos
+novos:</p>
+<ul>
+<li>
+<p>Uma funÃ§Ã£o pode receber um ou mais <strong>parÃ¢metros</strong>. Um parÃ¢metro Ã©
+uma variÃ¡vel que se refere a algum valor passado entre os parÃªnteses
+quando chamamos a funÃ§Ã£o. Esse pode ser o valor de qualquer
+expressÃ£o, seja uma simples variÃ¡vel como em <code class="language-text">minha_sqrt(num)</code>, mas
+pode ser tambÃ©m uma expressÃ£o mais complicada, como em
+<code class="language-text">minha_sqrt(b*b - 4*a*c)</code>.</p>
+</li>
+<li>
+<p>Uma funÃ§Ã£o pode <strong>devolver</strong> um valor ao retornar ao local de
+origem. Esse valor Ã© escrito apÃ³s o <code class="language-text">return</code>. O valor devolvido por
+uma funÃ§Ã£o tem um tipo determinado e pode ser utilizado em qualquer
+expressÃ£o onde uma variÃ¡vel do mesmo tipo poderia ser utilizado. Por
+exemplo, o valor pode ser atribuÃ­do a uma variÃ¡vel, como em
+<code class="language-text">raiz = minha_sqrt(num)</code> ou utilizado em uma expressÃ£o mais
+complicada, como em <code class="language-text">x = (-b + minha_sqrt(b*b - 4*a*c)) / (2*a)</code>.</p>
+</li>
+</ul>
+<p>Agora que jÃ¡ organizamos nosso programa em funÃ§Ãµes, podemos nos
+concentrar em implementar o mÃ©todo de Newton. Observe que fizemos um
+comentÃ¡rio que comeÃ§a com <code class="language-text"># TODO: ...</code>. Ã comum criar comentÃ¡rios
+como esse ou <code class="language-text"># FIXME: ....</code> para indicar trechos de cÃ³digo que
+merecem atenÃ§Ã£o posterior. Outra maneira, para projetos grandes, Ã©
+anotar um <code class="language-text">bug</code> num gerenciador de tarefas (como bugzilla, issues,
+etc.). Revise o <a href="https://pt.wikipedia.org/wiki/M%C3%A9todo_de_Newton%E2%80%93Raphson">mÃ©todo de Newton</a>
+e implemente a funÃ§Ã£o (vocÃª pode achar mais fÃ¡cil resolver o <a href="../fixacao/03-repeticao.html">exercÃ­cio
+correspondente</a>).</p>
+<h1 id="repeticao-de-codigo">RepetiÃ§Ã£o de cÃ³digo</h1>
+<p>Vamos resolver mais um exercÃ­cio:</p>
+<blockquote>
+<p>Escreva um programa que recebe um nÃºmero inteiro e decide se ele Ã©
+um produto de dois nÃºmeros primos.</p>
+</blockquote>
+<p>Antes de comeÃ§ar, vamos listar as duas pequenas tarefas que
+devemos fazer:</p>
+<ol>
+<li>controlar a entrada e saÃ­da do programa</li>
+<li>verificar se um nÃºmero Ã© produto de dois primos</li>
+</ol>
+<p>Novamente, precisamos identificar qual delas Ã© a tarefa principal,
+isso Ã©, que serÃ¡ executada primeiro quando o programa comeÃ§ar. Em
+grande parte de nossos problemas essa vai ser sempre a tarefa de ler
+os dados de entrada, realizar algumas operaÃ§Ãµes e mostrar os dados de
+saÃ­da. Nesse caso, vamos fazer o seguinte::</p>
+<pre class="highlightlanguage-python">
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Digite um nÃºmero inteiro: &quot;</span>))
+    <span style="color: #008000; font-weight: bold">if</span> eh_produto_dois_primos(n):
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;O nÃºmero </span><span style="color: #BB6688; font-weight: bold">{n}</span><span style="color: #BA2121"> Ã© produto de dois primos.&quot;</span>)
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;O nÃºmero </span><span style="color: #BB6688; font-weight: bold">{n}</span><span style="color: #BA2121"> nÃ£o Ã© produto de dois primos.&quot;</span>)
+
+main()
+</pre><p>Observe que definimos uma funÃ§Ã£o chamada <code class="language-text">main</code> e que adicionamos uma
+chamada a essa funÃ§Ã£o na Ãºltima linha do programa, que Ã© a Ãºnica
+instruÃ§Ã£o do programa que nÃ£o estÃ¡ dentro de uma funÃ§Ã£o. Sempre que
+nosso problema nÃ£o for trivial, vamos preferir organizar nossos
+programas dessa maneira. O nome <code class="language-text">main</code> Ã© uma convenÃ§Ã£o e serve para
+identificar facilmente qual Ã© a funÃ§Ã£o principal do programa.</p>
+<p>Para entender esse programa, precisamos investigar a linha que contÃ©m
+<code class="language-text">if eh_produto_dois_primos(n):</code>. O que estÃ¡ implÃ­cito aqui Ã© que
+<code class="language-text">eh_produto_dois_primos</code> Ã© uma funÃ§Ã£o que devolve um valor booleano
+dependendo se o nÃºmero <code class="language-text">n</code> passado como parÃ¢metro Ã© produto de dois
+primos. Para podermos deduzir isso foi fundamental que o <strong>nome da
+funÃ§Ã£o</strong> fosse bem representativo do que ela faz e do que ela devolve.</p>
+<p>Para poder testar a funÃ§Ã£o <code class="language-text">main</code>, faremos um stub.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">eh_produto_dois_primos</span>(n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve True se o argumento n puder</span>
+<span style="color: #BA2121; font-style: italic">    ser escrito como um produto de dois primos&quot;&quot;&quot;</span>
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000; font-weight: bold">True</span>
+</pre><p>A novidade nesse programa Ã© que adicionamos uma string na primeira
+linha da funÃ§Ã£o. Essa string nÃ£o Ã© associada a nenhuma variÃ¡vel e nÃ£o
+tem nenhum efeito. O motivo de adicionarmos Ã© que ela serve para
+documentar o que a funÃ§Ã£o faz. Por mais que uma funÃ§Ã£o tenha (e deva
+ter) um bom nome, nem sempre Ã© claro o que cada funÃ§Ã£o faz,
+particularmente se voltarmos a ler nosso cÃ³digo depois de alguns dias.
+Essas strings sÃ£o denominadas <em>strings de documentaÃ§Ã£o</em> ou
+<em>documentation strings</em>.</p>
+<p>Quando testarmos o programa com qualquer nÃºmero, digamos,
+100, obteremos sempre uma mensagem como</p>
+<pre class="highlight">O nÃºmero 100 Ã© produto de dois primos.
+</pre><p>independentemente do nÃºmero lido. Para testar o conjunto de instruÃ§Ãµes
+correspondentes ao <code class="language-text">else</code> da funÃ§Ã£o <code class="language-text">main</code> podemos mudar o nosso stub.
+Mas agora, jÃ¡ podemos implementar a funÃ§Ã£o de fato. Antes, vamos
+escrever um algoritmo, em bem alto nÃ­vel.</p>
+<ol>
+<li>
+para cada nÃºmero $q$ em $1, 2, ...., n$:<ul>
+<li>
+se $n$ for divisÃ­vel por $q$:<ul>
+<li>faÃ§a $r \gets n / q$</li>
+<li>verifique se $q$ Ã© primo</li>
+<li>verifique se $r$ Ã© primo</li>
+<li>
+se ambos forem primos<ul>
+<li>responda SIM</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>se nÃ£o tiver terminado, responda NÃO</li>
+</ol>
+<p>VocÃª pode sÃ³ acreditar que esse algoritmo estÃ¡ correto, ou pode tentar
+se convencer de que estÃ¡. Um bom computeiro tenta entender bem o que
+um algoritmo faz antes de tentar codificÃ¡-lo. Para isso, teste com
+algumas instÃ¢ncias pequenas utilizando lÃ¡pis e papel. Quando
+estivermos confiantes de que o o algoritmo estÃ¡ correto, podemos
+passar Ã  implementaÃ§Ã£o.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">eh_produto_dois_primos</span>(n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve True se o argumento n puder</span>
+<span style="color: #BA2121; font-style: italic">    ser escrito como um produto de dois primos&quot;&quot;&quot;</span>
+
+    produto_primos <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">False</span>
+    <span style="color: #008000; font-weight: bold">for</span> q <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>, n <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+        <span style="color: #008000; font-weight: bold">if</span> n <span style="color: #666666">%</span> q <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+            r <span style="color: #666666">=</span> n <span style="color: #666666">//</span> q
+
+            r_eh_primo <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+            <span style="color: #008000; font-weight: bold">for</span> d <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">2</span>, r):
+                <span style="color: #008000; font-weight: bold">if</span> r <span style="color: #666666">%</span> d <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+                    r_eh_primo <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">False</span>
+                    <span style="color: #008000; font-weight: bold">break</span>
+
+            q_eh_primo <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+            <span style="color: #008000; font-weight: bold">for</span> d <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">2</span>, q):
+                <span style="color: #008000; font-weight: bold">if</span> r <span style="color: #666666">%</span> d <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+                    q_eh_primo <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">False</span>
+                    <span style="color: #008000; font-weight: bold">break</span>
+
+            <span style="color: #008000; font-weight: bold">if</span> r_eh_primo <span style="color: #AA22FF; font-weight: bold">and</span> q_eh_primo:
+                produto_primos <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+                <span style="color: #008000; font-weight: bold">break</span>
+
+    <span style="color: #008000; font-weight: bold">return</span> produto_primos
+</pre><p>Leia com atenÃ§Ã£o e copie essa funÃ§Ã£o no seu programa. Podemos testar o
+programa digitando o nÃºmero <code class="language-text">15</code> que Ã© um produto de dois primos <code class="language-text">3</code> e
+<code class="language-text">5</code>. Ao verificar a saÃ­da iremos ver que o programa imprimiu
+corretamente</p>
+<pre class="highlight">O nÃºmero 15 Ã© produto de dois primos.
+</pre><p>Se testarmos com outros <code class="language-text">10</code> ou <code class="language-text">4</code>, o programa tambÃ©m responderÃ¡
+corretamente. Mas devolver a resposta correta para alguns exemplos nÃ£o
+significa que o programa estÃ¡ correto. Na verdade, nÃ£o importa qual
+nÃºmero inteiro fornecermos, o programa sempre responderÃ¡ que ele Ã©
+produto de dois primos. Isso nÃ£o Ã© verdade quando a resposta Ã© nÃ£o,
+como para o nÃºmero <code class="language-text">8</code> ou o nÃºmero <code class="language-text">20</code>.</p>
+<p>ConcluÃ­mos duas coisas: primeiro, nosso programa estÃ¡ errado, segundo,
+Ã© importante testar nossos programas com vÃ¡rios exemplos de entrada,
+particularmente para entradas que fornecem saÃ­das diferentes.</p>
+<p>Para descobrir onde estÃ¡ o erro do programa, podemos usar diversas estratÃ©gias, como simulÃ¡-lo com um debugger, ou ler o cÃ³digo
+lentamente com atenÃ§Ã£o. Se vocÃª jÃ¡ nÃ£o descobriu o erro, pare um pouco
+e tendo descobri-lo.</p>
+<p>Uma vez descoberto o erro, precisamos corrigi-lo. Mais importante,
+precisamos entender porque esse erro ocorreu para inÃ­cio de conversa.
+O erro Ã© um erro de digitaÃ§Ã£o na segunda ocorrÃªncia de
+<code class="language-text">if r % d == 0:</code> que deveria ser <code class="language-text">if q % d == 0:</code>. Como vocÃª deve
+adivinhar, isso ocorreu porque temos dois trechos de cÃ³digo muito
+parecidos e o segundo foi obtido copiando e modificando o primeiro,
+mas esquecemos de modificar uma linha.</p>
+<p>Esse exemplo descreve o que chamamos de <strong>duplicidade de cÃ³digo</strong>, que
+Ã© uma situaÃ§Ã£o extremamente comum no desenvolvimento de software.
+Muitas vezes, cada trecho de cÃ³digo tem papeis similares, mas para
+parÃ¢metros diferentes. No exemplo acima, queremos decidir se um dado
+nÃºmero (<code class="language-text">r</code> ou <code class="language-text">q</code>) Ã© primo. Em situaÃ§Ãµes como essa, devemos refatorar
+o cÃ³digo e definirmos uma funÃ§Ã£o. Reescrevemos assim.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">eh_primo</span>(n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Verifica se n Ã© primo&quot;&quot;&quot;</span>
+
+    eh_primo <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+    <span style="color: #008000; font-weight: bold">for</span> d <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">2</span>, n):
+        <span style="color: #008000; font-weight: bold">if</span> n <span style="color: #666666">%</span> d <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+            eh_primo <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">False</span>
+            <span style="color: #008000; font-weight: bold">break</span>
+    <span style="color: #008000; font-weight: bold">return</span> eh_primo
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">eh_produto_dois_primos</span>(n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve True se o argumento n puder</span>
+<span style="color: #BA2121; font-style: italic">    ser escrito como um produto de dois primos&quot;&quot;&quot;</span>
+
+    produto_primos <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">False</span>
+    <span style="color: #008000; font-weight: bold">for</span> q <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">1</span>, n <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+        <span style="color: #008000; font-weight: bold">if</span> n <span style="color: #666666">%</span> q <span style="color: #666666">==</span> <span style="color: #666666">0</span>:
+            r <span style="color: #666666">=</span> n <span style="color: #666666">//</span> q
+            <span style="color: #008000; font-weight: bold">if</span> eh_primo(r) <span style="color: #AA22FF; font-weight: bold">and</span> eh_primo(q):
+                produto_primos <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">True</span>
+                <span style="color: #008000; font-weight: bold">break</span>
+
+    <span style="color: #008000; font-weight: bold">return</span> produto_primos
+</pre><p>Deve ser evidente que a nova versÃ£o Ã© mais simples e muito mais
+compacta. Dessa vez, nÃ£o hÃ¡ repetiÃ§Ã£o de cÃ³digo. Testando para o
+nÃºmero <code class="language-text">8</code> vemos que, agora sim, ele responde corretamente que nÃ£o Ã©
+produto de dois primos.</p>
+<p>Infelizmente, como vocÃª jÃ¡ pode desconfiar, esse programa nÃ£o estÃ¡
+correto. Estude o programa e tente determinar para que exemplos esse
+programa devolve a saÃ­da incorreta! Depois, corrija seu programa. Ao
+terminar esse exercÃ­cio vocÃª vai descobri mais uma vantagem de ter
+refatorado o programa com uma nova funÃ§Ã£o, ao invÃ©s de manter as duas
+cÃ³pias praticamente idÃªnticas de um conjunto de instruÃ§Ãµes.</p>
+<h1 id="criando-e-organizando-seu-programa">Criando e organizando seu programa</h1>
+<p>Vamos resolver mais um problema para nos exercitar.</p>
+<blockquote>
+<p>Crie um programa que leia duas listas do teclado, correspondentes Ã s
+notas de provas e de exercÃ­cios dos estudantes, normaliza cada nota
+dividindo-se a nota pelo mÃ¡ximo da lista correspondente e computa a
+mÃ©dia final de cada estudante, que Ã© dada pela mÃ©dia geomÃ©trica
+entre a nota de prova e de exercÃ­cios.</p>
+</blockquote>
+<p>VocÃª deve tentar fazer todo esse programa por conta prÃ³pria.
+Para isso, procure seguir a mesma estratÃ©gia que seguimos antes:</p>
+<ol>
+<li>Leia o enunciado e procure entender o que Ã© pedido. Para isso,
+tente formalizar entrada e saÃ­da e crie alguns exemplos. Depois,
+faÃ§a uma lista de todas as tarefas curtas que precisam ser
+realizadas para se resolver esse problema.</li>
+<li>Identifique a tarefa principal responsÃ¡vel por controlar entrada e
+saÃ­da e crie uma funÃ§Ã£o <code class="language-text">main</code> utilizando chamadas para funÃ§Ãµes
+auxiliares quando quiser abstrair pequenas tarefas.</li>
+<li>Crie funÃ§Ãµes stubs para cada funÃ§Ã£o auxiliar necessÃ¡ria.
+Certifique-se de que os nomes das funÃ§Ãµes sejam adequados para as
+tarefas que abstraÃ­das. NÃ£o se esqueÃ§a de documentar as funÃ§Ãµes
+identificando a entrada e a saÃ­da sempre que necessÃ¡rio.</li>
+<li>Teste a funÃ§Ã£o principal verificando as instruÃ§Ãµes que controlam a
+entrada e a saÃ­da da funÃ§Ã£o.</li>
+<li>Implemente cada stub definido. Lembre-se de escrever antes um
+algoritmo em portuguÃªs, testar e, sÃ³ depois, traduzi-los a
+linguagem Python. Procure testar seu programa a cada funÃ§Ã£o
+implementada.</li>
+</ol>
+<p>Em seguida eu mostro como eu resolveria esse problema. <strong>NÃ£o leia</strong>
+esse cÃ³digo enquanto nÃ£o tiver terminado o seu prÃ³prio programa. Seu
+programa pode divergir completamente do cÃ³digo abaixo, mas isso nÃ£o
+significa que uma maneira Ã© mais correta do que a outra. Procure
+analisar criticamente as diferenÃ§as. Uma peculiaridade da ComputaÃ§Ã£o Ã©
+que, embora seja uma ciÃªncia dita exata, os algoritmos sÃ£o tÃ£o
+distintos quanto seus prÃ³prios programadores. Tanto que alguns diriam
+que programaÃ§Ã£o Ã© uma
+<a href="https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming">arte</a>!</p>
+<pre class="highlightlanguage-python"><span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #BA2121; font-style: italic">Calcula as mÃ©dias finais dos estudantes.</span>
+
+<span style="color: #BA2121; font-style: italic">Entrada:</span>
+<span style="color: #BA2121; font-style: italic">- uma linha com o nÃºmero n de estudantes</span>
+<span style="color: #BA2121; font-style: italic">- n linhas correspondentes Ã s notas de provas</span>
+<span style="color: #BA2121; font-style: italic">- n linhas correspondentes Ã s notas de exercÃ­cios</span>
+
+<span style="color: #BA2121; font-style: italic">SaÃ­da:</span>
+<span style="color: #BA2121; font-style: italic">- n linhas correspondentes Ã s medias finais</span>
+<span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;</span>
+
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_lista_numeros</span>(n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;LÃª uma lista de n nÃºmeros do teclado&quot;&quot;&quot;</span>
+    lista <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> _ <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        numero <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        lista<span style="color: #666666">.</span>append(numero)
+    <span style="color: #008000; font-weight: bold">return</span> lista
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">imprimir_lista_numeros</span>(lista):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Imprime cada nÃºmero de lista em um linha,</span>
+<span style="color: #BA2121; font-style: italic">    com duas casas decimais&quot;&quot;&quot;</span>
+    <span style="color: #008000; font-weight: bold">for</span> valor <span style="color: #AA22FF; font-weight: bold">in</span> lista:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #BB6688; font-weight: bold">{valor:.2f}</span><span style="color: #BA2121">&quot;</span>)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">obter_maximo</span>(lista):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve o valor mÃ¡ximo da lista&quot;&quot;&quot;</span>
+    <span style="color: #008000; font-weight: bold">assert</span> lista, <span style="color: #BA2121">&quot;Lista nÃ£o pode ser vazia&quot;</span>
+    maximo <span style="color: #666666">=</span> lista[<span style="color: #666666">0</span>]
+    <span style="color: #008000; font-weight: bold">for</span> numero <span style="color: #AA22FF; font-weight: bold">in</span> lista:
+        <span style="color: #008000; font-weight: bold">if</span> numero <span style="color: #666666">&gt;</span> maximo:
+            maximo <span style="color: #666666">=</span> numero
+    <span style="color: #008000; font-weight: bold">return</span> maximo
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">criar_lista_normalizada</span>(lista_antiga):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve uma nova lista com os elementos</span>
+<span style="color: #BA2121; font-style: italic">    de lista_antiga normalizados pelo mÃ¡ximo&quot;&quot;&quot;</span>
+    maximo <span style="color: #666666">=</span> obter_maximo(lista_antiga)
+    lista_nova <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> valor <span style="color: #AA22FF; font-weight: bold">in</span> lista_antiga:
+        novo_valor <span style="color: #666666">=</span> valor <span style="color: #666666">/</span> maximo
+        lista_nova<span style="color: #666666">.</span>append(novo_valor)
+    <span style="color: #008000; font-weight: bold">return</span> lista_nova
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_medias_finais</span>(notas_provas, notas_exercicios):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve uma nova lista com as mÃ©dias geomÃ©tricas</span>
+<span style="color: #BA2121; font-style: italic">    dos elementos de notas_provas e notas_exercicios&quot;&quot;&quot;</span>
+    medias_finais <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">assert</span> <span style="color: #008000">len</span>(notas_provas) <span style="color: #666666">==</span> <span style="color: #008000">len</span>(notas_exercicios), \
+           <span style="color: #BA2121">&quot;As listas de notas devem ter o mesmo tamanho&quot;</span>
+    n <span style="color: #666666">=</span> <span style="color: #008000">len</span>(notas_provas)
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        media_final <span style="color: #666666">=</span> math<span style="color: #666666">.</span>sqrt(notas_provas[i] <span style="color: #666666">*</span> notas_exercicios[i])
+        medias_finais<span style="color: #666666">.</span>append(media_final)
+    <span style="color: #008000; font-weight: bold">return</span> medias_finais
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(n))
+    notas_provas <span style="color: #666666">=</span> ler_lista_numeros(n)
+    notas_exercicios <span style="color: #666666">=</span> ler_lista_numeros(n)
+
+    notas_provas <span style="color: #666666">=</span> criar_lista_normalizada(notas_provas)
+    notas_exercicios <span style="color: #666666">=</span> criar_lista_normalizada(notas_exercicios)
+
+    medias_finais <span style="color: #666666">=</span> calcular_medias_finais(notas_provas, notas_exercicios)
+    imprimir_lista_numeros(medias_finais)
+
+main()
+</pre><p>HÃ¡ vÃ¡rios detalhe nesse programas e talvez alguns sejam novos para
+vocÃª. VocÃª deve pesquisar as instruÃ§Ãµes que nÃ£o conhecer e descobrir o
+objetivo de elas estarem ali. O que queremos destacar nesse exemplo,
+no entanto, Ã© a forma como estÃ¡ organizado. Ã uma boa prÃ¡tica (embora
+nem sempre seja seguida no mercado) criar programas bem documentados e
+com formataÃ§Ã£o padronizada, como acima. O programa acima estÃ¡
+organizado de acordo com algumas convenÃ§Ãµes:</p>
+<ol>
+<li>O programa comeÃ§a com um comentÃ¡rio descrevendo o que ele faz. No
+caso de Python, usamos uma string de mÃºltiplas linhas que Ã© mais
+convenientes. Repare que a documentaÃ§Ã£o descreve precisamente
+como utilizar o programa.</li>
+<li>Em seguida, hÃ¡ uma seÃ§Ã£o de <code class="language-text">import</code>. Por enquanto sÃ³ conhecemos e
+precisamos de uma funÃ§Ã£o no mÃ³dulo <code class="language-text">math</code>, mas podemos ter uma
+sequÃªncia bem grande de instruÃ§Ãµes desse tipos quando tivermos
+programas mais complexos que precisam de mais bibliotecas.</li>
+<li>Logo em seguida hÃ¡ uma sequÃªncia de funÃ§Ãµes auxiliares para se
+resolver nosso problema, cada uma bem documentada. As funÃ§Ãµes estÃ£o
+organizadas nessa ordem nÃ£o por acaso. Nesse nosso exemplo,
+primeiro estÃ£o as funÃ§Ãµes mais gerais (de entrada e saÃ­da) e depois
+funÃ§Ãµes mais especÃ­ficas para nosso problema. Cada desenvolvedor
+(ou grupo) normalmente adota uma estratÃ©gia particular.</li>
+<li>Por Ãºltimo, vem a funÃ§Ã£o principal, denominada <code class="language-text">main</code>, seguida de
+uma chamada para ela. O programa comeÃ§a a executar por ali e a
+maioria dos programadores tambÃ©m comeÃ§arÃ¡ a ler programas a partir
+da funÃ§Ã£o <code class="language-text">main</code>.</li>
+</ol>
+<h1 id="escopo-de-variaveis-e-ciclo-de-vida-de-funcoes">Escopo de variÃ¡veis e ciclo de vida de funÃ§Ãµes</h1>
+<p>Quando aprendemos a instruÃ§Ã£o de atribuiÃ§Ã£o, vimos que ela
+tem a seguinte forma</p>
+<pre class="highlight">&lt;nome de variÃ¡vel&gt; = &lt;expressÃ£o que computa um valor na memÃ³ria&gt;
+</pre><p>Assim, o nome do lado esquerdo deve ser um nome que referencia algum
+valor armazenado na memÃ³ria. Essa associaÃ§Ã£o, no jargÃ£o de Python Ã©
+chamada de <strong>binding</strong>. Uma vez definido o binding, podemos usar
+o nome da variÃ¡vel em um expressÃ£o para representar o valor
+referenciado. O nome de uma variÃ¡vel, no entanto, sÃ³ pode ser usado
+quando satisfeitas determinadas condiÃ§Ãµes:</p>
+<ol>
+<li>
+<p>A atribuiÃ§Ã£o correspondente ao binding tiver sido executada <em>antes</em>
+do uso da variÃ¡vel. Se houver mais de uma atribuiÃ§Ã£o correspondente
+ao mesmo nome, entÃ£o o nome corresponderÃ¡ ao Ãºltimo valor
+referenciado.</p>
+</li>
+<li>
+<p>O nome da variÃ¡vel ser visÃ­vel dentro do <em>escopo</em> em que foi
+criada. O escopo de uma variÃ¡vel Ã© um conjunto de nomes de
+variÃ¡veis correspondentes a uma regiÃ£o do cÃ³digo bem definida. Uma
+atribuiÃ§Ã£o <strong>sempre</strong> corresponde ao nome do escopo atual.</p>
+</li>
+</ol>
+<p>Vamos estudar dois tipos de escopo.</p>
+<ul>
+<li>
+<p><strong>Escopo global:</strong> O escopo global Ã© criado quando o interpretador
+Python inicia a execuÃ§Ã£o de seu programa. SÃ£o adicionados ao escopo
+global nome definidos diretamente no programa, que nÃ£o estejam no
+corpo de nenhuma funÃ§Ã£o. Essas variÃ¡veis sÃ£o visÃ­veis em qualquer
+parte do seu programa.</p>
+</li>
+<li>
+<p><strong>Escopo de funÃ§Ã£o:</strong> O escopo de uma funÃ§Ã£o Ã© criado somente quando
+uma funÃ§Ã£o Ã© chamada. SÃ£o adicionados ao escopo dessa chamada os
+nomes definidos dentro do corpo da funÃ§Ã£o. Essas variÃ¡veis sÃ£o
+visÃ­veis apenas dentro do corpo da funÃ§Ã£o.</p>
+</li>
+</ul>
+<p>Para deixar esses conceitos um pouco mais concretos, vejamos um
+exemplo de cÃ³digo:</p>
+<pre class="highlightlanguage-python">PI <span style="color: #666666">=</span> <span style="color: #666666">3.141592653589793</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_area_disco</span>(raio):
+    raio_quadrado <span style="color: #666666">=</span> raio <span style="color: #666666">**</span> <span style="color: #666666">2</span>
+    area <span style="color: #666666">=</span> PI <span style="color: #666666">*</span> raio_quadrado
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_volume_esfera</span>(raio):
+    raio_cubo <span style="color: #666666">=</span> raio <span style="color: #666666">**</span> <span style="color: #666666">3</span>
+    volume <span style="color: #666666">=</span> <span style="color: #666666">4.0/3.0</span> <span style="color: #666666">*</span> PI <span style="color: #666666">*</span> raio_cubo
+    <span style="color: #008000; font-weight: bold">return</span> volume
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    raio <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Digite o raio de uma esfera: &quot;</span>))
+    peso <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Digite o peso dessa esfera: &quot;</span>))
+
+    volume <span style="color: #666666">=</span> calcular_volume_esfera(raio)
+    densidade <span style="color: #666666">=</span> peso <span style="color: #666666">/</span> volume
+
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;A densidade da esfera Ã¡ </span><span style="color: #BB6688; font-weight: bold">{densidade}</span><span style="color: #BA2121">&quot;</span>)
+
+main()
+</pre><p>Existe uma Ãºnica variÃ¡vel global denominada <code class="language-text">PI</code>. Essa variÃ¡vel pode
+ser utilizada em qualquer ponto do programa que execute apÃ³s sua
+definiÃ§Ã£o. Observe quem ambas as funÃ§Ãµes <code class="language-text">calcular_area_disco</code> e
+<code class="language-text">calcular_area_disco</code> fazem uso de <code class="language-text">PI</code>.</p>
+<p>As variÃ¡veis locais de <code class="language-text">calcular_area_disco</code> sÃ£o o parÃ¢metro <code class="language-text">raio</code> e
+as demais variÃ¡veis <code class="language-text">raio_quadrado</code> e <code class="language-text">area</code>. Analogamente, as
+variÃ¡veis locais de <code class="language-text">calcular_volume_esfera</code> sÃ£o <code class="language-text">raio</code>, <code class="language-text">raio_cubo</code> e
+<code class="language-text">volume</code>. Finalmente, as variÃ¡veis locais de <code class="language-text">main</code> sÃ£o <code class="language-text">raio</code>,
+<code class="language-text">peso</code>, <code class="language-text">volume</code> e <code class="language-text">densidade</code>.</p>
+<p>Cada funÃ§Ã£o <em>enxerga</em> apenas as variÃ¡veis globais e suas variÃ¡veis
+locais! Assim, o nome <code class="language-text">raio_cubo</code> nÃ£o estÃ¡ no escopo de <code class="language-text">main</code> nem de
+<code class="language-text">calcular_area_disco</code>. Mas e os nomes de variÃ¡veis que sÃ£o comuns a
+mais de uma funÃ§Ã£o? Cada funÃ§Ã£o tÃªm suas prÃ³prias variÃ¡veis locais,
+assim hÃ¡ trÃªs nomes <code class="language-text">raio</code> distintos. VocÃª pode pensar que hÃ¡ o
+<code class="language-text">raio</code>-da-funÃ§Ã£o-<code class="language-text">calcular_area_disco</code>, o
+<code class="language-text">raio</code>-da-funÃ§Ã£o-<code class="language-text">calcular_volume_esfera</code> e o <code class="language-text">raio</code>-da-funÃ§Ã£o-<code class="language-text">main</code>.
+O mesmo acontece para a variÃ¡vel <code class="language-text">volume</code> que Ã© comum a
+<code class="language-text">calcular_volume_esfera</code> e <code class="language-text">main</code>.</p>
+<p>Para entender melhor, faÃ§amos um exercÃ­cio. O que serÃ¡
+impresso pelo programa a seguir:</p>
+<pre class="highlightlanguage-python">INCREMENTO <span style="color: #666666">=</span> <span style="color: #666666">3</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">somar</span>(x):
+    x <span style="color: #666666">=</span> x <span style="color: #666666">+</span> INCREMENTO
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    x <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+    somar(x)
+    <span style="color: #008000">print</span>(x)
+
+main()
+</pre><p>VocÃª deve ter respondido correto: <code class="language-text">10</code>. Embora ambas funÃ§Ãµes <code class="language-text">somar</code> e
+<code class="language-text">main</code> tenham uma variÃ¡vel de nome <code class="language-text">x</code>, elas sÃ£o nomes que se referem
+a variÃ¡veis distintas.</p>
+<p>Fazemos uma modificaÃ§Ã£o. O que serÃ¡ impresso?</p>
+<pre class="highlightlanguage-python">INCREMENTO <span style="color: #666666">=</span> <span style="color: #666666">3</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">somar</span>(x):
+    x <span style="color: #666666">=</span> x <span style="color: #666666">+</span> INCREMENTO
+    <span style="color: #008000; font-weight: bold">return</span> x
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    x <span style="color: #666666">=</span> <span style="color: #666666">10</span>
+    soma1 <span style="color: #666666">=</span> somar(x)
+    INCREMENTO <span style="color: #666666">=</span> <span style="color: #666666">4</span>
+    soma2 <span style="color: #666666">=</span> somar(x)
+    <span style="color: #008000">print</span>(soma1)
+    <span style="color: #008000">print</span>(soma2)
+
+main()
+</pre><p>Agora o valor calculado pela primeira chamada de <code class="language-text">somar</code> foi devolvido
+e armazenado em um variÃ¡vel referenciada por <code class="language-text">soma1</code> e o valor
+calculado pela segunda chamada em <code class="language-text">soma2</code>. Nesse caso, nÃ£o Ã© tÃ£o
+simples descobrir o que serÃ¡ impresso. Se vocÃª simular esse programa,
+obterÃ¡ <code class="language-text">13</code> e <code class="language-text">13</code>. Por que nÃ£o foi impresso <code class="language-text">13</code> e <code class="language-text">14</code>? Sabemos que
+<code class="language-text">somar</code> depende da variÃ¡vel global <code class="language-text">INCREMENTO</code>, mas a funÃ§Ã£o <code class="language-text">main</code>
+faz uma atribuiÃ§Ã£o a uma variÃ¡vel local <code class="language-text">INCREMENTO</code>. Lembrem-se de
+que atribuiÃ§Ãµes feitas em funÃ§Ãµes sÃ£o sempre locais!</p>
+<p>Por esse motivo (e por alguns outros que vocÃª ainda vai descobrir),
+nunca use ou faÃ§a modificaÃ§Ãµes em variÃ¡veis globais! Repetindo: nunca!
+A Ãºnica razÃ£o para usarmos uma variÃ¡vel global Ã© para dar um nome a um
+valor que nunca deverÃ¡ ser mudado durante a execuÃ§Ã£o do algoritmo.
+Chamamos essas variÃ¡veis de <strong>constantes</strong>. AliÃ¡s, Ã© por esse motivo
+que convencionamos escrever todas as variÃ¡veis globais em maiÃºsculas,
+para indicar que elas sÃ£o constantes e nÃ£o devem ser alteradas.</p>
+<p>Para descobrir o que estÃ¡ acontecendo internamente no interpretador
+Python, precisamos entender o ciclo de vida de uma funÃ§Ã£o. Para isso,
+vamos fazer mais um exercÃ­cio.</p>
+<blockquote>
+<p>Crie um programa que leia a lista de notas dos estudantes e
+normalize as notas de forma que a maior seja 10. Em seguida,
+determine para cada estudante da lista se ele foi aprovado.</p>
+</blockquote>
+<p>Experimente resolver esse exercÃ­cio. Para os impacientes, segue
+o cÃ³digo que eu faria:</p>
+<pre class="highlightlanguage-python">NOTA_MINIMA <span style="color: #666666">=</span> <span style="color: #666666">5.0</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">obter_maximo</span>(lista):
+    <span style="color: #008000; font-weight: bold">assert</span> lista, <span style="color: #BA2121">&quot;Lista nÃ£o pode ser vazia&quot;</span>
+    maximo <span style="color: #666666">=</span> lista[<span style="color: #666666">0</span>]
+    <span style="color: #008000; font-weight: bold">for</span> valor <span style="color: #AA22FF; font-weight: bold">in</span> lista:
+        <span style="color: #008000; font-weight: bold">if</span> maximo <span style="color: #666666">&lt;</span> valor:
+            maximo <span style="color: #666666">=</span> valor
+    <span style="color: #408080; font-style: italic"># breakpoint()</span>
+    <span style="color: #008000; font-weight: bold">return</span> maximo
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">multiplicar_fator</span>(lista, fator):
+    n <span style="color: #666666">=</span> <span style="color: #008000">len</span>(lista)
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        lista[i] <span style="color: #666666">=</span> lista[i] <span style="color: #666666">*</span> fator
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_lista_notas</span>():
+    n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>(<span style="color: #BA2121">&quot;Digite o nÃºmero de estudantes: &quot;</span>))
+    lista_notas <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> _ <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        lista_notas<span style="color: #666666">.</span>append(<span style="color: #008000">float</span>(<span style="color: #008000">input</span>()))
+    <span style="color: #008000; font-weight: bold">return</span> lista_notas
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">imprimir_lista_aprovacao</span>(lista_notas):
+    <span style="color: #008000; font-weight: bold">for</span> nota <span style="color: #AA22FF; font-weight: bold">in</span> lista_notas:
+        <span style="color: #008000; font-weight: bold">if</span> nota <span style="color: #666666">&lt;</span> NOTA_MINIMA:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;reprovado&quot;</span>)
+        <span style="color: #008000; font-weight: bold">else</span>:
+            <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;aprovado&quot;</span>)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    lista_notas <span style="color: #666666">=</span> ler_lista_notas()
+
+    maximo <span style="color: #666666">=</span> obter_maximo(lista_notas)
+    fator <span style="color: #666666">=</span> <span style="color: #666666">10.0</span> <span style="color: #666666">/</span> maximo
+    multiplicar_fator(lista_notas, fator)
+
+    imprimir_lista_aprovacao(lista_notas)
+
+main()
+</pre><p>Vamos fazer um desenho representando a memÃ³ria do computador no
+momento imediatamente anterior em que <code class="language-text">obter_maximo</code> devolve o
+valor mÃ¡ximo da lista.</p>
+<img src="figs/escopo_obter_maximo.png" style="width: 100%; max-width: 500px;">
+<p>HÃ¡ varias coisas a se notar. Nesse momento, a funÃ§Ã£o <code class="language-text">ler_lista_notas</code>
+jÃ¡ foi executada e terminada, entÃ£o todas as variÃ¡veis locais dessa
+funÃ§Ã£o jÃ¡ nÃ£o estÃ£o mais disponÃ­veis na funÃ§Ã£o, isso Ã©, nÃ£o hÃ¡ escopo
+para as variÃ¡veis dessa funÃ§Ã£o. Do mesmo modo, a funÃ§Ã£o
+<code class="language-text">multiplicar_fator</code> a funÃ§Ã£o <code class="language-text">imprimir_lista_aprovacao</code> tambÃ©m nÃ£o
+foram chamadas ainda, e portanto suas variÃ¡veis ainda nÃ£o foram
+criadas.</p>
+<p>HÃ¡ exatamente duas funÃ§Ãµes sendo executadas nesse momento: a funÃ§Ã£o
+<code class="language-text">main</code> e a funÃ§Ã£o <code class="language-text">obter_maximo</code>, entÃ£o existem exatamente dois
+escopos de funÃ§Ã£o, alÃ©m do escopo global.</p>
+<p><strong>Opcional:</strong> Se vocÃª quiser verificar isso, faÃ§a o seguinte: descomente a
+linha com <code class="language-text">breakpoint()</code> na funÃ§Ã£o <code class="language-text">obter_maximo()</code> e execute o seu
+programa. VocÃª entrarÃ¡ no mode de debug com uma mensagem mostrando a
+prÃ³xima instruÃ§Ã£o. Digite <code class="language-text">bt</code> (de backtrace) para mostrar a
+trajetÃ³ria do seu programa atÃ© essa instruÃ§Ã£o e explore investigando
+os valores das variÃ¡veis, e.g., digite <code class="language-text">maximo</code> para ver o valor
+associado a esse nome no escopo atual. Se vocÃª nÃ£o gosta de usar o
+terminal, entÃ£o pode fazer o mesmo configurando sua IDE preferida e
+adicionado um breakpoint na linha correspondente ao <code class="language-text">return</code>.</p>
+<pre class="highlight">Digite o nÃºmero de estudantes: 4
+4.8
+3.5
+8.0
+7.5
+&gt; /home/user/ra123456/funcoes/notas.py(10)obter_maximo()
+-&gt; return maximo
+(Pdb) bt
+  /home/user/ra123456/funcoes/notas.py(40)&lt;module&gt;()
+-&gt; main()
+  /home/user/ra123456/funcoes/notas.py(34)main()
+-&gt; maximo = obter_maximo(lista_notas)
+&gt; /home/user/ra123456/funcoes/notas.py(10)obter_maximo()
+-&gt; return maximo
+(Pdb) valor
+7.5
+(Pdb) maximo
+8.0
+(Pdb) continue
+aprovado
+reprovado
+aprovado
+aprovado
+</pre><p>Imediatamente depois que a funÃ§Ã£o <code class="language-text">obter_maximo</code> termina, o valor
+referenciado na frente de <code class="language-text">return</code> Ã© devolvido para a funÃ§Ã£o <code class="language-text">main</code>.
+Nesse momento, o escopo da funÃ§Ã£o <code class="language-text">obter_mÃ¡ximo</code> Ã© destruÃ­do. A
+prÃ³xima instruÃ§Ã£o de <code class="language-text">main</code> Ã© uma atribuiÃ§Ã£o ao nome de variÃ¡vel
+<code class="language-text">mÃ¡ximo</code>, que recebe o valor devolvido. Podemos olhar para a seguinte
+figura:</p>
+<img src="figs/escopo_obter_maximo_retorno.png" style="width: 100%; max-width: 500px;">
+<p>Com isso, podemos resumir o ciclo de vida de uma funÃ§Ã£o:</p>
+<ol>
+<li>
+<p>quando uma funÃ§Ã£o Ã© <strong>chamada</strong>:</p>
+<ul>
+<li>criamos um novo escopo para essa chamada</li>
+<li>para cada argumento, associamos os valores passados entre
+parÃªnteses</li>
+<li>continuamos executando a partir da primeira instruÃ§Ã£o da funÃ§Ã£o</li>
+</ul>
+</li>
+<li>
+<p>quando uma funÃ§Ã£o <strong>termina</strong>:</p>
+<ul>
+<li>devolvemos o valor apÃ³s <code class="language-text">return</code>, se houver</li>
+<li>destruÃ­mos o escopo da chamada de funÃ§Ã£o</li>
+<li>continuamos executando a prÃ³xima instruÃ§Ã£o imediatamente apÃ³s a
+chamada</li>
+</ul>
+</li>
+</ol>
+<p>O mecanismo de chamadas de funÃ§Ã£o em Python tem uma consequÃªncia
+especial para listas passadas como argumentos. Quando alteramos uma
+lista passada por argumento, essas mudanÃ§as ficarÃ£o visÃ­veis para a
+funÃ§Ã£o que realizou a chamada. Isso acontece quando chamamos a funÃ§Ã£o
+<code class="language-text">multiplicar_fator</code>. Para ver o motivo disso, repare que tanto a
+variÃ¡vel <code class="language-text">lista_notas</code> de <code class="language-text">main</code> quanto a variÃ¡vel <code class="language-text">lista</code> de
+<code class="language-text">multiplicar_fator</code> sÃ£o associadas Ã  mesma lista. O desenho a seguir
+representa a memÃ³ria imediatamente apÃ³s a primeira iteraÃ§Ã£o da linha
+<code class="language-text">lista[i] = lista[i] * fator</code>.</p>
+<img src="figs/escopo_multiplicar_fator.png" style="width: 100%; max-width: 500px;">
+<h1 id="modulos">MÃ³dulos</h1>
+<p><strong>ObservaÃ§Ã£o:</strong> Depois de ler o texto a seguir, procure ler e estudar
+a seÃ§Ã£o 6 do tutorial Python.</p>
+<p>Ã medida em que nossos projetos ficam maiores e mais complexos, copiar
+e colar um conjunto de funÃ§Ãµes em nossos arquivos Python torna-se
+bastante difÃ­cil. Mais dos que isso, pode ser que um conjunto de
+funÃ§Ãµes possa ser Ãºtil a diferentes programas. A maneira de tratar
+isso no universo Python Ã© criando-se <strong>mÃ³dulos</strong>, que agrupam um
+conjunto de funÃ§Ãµes e variÃ¡veis relacionadas.</p>
+<p>Um mÃ³dulo Ã© um arquivo Python que Ã© executado quando executamos
+o comando <code class="language-text">import</code>. Os mÃ³dulos podem vir de vÃ¡rias partes,
+dependendo de como foram instalados:</p>
+<ol>
+<li>JÃ¡ vimos um exemplo de mÃ³dulo quando digitamos <code class="language-text">import math</code>. Esse
+mÃ³dulo Ã© um mÃ³dulo da biblioteca padrÃ£o Python, o que significa que
+estÃ¡ disponÃ­vel em qualquer instalaÃ§Ã£o Python.</li>
+<li>TambÃ©m hÃ¡ mÃ³dulos adicionais instalados no sistema, que sÃ£o
+responsÃ¡veis por tarefas comuns, mas de domÃ­nios especÃ­ficos, como
+manipulaÃ§Ã£o de imagens, comunicaÃ§Ã£o com a Internet, computaÃ§Ã£o
+cientÃ­fica, etc.</li>
+<li>Finalmente, hÃ¡ mÃ³dulos pessoais, que sÃ£o aqueles criados pelo
+prÃ³prio desenvolvedor para seus prÃ³prios projetos.</li>
+</ol>
+<p>Por enquanto, sÃ³ iremos falar em como criar um mÃ³dulo pessoal.
+Para isso, vamos ver um exemplo.</p>
+<blockquote>
+<p>Em uma determinada disciplina, hÃ¡ 2 exercÃ­cios. A mÃ©dia parcial de
+um estudante Ã© dada pela mÃ©dia geomÃ©trica das notas dos exercÃ­cios.
+Escreva um programa que leia as listas de notas de exercicios e
+mostre a lista de notas parciais.</p>
+</blockquote>
+<p>Isso Ã© bem parecido com o que jÃ¡ fizemos, entÃ£o nada melhor do que
+copiar e colar algumas funÃ§Ãµes auxiliares. Copiamos
+<code class="language-text">ler_lista_numeros</code> e <code class="language-text">imprimir_lista_numeros</code>. Para calcular as
+mÃ©dias, jÃ¡ temos uma funÃ§Ã£o que faz isso, <code class="language-text">calcular_medias_finais</code>,
+mas melhor ajustar os nomes, para nÃ£o nos confundirmos. Com isso,
+escrevemos um programa chamado <code class="language-text">notas_parciais.py</code>.</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_lista_numeros</span>(n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;LÃª uma lista de n nÃºmeros do teclado&quot;&quot;&quot;</span>
+    lista <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> _ <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        numero <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        lista<span style="color: #666666">.</span>append(numero)
+    <span style="color: #008000; font-weight: bold">return</span> lista
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">imprimir_lista_numeros</span>(lista):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Imprime cada nÃºmero de lista em um linha,</span>
+<span style="color: #BA2121; font-style: italic">    com duas casas decimais&quot;&quot;&quot;</span>
+    <span style="color: #008000; font-weight: bold">for</span> valor <span style="color: #AA22FF; font-weight: bold">in</span> lista:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #BB6688; font-weight: bold">{valor:.2f}</span><span style="color: #BA2121">&quot;</span>)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_medias_geometricas</span>(lista1, lista2):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve uma nova lista com as mÃ©dias geomÃ©tricas</span>
+<span style="color: #BA2121; font-style: italic">    dos elementos de lista1 e lista2&quot;&quot;&quot;</span>
+    medias_geometricas <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">assert</span> <span style="color: #008000">len</span>(lista1) <span style="color: #666666">==</span> <span style="color: #008000">len</span>(lista2), <span style="color: #BA2121">&quot;As listas de devem ter o mesmo tamanho&quot;</span>
+    n <span style="color: #666666">=</span> <span style="color: #008000">len</span>(lista1)
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        media_geometrica <span style="color: #666666">=</span> math<span style="color: #666666">.</span>sqrt(lista1[i] <span style="color: #666666">*</span> lista2[i])
+        medias_geometricas<span style="color: #666666">.</span>append(media_geometrica)
+    <span style="color: #008000; font-weight: bold">return</span> medias_geometricas
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>())
+    notas_exercicios1 <span style="color: #666666">=</span> ler_lista_numeros(n)
+    notas_exercicios2 <span style="color: #666666">=</span> ler_lista_numeros(n)
+    medias_parciais <span style="color: #666666">=</span> calcular_medias_geometricas(notas_exercicios1, notas_exercicios2)
+    imprimir_lista_numeros(medias_parciais)
+
+main()
+</pre><p>Repare que, enquanto nesse programa resolvemos o problema de repetiÃ§Ã£o
+de cÃ³digo, afinal, sÃ³ definimos <code class="language-text">ler_lista_numeros</code> uma vez, temos que
+escrever exatamente as mesmas instruÃ§Ãµes que estavam em outro programa
+anterior. Nessas situaÃ§Ãµes, Ã© mais conveniente criar um <strong>mÃ³dulo</strong> que
+possa ser compartilhado entre os dois programas. Primeiro, criamos um
+arquivo, no mesmo diretÃ³rio, chamado <code class="language-text">utilidades.py</code> e movemos as
+funÃ§Ãµes utilitÃ¡rias para lÃ¡:</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">math</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">ler_lista_numeros</span>(n):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;LÃª uma lista de n nÃºmeros do teclado&quot;&quot;&quot;</span>
+    lista <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">for</span> _ <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        numero <span style="color: #666666">=</span> <span style="color: #008000">float</span>(<span style="color: #008000">input</span>())
+        lista<span style="color: #666666">.</span>append(numero)
+    <span style="color: #008000; font-weight: bold">return</span> lista
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">imprimir_lista_numeros</span>(lista):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Imprime cada nÃºmero de lista em um linha,</span>
+<span style="color: #BA2121; font-style: italic">    com duas casas decimais&quot;&quot;&quot;</span>
+    <span style="color: #008000; font-weight: bold">for</span> valor <span style="color: #AA22FF; font-weight: bold">in</span> lista:
+        <span style="color: #008000">print</span>(<span style="color: #BA2121">f&quot;</span><span style="color: #BB6688; font-weight: bold">{valor:.2f}</span><span style="color: #BA2121">&quot;</span>)
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_medias_geometricas</span>(lista1, lista2):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve uma nova lista com as mÃ©dias geomÃ©tricas</span>
+<span style="color: #BA2121; font-style: italic">    dos elementos de lista1 e lista2&quot;&quot;&quot;</span>
+    medias_geometricas <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">assert</span> <span style="color: #008000">len</span>(lista1) <span style="color: #666666">==</span> <span style="color: #008000">len</span>(lista2), <span style="color: #BA2121">&quot;As listas de devem ter o mesmo tamanho&quot;</span>
+    n <span style="color: #666666">=</span> <span style="color: #008000">len</span>(lista1)
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        media_geometrica <span style="color: #666666">=</span> math<span style="color: #666666">.</span>sqrt(lista1[i] <span style="color: #666666">*</span> lista2[i])
+        medias_geometricas<span style="color: #666666">.</span>append(media_geometrica)
+    <span style="color: #008000; font-weight: bold">return</span> medias_geometricas
+</pre><p>Com isso podemos modificar nosso arquivo <code class="language-text">notas_parciais.py</code> para conter
+apenas:</p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">utilidades</span> <span style="color: #008000; font-weight: bold">import</span> ler_lista_numeros, imprimir_lista_numeros, calcular_medias_geometricas
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>())
+    notas_exercicios1 <span style="color: #666666">=</span> ler_lista_numeros(n)
+    notas_exercicios2 <span style="color: #666666">=</span> ler_lista_numeros(n)
+    medias_parciais <span style="color: #666666">=</span> calcular_medias_geometricas(notas_exercicios1, notas_exercicios2)
+    imprimir_lista_numeros(medias_parciais)
+
+main()
+</pre><p>A primeira linha desse programa faz o seguinte:</p>
+<ol>
+<li>procura o mÃ³dulo chamado <code class="language-text">utilidades</code> na sua lista de mÃ³dulos
+e encontrar um arquivo <code class="language-text">utilidades.py</code>;</li>
+<li>executa todas as instruÃ§Ãµes nesse mÃ³dulo; nesse caso, hÃ¡ apenas
+instruÃ§Ãµes de definiÃ§Ã£o de funÃ§Ãµes;</li>
+<li>torna disponÃ­vel no escopo global do programa (<code class="language-text">notas_parciais.py</code>)
+os nomes das funÃ§Ãµes selecionadas.</li>
+</ol>
+<p>Agora, essa as funÃ§Ãµes podem ser utilizadas em vÃ¡rios programas, mas
+sem a necessidade de copiar e colar. Por exemplo, suponha que, no
+final do semestre, tenhamos que escrever outro programa.</p>
+<blockquote>
+<p>AlÃ©m dos exercÃ­cios, hÃ¡ uma prova. A mÃ©dia final da disciplina Ã©
+dada pela mÃ©dia <strong>aritmÃ©tica</strong> entre a mÃ©dia parcial e a nota da
+prova. Escreva um programa que leia as listas de notas marciais e
+das provas e mostre a lista de notas finais.</p>
+</blockquote>
+<p>Podemos, agora escrever o seguinte programa, <code class="language-text">notas_finais.py</code></p>
+<pre class="highlightlanguage-python"><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">utilidades</span>
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">calcular_medias_aritmeticas</span>(lista1, lista2):
+    <span style="color: #BA2121; font-style: italic">&quot;&quot;&quot;Devolve uma nova lista com as mÃ©dias aritmÃ©ticas</span>
+<span style="color: #BA2121; font-style: italic">    dos elementos de lista1 e lista2&quot;&quot;&quot;</span>
+    medias_aritmeticas <span style="color: #666666">=</span> []
+    <span style="color: #008000; font-weight: bold">assert</span> <span style="color: #008000">len</span>(lista1) <span style="color: #666666">==</span> <span style="color: #008000">len</span>(lista2), <span style="color: #BA2121">&quot;As listas de devem ter o mesmo tamanho&quot;</span>
+    n <span style="color: #666666">=</span> <span style="color: #008000">len</span>(lista1)
+    <span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(n):
+        media_aritmetica <span style="color: #666666">=</span> (lista1[i] <span style="color: #666666">+</span> lista2[i]) <span style="color: #666666">/</span> <span style="color: #666666">2</span>
+        medias_aritmeticas<span style="color: #666666">.</span>append(media_aritmetica)
+    <span style="color: #008000; font-weight: bold">return</span> medias_aritmeticas
+
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">main</span>():
+    n <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #008000">input</span>())
+    notas_exercicios1 <span style="color: #666666">=</span> utilidades<span style="color: #666666">.</span>ler_lista_numeros(n)
+    notas_exercicios2 <span style="color: #666666">=</span> utilidades<span style="color: #666666">.</span>ler_lista_numeros(n)
+    medias_parciais <span style="color: #666666">=</span> calcular_medias_aritmeticas(notas_exercicios1, notas_exercicios2)
+    utilidades<span style="color: #666666">.</span>imprimir_lista_numeros(medias_parciais)
+
+main()
+</pre><p>Observe que agora utilizamos uma sintaxe alternativa para importar o
+mÃ³dulo. O mÃ³dulo <code class="language-text">utilidades.py</code> continua sendo executado e importado
+como antes. A Ãºnica diferenÃ§a Ã© que o nome da funÃ§Ã£o
+<code class="language-text">ler_lista_numeros</code> e demais nÃ£o estarÃ£o disponÃ­veis no escopo global
+do nosso programa. Ao invÃ©s disso, estarÃ¡ disponÃ­vel o nome
+<code class="language-text">utilidades</code>, por onde acessamos as funÃ§Ãµes do mÃ³dulo.</p>
+<p>Finalmente, repare que a funÃ§Ã£o auxiliar <code class="language-text">calcular_medias_aritmeticas</code>
+que tivemos que criar Ã© suficientemente genÃ©rica e pode ser que ela
+seja Ãºtil em outro programa. Assim, pode ser razoÃ¡vel movÃª-la para o
+mÃ³dulo de utilidades. FaÃ§a isso como exercÃ­cio. A decisÃ£o de quando
+uma funÃ§Ã£o deve estar disponÃ­vel em um mÃ³dulo para reuso ou mesmo como
+organizar os mÃ³dulos nÃ£o Ã© trivial. SÃ³ com a experiÃªncia vocÃª ganharÃ¡
+mais confianÃ§a para essa tarefa.</p>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="05-listas.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../index.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="07-algortimos-iterativos.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

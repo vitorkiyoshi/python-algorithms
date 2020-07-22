@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - FunÃ§Ãµes agregadoras
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >FunÃ§Ãµes agregadoras</h1>
+
+
+          <span class="meta">Segunda, 4 de maio de 2020</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <p><strong>AtenÃ§Ã£o:</strong> Esta tarefa nÃ£o serÃ¡ corrigida manualmente, mas vocÃª deve
+tentar respondÃª-la genuinamente. Se tiver alguma dÃºvida se ela estÃ¡ ou
+nÃ£o correta, procure os monitores. Tentativas de passar no teste
+automÃ¡tico sem responder as questÃµes serÃ£o consideradas fraude.</p>
+<h1 id="numeros-primos">NÃºmeros primos</h1>
+<p>Python tem funÃ§Ãµes predefinidas que permitem filtrar, mapear e reduzir listas. Nesta tarefa, vocÃª deve implementar suas prÃ³prias funÃ§Ãµes que fazem essas operaÃ§Ãµes.</p>
+<p>VocÃª deve definir uma funÃ§Ã£o chamada <code class="language-text">filtra</code> que aplica uma funÃ§Ã£o <code class="language-text">f</code> a cada elemento de um lista e retorna os elementos para os quais o retorno de <code class="language-text">f</code> Ã© <code class="language-text">True</code>. A funÃ§Ã£o e a lista sÃ£o parÃ¢metros de <code class="language-text">filtra</code>.</p>
+<p>Em seguida, vocÃª deve definir uma funÃ§Ã£o chamada <code class="language-text">mapeia</code> que aplica para cada elemento de uma lista uma dada funÃ§Ã£o e devolve uma nova lista. Os parÃ¢metros de <code class="language-text">mapeia</code> sÃ£o a lista e a funÃ§Ã£o a ser aplicada.</p>
+<p>A outra funÃ§Ã£o que vocÃª deve implementar Ã© a <code class="language-text">reduz</code>. Essa operaÃ§Ã£o acumula os valores de uma lista de forma que produz um Ãºnico valor. Essa acumulaÃ§Ã£o Ã© feita deslizando-se sobre a lista e aplicando uma computaÃ§Ã£o a elementos sequenciais. Dessa forma, os parÃ¢metros de <code class="language-text">reduz</code>sÃ£o uma lista e uma funÃ§Ã£o que recebe dois valores e retorna um valor.</p>
+<p>ApÃ³s definir essas trÃªs funÃ§Ãµes (<code class="language-text">filtra</code>, <code class="language-text">mapeia</code> e <code class="language-text">reduz</code>), vocÃª deve fazer um  programa que recebe uma sequÃªncia de nÃºmeros inteiros positivos e retorna a soma dos quadrados dos nÃºmeros primos dessa sequÃªncia. VocÃª deve usar as <code class="language-text">filtra</code>, <code class="language-text">mapeia</code> e <code class="language-text">reduz</code> que vocÃª definiu. Ã provÃ¡vel que vocÃª precise definir outras funÃ§Ãµes. O nome do seu programa deve ser <code class="language-text">primos.py</code>.</p>
+<p>Se a sequÃªncia for vazia ou nÃ£o tiver nenhum nÃºmero primo, a saÃ­da deve ser $0$.</p>
+<h2 id="entrada">Entrada</h2>
+<p>Uma sequencia de nÃºmeros inteiros positivos.</p>
+<pre class="highlight">2 3 5 5 8
+</pre><h2 id="saida">SaÃ­da</h2>
+<p>A soma dos quadrados dos nÃºmeros primos da sequÃªncia dada na entrada.</p>
+<pre class="highlight">63
+</pre>
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="07-percorrer-listas.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../index.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="09-conceito-frequencia.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>

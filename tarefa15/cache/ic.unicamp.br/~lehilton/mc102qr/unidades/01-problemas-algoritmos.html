@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - Problemas e algoritmos
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >Problemas e algoritmos</h1>
+
+
+          <span class="meta">TerÃ§a, 10 de marÃ§o de 2020</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h1 id="introducao">IntroduÃ§Ã£o</h1>
+<p>Os computadores sÃ£o mÃ¡quinas incrÃ­veis e, de fato, podemos ver
+aplicaÃ§Ãµes das mais diversas possÃ­veis. Por exemplo, ele pode te
+ajudar a fazer contas simples aritmÃ©ticas, mas de maneira muito mais
+rÃ¡pida do que feito no papel, podem simular processos quÃ­micos,
+sintetizar voz e traduzir documentos, sequenciar problemas genÃ´micos,
+resolver problemas de trÃ¢nsito, e uma outra incontÃ¡vel variedade de
+aplicaÃ§Ãµes!</p>
+<p>O que Ã© surpreendente que tudo que o computador faz Ã© manipular um
+conjunto (muito grande) de chaves. Essas chaves sÃ£o chamadas de
+<strong>bits</strong>. Um bit Ã© um valor armazenado que pode estar em dois estados,
+<strong>0</strong> ou <strong>1</strong>. Tipicamente, nos computadores de hoje, esses estados
+sÃ£o determinados por caracterÃ­sticas elÃ©tricas, como carga positiva,
+ou negativa, etc.</p>
+<p>Na verdade, embora utilizemos os computadores para coisas incrÃ­veis
+como as listadas acima, ele Ã© projetado para executar tarefas bem
+simples, como <em>inverta esse bit</em>, <em>faÃ§a um bit virar 1</em>, ou realizar
+aÃ§Ãµes dependendo do valor do bit, como <em>se o bit for 1, modifique o
+prÃ³ximo bit</em>, etc.</p>
+<p>Os computadores podem ser muito diferentes, tanto na forma (um PC, um
+celular, um chip automotivo...), quanto na representaÃ§Ã£o interna. Mas
+todos eles sÃ£o baseado nos mesmos princÃ­pios gerais, sempre temos esse
+espÃ­rito de um conjunto de &quot;botÃµes&quot; ou &quot;manivelas&quot; que manipulam os
+bits subjacentes.</p>
+<h2 id="entendendo-os-termos">Entendendo os termos</h2>
+<p>Para entender alguns termos importantes, vamos apelas para uma analogia gastronÃ´mica.
+Imagine que queremos fazer um bolo. EntÃ£o vamos ter que considerar diversos
+elementos:</p>
+<ul>
+<li>Os ingrediente sÃ£o as <strong>entradas</strong> do processo.</li>
+<li>O bolo Ã© a <strong>saÃ­da</strong>.</li>
+<li>A receita do bolo que lista as atividades que serem executadas Ã© o <strong>algoritmo</strong>.</li>
+</ul>
+<p>Ainda podemos distinguir duas partes importantes nesse processo</p>
+<ul>
+<li>As receitas, ou algoritmos, correspondem ao que chamamos de <strong>software</strong>.</li>
+<li>JÃ¡ os utensÃ­lios utilizados (panela, forno, talheres e mesmo o cozinheiro) correspondem ao <strong>hardware</strong>.</li>
+</ul>
+<h2 id="algoritmos-e-computacao">Algoritmos e ComputaÃ§Ã£o</h2>
+<p>Aqui temos que diferenciar algoritmos de ComputaÃ§Ã£o. Algoritmos sÃ£o os
+texto propriamente dito; jÃ¡ a teoria dos Algoritmos Ã© a Ã¡rea da
+computaÃ§Ã£o ue estuda os algoritmos.</p>
+<p>Podemos pensar numa analogia com Literatura: enquanto os objetos de
+estudo dessa disciplina sÃ£o os poemas, contos, romances, etc., a
+LIteratura Ã© a ciÃªncia que estuda a estrutura, a forma, o modo, o
+tamanho, o ritmo desse conteÃºdo. Da mesma forma, na teoria dos
+algoritmos, queremos estudar a estrutura, a forma, o modo, a
+velocidade, as limitaÃ§Ãµes, etc. dos algoritmos.</p>
+<p>Ã preciso entender e diferenciar tambÃ©m o nosso papel nesse contexto.
+Enquanto nÃ³s queremos resolver problemas, o computador Ã© um mero
+instrumento de trabalho. Uma frase bem conhecida que descreve esse
+sentimento, de origem desconhecida, Ã© a seguinte:</p>
+<blockquote>
+<p>CiÃªncia da ComputaÃ§Ã£o Ã© tanto sobre computadores,
+quanto Astronomia Ã© sobre telescÃ³pios.</p>
+</blockquote>
+<p>Isso Ã© particularmente crÃ­tico quando lemos os termos em inglÃªs, em
+que CiÃªncia da ComputaÃ§Ã£o e Engenharia da ComputaÃ§Ã£o sÃ£o traduzidos
+como &quot;Computer Science&quot; e &quot;Computer Engineering&quot;. Ã bem verdade que
+nÃ³s vamos aprender no decorrer do curso como funciona um computador em
+um nÃ­vel muito grande de detalhes e muitos podem atÃ© projetar a
+arquitetura de um computador. Mas Ã© importante saber â e explicar! â
+que quando falamos de ComputaÃ§Ã£o estamos falando desde as simples
+contas de uma planilha de gastos no seu computador, atÃ© os enormes
+genomas calculados por computadores, aos diversos problemas de
+logÃ­stica gigantescos da indÃºstria, aos incrÃ­veis e surpreendentes
+avanÃ§os do reconhecimento de padrÃµes, atÃ© as respostas a perguntas
+fundamentais matemÃ¡ticas que atiÃ§am a curiosidade humana.</p>
+<h1 id="um-pouco-de-historia">Um pouco de histÃ³ria</h1>
+<p>Um dos primeiros algoritmos nÃ£o triviais Ã© o chamado algoritmo de
+Euclides, que vocÃªs jÃ¡ devem ter estudado. Ele foi escrito
+provavelmente entre 400 e 300 a.C. pelo matemÃ¡tico grego Euclides (que
+talvez o tenha inventando ou apenas formalizado um algoritmo
+conhecido). Esse algoritmo server para encontrar o maior divisor comum
+(MDC) entre dois nÃºmeros inteiros positivos. Por exemplo, o MDC de 80
+e 32 Ã© 16</p>
+<p>A palavra &quot;algoritmo&quot; Ã© derivada do nome do matemÃ¡tico persa Mohammed
+al-KhowÃ¢rizmÄ±Ì, do sÃ©culo nono, a quem sÃ£o atribuÃ­dos os algoritmos de
+adiÃ§Ã£o, subtraÃ§Ã£o, multiplicaÃ§Ã£o e divisÃ£o com nÃºmeros decimais.
+Aqueles que aprendemos nas primeiras sÃ©ries da escola.</p>
+<p>Uma das primeiras mÃ¡quinas automÃ¡ticas que poderiam ser <em>controladas</em>,
+ou digamos, <em>programadas</em> foram mÃ¡quinas de tecer criadas pelo francÃªs
+Joseph Jacquard in 1801 A forma dos padrÃµes dos tecidos era
+determinada por cartÃµes perfurados em vÃ¡rios locais!</p>
+<p>Uma das primeiras mÃ¡quinas que fizeram computaÃ§Ã£o numÃ©rica foram as
+mÃ¡quinas diferenciais, de Charles Babbage em 1833. Assim como as
+mÃ¡quinas de Jacquard, a mÃ¡quina de Babbage era de natureza mecÃ¢nica,
+baseada em alavancas, rodas dentadas e engrenagens, ao invÃ©s
+eletrÃ´nicos e silÃ­cio como os computadores de hoje.</p>
+<p>Ada Byron, condessa de Lovelace, foi programadora de Babbage. Ela Ã©
+uma das figuras mais interessantes da histÃ³ria da ComputaÃ§Ã£o e Ã©
+creditada por lanÃ§ar as bases da programaÃ§Ã£o, mais de cem anos antes
+do primeiro computador em funcionamento estar disponÃ­vel.</p>
+<p>No entanto, os primeiros computadores de uso geral foram construÃ­dos
+apenas na dÃ©cada de 1940, em parte, como resposta Ã s necessidades
+computacionais de fÃ­sicos e astrÃ´nomos e, em parte, como resultado
+natural da disponibilidade dos dispositivos eletromecÃ¢nicos e
+eletrÃ´nicos apropriados. Alguns nomes de destaque nessa evoluÃ§Ã£o sÃ£o o
+inglÃªs Alan Turing, os americanos Howard Aiken, John Mauchly, J.
+Presper Eckert, and Herman Goldstine, e o famoso matemÃ¡tico americano
+e alemÃ£o John von Neumann.</p>
+<p>A figura a seguir Ã© um computador ENIAC desenvolvido por  Mauchly, Eckert e Goldstine:</p>
+<img src="figs/eniac.svg" style="width: 400px; text-align: center">
+<p>Com relaÃ§Ã£o Ã  teria dos algoritmos, a dÃ©cada de 1930 experienciou uma
+rÃ¡pida disseminaÃ§Ã£o de conhecimento. Mesmo antes de haver mÃ¡quinas
+viÃ¡veis (que sÃ³ viriam anos mais tarde), vÃ¡rias matemÃ¡ticos criaram as
+bases fundamentais da ComputaÃ§Ã£o! Algumas figuras-chaves sÃ£o o inglÃªs
+Alan Turing, o britÃ¢nico Kurt GÃ¶del, o russo AndreÄ±Ì A. Markov e os
+americanos Alonzo Church, Emil Post e Stephen Kleene.</p>
+<p>Depois disso, houve uma enormidade de descobertas e evoluÃ§Ã£o, que
+acabaram por culminar na definiÃ§Ã£o formal de um curso de computaÃ§Ã£o
+por volta de meados de 1960, criando-se vÃ¡rios curso de CiÃªncia da
+ComputaÃ§Ã£o em vÃ¡rias universidades americanas.</p>
+<p>Alguns links interessantes que vocÃªs podem ver:</p>
+<ul>
+<li><a href="https://www.livescience.com/20718-computer-history.html">https://www.livescience.com/20718-computer-history.html</a></li>
+<li><a href="https://www.computerhistory.org/timeline/computers/">https://www.computerhistory.org/timeline/computers/</a></li>
+</ul>
+<h2 id="arquitetura-de-von-neumann">Arquitetura de von Neumann</h2>
+<p>A maioria dos computadores modernos sÃ£o organizados seguindo
+a arquitetura proposta por Von Neumann, que reÃºne os seguintes componentes:</p>
+<p>A processing unit that contains an arithmetic logic unit and processor registers
+A control unit that contains an instruction register and program counter Input and output mechanisms[1][2]</p>
+<ul>
+<li>Uma memÃ³ria que guarda dados e instruÃ§Ãµes</li>
+<li>Uma memÃ³ria externa que guarda grandes quantidades de dados permanentemente</li>
+<li>Uma unidade central de processamento, composta por diversos registradores e que realiza operaÃ§Ãµes aritmÃ©ticas e lÃ³gicas</li>
+<li>Uma unidade de controle, cuja funÃ§Ã£o Ã© buscar um programa na memÃ³ria, instruÃ§Ã£o por instruÃ§Ã£o, e executÃ¡-lo sobre os dados de entrada.</li>
+</ul>
+<p>Atualmente, a arquitetura de von Neumann refere-se a qualquer computador em que o conjunto de instruÃ§Ãµes
+estÃ¡ armazenado na memÃ³ria. O que liga os diversos componentes em um computador Ã© o que chamamos de bus.</p>
+<img src="figs/organizacao.svg" style="width: 550px; text-align: center">
+<h1 id="algoritmos">Algoritmos</h1>
+<p>Vamos tentar melhorar nossa definiÃ§Ã£o de algoritmo. Primeiro, vamos
+ver uma receita de <em>mousseline au chocolat</em> (retirada da
+bibliografia).</p>
+<p>Os ingredientes, ou a <strong>entrada</strong> desse algoritmo sÃ£o: 8 onÃ§as de
+pedaÃ§os de chocolate meio amargo, 2 colheres de sopa de Ã¡gua, 14
+xÃ­caras de aÃ§Ãºcar em pÃ³, 6 ovos separados e assim por diante. As
+<strong>saÃ­das</strong> sÃ£o as seis ou oito porÃ§Ãµes da deliciosa mousseline au
+chocolat. Aqui estÃ¡ a receita ou o algoritmo para isso:</p>
+<blockquote>
+<p>Derreta o chocolate e 2 colheres de sopa de Ã¡gua em banho-maria.
+Quando derretido, misture o aÃ§Ãºcar em pÃ³; adicione a manteiga pouco
+a pouco. Deixe descansar. Bata as gemas atÃ© engrossar e cor de
+limÃ£o, cerca de 5 minutos. Dobre delicadamente no chocolate.
+ReaqueÃ§a levemente para derreter o chocolate, se necessÃ¡rio. Misture
+o rum e a baunilha. Bata as claras em neve atÃ© formar espuma. Bata 2
+colheres de sopa de aÃ§Ãºcar; bata atÃ© formar picos duros. Dobre
+delicadamente as claras em uma mistura de gema de chocolate. Despeje
+em pratos individuais. Refrigere por pelo menos 4 horas. Sirva com
+chantilly, se desejar. Faz 6 a 8 porÃ§Ãµes.</p>
+</blockquote>
+<h2 id="nivel-de-detalhes">NÃ­vel de detalhes</h2>
+<p>Considere a instruÃ§Ã£o &quot;misture o aÃ§Ãºcar em pÃ³&quot;. Por que a receita nÃ£o
+diz âpegue um pouco de aÃ§Ãºcar em pÃ³, despeje no chocolate derretido,
+mexa, tome um pouco mais, despeje, mexa,...â? A resposta Ã© que o
+hardware sabe como executar a instruÃ§Ã£o e nÃ£o precisa de detalhes
+adicionais.</p>
+<p>Mas por que nÃ£o dizer que ele sabe como <em>fazer mistura de chocolate
+com aÃ§Ãºcar e manteiga</em>? Ou mesmo que o hardware sabe preparar
+mousseline au chocolat? Quando escrevemos um algoritmo, escrevemos
+pensando no hardware utilizado. Sempre devemos escrever uma instruÃ§Ã£o
+bem definida para o &quot;computador&quot; que executarÃ¡ o algoritmo.</p>
+<p>Isso acontece, por exemplo, quando utilizamos um algoritmo
+para multiplicar 528 por 46, mas supomos que jÃ¡ sabemos
+multiplicar 8 por 6, etc.</p>
+<h2 id="abstracao">AbstraÃ§Ã£o</h2>
+<p>Enquanto nÃ³s dizemos que um computador realiza atividades extremamente
+simples, os nossos algoritmos vÃ£o utilizar instruÃ§Ãµes em mais
+diferentes nÃ­veis de detalhes. Por exemplo, um cozinheiro aprendiz
+pode necessitar da recita de mousseline au chocolat, mas para um chef
+experiente, a instruÃ§Ã£o <em>prepare um mousseline au chocolat</em> jÃ¡ Ã©
+suficientemente clara.</p>
+<p>Abstrair significa <strong>esconder</strong> os detalhes de que nÃ£o precisamos. Do
+mesmo jeito, no computador, ao invÃ©s de operarmos sempre sobre bits â
+o que seria muito tedioso, vamos agrupar os bits em grupos de 8 bits,
+chamados <em>bytes</em>. Ainda, agruparemos um ou mais bytes em <em>caracteres</em>,
+depois um ou mais caracteres em *palavras&quot; e assim por diante.</p>
+<h2 id="texto-finito">Texto finito</h2>
+<p>Suponha que queremos calcular quanto iremos gastar no supermercado.
+Para isso, receberemos como entrada uma lista de itens e valores.
+Podemos escrever o seguinte algoritmo para essa tarefa:</p>
+<ol>
+<li>tome nota do nÃºmero 0</li>
+<li>percorra a lista, adicionando o valor de cada item ao nÃºmero anotado</li>
+<li>quando terminar de percorrer a lista, responda o nÃºmero anotado</li>
+</ol>
+<p>Primeiro, precisamos nos convencer de que esse algoritmo simples
+realmente realiza a tarefa solicitada. Para isso, vamos testÃ¡-lo
+com algumas listas. Observe que precisamos reservar um espaÃ§o no
+papel para guardar o &quot;valor&quot; atualmente sendo computado.</p>
+<p>Executando esse algoritmo, fazemos algumas observaÃ§Ãµes.</p>
+<ol>
+<li>
+<p>Enquanto o <strong>texto</strong> do algoritmo Ã© um texto curto e de tamanho
+fixo definido (3 linhas), o <strong>processo</strong> que esse texto descreve
+pode variar em duraÃ§Ã£o dependendo do tamanho da lista de
+exercÃ­cios.</p>
+</li>
+<li>
+<p>AlÃ©m disso, mesmo que o valor possa ser bem diferente para listas
+de diferentes famÃ­lias (pense numa pessoa que mora sozinha em
+contraste com uma famÃ­lia seis pessoas!), o espaÃ§o no papel que
+separamos para executar esse algoritmo Ã© sempre o mesmo. O que isso
+quer dizer Ã© que mesmo que o processo possa produzir valores
+diferentes, os recursos utilizar por ele sÃ£o sempre limitados.</p>
+</li>
+</ol>
+<h1 id="o-problema-algoritmico">O problema algorÃ­tmico</h1>
+<p>Observe que o algoritmo para calcular o valor da lista de compras
+Ã© genÃ©rico e nÃ£o interessa qual o tamanho famÃ­lia ou lista de compras
+em particular que Ã© fornecida como entrada. Assim,
+esse algoritmo funciona para um conjunto <em>infinito</em> de entradas
+diferentes.</p>
+<p>Repare que isso Ã© em contraste com o a receita de mousseline au
+chocolat, que sempre que executado por um cozinheiro vai produzir as
+mesmas porÃ§Ãµes de mousseline. Mas mesmo esse algoritmo pode ser tornado
+genÃ©rico, se mudarmos os ingredientes para algo como &quot;X onÃ§as de
+pedaÃ§os de chocolate, X / 4 colheres de sopa de Ã¡gua, X / 32 xÃ­caras
+de aÃ§Ãºcar em pÃ³, etc.&quot;. Assim, o resultado produzido pela receita
+poderia ser &quot;rende de 3/4 X a X porÃ§Ãµes de X&quot;.</p>
+<p>Um outro aspecto importante Ã© que a entrada deve ser vÃ¡lida. Assim,
+devemos fornecer uma lista de compras para o algoritmo da soma, e nÃ£o
+podemos tentar executar esse algoritmo com uma lista dos livros mais
+vendidos no ano, jÃ¡ que isso nÃ£o faria sentido. Isso significa que as
+entradas do nosso problema devem ser especificadas de alguma maneira.</p>
+<p>Observe que as saÃ­das produzidas por cada algoritmo podem ter natureza diferentes.
+Enquanto as saÃ­das da receita sÃ£o &quot;porÃ§Ãµes de mousseline&quot;,
+as saÃ­das do algoritmo da soma sÃ£o nÃºmeros.
+Assim, tambÃ©m devemos ter uma especificaÃ§Ã£o das saÃ­das.</p>
+<p>AlÃ©m disso, observe que para cada entrada, queremos encontrar uma
+saÃ­da correspondente. A descriÃ§Ã£o dessa saÃ­da independe do algoritmo
+que a obtÃ©m. Desse modo, separamos <em>problemas</em> dos <em>algoritmos</em>
+que os resolvem! Veja a imagem extraÃ­da da bibliografia.</p>
+<img src="figs/problema-algoritmo.png" style="width: 550px; text-align: center">
+<p>Agora jÃ¡ estamos em posiÃ§Ã£o de definir problemas e algoritmos. Vamos
+definir um <em>problema algorÃ­tmico</em> --- algumas vezes tambÃ©m vamos
+chamÃ¡-los de <em>problema computacional</em> --- uma relaÃ§Ã£o formada por</p>
+<ol>
+<li>
+<p>uma caracterizaÃ§Ã£o de uma coleÃ§Ã£o vÃ¡lida, possivelmente infinita, das possÃ­veis entradas do problema,</p>
+</li>
+<li>
+<p>uma especificaÃ§Ã£o das saÃ­das desejadas como funÃ§Ã£o das entradas.</p>
+</li>
+</ol>
+<p>Uma vez entendido o que Ã© um problema algorÃ­tmico, vocÃª pode escrever
+uma definiÃ§Ã£o de algoritmo da sua maneira preferida. Aqui, eu
+vou dizer que um algoritmo Ã© uma sequÃªncia de instruÃ§Ãµes
+que resolve um determinado problema. Mas, independentemente
+da forma com que vocÃª defina seu algoritmo, temos que considerar
+algumas propriedades fundamentais:</p>
+<ul>
+<li>
+<p>Essa sequÃªncia de instruÃ§Ãµes deve ser <em>finita</em>. Isso Ã© porque nÃ£o
+queremos considerar sequÃªncias infinitas de instruÃ§Ãµes, jÃ¡ que elas
+sequer podem ser escritos ou armazenadas em um computador.</p>
+</li>
+<li>
+<p>O algoritmo deve conter apenas <em>instruÃ§Ãµes elementares</em>. Aqui, temos
+que lembrar que um algoritmo Ã© escrito para determinado hardware â
+ou computador, assim apenas instruÃ§Ãµes que podem ser compreendidas
+por esse hardware de forma clara e inambÃ­gua podem ser utilizadas.</p>
+</li>
+<li>
+<p>O texto do algoritmo deve ser uma <em>sequÃªncia sistemÃ¡tica</em> de passos.
+Isso quer dizer que sabemos exatamente qual a ordem em que as
+instruÃ§Ãµes sÃ£o executadas. Dito de outra maneira, apÃ³s realizar cada
+uma das instruÃ§Ãµes, devemos saber se ainda hÃ¡ alguma instruÃ§Ã£o a ser
+executada ou se o processo deve terminar.</p>
+</li>
+<li>
+<p>Sempre que for fornecida uma entrada vÃ¡lida, o algoritmo deve
+<em>sempre terminar</em> com uma saÃ­da correspondente. Isso implica duas
+coisas: primeiro, que o tempo gasto pelo algoritmo Ã© finito e,
+segundo, que os demais recursos utilizados, como espaÃ§o no papel,
+ingredientes, etc., tambÃ©m sÃ£o limitados.</p>
+</li>
+</ul>
+
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../index.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="02-escrevendo-algoritmos.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+
+
+
+  </body>
+
+</html>

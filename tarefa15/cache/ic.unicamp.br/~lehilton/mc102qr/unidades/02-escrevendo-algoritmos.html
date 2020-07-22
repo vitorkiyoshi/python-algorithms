@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Algoritmos e ProgramaÃ§Ã£o de Computadores
+    - Escrevendo algoritmos
+  </title>
+
+  <meta name="keywords" content="MC102, Algoritmos e ProgramaÃ§Ã£o de Computadores, Python">
+  <meta name="description" content="PÃ¡gina da disciplina de MC102 para turma QR">
+  <meta name="author" content="Lehilton Pedrosa">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../dist/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme css -->
+  <link href="../dist/css/main.min.css" rel="stylesheet">
+
+  <!-- Prism -->
+  <!-- <link href="../dist/vendor/prism/prism.css" rel="stylesheet" /> -->
+</head>
+<body >
+
+  <body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">MC102</a>
+
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i>&#9776;</i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item top back-to-top-link">
+          <a class="nav-link" href="#"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>topo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">voltar</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead"   style="background-image: url('../images/home-bg.jpg')" >
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+
+          <h1 >Escrevendo algoritmos</h1>
+
+
+          <span class="meta">Quinta, 12 de marÃ§o de 2020</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <h1 id="escrevendo-um-algoritmo">Escrevendo um algoritmo</h1>
+<p>NÃ³s jÃ¡ sabemos o que Ã© um algoritmo. Ele Ã© um texto com diversas
+instruÃ§Ãµes. Normalmente, podemos imaginar que um algoritmo serÃ¡
+executado por um certo robozinho. Esse robÃ´ Ã© o <strong>processador</strong> que
+irÃ¡ executar as instruÃ§Ãµes do algoritmo, entÃ£o Ã© fundamental que sÃ³
+demos a ele ordens bem bÃ¡sicas, que ele seja capaz de cumprir.</p>
+<p>Assim, queremos escrever um algoritmo que sÃ³ contenha <em>instruÃ§Ãµes
+elementares</em>. Mais do que isso, tambÃ©m Ã© importante projetar um
+mecanismo que diga ao robÃ´ qual instruÃ§Ã£o ele deverÃ¡ executar em
+seguida e quando o algoritmo termina. Por isso, nosso algoritmo terÃ¡
+algumas <em>instruÃ§Ãµes de controle</em> que digam a ordem e a forma em que as
+aÃ§Ãµes sÃ£o executadas.</p>
+<h2 id="estruturas-de-controle">Estruturas de controle</h2>
+<p>Vamos listar as estruturas de controle mais comumente utilizadas ao
+escrever um algoritmo:</p>
+<ul>
+<li>
+<p>O <strong>sequenciamento direto</strong> Ã© a convenÃ§Ã£o do nosso algoritmo que
+determina que uma instruÃ§Ã£o escrita antes no texto deve ser
+executada antes. Normalmente Ã© determinada implicitamente. Por
+exemplo, se escrevermos uma instruÃ§Ã£o por linha, entÃ£o sabemos que
+cada linha Ã© executada em ordem; se separarmos instruÃ§Ãµes por
+ponto-e-vÃ­rgula, entÃ£o podemos imaginar que esse ponto-e-vÃ­rgula
+significa &quot;e depois faÃ§a&quot;, etc.</p>
+</li>
+<li>
+<p>O <strong>desvio condicional</strong> Ã© uma estrutura de controle que permite que
+a execuÃ§Ã£o de um algoritmo tome caminhos diferentes, dependendo da
+entrada e dos dados jÃ¡ computados. Normalmente tem a forma <em>&quot;se Q,
+entÃ£o faÃ§a A, do contrÃ¡rio faÃ§a B&quot;</em>, ou apenas <em>&quot;se Q, entÃ£o faÃ§a
+A&quot;</em>. Nessas frases, Q Ã© uma condiÃ§Ã£o, ou uma pergunta, cuja a
+resposta Ã© sim ou nÃ£o e pode ser testada por nosso robÃ´.</p>
+</li>
+</ul>
+<img src="figs/exit.jpg" style="width: 100%; max-width: 400px;">
+<p>VocÃª pode se perguntar como a execuÃ§Ã£o de um algoritmo pode levar
+tempo diferente se o tamanho do texto que o descreve Ã© fixo. Se
+tivÃ©ssemos apenas os tipos de controle acima, entÃ£o toda execuÃ§Ã£o
+levaria o mesmo tempo. Para executarmos uma instruÃ§Ã£o ou um conjunto
+de instruÃ§Ãµes por um nÃºmero variÃ¡vel de vezes, precisamos das chamadas
+<em>estruturas iterativas</em>. Cada parte da execuÃ§Ã£o em que executamos esse
+conjunto de instruÃ§Ãµes uma vez Ã© chamada de <em>iteraÃ§Ã£o</em>.</p>
+<ul>
+<li>
+<p>A <strong>iteraÃ§Ã£o limitada</strong> Ã© a estrutura mais comum de iteraÃ§Ã£o e Ã©
+normalmente da forma &quot;repita A exatamente N vezes&quot; ou muitas outras
+vezes pode ser da forma &quot;para cada item I da lista L, faÃ§a A&quot;. Isso
+foi Ãºtil, por exemplo, no exemplo da soma dos preÃ§os da lista de
+compra, que vimos anteriormente.</p>
+</li>
+<li>
+<p>A <strong>iteraÃ§Ã£o condicional</strong> Ã© outra estrutura de controle iterativa
+que Ã© utilizada quando nÃ£o sabemos no inÃ­cio quantas vezes
+precisamos iterar. Normalmente, tem as formas &quot;repita A atÃ© que Q
+valha&quot; ou &quot;enquanto Q, faÃ§a A&quot;. De novo, Q Ã© uma condiÃ§Ã£o que pode
+ser testada por nosso robÃ´.</p>
+</li>
+</ul>
+<p>As estruturas iterativas normalmente sÃ£o chamadas de <strong>laÃ§os</strong> ou
+<strong>loops</strong>.</p>
+<p>Vamos reescrever o algoritmo para exemplo da lista de compras.
+NÃ³s vamos supor que nosso algoritmo recebe, nÃ£o somente a lista
+de compras, como o nÃºmero de itens que ela contÃ©m, que representaremos
+pela letra <code class="language-text">N</code>.</p>
+<pre class="highlight">(1) tome nota do nÃºmero zero; aponte para o primeiro item da lista;
+(2) faÃ§a o seguinte N - 1 vezes:
+    (2.1) adicione o valor do item atual ao nÃºmero anotado;
+    (2.2) aponte para o prÃ³ximo item da lista;
+(3) adicione o valor do item atual ao nÃºmero anotado;
+(4) devolva como saÃ­da o nÃºmero anotado.
+</pre><h2 id="combinando-estruturas">Combinando estruturas</h2>
+<p>O que torna os algoritmos particularmente ricos Ã© a possibilidade de
+combinar as diversas estruturas de controle. Por exemplo, podemos
+executar um laÃ§o dentro do conjunto de aÃ§Ãµes de uma estrutura
+condicional. Mais do que isso, podemos executar um laÃ§o dentro do
+conjunto de aÃ§Ãµes de outro laÃ§o. Nesse Ãºltimo exemplo, chamamos o
+primeiro de <em>laÃ§o interno</em> e o segundo de <em>laÃ§o externo</em>. E assim por
+diante!</p>
+<p>JÃ¡ deve dar para perceber que os algoritmos podem ficar cada vez mais
+diversos e mas ricos â e, algumas vezes, mais complexos! Cada
+algoritmo pode ser mais ou menos complicado. Isso vai depender do
+problema que queremos resolver.</p>
+<p>Vamos tentar fazer um algoritmo que ordena um conjunto de cartas!</p>
+<img src="figs/bubble.svg" style="width: 100%; max-width: 400px; padding: 0 10%;">
+<p>Uma maneira de fazer isso Ã© primeiro colocar as cartas uma do lado da
+outra. Depois, basta percorrer as cartas vÃ¡rias vezes, da esquerda
+para a direita trocando cartas adjacentes que estejam fora de ordem.
+Quando nÃ£o encontrarmos nenhum par de cartas fora de ordem, sabemos
+que as cartas estÃ£o ordenadas. Esse Ã© um algoritmo chamado de <em>bubble
+sort</em>, ou ordenaÃ§Ã£o da bolha. A ideia Ã© que as cartas maiores vÃ£o sendo
+empurradas para o final, como se fossem bolhas.</p>
+<img src="figs/bubble1.svg" style="width: 100%; max-width: 450px;">
+<p>Na verdade, o bubblesort Ã© um algoritmo bem lento e vocÃª ainda vai
+aprender diversos algoritmos que sÃ£o muitas vezes mais rÃ¡pidos. Mas,
+por enquanto, vamos nos concentrar em escrever esse algoritmo.
+Primeiro, precisamos saber quantas vezes precisamos percorrer a
+sequÃªncia de cartas. Na primeira vez que percorremos as cartas, deve
+ser fÃ¡cil convencer-se de que a maior carta estarÃ¡ no final. Na
+segunda vez, a segunda maior carta jÃ¡ estarÃ¡ na posiÃ§Ã£o correta, e
+assim por diante. Assim, se o nÃºmero de cartas Ã© N, entÃ£o basta
+percorrer o baralho N - 1 vezes.</p>
+<pre class="highlight">(1) repita o seguinte N â 1 vezes:
+    (1.1) aponte para a primeira carta;
+    (1.2) repita o seguinte N - 1 vezes:
+        (1.2.1) compare a carta apontada atualmente com a seguinte;
+        (1.2.2) se as cartas comparadas estÃ£o fora de ordem, inverta-as;
+        (1.2.3) aponte para a prÃ³xima carta.
+</pre><p>Esse Ã© um exemplo de algoritmo em que utilizamos e combinamos
+diversas estruturas de controle. Tente identificÃ¡-las!</p>
+<h2 id="desenhando-um-algoritmo">Desenhando um algoritmo</h2>
+<p>Ao invÃ©s de escrever um algoritmo, tambÃ©m podemos representÃ¡-los
+utilizando desenhos. HÃ¡ diversas maneiras de desenhÃ¡-los, mas talvez a
+maneira mais comum Ã© criar o que chamamos de &quot;diagrama de fluxo&quot;, ou
+em inglÃªs, &quot;flowchart&quot;.</p>
+<p>Em um diagrama de fluxo, cada instruÃ§Ã£o elementar Ã© representada por
+um retÃ¢ngulo e cada desvio condicional Ã© representado por um losango.
+O objetivo Ã© entender qual o <em>fluxo</em> de execuÃ§Ã£o do algoritmo. Assim,
+saindo de cada retÃ¢ngulo hÃ¡ um arco que aponta para a prÃ³xima
+instruÃ§Ã£o a ser executada. Como a instruÃ§Ã£o executada depois de um
+desvio condicional depende da resposta, sim ou nÃ£o, a partir de um
+losango hÃ¡ dois arcos, um para cada possibilidade.</p>
+<p>Vamos tentar fazer um desenho do nosso algoritmo.</p>
+<img src="figs/fluxo.svg" style="width: 100%; max-width: 500px;">
+<p>Perceba que as estruturas iterativas correspondem ao desenho de um
+ciclo no diagrama de fluxo. Isso explica a nomenclatura de laÃ§o.</p>
+<h1 id="sub-rotinas">Sub-rotinas</h1>
+<p>Algumas vezes, os algoritmos podem ficar mais e mais complicados.
+Assim nossos algoritmo ou diagramas de fluxo podem ficar cada vez
+maiores. Vamos ver um exemplo de como isso pode acontecer.</p>
+<p>Suponha que, na nossa lista de compras, hÃ¡, nÃ£o somente o valor de cada
+item, mas tambÃ©m o tipo. Assim, cada item pode ser <em>alimentaÃ§Ã£o</em>,
+<em>limpeza</em>, <em>vestuÃ¡rio</em>, <em>eletrÃ´nico</em> etc. Dependendo do supermercado a
+que vamos, nÃ£o vamos conseguir comprar todos os itens. Se no
+supermercado mais prÃ³ximo pudermos comprar apenas itens de alimentaÃ§Ã£o
+e limpeza, entÃ£o precisamos saber o quanto vamos gastar com esses tipos
+de item. Vamos modificar o algoritmo anterior.</p>
+<pre class="highlight">(1) tome nota do nÃºmero zero
+(2) aponte para o primeiro item da lista;
+(3) faÃ§a o seguinte N - 1 vezes:
+    (3.1) se o item atual Ã© do tipo &quot;alimentaÃ§Ã£o&quot;
+        (3.1.1) adicione o valor do item atual ao nÃºmero anotado;
+    (3.2) aponte para o prÃ³ximo item da lista;
+(4) se o item atual Ã© do tipo &quot;alimentaÃ§Ã£o&quot;
+    (4.1) adicione o valor do item atual ao nÃºmero anotado;
+(5) aponte para o primeiro item da lista;
+(6) faÃ§a o seguinte N - 1 vezes:
+    (6.1) se o item atual Ã© do tipo &quot;limpeza&quot;
+        (6.1.1) adicione o valor do item atual ao nÃºmero anotado;
+    (6.2) aponte para o prÃ³ximo item da lista;
+(7) se o item atual Ã© do tipo &quot;limpeza&quot;
+    (7.1) adicione o valor do item atual ao nÃºmero anotado;
+(8) devolva como saÃ­da o nÃºmero anotado.
+</pre><p>Ã claro que hÃ¡ algoritmos mais simples para essa tarefa, mas esse
+podemos fazer diversas observaÃ§Ãµes do algoritmo que escrevemos acima.
+Primeiro, o texto do algoritmo ficou muito maior. Mais importante do
+que isso, Ã© muito mais difÃ­cil entender o que estÃ¡ fazendo esse
+algoritmo. Tente desenhar o diagrama de fluxo correspondente.</p>
+<p>AlÃ©m disso, observamos que hÃ¡ dois trechos do algoritmo que sÃ£o muito
+parecidos e tudo que muda Ã© o tipo de alimento. Podemos entÃ£o tentar
+escrever esse trecho de cÃ³digo apenas uma vez utilizando um
+<strong>parÃ¢metro</strong> ao invÃ©s do tipo de alimento. Esse trecho de cÃ³digo Ã©
+chamado de <strong>sub-rotina</strong> ou <strong>procedimento</strong>.</p>
+<pre class="highlight">SOMAR ITENS DA CATEGORIA (X)
+(1) aponte para o primeiro item da lista;
+(2) faÃ§a o seguinte N - 1 vezes:
+    (2.1) se o item atual Ã© do tipo X
+        (2.1.1) adicione o valor do item atual ao nÃºmero anotado;
+    (2.2) aponte para o prÃ³ximo item da lista;
+(3) se o item atual Ã© do tipo &quot;X&quot;
+    (3.1) adicione o valor do item atual ao nÃºmero anotado;
+</pre><p>No texto acima, X Ã© um parÃ¢metro que serÃ¡ substituÃ­do pelo tipo de
+alimento quando invocarmos essa sub-rotina. Com esse texto, agora
+podemos <em>invocar</em> ou <em>chamar</em> a nossa sub-rotina duas vezes no
+algoritmo principal.</p>
+<pre class="highlight">(1) tome nota do nÃºmero zero
+(2) SOMAR ITENS DA CATEGORIA (&quot;alimentaÃ§Ã£o&quot;)
+(3) SOMAR ITENS DA CATEGORIA (&quot;limpeza&quot;)
+(4) devolva como saÃ­da o nÃºmero anotado.
+</pre><p>Compare esse novo algoritmo com o algoritmo anterior. Ele nÃ£o ficou
+muito mais simples? Ã importante observar que agora utilizamos uma
+instruÃ§Ã£o que antes nÃ£o era permitida, que Ã© SOMAR ITENS DA
+CATEGORIA. Esta nÃ£o Ã© uma instruÃ§Ã£o elementar do nosso processador
+original, mas utilizamos como se fosse. O que estamos fazendo Ã©
+anÃ¡logo a ensinar o nosso robozinho a realizar uma nova atividade, de
+forma que nÃ£o precisamos explicar de novo como fazÃª-la. Dizemos que
+estamos criando uma nova <em>abstraÃ§Ã£o</em>, escondendo os detalhes de
+implementaÃ§Ã£o.</p>
+<p>Podemos desenhar agora um diagrama de fluxo substituindo o trecho do
+algoritmo da sub-rotina por um retÃ¢ngulo, como uma instruÃ§Ã£o
+elementar. FaÃ§a isso.</p>
+<h1 id="tipos-e-estrutura-de-de-dados">Tipos e estrutura de de dados</h1>
+<p>Por enquanto falamos apenas de nÃºmeros anotados, de listas de itens de
+compra, de apontamentos para itens, de ingredientes. Alguns desses
+elementos aparecem na entrada e na saÃ­da, enquanto outros aparecem
+como objetos intermediÃ¡rios computados durante a execuÃ§Ã£o do
+algoritmo. A todos esses objetos, chamaremos de <strong>dados</strong>.</p>
+<h2 id="tipos">Tipos</h2>
+<p>Os vÃ¡rios dados aparecem nos mais diversos sabores, ou mais
+precisamente, nos mais diversos <strong>tipos</strong>. Os tipos mais comuns
+utilizados nos computadores sÃ£o os <em>nÃºmeros</em>, que podem ter diversos
+subtipos, e <em>strings</em>, que representam palavras ou textos nos mais
+diversos alfabetos.</p>
+<p>Nos computadores que consideraremos, os dados sÃ£o sempre representados
+de alguma maneira em particular na memÃ³ria do computador. Assim,
+precisamos adotar convenÃ§Ãµes para representar os objetos tratados pelos
+algoritmos como uma sequÃªncia bem definida de dados. Por exemplo,
+enquanto tratamos nÃºmeros inteiros no formato decimal, a representaÃ§Ã£o
+desses nÃºmeros na memÃ³ria Ã© binÃ¡ria. Se quisermos representar objetos
+mais complicados, como uma imagem, vamos precisar definir
+representaÃ§Ãµes apropriadas â algumas vezes um tanto quanto
+complicadas, outras vezes mais simples.</p>
+<p>Ã importante que entendamos exatamente qual Ã© o tipo de cada dado que
+tratamos no algoritmo, pois cada tipo permite operaÃ§Ãµes distintas. Por
+exemplo, podemos dividir dois nÃºmeros, mas nÃ£o podemos dividir duas
+strings!</p>
+<h2 id="variaveis">VariÃ¡veis</h2>
+<p>No algoritmo da soma, referimo-nos a um dado simplesmente como &quot;valor
+anotado&quot;, que Ã© inicializado com 0 e depois acumula o valor dos itens
+de compra. O que estamos fazendo Ã© utilizar uma <strong>variÃ¡vel</strong>. Uma
+variÃ¡vel nÃ£o Ã© o valor de um dado em si; ao invÃ©s disso, podemos
+entender uma variÃ¡vel como uma pequena caixa ou cÃ©lula onde um
+determinado <em>valor</em> pode ser armazenado. Cada variÃ¡vel tem um <em>tipo</em>
+correspondente; assim, podemos imaginar que nessa caixa sÃ³ cabem
+valores do tipo correspondente.</p>
+<p>Normalmente, damos um <em>nome</em> a essa caixa. PoderÃ­amos, por exemplo, ao
+invÃ©s de dizer &quot;nÃºmero anotado&quot;, chamar essa variÃ¡vel de &quot;subtotal&quot;.</p>
+<img src="figs/variavel.svg" style="width: 100%; max-width: 450px;">
+<p>Em ComputaÃ§Ã£o, chamamos de variÃ¡vel uma cÃ©lula que pode conter
+diversos valores distintos em diferentes momentos, ao contrÃ¡rio da
+MatemÃ¡tica, em que uma variÃ¡vel Ã© apenas um sÃ­mbolo que representa um
+valor desconhecido.</p>
+<p>Como o valor de uma variÃ¡vel pode mudar, necessitamos de instruÃ§Ãµes
+especÃ­ficas para alterar o valor de uma variÃ¡vel. Essa instruÃ§Ã£o Ã©
+chamada de <strong>atribuiÃ§Ã£o</strong>. Normalmente escrevemos algo como &quot;Atribua
+valor V Ã  variÃ¡vel X&quot;, ou utilizamos uma notaÃ§Ã£o mais simples, como X
+$\gets$ V, que devemos ler como &quot;a variÃ¡vel X recebe o valor de V&quot;.</p>
+<p>TambÃ©m podemos atribuir um valor de uma expressÃ£o, como em X $\gets$
+V+1, em que queremos atribuir Ã  variÃ¡vel X o valor de V mais uma
+unidade. Devemos tomar um cuidado especial, jÃ¡ que muitas vezes
+o novo valor depende do valor anterior da variÃ¡vel. Assim, podemos
+ter a instruÃ§Ã£o X $\gets$ X+1 que significa que o valor da variÃ¡vel
+X deve ser mudado e que o novo valor Ã© o valor anterior mais um.</p>
+<h2 id="colecoes-de-dados">ColeÃ§Ãµes de dados</h2>
+<p>Retomemos o exemplo da nossa lista de compras. Para representar a
+entrada, falamos de uma &quot;lista de compras&quot;. Assim, cada item a ser
+comprado Ã© uma parte da lista. Podemos querer <strong>armazenar</strong> cada item
+em um conjunto de variÃ¡veis. Por exemplo, o primeiro item na variÃ¡vel
+X, o segundo na variÃ¡vel Y e o terceiro na variÃ¡vel Z. Mas logo vocÃª
+deve perceber que essa estratÃ©gia nÃ£o Ã© boa se tivermos um lista de
+compras com mais ou menos do que trÃªs itens. Para listas maiores,
+precisarÃ­amos definir mais variÃ¡veis e, para listas menores, terÃ­amos
+variÃ¡veis que nÃ£o fazem sentido!</p>
+<p>Como nosso objetivo Ã© escrever um texto de tamanho fixo, mas que possa
+ser executado com listas de qualquer tamanho, precisamos de uma maneira
+de nos referir a esses elementos de maneira <em>uniforme</em>. Para isso,
+vamos utilizar o que chamamos de <strong>lista</strong>. Dependendo do contexto, tambÃ©m
+serÃ£o chamadas de <em>vetores</em> ou <em>arranjos unidimensionais</em>.</p>
+<p>Para tomar um exemplo, vamos tentar representar a nossa sequÃªncia de
+cartas usando uma lista. Por simplicidade, todas as cartas tem valores diferentes,
+entÃ£o vamos ignorar os naipes e supor que o Ã¡s Ã© representado pelo nÃºmero 1.
+Assim, a sequÃªncia anterior poderia ser representada pela seguinte lista.</p>
+<img src="figs/lista_cartas.svg" style="width: 100%; max-width: 350px;">
+<p>Na figura acima, a variÃ¡vel <em>cartas</em> representa toda a sequÃªncia de
+cartas, mas ainda precisamos de algum mecanismo para nos referir a
+cada um dos elementos. PoderÃ­amos dizer simplesmente &quot;o primeiro
+elemento de cartas&quot;, mas hÃ¡ um jeito melhor. Vamos adotar uma notaÃ§Ã£o
+de colchetes, assim a primeira carta serÃ¡ <em>cartas[1]</em>, a segunda serÃ¡
+<em>cartas[2]</em> e assim por diante.</p>
+<p>Com isso, podemos tentar reescrever nosso algoritmo bubblesort.</p>
+<pre class="highlight">(1) repita o seguinte N â 1 vezes:
+    (1.1) X &lt;-- 1;
+    (1.2) enquanto X &lt; N
+        (1.2.1) se cartas[X + 1] &lt; cartas[X], entÃ£o inverta esses elementos;
+        (1.2.3) X &lt;-- X + 1.
+</pre>
+
+        <!-- Navigation buttons -->
+<div role="navigation" class="row justify-content-between">
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="01-problemas-algoritmos.html">
+      &larr; Anterior
+    </a>
+  </div>
+
+  <div class="col-12 d-none d-lg-inline-block col-lg-4">
+    <a class="btn btn-secondary w-100" href="../index.html">
+      Voltar
+    </a>
+  </div>
+
+  <div class="col-12 col-sm-5 col-lg-4">
+    <a class="btn btn-primary w-100 mt-1 mt-sm-0" href="03-linguagens-programacao.html">
+      PrÃ³xima &rarr;
+    </a>
+  </div>
+
+</div>      </div>
+    </div>
+</article>
+
+<hr />
+
+
+<!-- Footer -->
+<footer>
+  <p class="copyright text-muted">
+    <a href="https://www.ic.unicamp.br/~lehilton/" title="PÃ¡gina pessoal">
+      Copyright &copy; 2020
+    </a>
+  </p>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../dist/vendor/jquery/jquery.min.js"></script>
+<script src="../dist/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../dist/vendor/prism/prism.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<script src="../dist/js/main.min.js"></script>
+
+<!-- Mathjax setup -->
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+  };
+</script>
+<script src="../dist/vendor/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+
+
+
+  </body>
+
+</html>
